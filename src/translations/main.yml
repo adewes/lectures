@@ -3,10 +3,10 @@ $include:
 hp:
   site-title:
     _t:
-      de: cdd16e000993c5d8
-      en: cdd16e000993c5d8
-    de: Differential Privacy
-    en: Differential Privacy
+      de: 6efcfd2b329aadd0
+      en: 6efcfd2b329aadd0
+    de: Vorlesungen
+    en: Lectures
   translation-note:
     _t:
       de: 61cf1a0868a8f0f7

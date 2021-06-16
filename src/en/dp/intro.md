@@ -13,17 +13,42 @@ In the following, we use sample data describing the income of different individu
 <div id="table" data-render="DataTable([...this.data.slice(0,10),{name: '...', income: '...'}])">
 </div>
 
-In general, we represent data as individual blocks in the following. A red block <span data-render="Cube({color: 'red', size: 'xs'})"></span> represents confidential, personal data. A green block <span data-render="Cube({color: 'green', size: 'xs'})"></span>, on the other hand, represents anonymous or aggregated data without any alleged personal reference.
+In the following, we represent individual records as individual blocks.
 
+<div style="display: flex; flex-direction: row;">
 
-<div id="cubes" data-render="DataCubes(data)">
+<div style="margin-right: 10px;">
+
+  <h2>{{'intro.d.title'|translate}}</h2>
+
+  <div style="margin-left: 10px;" id="cubes-d" data-render="DataCubes({data,
+color: 'red'})">
+  </div>
 </div>
+
+<div>
+
+  <h2>{{'intro.dp.title'|translate}}</h2>
+
+  <div id="cubes-dp" data-render="DataCubes({data: dataD,
+color: 'green'})">
+  </div>
+</div>
+
+</div>
+
+
+
+# Data set $ D' $
+
+The data set $ D' $ is identical to the data set $ D $ except for a single remote data point <span data-render="Cube({color: 'red', size: 'xs'})"></span>. In the following, we call this remote data point the difference point.
+
 
 
 <script type="module">
   import { renderAll } from '{{"js/render.js"|file}}';
   import { random } from '{{"js/stats.js"|file}}';
-  import { DataTable, DataCubes, Cube, ResultBoxes } from '{{"js/sites/intro.js"|file}}';
+  import { DataTable, SuccessRate, Literal, DataCubes, Cube } from '{{"js/sites/intro.js"|file}}';
 const firstNames = ['James', 'Robert', 'John', 'Michael', 'Joseph', 'Mary', 'Patricia', 'Jennifer', 'Linda', 'Elizabeth', 'Andreas', 'Christian', 'Thomas', 'Lukas', 'Tristan', 'Isolde', 'Wolfgang', 'Herbert', 'Brunhile']
 const lastNames = ['Meier', 'Müller', 'Schmidt', 'Kachelmann','Weintraut', 'Schwarz', 'Manning', 'Johnson', 'Biden', 'Maurer', 'Kemmerling', 'Gott', 'Liefers', 'Duchrow', 'Lohse']
 const zipCodes = ['66606', '72070', '80331', '10625', '54315', '12421', '92151']
@@ -47,6 +72,8 @@ const randomIncome = (age) => 31000+age*500+random(1000)*10-random(1000)*10
   const differencePoint = data[random(data.length)]
   const minIncome = Math.floor(differencePoint.income/10000)*10000
 
+  const dataD = data.filter(row => row !== differencePoint)
+
   window.dp = {
     differencePoint: differencePoint,
     incomeGroup: {
@@ -54,10 +81,10 @@ const randomIncome = (age) => 31000+age*500+random(1000)*10-random(1000)*10
       max: minIncome+10000,
     },
     data: data,
-    dataD: data.filter(row => row !== differencePoint)
+    dataD: dataD,
   }
 
-  renderAll({DataTable, DataCubes, Cube, ResultBoxes, data})
+  renderAll({DataTable, SuccessRate, DataCubes, Literal, n: data.length, Cube, data, dataD})
 
 </script>
 
@@ -130,7 +157,7 @@ Where $ x _ i = 1 $ if the income of the data point $ i $ is in the range of inc
     values.push(0)
     ticks.push(i)
   }
-  barChart("result-exact", [values], {xTicks: ticks,blocks: [{x: dp.exact.count, class: 'is-green'}, {x: dp.exact.countD, class: 'is-red'}], height: 50});
+  barChart("result-exact", [values], {xTicks: ticks,blocks: [{x: dp.exact.count, class: 'is-green'}, {x: dp.exact.countD, class: 'is-red'}], height: 20});
 </script>
 
 
@@ -144,6 +171,9 @@ An attacker who knows all data values $x _ i$ except for a single value $x _ j $
   \end{equation}
 </div>
 
+
+<div data-render="SuccessRate({trials: 100, successes: 100})">
+</div>
 
 # Adding noise
 
@@ -201,7 +231,7 @@ Do you notice a problem here? No? Then take a look at the edges of the frequency
 <div id="frequency-table">
 </div>
 
-Crucial for the attacker is the ratio of the probabilities of the observed values: If a given value in $ D $ and $ D' $ is equally likely, the attacker can at best only guess how the data point $ x _ j $ contributed to the result. However, the more the ratio of one differs from 1, the more information the observed result provides to the attacker.
+Crucial for the attacker is the ratio of the probabilities of the observed values: If a given value in $ D $ and $ D' $ is equally likely, the attacker can at best only guess how the data point $ x _ j $ contributed to the result. However, the more the ratio of one differs from 1, the more information the observed result provides to the attacker. In the above case, the probability that an attacker will uncover our data is still 25%!
 
 That is, crucial to the security of our noise-based anonymization is the minimum (or maximum) ratio of the probabilities for a given outcome value for the two difference datasets $ D $ and $ D' $:
 
@@ -260,30 +290,30 @@ const geometricNoise = (epsilon, symmetric) => {
   }
   return k
 }
-
-const frequencies = {}
-for(let i=0;i<10000;i++){
-  let v = geometricNoise(0.5, true);
-  if (frequencies[v] === undefined)
-    frequencies[v] = 0;
-  frequencies[v]++;
-}
-
-const { dp } = window;
-
-dp.geometricNoise = geometricNoise;
-
-const sf = Object.entries(frequencies).sort((a, b) => a[0]-b[0]);
-
-import { barChart } from '{{"js/plotting.js"|file}}';
-
-barChart("geometric-noise-example",
-    [sf.map(s => s[1])],
-    {xTicks: sf.map(s => s[0])});
-
   {% endset -%}
 
   {{geometricNoise}}
+
+  const frequencies = {}
+  for(let i=0;i<10000;i++){
+    let v = geometricNoise(0.5, true);
+    if (frequencies[v] === undefined)
+      frequencies[v] = 0;
+    frequencies[v]++;
+  }
+
+  const { dp } = window;
+
+  dp.geometricNoise = geometricNoise;
+
+  const sf = Object.entries(frequencies).sort((a, b) => a[0]-b[0]);
+
+  import { barChart } from '{{"js/plotting.js"|file}}';
+
+  barChart("geometric-noise-example",
+      [sf.map(s => s[1])],
+      {xTicks: sf.map(s => s[0])});
+
 </script>
 
 
@@ -294,14 +324,12 @@ barChart("geometric-noise-example",
 </div>
 
 
-<div class="chart sick box" id="geometric-noise-example">
+<div class="chart box" id="geometric-noise-example">
 </div>
 
 
-<div class="chart box" id="result-with-geometric-noise">
-</div>
 <script type="module">
-  import { FrequencyTable } from '{{"js/sites/intro.js"|file}}';
+  import { FrequencyTable, SuccessRate, Epsilon } from '{{"js/sites/intro.js"|file}}';
   import { render } from '{{"js/render.js"|file}}';
   import { barChart } from '{{"js/plotting.js"|file}}';
   import { random } from '{{"js/stats.js"|file}}';
@@ -309,33 +337,170 @@ barChart("geometric-noise-example",
   const { geometricNoise } = dp;
   const left = Math.max(0, dp.exact.count - 20)
   const right = Math.max(0, dp.exact.count + 20)
-  const values = []
-  const valuesD = []
-  const ticks = []
-  for(let i=left;i<=right;i++){
-    values.push(0)
-    valuesD.push(0)
-    ticks.push(i)
+  let values = []
+  let valuesD = []
+  let ticks = []
+  let successes = 0
+  let epsilon = 0.2
+  let trials = 0
+
+  const reset = () => {
+
+    values = []
+    valuesD = []
+    ticks = []
+    successes = 0
+    trials = 0
+
+    for(let i=left;i<=right;i++){
+      values.push(0)
+      valuesD.push(0)
+      ticks.push(i)
+    }
+
+    window.tests = {
+      values: values,
+      valuesD: valuesD,
+      ticks: ticks,
+    }
+
   }
+
+  window.epsilonChanged = (e) => {
+    epsilon = e.target.value
+    reset()
+  }
+
+  reset()
+
   const N = 3
-  const epsilon = 1.0
   setInterval(() => {
     let nv, nvD
-    for(let i=0;i<100;i++){
-      nv = geometricNoise(epsilon, true)+dp.exact.count
-      values[nv-left] += 1
-      nvD = geometricNoise(epsilon, true)+dp.exact.countD
-      valuesD[nvD-left] += 1      
+    let n = 0
+    while(true){
+      nv = geometricNoise(epsilon, true)
+      nvD = geometricNoise(epsilon, true)
+      if (Math.abs(nv) > 20 || Math.abs(nvD) > 20)
+        continue // we do not count unplottable values
+      values[nv-left+dp.exact.count] += 1
+      valuesD[nvD-left+dp.exact.countD] += 1
+      trials++
+      if (nv+dp.exact.count >= nvD + dp.exact.countD){
+        // an attacker would estimate "yes" if the x > x', no otherwise
+        successes++
+      }
+      if (n++ > 10)
+        break
     }
-    barChart("result-with-geometric-noise", [values, valuesD], {classNames: ['is-green', 'is-red'], xTicks: ticks,blocks: [{x: nv, class: 'is-green'}, {x: nvD, class: 'is-red'}], height: 200});
+
+    barChart("result-with-geometric-noise", [values, valuesD], {classNames: ['is-green', 'is-red'], xTicks: ticks,blocks: [{x: nv+dp.exact.count, class: 'is-green'}, {x: nvD+dp.exact.countD, class: 'is-red'}], height: 200});
     render(document.getElementById('frequency-table-geometric'), FrequencyTable, {values: ticks, frequencies: values, frequenciesD: valuesD, epsilon: epsilon})
+    render(document.getElementById('success-rate'), SuccessRate, {trials: trials, successes: successes})
+    render(document.getElementById('epsilon'), Epsilon, {epsilon: epsilon})
   }, 1000);
 </script>
 
 
+### Epsilon
+
+Change the value of $ \epsilon $ to get a sense of how the parameter affects the accuracy of the result values and the likelihood of success for an attacker. In general, the smaller $ \epsilon $, the lower the potential privacy loss for victims, but the higher the standard deviation of the resulting data.
+
+<input type="range" min="0.05" max="10.0" step="0.1" value="0.2" onChange="epsilonChanged(event)" /> <span id="epsilon" />
+<div class="chart box" id="result-with-geometric-noise">
+</div>
+
 <div id="frequency-table-geometric">
 </div>
 
+<div id="success-rate">
+</div>
+
+
+
 # Sensitivity
 
+In our example above, adding a data point to our data set changed the result by at most an amount of 1 (since we were calculating frequencies). But what if we want to calculate a function where a single data point has a larger effect on the result? For example, we might be interested in the mean, which is calculated as
+
+<div>
+  \begin{equation}
+  \bar{E} = \frac{1}{N}\sum\limits_{i=1}^N e_i
+  \end{equation}
+</div>
+
+
+where $e _ i$ is the respective income of a person. The extent to which a single data point for this function can influence the result depends on the one hand on the possible range of values (in this case the possible salary range), and on the other hand on the number of data points $N$. If $e _ \mathrm{max}$ is the maximum salary to be considered, the **sensitivity of** the mean value $\bar{E}$ is therefore
+
+\begin{equation}
+\mathcal{S}(\bar{E}) = \frac{e_\mathrm{max}}{N}
+\end{equation}
+
+
+Our dataset has <span data-render="Literal(n)"></span> entries. If we assume a maximum income of 100,000 €, the sensitivity is $\mathcal{S}(\bar{E}) = $ <span data-render="Literal(Math.floor(100000/n))"></span>. To protect the mean using differential privacy, we would actually need a different mechanism, since the value is reel and the geometric mechanism can only be applied to discrete data. However, we can discretize the mean to be able to process it using the mechanism. If we choose the discretization interval identical to the sensitivity $\mathcal{S}$, we do not need to modify our mechanism above. If we want greater accuracy, we need to modify the mechanism accordingly.
+
+<script type="module">
+
+  {% set mean -%}
+// {{'intro.exact.calculate-mean'|translate}}
+const mean = (d, min, max) => {
+  if (d.length === 0)
+    throw 'empty list received'
+  let m = 0
+  d.forEach(row => {
+    if (row.income < min || row.income > max)
+      throw 'out of bounds value detected'
+    m += row.income
+  })
+  return m/d.length
+}
+  {% endset -%}
+
+    const { dp } = window;
+    const { data, dataD, incomeGroup } = dp;
+
+    {{mean}}
+
+    dp.exact = {
+      ...dp.exact,
+      mean: mean(data),
+      meanD: mean(dataD),
+    }
+</script>
+
+
+
+<div class="highlight">
+{% filter highlight(language='javascript') %}
+{{mean}}
+{% endfilter %}
+</div>
+
+
+# Further topics
+
+## Testing DP mechanisms
+
+<script type="module">
+
+  import { render } from '{{"js/render.js"|file}}';
+  import { barChart } from '{{"js/plotting.js"|file}}';
+
+  setInterval(() =&gt; {
+    const testStatistic = [];
+    const { tests } = window;
+    const { values, valuesD, ticks } = tests;
+    for(let i=0;i&lt;values.length;i++){
+      const ratio = valuesi/valuesDi
+      if (isNaN(ratio) || !isFinite(ratio))
+        testStatistic.push(0)
+      else
+        testStatistic.push(ratio)
+    }
+    barChart("test-statistic", [testStatistic], {hLines: [{y: 1.0, width: 3, color: '#000', style: 'dotted'}], xTicks: ticks, height: 200});    
+  }, 1000)
+</script>
+
+<div class="chart box" id="test-statistic">
+</div>
+
+## Attacking DP mechanisms
 

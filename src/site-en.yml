@@ -4,13 +4,17 @@ pages:
 - name: ''
   navtitle: Start
   src: en/index.md
-  title: Differential Privacy - Lecture Materials
-- name: intro
-  slug: introduction
-  src: en/intro.md
-  title: Introduction
+  title: Lecture materials
+- children:
+  - name: intro
+    slug: introduction
+    src: en/dp/intro.md
+    title: Introduction
+  name: dp
+  slug: differential-privacy
+  title: Differential Privacy
 - name: imprint
   slug: contact
   src: en/imprint.md
   title: Contact
-title: Differential Privacy
+title: Lectures

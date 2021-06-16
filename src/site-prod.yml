@@ -2,7 +2,7 @@ $include:
   - site.yml
   - site-i18n.yml
 path: /lectures/
-url: https://adewes.github.io/dp-lecture
+url: https://adewes.github.io/lectures
 # we generate links without extensions as nginx rewrites those URLs automatically
 hide-href-extensions: ['/index.html', 'index.html', '.html']
 context:

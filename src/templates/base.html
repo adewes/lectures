@@ -49,12 +49,18 @@
     {% block mobile_side_menu %}    
     <div class="side-menu" id="side-menu" data-toggle-class="is-active">
       <aside class="menu">
-        <p class="menu-label" style="text-align:center">
+        <p class="menu-label">
             <a href="{{''|href}}">
+
+              <!--start-->
               {% with size="is-lg" %}
-                {% include "_logo.html"%}
+                {% include "_logo.html" %}
               {% endwith %}
+              <!--stop-->
+
+              <span>
               {{'hp.site-title'|translate}}
+              </span>
             </a>
         </p>
         {% block extra_nav %}{% endblock %}

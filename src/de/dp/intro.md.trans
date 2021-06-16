@@ -1,6 +1,15 @@
+0025cea56fe08a2d:
+  de: '      testStatistic.push(values[i]/valuesD[i])'
+  en: '      testStatistic.push(valuesi/valuesDi)'
 0107b6f2588a15d2:
   de: '  import { DataTable } from ''{{"js/sites/intro.js"|file}}'';'
   en: '  import { DataTable } from ''{{"js/sites/intro.js"|file}}'';'
+01255aa65b19e309:
+  de: >-
+    Unser Datensatz hat <span data-render="Literal(n)"></span>
+    Einträge
+  en: >-
+    Our data set has <span data-render="Literal(n)"></span> entries
 017bf663332d1818:
   de: x_j = X_g - \sum\limits_{i \ne j}^N x_i
   en: x_j = X_g - \sum\limits_{i \ne j}^N x_i
@@ -13,6 +22,16 @@
     This makes it difficult for the attacker to estimate the original
     value $ x _ j $, because he/she does not know the added random
     value $ n $:
+041136667569842c:
+  de: >-
+    Unser Datensatz hat <span data-render="Literal(n)"></span>
+    Einträge. Legen wir ein maximales Einkommen von 100.000 €
+    zu Grunde, beträgt die Sensitivität damit $\mathcal{S}(\bar{E})
+    = $ <span data-render="Literal(Math.floor(100000/n))"></span>.
+  en: >-
+    Our dataset has <span data-render="Literal(n)"></span> entries.
+    If we assume a maximum income of 100,000 €, the sensitivity
+    is $\mathcal{S}(\bar{E}) = $ <span data-render="Literal(Math.floor(100000/n))"></span>.
 04251a1a2300da15:
   de: '  <div class=''face side''></div>'
   en: '  <div class=''face side''></div>'
@@ -43,6 +62,13 @@
 0985dab4f0cb3b0e:
   de: '  {{geometricNoise}}'
   en: '  {{geometricNoise}}'
+0a190c0b2ddc8d2e:
+  de: >-
+    Unser Datensatz hat <span data-render="Cardinality(n)"></span>
+    Einträge
+  en: >-
+    Our data set has <span data-render="Cardinality(n)"></span>
+    entries
 0a393e506a020bb9:
   de: '{{geometricNoise}}'
   en: '{{geometricNoise}}'
@@ -74,6 +100,9 @@
 0ecc22d04d901b21:
   de: X = a
   en: X = a
+0edd0ee981a737da:
+  de: '  console.log(testStatistic)'
+  en: '  console.log(testStatistic)'
 0f60acfec97f3042:
   de: '    // {{''intro.exact.calculate-frequencies''|translate}}'
   en: '    // {{''intro.exact.calculate-frequencies''|translate}}'
@@ -102,6 +131,25 @@
 13e5ed8122794344:
   de: '  language = {{site.lang}}'
   en: '  language = {{site.lang}}'
+141e001abb0bfc37:
+  de: >-
+    Entscheidend für den Angreifer ist das Verhältnis der Wahrscheinlichkeiten
+    der beobachteten Werte: Ist ein gegebener Wert in $ D $ und
+    $ D' $ gleich wahrscheinlich, kann der Angreifer im Besten
+    Fall nur raten, wie der Datenpunkt $ x _ j $ zu dem Ergebnis
+    beigetragen hat. Je stärker jedoch das Verhältnis von einer
+    von 1 abweicht, umso mehr Informationen liefert das beobachtete
+    Ergebnis dem Angreifer. In dem obigen Fall beträgt die Wahrscheinlichkeit,
+    dass ein Angreifer unsere Daten aufdeckt bei immerhin 25%!
+  en: >-
+    Crucial for the attacker is the ratio of the probabilities
+    of the observed values: If a given value in $ D $ and $ D'
+    $ is equally likely, the attacker can at best only guess how
+    the data point $ x _ j $ contributed to the result. However,
+    the more the ratio of one differs from 1, the more information
+    the observed result provides to the attacker. In the above
+    case, the probability that an attacker will uncover our data
+    is still 25%!
 153252309eec394e:
   de: <div class="cube is-active">
   en: <div class="cube is-active">
@@ -132,6 +180,9 @@
 177f7257b7c785f7:
   de: <div id="result-exact"></div>
   en: <div id="result-exact"></div>
+18140a9a324f50f9:
+  de: '    const { values, valuesD, ticks } = tests;'
+  en: '    const { values, valuesD, ticks } = tests;'
 18a5818faf036753:
   de: '  X_g = \sum\limits_{i=1}^N x_i'
   en: '  X_g = \sum\limits_{i=1}^N x_i'
@@ -150,6 +201,9 @@
 1d3f01bbf9d48d0c:
   de: <div id="frequency-table">
   en: <div id="frequency-table">
+1f0293e875a3a09f:
+  de: '  console.log(window.testValues)'
+  en: '  console.log(window.testValues)'
 218a8ff2c00a9a3e:
   de: '      if p < 1e-6 {'
   en: '      if p &lt; 1e-6 {'
@@ -170,6 +224,9 @@
     <script type="module" src="{{'js/render.js'|file}}"></script>
   en: >-
     <script type="module" src="{{'js/render.js'|file}}"></script>
+2670b842e53709ee:
+  de: '<div style="display: flex; flex-direction: column">'
+  en: '<div style="display: flex; flex-direction: column">'
 26d2de241e54dfe6:
   de: '                   && row.income < incomeGroup.max).length'
   en: >2-
@@ -198,9 +255,15 @@
 2c100c1c5df29105:
   de: <!--translate(ignore)-->
   en: <!--translate(ignore)-->
+2c6a2aa21549b874:
+  de: '    testStatistic.push(values[i]/valuesD[i])'
+  en: '    testStatistic.push(valuesi/valuesDi)'
 2c8d5382c498bfcf:
   de: <div id="cubes"></div>
   en: <div id="cubes"></div>
+2d06a52db7ec56ca:
+  de: '  <h2>{{''d.title''|translate}}</h2>'
+  en: '  <h2>{{''d.title''|translate}}</h2>'
 2d6bc211ca7e3345:
   de: >-
     Das heißt entscheidend für die Sicherheit unserer rauschbasierten
@@ -212,15 +275,24 @@
     is the minimum (or maximum) ratio of the probabilities for
     a given outcome value for the two difference datasets $ D
     $ and $ D' $:
+2da1ee747334f043:
+  de: '  <h2>{{''intro.d.title''|translate}}</h2>'
+  en: '  <h2>{{''intro.d.title''|translate}}</h2>'
 2df2d1e49292add5:
   de: '## Beispiel: Geometrischer Mechanismus'
   en: '## Example: Geometric mechanism'
+2e2256a682a6b71c:
+  de: '  console.log(window)'
+  en: '  console.log(window)'
 2e4f465cfd00a871:
   de: '  <script type="module">'
   en: '  <script type="module">'
 301e6359c0d74f4d:
   de: <div class="cube is-red is-xl">
   en: <div class="cube is-red is-xl">
+3155ff338ae4600b:
+  de: '        testStatistic.push(ratio)'
+  en: '        testStatistic.push(ratio)'
 31daaa8483c00323:
   de: '    const geometricNoise = (epseilon, symmetric) => {'
   en: '    const geometricNoise = (epseilon, symmetric) =&gt;
@@ -252,9 +324,26 @@
 355d643374d7b953:
   de: '  renderAll({DataTable, DataCubes, Cube, ResultBoxes, data})'
   en: '  renderAll({DataTable, DataCubes, Cube, ResultBoxes, data})'
+357d6f0344a5a2e5:
+  de: >-
+    Unser Datensatz hat <span data-render="Literal(n)"></span>
+    Einträge. Legen wir ein maximales Einkommen von 100.000 €
+    zu Grunde, beträgt die Sensitivität damit $\mathcal{S}(\bar{E})
+    = $ <span data-render="Literal(10"></span>.
+  en: >-
+    Our dataset has <span data-render="Literal(n)"></span> entries.
+    If we assume a maximum income of 100,000 €, the sensitivity
+    is $\mathcal{S}(\bar{E}) = $ <span data-render="Literal(10"></span>.
 370f2b3e0e5f7083:
   de: '  barChart("result-exact", [[1,2,3,4]], {});'
   en: '  barChart("result-exact", [[1,2,3,4]], {});'
+38fb48d86f1dbbd5:
+  de: >-
+    Unser Datensatz hat <span data-render="Cardinality({n})"></span>
+    Einträge
+  en: >-
+    Our data set has <span data-render="Cardinality({n})"></span>
+    entries
 3910c4a794b32f19:
   de: '      d.filter(row => row.income >= incomeGroup.min'
   en: '      d.filter(row =&gt; row.income &gt;= incomeGroup.min'
@@ -269,6 +358,14 @@
   en: >-
     The higher the value $\alpha$, the more information an attacker
     can derive from an observed result value in the worst case.
+3b3b16af1ffd6fea:
+  de: >-
+    <div id="cubes-dp" data-render="DataCubes({data, color: 'green'})">
+  en: >-
+    <div id="cubes-dp" data-render="DataCubes({data, color: 'green'})">
+3c9e730afcf1566b:
+  de: '  const { values, valuesD, ticks } = window.tests;'
+  en: '  const { values, valuesD, ticks } = window.tests;'
 3cdeb9a9206c2512:
   de: >-
     wobei $ x _i = 1 $ falls das Einkommen des Datenpunktes $
@@ -276,6 +373,15 @@
   en: >-
     where $ x _i = 1 $ if the income of the data point $ i $ is
     in the range of the group $ g $, and $ x _ i = 0 $ otherwise:
+3d8ad43fb5841776:
+  de: >-
+    Ändern Sie den Wert von $ \epsilon $, um ein Gefühl dafür
+    zu bekommen, wie der Parameter die Genauigkeit der Ergebniswerte
+    und die Erfolgswahrscheinlichkeit eines Angreifers beeinflusst.
+  en: >-
+    Change the value of $ \epsilon $ to get a feel for how the
+    parameter affects the accuracy of the result values and the
+    likelihood of success for an attacker.
 3f9b8761709a61ae:
   de: >-
     \frac{\mathrm{P}(X_g = x, Y_g = y|D)}{\mathrm{P}(X_g = x,
@@ -304,6 +410,12 @@
 42b828c62e45b528:
   de: '  language = ''{{lang}}'''
   en: '  language = ''{{lang}}'''
+44446ec5e48889c4:
+  de: <div class="chart box" id="geometric-noise-example">
+  en: <div class="chart box" id="geometric-noise-example">
+448e6d02b3cde12f:
+  de: '  for(let i=0;i<values.length;i++){'
+  en: '  for(let i=0;i&lt;values.length;i++){'
 457de1ab9da35e10:
   de: '    barChart("geometric-noise-example", [values], {});'
   en: '    barChart("geometric-noise-example", [values], {});'
@@ -313,6 +425,9 @@
 485feec58a6e7906:
   de: '# Unsere Daten'
   en: '# Our data'
+4941aa473d18feb7:
+  de: '<div style="display: flex; flex-direction: row; gap: 20px;">'
+  en: '<div style="display: flex; flex-direction: row; gap: 20px;">'
 4c55e47554c70582:
   de: \begin{equation*}
   en: \begin {equation*}
@@ -354,6 +469,22 @@
     <div id="table" data-render="this.DataTable(this.data)"></div>
   en: >-
     <div id="table" data-render="this.DataTable(this.data)"></div>
+5603737f368bd984:
+  de: >-
+    In unserem Beispiel oben hat das Hinzufügen eines Datenpunktes
+    zu unserem Datensatz das Ergebnis maximal um einen Betrag
+    von 1 verändert (da wir Häufigkeiten berechnet haben). Was
+    aber, wenn wir eine Funktion berechnen möchten, bei der ein
+    einzelner Datenpunkt einen größeren Effekt auf das Ergebnis
+    hat? Beispielsweise könnten wir am Mittelwert interessiert
+    sein, der sich berechnet als
+  en: >-
+    In our example above, adding a data point to our data set
+    changed the result by at most an amount of 1 (since we were
+    calculating frequencies). But what if we want to calculate
+    a function where a single data point has a larger effect on
+    the result? For example, we might be interested in the mean,
+    which is calculated as
 56fad126f2d4276c:
   de: 1 & , & E_i \in [E^g_\mathrm{min},E^g_\mathrm{max}] \\
   en: 1 & , & E_i \in [E^g_\mathrm {min},E^g_\mathrm {max}] \\
@@ -367,6 +498,11 @@
   en: >2-
       import { DataTable, DataCubes, Cube, ResultBoxes } from
     '{{"js/sites/intro.js"|file}}';
+583e29498e2b0a6f:
+  de: >-
+    <div id="cubes-dp" data-render="DataCubes({dataD, color: 'green'})">
+  en: >-
+    <div id="cubes-dp" data-render="DataCubes({dataD, color: 'green'})">
 5861cfd84d61e060:
   de: '{% set distribution %}'
   en: '{% set distribution %}'
@@ -386,9 +522,19 @@
   en: >-
     <div id="table" data-render="DataTable([...this.data.slice(0,10),{name:
     '...', income: '...'}])">
+5c1cdad8a386d888:
+  de: '    const { tests } = window;'
+  en: '    const { tests } = window;'
 5cc3208cb904c8c5:
   de: '  {% endset -%}'
   en: '  {% endset -%}'
+5fc8b473001c6a70:
+  de: >-
+    <div id="cubes-dp" data-render="DataCubes({data: dataD, color:
+    'green'})">
+  en: >-
+    <div id="cubes-dp" data-render="DataCubes({data: dataD, color:
+    'green'})">
 612858d6f83d566e:
   de: '## Ergebnis'
   en: '## Result'
@@ -398,6 +544,40 @@
 620b7be47d622f85:
   de: '  renderAll()'
   en: '  renderAll()'
+621f6baf25595710:
+  de: "    barChart(\"test-statistic\", [testStatistic], {hLines:\
+    \ [{y: 1.0, width: 3, color: '#a73'}], xTicks: ticks, height:\
+    \ 200});    "
+  en: "    barChart(\"test-statistic\", [testStatistic], {hLines:\
+    \ [{y: 1.0, width: 3, color: '#a73'}], xTicks: ticks, height:\
+    \ 200});    "
+62685374caf347ea:
+  de: "    barChart(\"test-statistic\", [testStatistic], {xTicks:\
+    \ ticks, height: 200});    "
+  en: "    barChart(\"test-statistic\", [testStatistic], {xTicks:\
+    \ ticks, height: 200});  "
+62d0f7a54cf5d079:
+  de: >-
+    wobei $e _ i$ das jeweilige Einkommen einer Person ist. Wie
+    stark ein einzelner Datenpunkt für diese Funktion das Ergebnis
+    beeinflussen kann, hängt zum einen von dem möglichen Wertebereich
+    (hier also der möglichen Gehaltsspanne) ab, als auch von der
+    Anzahl der Datenpunkte $N$. Ist $e _ \mathrm{max}$ das maximal
+    zu betrachtende Gehalt beträgt die **Sensitivität** des Mittelwertes
+    $\bar{E}$ daher
+  en: >-
+    where $e _ i$ is the respective income of a person. The extent
+    to which a single data point for this function can influence
+    the result depends on the one hand on the possible range of
+    values (in this case the possible salary range), and on the
+    other hand on the number of data points $N$. If $e _ \mathrm{max}$
+    is the maximum salary to be considered, the **sensitivity
+    of** the mean value $\bar{E}$ is therefore
+62e01774f43065c4:
+  de: "    barChart(\"test-statistic\", [testStatistic], {hLines:\
+    \ [1.0, xTicks: ticks, height: 200});    "
+  en: "    barChart(\"test-statistic\", [testStatistic], {hLines:\
+    \ [1.0, xTicks: ticks, height: 200});  "
 63551eee25cfc411:
   de: 1 & , & E_i \in [E^g_{min},G^g_{max}]
   en: 1 & , & E_i \in [E^g_{min},G^g_] [{max}]
@@ -423,6 +603,22 @@
     the data point $ x _ j $ contributed to the result. However,
     the more the ratio of one differs from 1, the more information
     the observed result provides to the attacker.
+691b1d065da10cb4:
+  de: '    console.log(testStatistic)'
+  en: '    console.log(testStatistic)'
+6b928a3b4402e59d:
+  de: >-
+    Unser Datensatz hat <span data-render="Literal(n)"></span>
+    Einträge. Legen wir ein maximales Einkommen von 100.000 €
+    zu Grunde, beträgt die Sensitivität damit $\mathcal{S}(\bar{E})
+    = $ <span data-render="Literal(100000/n)"></span>.
+  en: >-
+    Our dataset has <span data-render="Literal(n)"></span> entries.
+    If we assume a maximum income of 100,000 €, the sensitivity
+    is $\mathcal{S}(\bar{E}) = $ <span data-render="Literal(100000/n)"></span>.
+6bac6ff0a57877d6:
+  de: '# Datensatz $ D'' $'
+  en: '# Data set $ D'' $'
 6c179f21e6f62b62:
   de: '  '
   en: '  '
@@ -435,15 +631,32 @@
 6d274ea89a215540:
   de: '      let pv = Math.random()'
   en: '      let pv = Math.random()'
+6f00d763ab5bfd19:
+  de: '# Testen von DP-Mechanismen'
+  en: '# Testing DP mechanisms'
 6fcf3d4a4d8e9555:
   de: Das ist das Ergebnis
   en: This is the result
 736a88feb2471bf3:
   de: '      if (p < 1e-6) {'
   en: '      if (p &lt; 1e-6) {'
+737db166c79ae98e:
+  de: '  }'
+  en: '  }'
 77885ad5ce27a0ac:
   de: '        } else {'
   en: '        } else {'
+77f91e37c5571b91:
+  de: >-
+    Der Datensatz $ D' $ ist bis auf einen einzelnen entfernten
+    Datenpunkt <span data-render="Cube({color: 'red', size: 'xs'})">
+    identisch zum Datensatz $ D $. Diesen entfernten Datenpunkt
+    nennen wir im Folgenden Differenzpunkt.
+  en: "The dataset $ D' $ is <span data-render=\"Cube({color:\
+    \ 'red', size: 'xs'})\">identical to the dataset $ D $</span>\
+    \ except for a single remote data point. <span data-render=\"\
+    Cube({color: 'red', size: 'xs'})\">In the following, we call\
+    \ this remote data point the difference point.</span> "
 78e89faf5d790e5e:
   de: '  ssss'
   en: '  ssss'
@@ -473,6 +686,9 @@
   en: >-
     where $ x_i = 1 $ if the income of the data point $ i $ is
     in the range of the group $ g $, and $ x_i = 0 $ otherwise:
+83c9ec053a9e4906:
+  de: '  setInterval(() => {'
+  en: '  setInterval(() =&gt; {'
 84a5e715899e1c4b:
   de: '# '
   en: '# '
@@ -491,17 +707,30 @@
 883dece2134e9e46:
   de: 1 & , & E_i \in [E^g_\mathrm{min},E^g_{max}] \\
   en: 1 & , & E_i \in [E^g_\mathrm {min},E^g_{max}] \\
+88a8ed669b7805bb:
+  de: '  console.log(window.tests)'
+  en: '  console.log(window.tests)'
 89a5d557b9e985a5:
   de: >-
     Wir repräsentieren diese Daten im Folgenden als einzelne Blöcke.
   en: >-
     We represent this data as individual blocks in the following.
+89cb18c6fae4accd:
+  de: '  <h2>{{''intro.dp.title''|translate}}</h2>'
+  en: '  <h2>{{''intro.dp.title''|translate}}</h2>'
 89d3e6c2a59bfc61:
   de: '  import { render } from ''{{"js/render.js"|file}}'';'
   en: '  import { render } from ''{{"js/render.js"|file}}'';'
 8a1384d6f4dbdbcd:
   de: '            return 0'
   en: '            return 0'
+8c622b24dab4d168:
+  de: >2-
+      barChart("test-statistic", [testStatistic], {classNames:
+    ['is-green', 'is-red'], xTicks: ticks, height: 200});
+  en: >2-
+      barChart("test-statistic", [testStatistic], {classNames:
+    ['is-green', 'is-red'], xTicks: ticks, height: 200});
 8da2256b5ded4e22:
   de: '          return 0'
   en: '          return 0'
@@ -520,6 +749,9 @@
     An attacker who knows all data values $x _ i$ except for a
     single value $x _ j $ can easily calculate the missing value
     $ x _ j $ from the result $ X _ g $:
+95ca71aac1c604b3:
+  de: '# Datensatz $ D $'
+  en: '# Data set $ D $'
 96095dace0802704:
   de: '  <div class="chart sick box" id="result-exact"></div>'
   en: '  <div class="chart sick box" id="result-exact"></div>'
@@ -529,9 +761,15 @@
 985e3d648149422c:
   de: x_j = X_g - \sum\limit_{i \ne j}^N x_i
   en: x_j = X_g - \sum\limit_{i \ne j}^N x_i
+9889c96dedec802d:
+  de: '<div style="margin-right: 20px;">'
+  en: '<div style="margin-right: 20px;">'
 9b29899409358cb4:
   de: '# Hinzufügen von Rauschen'
   en: '# Adding noise'
+9b5f697379164f98:
+  de: '        testStatistic.push(0)'
+  en: '        testStatistic.push(0)'
 9b878fc5856223e4:
   de: '  const tableElement = document.getElementById(''table'');'
   en: '  const tableElement = document.getElementById(''table'');'
@@ -553,6 +791,9 @@
 9befc599c061a619:
   de: '      if (symmetric && Math.random() < 0.5) {'
   en: '      if (symmetric && Math.random() &lt; 0.5) {'
+9ca155e0e0aedc0e:
+  de: '# Weiterführende Themen'
+  en: '# Further topics'
 9d22b5a9480ea891:
   de: <div id="result-boxes" data-render="ResultBoxes()"
   en: '&lt;div id="result-boxes" data-render="ResultBoxes()"'
@@ -579,6 +820,14 @@ a3bf2c54848ca1cb:
   en: >-
     where $x_i = 1$ if the income of the data point $i$ is in
     the range of the group $g$, and $x_i = 0$ otherwise:
+a40f74bd38b0eefb:
+  de: >2-
+      <div id="cubes-d" data-render="DataCubes({data, color: 'red'})">
+  en: >2-
+      <div id="cubes-d" data-render="DataCubes({data, color: 'red'})">
+a54ebc70d2d74678:
+  de: '    for(let i=0;i<values.length;i++){'
+  en: '    for(let i=0;i&lt;values.length;i++){'
 a715ab659c32cc96:
   de: <div id="cubes" data-render="DataCubes(data)"></div>
   en: <div id="cubes" data-render="DataCubes(data)"></div>
@@ -594,12 +843,32 @@ a980ccd6872b59de:
 a9bc5143b4851096:
   de: '  </script>'
   en: '  </script>'
+aa6346035b082555:
+  de: >2-
+      <div style="margin-left: 10px;" id="cubes-d" data-render="DataCubes({data,
+    color: 'red'})">
+  en: >2-
+      <div style="margin-left: 10px;" id="cubes-d" data-render="DataCubes({data,
+    color: 'red'})">
 aac32651b10f567c:
   de: </div>
   en: </div>
+aaeb8a2693aa4137:
+  de: <div id="success-rate">
+  en: <div id="success-rate">
 ad4287736086e068:
   de: \end{array}\right.
   en: \end {array}\right.
+ad74d4f3169ebcbf:
+  de: '<div style="margin-right: 10px;">'
+  en: '<div style="margin-right: 10px;">'
+adbb19ee86bd2d61:
+  de: "    barChart(\"test-statistic\", [testStatistic], {hLines:\
+    \ [{y: 1.0, width: 3, color: '#f77'}], xTicks: ticks, height:\
+    \ 200});    "
+  en: "    barChart(\"test-statistic\", [testStatistic], {hLines:\
+    \ [{y: 1.0, width: 3, color: '#f77'}], xTicks: ticks, height:\
+    \ 200});    "
 adc9b607490f9be6:
   de: '# Eine erste Statistik'
   en: '# A first statistic'
@@ -610,6 +879,17 @@ b094cc1fc365e2fb:
   en: >-
     where $ x _ i = 1 $ if the income of the data point $ i $
     is in the range of the group $ g $, and $ x _ i = 0 $ otherwise:
+b1a56134e3b70adb:
+  de: >-
+    Der Datensatz $ D' $ ist bis auf einen einzelnen entfernten
+    Datenpunkt <span data-render="Cube({color: 'red', size: 'xs'})"></span>
+    identisch zum Datensatz $ D $. Diesen entfernten Datenpunkt
+    nennen wir im Folgenden Differenzpunkt.
+  en: >-
+    The data set $ D' $ is identical to the data set $ D $ except
+    for a single remote data point <span data-render="Cube({color:
+    'red', size: 'xs'})"></span>. In the following, we call this
+    remote data point the difference point.
 b1ce08e182292faf:
   de: >-
     Um den schlimmstmöglichen Fall zu finden, müssen wir dieses
@@ -650,6 +930,9 @@ b6582bc89c437f7a:
     $ This makes it difficult for the attacker to estimate the
     original value $ x _ j $, because he/she does not know the
     added random value $ n $:
+b6eba3ba6ccf9edd:
+  de: '  const { tests } = window;'
+  en: '  const { tests } = window;'
 b745301a9fe97cbd:
   de: '## Umsetzung in Code'
   en: '## Conversion to code'
@@ -658,12 +941,25 @@ b80238d83196593b:
     <script type="module" src="{{'js/sites/intro.js'|file}}"></script>
   en: >-
     <script type="module" src="{{'js/sites/intro.js'|file}}"></script>
+b858e2a13bbf4991:
+  de: '## Angreifen von DP-Mechanismen'
+  en: '## Attacking DP mechanisms'
+baf8dc953dd75acc:
+  de: >2-
+      <div id="cubes-dp" data-render="DataCubes({data: dataD,
+    color: 'green'})">
+  en: >2-
+      <div id="cubes-dp" data-render="DataCubes({data: dataD,
+    color: 'green'})">
 bb3a2f29e76e0d75:
   de: '  renderAll(window)'
   en: '  renderAll(window)'
 bb66fb83595ecb94:
   de: \begin{equation}
   en: \begin {equation}
+bbef5271b6c89ea4:
+  de: <div class="chart box" id="test-statistic">
+  en: <div class="chart box" id="test-statistic">
 bcbb160baf203da1:
   de: <div class="cube"></div>
   en: <div class="cube"></div>
@@ -688,15 +984,24 @@ c1abe070ee4729f0:
 c2213afa3589c5e1:
   de: '  <div>'
   en: '  <div>'
+c22adb20526a224d:
+  de: '<div style="display: flex; flex-direction: row;">'
+  en: '<div style="display: flex; flex-direction: row;">'
 c36903fbf5f6f28d:
   de: x_i = \left\{\begin{array}{rcl}
   en: x_i = \left\{\begin{array}{rcl}
+c3b3c4e83f9b062e:
+  de: '  const { values, valuesD, ticks } = tests;'
+  en: '  const { values, valuesD, ticks } = tests;'
 c3de7d4935aa97bc:
   de: '{% endset %}'
   en: '{% endset %}'
 c4eee1166c5d2288:
   de: '  const data = ['
   en: '  const data = ['
+c61a51265636ac6d:
+  de: '  const testStatistic = [];'
+  en: '  const testStatistic = [];'
 c83d4085ca5dfe0a:
   de: '  \end{equation}'
   en: '  \ending {equation}'
@@ -710,6 +1015,9 @@ c8e2142023a38c28:
   en: >-
     &lt;div id="result-boxes" data-render="ResultBoxes({min: 10,
     max: 20})"
+c93d93b009c6faa8:
+  de: '## Testen von DP-Mechanismen'
+  en: '## Testing DP mechanisms'
 ca5694b305132768:
   de: >-
     Je höher der Wert $\alpha$, umso mehr Informationen kann ein
@@ -767,9 +1075,55 @@ cdd5f9a9b7bf319a:
 cf0d910eda143b3a:
   de: '{% filter highlight(language=''javascript'') %}'
   en: '{% filter highlight(language=''javascript'') %}'
+cf6539f162bf5b57:
+  de: >-
+    Im Folgenden repräsentieren wir einzelne Datensätze als einzelne
+    Blöcke.
+  en: >-
+    In the following, we represent individual records as individual
+    blocks.
+d077c5dd2b77ab9f:
+  de: '### Epsilon'
+  en: '### Epsilon'
+d10c4f8fdcb44aa8:
+  de: '  }, 1000)'
+  en: '  }, 1000)'
 d138ecd0cb92e92e:
   de: '    const values = []'
   en: '    const values = []'
+d226cf5e009383b4:
+  de: '  const testStatistic = []'
+  en: '  const testStatistic = []'
+d29e5e273b4d6774:
+  de: '      const ratio = values[i]/valuesD[i]'
+  en: '      const ratio = valuesi/valuesDi'
+d36c7af8458c6ba4:
+  de: >-
+    Unser Datensatz hat <span data-render="Literal(n)"></span>
+    Einträge. Legen wir ein maximales Einkommen von 100.000 €
+    zu Grunde, beträgt die Sensitivität damit $\mathcal{S}(\bar{E})
+    = $ <span data-render="Literal(Math.floor(100000/n))"></span>.
+    Um den Mittelwert mithilfe von Differential Privacy zu schützen
+    bräuchten wir eigentlich einen anderen Mechanismus, da der
+    Wert reel ist und der geometrische Mechanismus nur auf diskrete
+    Daten angewandt werden kann. Wir können jedoch den Mittelwert
+    diskretisieren, um ihn mit dem Mechanismus verarbeiten zu
+    können. Wählen wir das Diskretisierungsintervall identisch
+    zur Sensitivität $\mathcal{S}$, brauchen wir unseren Mechanismus
+    oben nicht zu modifizieren. Wollen wir eine größere Genauigkeit,
+    müssen wir den Mechanismus entsprechend anpassen.
+  en: >-
+    Our dataset has <span data-render="Literal(n)"></span> entries.
+    If we assume a maximum income of 100,000 €, the sensitivity
+    is $\mathcal{S}(\bar{E}) = $ <span data-render="Literal(Math.floor(100000/n))"></span>.
+    To protect the mean using differential privacy, we would actually
+    need a different mechanism, since the value is reel and the
+    geometric mechanism can only be applied to discrete data.
+    However, we can discretize the mean to be able to process
+    it using the mechanism. If we choose the discretization interval
+    identical to the sensitivity $\mathcal{S}$, we do not need
+    to modify our mechanism above. If we want greater accuracy,
+    we need to modify the mechanism accordingly.
 d5b611578b11f527:
   de: >-
     wobei $ x _ i = 1 $ falls das Einkommen des Datenpunktes $
@@ -782,6 +1136,16 @@ d5b611578b11f527:
 d675f02176294d59:
   de: '  language = ''{{site.config}}'''
   en: '  language = ''{{site.config}}'''
+d71061940c4c73c0:
+  de: >-
+    Unser Datensatz hat <span data-render="Literal(n)"></span>
+    Einträge. Legen wir ein maximales Einkommen von 100.000 €
+    zu Grunde, beträgt die Sensitivität damit $\mathcal{S}(\bar{E})
+    = $ <span data-render="Literal(10)"></span>.
+  en: >-
+    Our dataset has <span data-render="Literal(n)"></span> entries.
+    If we assume a maximum income of 100,000 €, the sensitivity
+    is $\mathcal{S}(\bar{E}) = $ <span data-render="Literal(10)"></span>.
 d7ad5244a61dbb7b:
   de: '      countD: frequency(dataD),'
   en: '      countD: frequency(dataD),'
@@ -791,6 +1155,20 @@ d855c12a5449a320:
 d86fc95339d4b352:
   de: '  language = ''{{site}}'''
   en: '  language = ''{{site}}'''
+d96c2c30b1627eea:
+  de: >-
+    Ändern Sie den Wert von $ \epsilon $, um ein Gefühl dafür
+    zu bekommen, wie der Parameter die Genauigkeit der Ergebniswerte
+    und die Erfolgswahrscheinlichkeit eines Angreifers beeinflusst.
+    Generell gilt: Je kleiner $ \epsilon $, um so geringer ist
+    der potentielle Privatsphäre-Verlust für Betroffene, aber
+    umso höher ist die Standardabweichung der resultierenden Daten.
+  en: >-
+    Change the value of $ \epsilon $ to get a sense of how the
+    parameter affects the accuracy of the result values and the
+    likelihood of success for an attacker. In general, the smaller
+    $ \epsilon $, the lower the potential privacy loss for victims,
+    but the higher the standard deviation of the resulting data.
 da240084a221f00e:
   de: '  <span class="face left"></span>'
   en: '  <span class="face left"></span>'
@@ -800,6 +1178,18 @@ db405ba385545e66:
 dc11f1ba8da49943:
   de: '  const cubesElement = document.getElementById(''cubes'');'
   en: '  const cubesElement = document.getElementById(''cubes'');'
+de44b459e19f4ae1:
+  de: "    barChart(\"test-statistic\", [testStatistic], {hLines:\
+    \ [{y: 1.0, width: 3, color: '#000', style: 'dotted'}], xTicks:\
+    \ ticks, height: 200});    "
+  en: "    barChart(\"test-statistic\", [testStatistic], {hLines:\
+    \ [{y: 1.0, width: 3, color: '#000', style: 'dotted'}], xTicks:\
+    \ ticks, height: 200});    "
+df1e3988f3b18a4e:
+  de: >-
+    <div id="cubes-d" data-render="DataCubes({data, color: 'red'})">
+  en: >-
+    <div id="cubes-d" data-render="DataCubes({data, color: 'red'})">
 df61298ef1831b17:
   de: '    const frequency = (d) => '
   en: '    const frequency = (d) =&gt; '
@@ -828,9 +1218,37 @@ e18e22d406550661:
 e22df8060c226395:
   de: 1 & , & E_i \in [E^g_{min},G^g_{max}] \\
   en: 1 & , & E_i \in [E^g_{min},G^g_{max}] \
+e268e59528e713af:
+  de: '      if (isNaN(ratio) || !isFinite(ratio))'
+  en: '      if (isNaN(ratio) || !isFinite(ratio))'
+e30d495e2ffff2f8:
+  de: >-
+    wobei $e_i$ das jeweilige Einkommen einer Person ist. Wie
+    stark ein einzelner Datenpunkt für diese Funktion das Ergebnis
+    beeinflussen kann, hängt zum einen von dem möglichen Wertebereich
+    (hier also der möglichen Gehaltsspanne) ab, als auch von der
+    Anzahl der Datenpunkte $N$. Ist $e_\mathrm{max}$ das maximal
+    zu betrachtende Gehalt beträgt die **Sensitivität** des Mittelwertes
+    $\bar{E}$ daher
+  en: >-
+    where $e_i$ is the respective income of a person. The extent
+    to which a single data point for this function can influence
+    the result depends on the one hand on the possible range of
+    values (in this case the possible salary range), and on the
+    other hand on the number of data points $N$. If $e_\mathrm{max}$
+    is the maximum salary to be considered, the **sensitivity
+    of** the mean value $\bar{E}$ is therefore
 e3b0c44298fc1c14:
   de: ''
   en: ''
+e5b7c8af5c03d45a:
+  de: >-
+    <div data-render="SuccessRate({trials: 100, successes: 100})">
+  en: >-
+    <div data-render="SuccessRate({trials: 100, successes: 100})">
+e6754ac967f39cf2:
+  de: '      testStatistic.push(ratio)'
+  en: '      testStatistic.push(ratio)'
 e69200ae0c7313e3:
   de: <script type="module">
   en: <script type="module">
@@ -870,18 +1288,41 @@ e7b138a9a60eeec3:
 e7dba0b556e6d88b:
   de: '      pv = Math.random()'
   en: '      pv = Math.random()'
+e861e505a8c1ba66:
+  de: '<div style="display: flex; flex-direction: row">'
+  en: '<div style="display: flex; flex-direction: row">'
 e874ff33bb2d1049:
   de: '    barChart("result-exact", [[1,2,3,4]], {});'
   en: '    barChart("result-exact", [[1,2,3,4]], {});'
+eb8f7c3f6a481214:
+  de: '    const testStatistic = [];'
+  en: '    const testStatistic = [];'
+ed77a1d25d950db4:
+  de: >-
+    <div id="cubes" data-render="DataCubes({data, color: 'red'})">
+  en: >-
+    <div id="cubes" data-render="DataCubes({data, color: 'red'})">
+eecd2bc9d11df43f:
+  de: "    barChart(\"test-statistic\", [testStatistic], {classNames:\
+    \ ['is-green', 'is-red'], xTicks: ticks, height: 200});  \
+    \  "
+  en: "    barChart(\"test-statistic\", [testStatistic], {classNames:\
+    \ ['is-green', 'is-red'], xTicks: ticks, height: 200});  "
 f01f4c46d13105f3:
   de: '# Einführung'
   en: '# Introduction'
 f02efeb0c4f06b8f:
   de: '  <div class=''face top''></div>'
   en: '  <div class=''face top''></div>'
+f1b85b28c889bfd1:
+  de: '  <h2>{{''dp.title''|translate}}</h2>'
+  en: '  <h2>{{''dp.title''|translate}}</h2>'
 f263148ebc3fa901:
   de: 0 & , & E_i \notin [E^g_{min},E^g_{max}] \\
   en: 0 & , & E_i \notin [E^g_{min},E^g_{max}] \\
+f4e6254fdba0b91e:
+  de: '      if (isNan(ratio) || !isFinite(ratio))'
+  en: '      if (isNan(ratio) || !isFinite(ratio))'
 f5280ef03c25ba4e:
   de: <div class="highlight">
   en: <div class="highlight">
@@ -903,6 +1344,11 @@ f83b14a13c67614d:
 f98092410e0e7dd9:
   de: '  translations = {{site.translations.intro|tojson}};'
   en: '  translations = {{site.translations.intro|tojson}};'
+f9f5d476bb53283c:
+  de: >-
+    <div id="cubes-dp" data-render="DataCubes({data, color: 'red'})">
+  en: >-
+    <div id="cubes-dp" data-render="DataCubes({data, color: 'red'})">
 fa7f8633cd807cbd:
   de: '  <div class="face front"></div>'
   en: '  <div class="face front"></div>'
@@ -912,6 +1358,13 @@ fb05b17f89301fcd:
 fb14dff5b747a8cc:
   de: '  {{aggregate}}'
   en: '  {{aggregate}}'
+fca07bb750ac7bc4:
+  de: "    barChart(\"test-statistic\", [testStatistic], {hLines:\
+    \ [{y: 1.0, color: '#000'}], xTicks: ticks, height: 200});\
+    \    "
+  en: "    barChart(\"test-statistic\", [testStatistic], {hLines:\
+    \ [{y: 1.0, color: '#000'}], xTicks: ticks, height: 200});\
+    \    "
 fe86ca09c85e14f1:
   de: <div class="cube is-red is-lg">
   en: <div class="cube is-red is-lg">
@@ -921,3 +1374,6 @@ fe8faea807e9310e:
 ff34c171c807ca72:
   de: '  const data = [{name: "Max Mustermann", income: 53242}]'
   en: '  const data = [{name: "Max Mustermann", income: 53242}]'
+ff6f623cd010dfe2:
+  de: '      else'
+  en: '      else'

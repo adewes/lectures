@@ -13,77 +13,6 @@ ul.result-boxes {
   }
 }
 
-$sizes: ("xs": 30, "sm": 60, "md": 120, "lg": 240, "xl": 480);
-
-.cube {
-  overflow: hidden;
-  display: inline-block;
-
-  @each $size, $d in $sizes {
-    &.is-#{$size} {
-      width: #{$d*0.8}px;
-      height: #{$d*0.8}px;
-
-      .face {
-        transform-origin: 0 0;
-        position: absolute;
-        width: #{$d*0.33}px;
-        height: #{$d*0.33}px;
-
-        &.front {
-          background: #eee;
-          transform: rotate(-30deg) skewX(-30deg) translate(#{$d/300*130}px, #{$d/300*172}px) scaleY(0.864);
-        }
-        &.top {
-          background: #ccc;
-          transform: rotate(210deg) skew(-30deg) translate(#{-$d/300*200}px, #{-$d/300*60}px) scaleY(0.864);
-        }
-        &.side {
-          background: #ddd;
-          transform: rotate(90deg) skewX(-30deg) scaleY(0.864) translate(#{$d/300*68}px, #{-$d/300*131}px);
-        }
-
-        }
-
-    }
-  }
-
-
-  &.is-red {
-    .face {
-      &.front {
-        background: #a58;
-      }
-
-      &.top {
-        background: #c7b;
-      }
-
-      &.side {
-        background: #d9a;
-      }      
-    }
-  }
-
-  &.is-green {
-    .face {
-      &.front {
-        background: #9fa;
-      }
-
-      &.top {
-        background: #7eb;
-      }
-
-      &.side {
-        background: #6fa;
-      }      
-    }
-  }
-
-  
-}
-
 table.frequency-table {
   tr {
     td:first-child, th:first-child {
@@ -100,5 +29,25 @@ table.frequency-table {
       background: #9fa;
     }
 
+  }
+}
+
+.success-rate {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  span {
+    display: inline-block;
+    color: #fff;
+    flex-grow: 0;
+  }
+  span:first-child {
+    background: #e53;
+  }
+  span:nth-child(2) {
+    color: #000;
+    background: #9fa;
   }
 }

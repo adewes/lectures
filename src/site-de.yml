@@ -4,13 +4,17 @@ pages:
 - name: ''
   navtitle: Start
   src: de/index.md
-  title: Differential Privacy - Vorlesungsmaterialien
-- name: intro
-  slug: einfuehrung
-  src: de/intro.md
-  title: Einführung
+  title: Vorlesungsmaterialien
+- children:
+  - name: intro
+    slug: einfuehrung
+    src: de/dp/intro.md
+    title: Einführung
+  name: dp
+  slug: differential-privacy
+  title: Differential Privacy
 - name: imprint
   slug: kontakt
   src: de/imprint.md
   title: Kontakt
-title: Differential Privacy
+title: Vorlesungen

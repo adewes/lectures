@@ -23,7 +23,7 @@ export function barChart(id, allBars, opts){
 
     const N = allBars.length
     const plotWidth = container.clientWidth-leftMargin-n*barMargin*N;
-    const barWidth = Math.max(1, Math.min(20, plotWidth/n))/N;
+    const barWidth = Math.max(2, Math.min(50, plotWidth/n))/N;
     const innerWidth = (barWidth+barMargin)*n*N;
 
     let withBlocks = false;
@@ -49,7 +49,7 @@ export function barChart(id, allBars, opts){
     let lastXTick;
     for(let i=0;i<n;i++){
         let x = leftMargin+i*(barWidth+barMargin)*N;
-        let width = barWidth+(x-Math.floor(x) > 0.5 && barMargin == 0 ? 1 : 0);
+        let width = Math.floor(barWidth+(x-Math.floor(x) > 0.5 && barMargin == 0 ? 1 : 0));
         if (opts.ref !== undefined){
             const refElement = document.createElement("span");
             refElement.style.width = width+"px";
@@ -117,10 +117,10 @@ export function barChart(id, allBars, opts){
             const element = document.createElement("span");
             element.style.marginLeft = -(barWidth+barMargin)+"px";
             element.style.width = width*N+"px";
-            element.style.height = width*N*0.5+"px";
+            element.style.height = Math.floor(width*N*0.5)+"px";
             element.style.position = "absolute";
             element.style.left = x+"px";
-            element.style.bottom = (bottomMargin-width-4)+"px"
+            element.style.bottom = Math.floor(bottomMargin-width-4)+"px"
             element.style.display = "block";
             element.style.zIndex = 3;
             if (block !== undefined && block.class !== undefined){

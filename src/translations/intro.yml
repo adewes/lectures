@@ -1,4 +1,18 @@
 intro:
+  d:
+    title:
+      _t:
+        de: c387acb26a61e4c3
+        en: c387acb26a61e4c3
+      de: Datensatz $ D $
+      en: Data set $ D $
+  dp:
+    title:
+      _t:
+        de: 4bf72bbeeb7bc6b9
+        en: 4bf72bbeeb7bc6b9
+      de: Datensatz $ D' $
+      en: Data set $ D' $
   exact:
     calculate-frequencies:
       _t:
@@ -7,6 +21,12 @@ intro:
       de: Wir berechnen die Häufigkeiten in den Datensätzen D
         und D'
       en: We calculate the frequencies in data sets D and D'
+    calculate-mean:
+      _t:
+        de: ac3ef9656fc2c879
+        en: ac3ef9656fc2c879
+      de: Wir berechnen den Mittelwert der Einkommen
+      en: We calculate the mean value of the incomes
     store-value:
       _t:
         de: f0b1aea6ec112adf
@@ -43,6 +63,12 @@ intro:
       en: dcd1d5223f73b3a9
     de: Name
     en: Name
+  of:
+    _t:
+      de: 43ce6022b9318e93
+      en: 43ce6022b9318e93
+    de: von
+    en: of
   ratio:
     _t:
       de: ae46664ba67ffee0

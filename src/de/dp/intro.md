@@ -14,18 +14,41 @@ Im folgenden nutzen wir Beispieldaten, die das Einkommen verschiedener Personen 
 <div id="table" data-render="DataTable([...this.data.slice(0,10),{name: '...', income: '...'}])">
 </div>
 
-Generell repräsentieren wir Daten im Folgenden als einzelne Blöcke. Ein roter Block <span data-render="Cube({color: 'red', size: 'xs'})"></span> repräsentiert vertrauliche, personenbezogene Daten. Ein grüner Block <span data-render="Cube({color: 'green', size: 'xs'})"></span> hingegen anonyme oder aggregierte Daten ohne vermeintlichen Personenbezug.
+Im Folgenden repräsentieren wir einzelne Datensätze als einzelne Blöcke.
 
+<div style="display: flex; flex-direction: row;">
 
-<div id="cubes" data-render="DataCubes(data)">
+<div style="margin-right: 10px;">
+
+  <h2>{{'intro.d.title'|translate}}</h2>
+
+  <div style="margin-left: 10px;" id="cubes-d" data-render="DataCubes({data, color: 'red'})">
+  </div>
 </div>
+
+<div>
+
+  <h2>{{'intro.dp.title'|translate}}</h2>
+
+  <div id="cubes-dp" data-render="DataCubes({data: dataD, color: 'green'})">
+  </div>
+</div>
+
+</div>
+
+
+
+# Datensatz $ D' $
+
+Der Datensatz $ D' $ ist bis auf einen einzelnen entfernten Datenpunkt <span data-render="Cube({color: 'red', size: 'xs'})"></span> identisch zum Datensatz $ D $. Diesen entfernten Datenpunkt nennen wir im Folgenden Differenzpunkt.
+
 
 <!--translate:ignore-->
 
 <script type="module">
   import { renderAll } from '{{"js/render.js"|file}}';
   import { random } from '{{"js/stats.js"|file}}';
-  import { DataTable, DataCubes, Cube, ResultBoxes } from '{{"js/sites/intro.js"|file}}';
+  import { DataTable, SuccessRate, Literal, DataCubes, Cube } from '{{"js/sites/intro.js"|file}}';
 const firstNames = ['James', 'Robert', 'John', 'Michael', 'Joseph', 'Mary', 'Patricia', 'Jennifer', 'Linda', 'Elizabeth', 'Andreas', 'Christian', 'Thomas', 'Lukas', 'Tristan', 'Isolde', 'Wolfgang', 'Herbert', 'Brunhile']
 const lastNames = ['Meier', 'Müller', 'Schmidt', 'Kachelmann','Weintraut', 'Schwarz', 'Manning', 'Johnson', 'Biden', 'Maurer', 'Kemmerling', 'Gott', 'Liefers', 'Duchrow', 'Lohse']
 const zipCodes = ['66606', '72070', '80331', '10625', '54315', '12421', '92151']
@@ -49,6 +72,8 @@ const randomIncome = (age) => 31000+age*500+random(1000)*10-random(1000)*10
   const differencePoint = data[random(data.length)]
   const minIncome = Math.floor(differencePoint.income/10000)*10000
 
+  const dataD = data.filter(row => row !== differencePoint)
+
   window.dp = {
     differencePoint: differencePoint,
     incomeGroup: {
@@ -56,10 +81,10 @@ const randomIncome = (age) => 31000+age*500+random(1000)*10-random(1000)*10
       max: minIncome+10000,
     },
     data: data,
-    dataD: data.filter(row => row !== differencePoint)
+    dataD: dataD,
   }
 
-  renderAll({DataTable, DataCubes, Cube, ResultBoxes, data})
+  renderAll({DataTable, SuccessRate, DataCubes, Literal, n: data.length, Cube, data, dataD})
 
 </script>
 
@@ -137,7 +162,7 @@ wobei $ x _ i = 1 $ falls das Einkommen des Datenpunktes $ i $ im Bereich der Ei
     values.push(0)
     ticks.push(i)
   }
-  barChart("result-exact", [values], {xTicks: ticks,blocks: [{x: dp.exact.count, class: 'is-green'}, {x: dp.exact.countD, class: 'is-red'}], height: 50});
+  barChart("result-exact", [values], {xTicks: ticks,blocks: [{x: dp.exact.count, class: 'is-green'}, {x: dp.exact.countD, class: 'is-red'}], height: 20});
 </script>
 <!--translate:ignore-->
 
@@ -152,6 +177,9 @@ Ein Angreifer, der bis auf einen einzigen Wert $x _ j $ alle Datenwerte $x _ i$ 
   \end{equation}
 </div>
 <!--translate:ignore-->
+
+<div data-render="SuccessRate({trials: 100, successes: 100})">
+</div>
 
 # Hinzufügen von Rauschen
 
@@ -211,7 +239,7 @@ Fällt Ihnen hier ein Problem auf? Nein? Dann schauen Sie mal auf die Ränder de
 <div id="frequency-table">
 </div>
 
-Entscheidend für den Angreifer ist das Verhältnis der Wahrscheinlichkeiten der beobachteten Werte: Ist ein gegebener Wert in $ D $ und $ D' $ gleich wahrscheinlich, kann der Angreifer im Besten Fall nur raten, wie der Datenpunkt $ x _ j $ zu dem Ergebnis beigetragen hat. Je stärker jedoch das Verhältnis von einer von 1 abweicht, umso mehr Informationen liefert das beobachtete Ergebnis dem Angreifer.
+Entscheidend für den Angreifer ist das Verhältnis der Wahrscheinlichkeiten der beobachteten Werte: Ist ein gegebener Wert in $ D $ und $ D' $ gleich wahrscheinlich, kann der Angreifer im Besten Fall nur raten, wie der Datenpunkt $ x _ j $ zu dem Ergebnis beigetragen hat. Je stärker jedoch das Verhältnis von einer von 1 abweicht, umso mehr Informationen liefert das beobachtete Ergebnis dem Angreifer. In dem obigen Fall beträgt die Wahrscheinlichkeit, dass ein Angreifer unsere Daten aufdeckt bei immerhin 25%!
 
 Das heißt entscheidend für die Sicherheit unserer rauschbasierten Anonymisierung ist das minimale (oder maximale) Verhältnis der Wahrscheinlichkeiten für einen gegebenen Ergebniswert für die beiden Differenzdatensätze $ D $ und $ D' $:
 
@@ -274,30 +302,30 @@ const geometricNoise = (epsilon, symmetric) => {
   }
   return k
 }
-
-const frequencies = {}
-for(let i=0;i<10000;i++){
-  let v = geometricNoise(0.5, true);
-  if (frequencies[v] === undefined)
-    frequencies[v] = 0;
-  frequencies[v]++;
-}
-
-const { dp } = window;
-
-dp.geometricNoise = geometricNoise;
-
-const sf = Object.entries(frequencies).sort((a, b) => a[0]-b[0]);
-
-import { barChart } from '{{"js/plotting.js"|file}}';
-
-barChart("geometric-noise-example",
-    [sf.map(s => s[1])],
-    {xTicks: sf.map(s => s[0])});
-
   {% endset -%}
 
   {{geometricNoise}}
+
+  const frequencies = {}
+  for(let i=0;i<10000;i++){
+    let v = geometricNoise(0.5, true);
+    if (frequencies[v] === undefined)
+      frequencies[v] = 0;
+    frequencies[v]++;
+  }
+
+  const { dp } = window;
+
+  dp.geometricNoise = geometricNoise;
+
+  const sf = Object.entries(frequencies).sort((a, b) => a[0]-b[0]);
+
+  import { barChart } from '{{"js/plotting.js"|file}}';
+
+  barChart("geometric-noise-example",
+      [sf.map(s => s[1])],
+      {xTicks: sf.map(s => s[0])});
+
 </script>
 <!--translate:ignore-->
 
@@ -309,15 +337,13 @@ barChart("geometric-noise-example",
 </div>
 <!--translate:ignore-->
 
-<div class="chart sick box" id="geometric-noise-example">
+<div class="chart box" id="geometric-noise-example">
 </div>
 
 
 <!--translate:ignore-->
-<div class="chart box" id="result-with-geometric-noise">
-</div>
 <script type="module">
-  import { FrequencyTable } from '{{"js/sites/intro.js"|file}}';
+  import { FrequencyTable, SuccessRate, Epsilon } from '{{"js/sites/intro.js"|file}}';
   import { render } from '{{"js/render.js"|file}}';
   import { barChart } from '{{"js/plotting.js"|file}}';
   import { random } from '{{"js/stats.js"|file}}';
@@ -325,32 +351,174 @@ barChart("geometric-noise-example",
   const { geometricNoise } = dp;
   const left = Math.max(0, dp.exact.count - 20)
   const right = Math.max(0, dp.exact.count + 20)
-  const values = []
-  const valuesD = []
-  const ticks = []
-  for(let i=left;i<=right;i++){
-    values.push(0)
-    valuesD.push(0)
-    ticks.push(i)
+  let values = []
+  let valuesD = []
+  let ticks = []
+  let successes = 0
+  let epsilon = 0.2
+  let trials = 0
+
+  const reset = () => {
+
+    values = []
+    valuesD = []
+    ticks = []
+    successes = 0
+    trials = 0
+
+    for(let i=left;i<=right;i++){
+      values.push(0)
+      valuesD.push(0)
+      ticks.push(i)
+    }
+
+    window.tests = {
+      values: values,
+      valuesD: valuesD,
+      ticks: ticks,
+    }
+
   }
+
+  window.epsilonChanged = (e) => {
+    epsilon = e.target.value
+    reset()
+  }
+
+  reset()
+
   const N = 3
-  const epsilon = 1.0
   setInterval(() => {
     let nv, nvD
-    for(let i=0;i<100;i++){
-      nv = geometricNoise(epsilon, true)+dp.exact.count
-      values[nv-left] += 1
-      nvD = geometricNoise(epsilon, true)+dp.exact.countD
-      valuesD[nvD-left] += 1      
+    let n = 0
+    while(true){
+      nv = geometricNoise(epsilon, true)
+      nvD = geometricNoise(epsilon, true)
+      if (Math.abs(nv) > 20 || Math.abs(nvD) > 20)
+        continue // we do not count unplottable values
+      values[nv-left+dp.exact.count] += 1
+      valuesD[nvD-left+dp.exact.countD] += 1
+      trials++
+      if (nv+dp.exact.count >= nvD + dp.exact.countD){
+        // an attacker would estimate "yes" if the x > x', no otherwise
+        successes++
+      }
+      if (n++ > 10)
+        break
     }
-    barChart("result-with-geometric-noise", [values, valuesD], {classNames: ['is-green', 'is-red'], xTicks: ticks,blocks: [{x: nv, class: 'is-green'}, {x: nvD, class: 'is-red'}], height: 200});
+
+    barChart("result-with-geometric-noise", [values, valuesD], {classNames: ['is-green', 'is-red'], xTicks: ticks,blocks: [{x: nv+dp.exact.count, class: 'is-green'}, {x: nvD+dp.exact.countD, class: 'is-red'}], height: 200});
     render(document.getElementById('frequency-table-geometric'), FrequencyTable, {values: ticks, frequencies: values, frequenciesD: valuesD, epsilon: epsilon})
+    render(document.getElementById('success-rate'), SuccessRate, {trials: trials, successes: successes})
+    render(document.getElementById('epsilon'), Epsilon, {epsilon: epsilon})
   }, 1000);
 </script>
 <!--translate:ignore-->
 
+### Epsilon
+
+Ändern Sie den Wert von $ \epsilon $, um ein Gefühl dafür zu bekommen, wie der Parameter die Genauigkeit der Ergebniswerte und die Erfolgswahrscheinlichkeit eines Angreifers beeinflusst. Generell gilt: Je kleiner $ \epsilon $, um so geringer ist der potentielle Privatsphäre-Verlust für Betroffene, aber umso höher ist die Standardabweichung der resultierenden Daten.
+
+<!--translate:ignore-->
+<input type="range" min="0.05" max="10.0" step="0.1" value="0.2" onChange="epsilonChanged(event)" /> <span id="epsilon" />
+<div class="chart box" id="result-with-geometric-noise">
+</div>
+
 <div id="frequency-table-geometric">
 </div>
 
+<div id="success-rate">
+</div>
+<!--translate:ignore-->
+
+
 # Sensitivität
 
+In unserem Beispiel oben hat das Hinzufügen eines Datenpunktes zu unserem Datensatz das Ergebnis maximal um einen Betrag von 1 verändert (da wir Häufigkeiten berechnet haben). Was aber, wenn wir eine Funktion berechnen möchten, bei der ein einzelner Datenpunkt einen größeren Effekt auf das Ergebnis hat? Beispielsweise könnten wir am Mittelwert interessiert sein, der sich berechnet als
+
+<!--translate:ignore-->
+<div>
+  \begin{equation}
+  \bar{E} = \frac{1}{N}\sum\limits_{i=1}^N e_i
+  \end{equation}
+</div>
+<!--translate:ignore-->
+
+wobei $e _ i$ das jeweilige Einkommen einer Person ist. Wie stark ein einzelner Datenpunkt für diese Funktion das Ergebnis beeinflussen kann, hängt zum einen von dem möglichen Wertebereich (hier also der möglichen Gehaltsspanne) ab, als auch von der Anzahl der Datenpunkte $N$. Ist $e _ \mathrm{max}$ das maximal zu betrachtende Gehalt beträgt die **Sensitivität** des Mittelwertes $\bar{E}$ daher
+
+<!--translate:ignore-->
+\begin{equation}
+\mathcal{S}(\bar{E}) = \frac{e_\mathrm{max}}{N}
+\end{equation}
+<!--translate:ignore-->
+
+Unser Datensatz hat <span data-render="Literal(n)"></span> Einträge. Legen wir ein maximales Einkommen von 100.000 € zu Grunde, beträgt die Sensitivität damit $\mathcal{S}(\bar{E}) = $ <span data-render="Literal(Math.floor(100000/n))"></span>. Um den Mittelwert mithilfe von Differential Privacy zu schützen bräuchten wir eigentlich einen anderen Mechanismus, da der Wert reel ist und der geometrische Mechanismus nur auf diskrete Daten angewandt werden kann. Wir können jedoch den Mittelwert diskretisieren, um ihn mit dem Mechanismus verarbeiten zu können. Wählen wir das Diskretisierungsintervall identisch zur Sensitivität $\mathcal{S}$, brauchen wir unseren Mechanismus oben nicht zu modifizieren. Wollen wir eine größere Genauigkeit, müssen wir den Mechanismus entsprechend anpassen.
+
+<!--translate:ignore-->
+<script type="module">
+
+  {% set mean -%}
+// {{'intro.exact.calculate-mean'|translate}}
+const mean = (d, min, max) => {
+  if (d.length === 0)
+    throw 'empty list received'
+  let m = 0
+  d.forEach(row => {
+    if (row.income < min || row.income > max)
+      throw 'out of bounds value detected'
+    m += row.income
+  })
+  return m/d.length
+}
+  {% endset -%}
+
+    const { dp } = window;
+    const { data, dataD, incomeGroup } = dp;
+
+    {{mean}}
+
+    dp.exact = {
+      ...dp.exact,
+      mean: mean(data),
+      meanD: mean(dataD),
+    }
+</script>
+<!--translate:ignore-->
+
+
+<!--translate:ignore-->
+<div class="highlight">
+{% filter highlight(language='javascript') %}
+{{mean}}
+{% endfilter %}
+</div>
+<!--translate:ignore-->
+
+# Weiterführende Themen
+
+## Testen von DP-Mechanismen
+
+<script type="module">
+
+  import { render } from '{{"js/render.js"|file}}';
+  import { barChart } from '{{"js/plotting.js"|file}}';
+
+  setInterval(() => {
+    const testStatistic = [];
+    const { tests } = window;
+    const { values, valuesD, ticks } = tests;
+    for(let i=0;i<values.length;i++){
+      const ratio = values[i]/valuesD[i]
+      if (isNaN(ratio) || !isFinite(ratio))
+        testStatistic.push(0)
+      else
+        testStatistic.push(ratio)
+    }
+    barChart("test-statistic", [testStatistic], {hLines: [{y: 1.0, width: 3, color: '#000', style: 'dotted'}], xTicks: ticks, height: 200});    
+  }, 1000)
+</script>
+
+<div class="chart box" id="test-statistic">
+</div>
+
+## Angreifen von DP-Mechanismen

@@ -1,4 +1,4 @@
-name: dp-lecture
+name: lectures
 url: http://localhost:8111
 path: /
 static-path: static

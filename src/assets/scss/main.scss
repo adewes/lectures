@@ -5,6 +5,7 @@
 @import 'sequence.scss';
 @import 'comments.scss';
 @import 'charts.scss';
+@import 'cube.scss';
 @import '../css/bulma.min.css';
 
 // we import the styles for the different sites
@@ -38,6 +39,11 @@ body {
             margin-top: 40px;
         }
     }
+}
+
+p {
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 h1,
@@ -129,7 +135,11 @@ pre, code {
     font-family: Source Code Pro, monospace;
     font-weight: 400;
     background:#fafafa;
-    font-size: 0.9rem;
+    font-size: 20px;
+
+    @media(max-width: $tablet +1px){
+        font-size: 16px;
+    }
 }
 
 .main {
@@ -162,6 +172,7 @@ pre, code {
                 font-family: Oxanium, Arial, Helvetica; 
                 text-align: center;
                 font-size: 20px;
+
                 img {
                     margin: 0 auto;
                     margin-top: 10px;
