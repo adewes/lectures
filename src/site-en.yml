@@ -1,0 +1,16 @@
+# Warning, this is an auto-generated file, do not modify!
+# Modify this file instead: site-all.yml
+pages:
+- name: ''
+  navtitle: Start
+  src: en/index.md
+  title: Differential Privacy - Lecture Materials
+- name: intro
+  slug: introduction
+  src: en/intro.md
+  title: Introduction
+- name: imprint
+  slug: contact
+  src: en/imprint.md
+  title: Contact
+title: Differential Privacy

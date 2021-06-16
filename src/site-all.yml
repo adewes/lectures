@@ -1,0 +1,14 @@
+title: Differential Privacy
+pages:
+  - src|f|exists?: "{target_language}/index.md"
+    title|t: Differential Privacy - Vorlesungsmaterialien
+    navtitle|t: Start
+    name: ''
+  - title|t: Einführung
+    src|f|exists?: "{target_language}/intro.md" 
+    name: intro
+    slug||slugify: einführung
+  - title|t: Kontakt
+    name: imprint
+    slug||slugify: Kontakt
+    src|f|exists?: "{target_language}/imprint.md"

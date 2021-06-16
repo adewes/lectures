@@ -1,0 +1,47 @@
+
+/* Bar Chart Styles */
+
+.chart {
+    background: #fff;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+.legend {
+    display: block;
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    padding-left: 60px;
+}
+
+.legend span.bar {
+    padding: 4px 10px 4px 10px;
+    color: #444;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.chart span.bar {
+    background: #f70;
+}
+
+.chart span.bar, .chart span.block {
+    &.is-green {
+        background: #8f7;
+    }
+
+    &.is-red {
+        background: #f77;
+    }    
+}
+
+.chart span.block {
+    background: #aaa;
+}
+
+.chart span.refbar {
+    background: #aaa;
+}

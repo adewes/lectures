@@ -1,0 +1,923 @@
+0107b6f2588a15d2:
+  de: '  import { DataTable } from ''{{"js/sites/intro.js"|file}}'';'
+  en: '  import { DataTable } from ''{{"js/sites/intro.js"|file}}'';'
+017bf663332d1818:
+  de: x_j = X_g - \sum\limits_{i \ne j}^N x_i
+  en: x_j = X_g - \sum\limits_{i \ne j}^N x_i
+0262559e8ccb9a29:
+  de: >-
+    Dies erschwert dem Angreifer die Schätzung des Ursprungswertes
+    $ x _ j $, denn er/sie kennt den hinzugefügten Zufallswert
+    $ n $ nicht:
+  en: >-
+    This makes it difficult for the attacker to estimate the original
+    value $ x _ j $, because he/she does not know the added random
+    value $ n $:
+04251a1a2300da15:
+  de: '  <div class=''face side''></div>'
+  en: '  <div class=''face side''></div>'
+0607b267a918ae63:
+  de: '  language = ''{{site.config.lang}}'''
+  en: '  language = ''{{site.config.lang}}'''
+062ee26c5aa93013:
+  de: >-
+    wobei $ x_i = 1 $ falls das Einkommen des Datenpunktes $i$
+    im Bereich der Gruppe $ g $ liegt, und $ x_i = 0 $ andernfalls:
+  en: >-
+    where $ x_i = 1 $ if the income of the data point $i$ is in
+    the range of the group $ g $, and $ x_i = 0 $ otherwise:
+06666bb55e0013a3:
+  de: '  render(cubesElement, DataCubes, data)'
+  en: '  render(cubesElement, DataCubes, data)'
+06c6079a7fe6254c:
+  de: >-
+    Generell repräsentieren wir Daten im Folgenden als einzelne
+    Blöcke. Ein roter Block repräsentiert vertrauliche, personenbezogene
+    Daten. Ein grüner Block () hingegen anonyme oder aggregierte
+    Daten ohne vermeintlichen Personenbezug.
+  en: >-
+    In general, we represent data as individual blocks in the
+    following. A red block represents confidential, personal data.
+    A green block (), on the other hand, represents anonymous
+    or aggregated data without any alleged personal reference.
+0985dab4f0cb3b0e:
+  de: '  {{geometricNoise}}'
+  en: '  {{geometricNoise}}'
+0a393e506a020bb9:
+  de: '{{geometricNoise}}'
+  en: '{{geometricNoise}}'
+0aef5d5a742390d8:
+  de: <div class="cube">cube</div>
+  en: <div class="cube">cube</div>
+0b6233d4c302a303:
+  de: '      values.push(geometricNoise(0.5, true))'
+  en: '      values.push(geometricNoise(0.5, true))'
+0d73ad0cde568bbf:
+  de: '  x_i = \left\{\begin{array}{rcl}'
+  en: '  x_i = \left\{\begin{array}{rcl}'
+0dc6c99c53567b64:
+  de: 0 & , & E_i \notin [E^g_\mathrm{min},E^g_\mathrm{max}] \\
+  en: 0 & , & E_i \notin [E^g_\mathrm {min},E^g_\mathrm {max}]
+    \\
+0e8a4dc49074e8df:
+  de: >-
+    Je höher der Wert $\alpha$, umso mehr Informationen kann ein
+    Angreifer potentiell aus einem beobachteten Ergebniswert ableiten.
+    Um den schlimmstmöglichen Fall zu finden, müssen wir dieses
+    Wahrscheinlichkeitsverhältnis über alle möglichen Ergebnismengen
+    betrachten:
+  en: >-
+    The higher the value $\alpha$, the more information an attacker
+    can potentially derive from an observed outcome value. To
+    find the worst case, we need to consider this likelihood ratio
+    over all possible result sets:
+0ecc22d04d901b21:
+  de: X = a
+  en: X = a
+0f60acfec97f3042:
+  de: '    // {{''intro.exact.calculate-frequencies''|translate}}'
+  en: '    // {{''intro.exact.calculate-frequencies''|translate}}'
+114827cc5c576926:
+  de: '      let p = Math.exp(-epsilon)'
+  en: '      let p = Math.exp(-epsilon)'
+128e827b1802737f:
+  de: x_i = \left\{\begin{array}{rl}
+  en: x_i = \left\{\begin{array}{rl}
+1306f6aeb5f4ef54:
+  de: >-
+    Allerdings gibt es immer noch Randfälle, bei denen solche
+    verrauschten Daten Ursprungswerte preisgeben können. Hierzu
+    ein Beispiel: Wir fügen dem Ergebnis von oben einen zufälligen
+    Wert im Bereich $[-3, 3]$ hinzu. Wir wiederholen dies und
+    tragen die Häufigkeit der beobachteten Werte auf. Wie vorher
+    markieren grüne Balken das Ergebnis für den Datensatz $D$,
+    und rote Balken das Ergebnis für den Datensatz $D'$.
+  en: >-
+    However, there are still edge cases where such noisy data
+    can reveal origin values. Here is an example: We add a random
+    value in the range $[-3, 3]$ to the result from above. We
+    repeat this and plot the frequency of the observed values.
+    As before, green bars mark the result for the data set $D$,
+    and red bars mark the result for the data set $D'$.
+13e5ed8122794344:
+  de: '  language = {{site.lang}}'
+  en: '  language = {{site.lang}}'
+153252309eec394e:
+  de: <div class="cube is-active">
+  en: <div class="cube is-active">
+1572622edf270476:
+  de: >-
+    Fällt Ihnen hier ein Problem auf? Nein? Dann schauen Sie mal
+    auf die Ränder der Häufigkeitsverteilung: Durch Hinzufügen
+    des Differenz-Datensatzes verschiebt sich die Wahrscheinlichkeitsverteilung
+    maximal um den Betrag 1 nach rechts (falls der Datenpunkt
+    Teil der betrachteten Gruppe ist). D.h. beobachtet ein Angreifer
+    den Wert ganz rechts, weiß er/sie sofort, dass der gesuchte
+    Datenpunkt in der Gruppe sein muss, und hat damit das Einkommen
+    der Person aufgedeckt. Warum? Schauen wir uns dazu die Häufigkeiten
+    an:
+  en: >-
+    Do you notice a problem here? No? Then take a look at the
+    edges of the frequency distribution: By adding the difference
+    data set, the probability distribution shifts to the right
+    by a maximum amount of 1 (if the data point is part of the
+    group under consideration). I.e., if an attacker observes
+    the value on the far right, he/she immediately knows that
+    the data point they are looking for must be in the group,
+    and has thus uncovered the person's income. Why? Let's look
+    at the frequencies for this:
+169a3735c2ce0923:
+  de: '  test'
+  en: '  test'
+177f7257b7c785f7:
+  de: <div id="result-exact"></div>
+  en: <div id="result-exact"></div>
+18a5818faf036753:
+  de: '  X_g = \sum\limits_{i=1}^N x_i'
+  en: '  X_g = \sum\limits_{i=1}^N x_i'
+18e9f2912c16782b:
+  de: '          if (Math.random() > 0.5)'
+  en: '          if (Math.random() &gt; 0.5)'
+194917bf91dbd8e6:
+  de: '  language = ''{{site.lang}}'''
+  en: '  language = ''{{site.lang}}'''
+194ff4ea964b5c19:
+  de: '  \begin{equation}'
+  en: '  \begin {equation}'
+1ab1fdd9329a748f:
+  de: '  console.log(render);'
+  en: '  console.log(render);'
+1d3f01bbf9d48d0c:
+  de: <div id="frequency-table">
+  en: <div id="frequency-table">
+218a8ff2c00a9a3e:
+  de: '      if p < 1e-6 {'
+  en: '      if p &lt; 1e-6 {'
+21a7f2f1969acbfd:
+  de: '  renderAll({DataTable, DataCubes}, {data})'
+  en: '  renderAll({DataTable, DataCubes}, {data})'
+230a626c99da9012:
+  de: '      let k = Math.floor(Math.log(1-pe)/Math.log(p))'
+  en: '      let k = Math.floor(Math.log(1-pe)/Math.log(p))'
+2522ac34242d6310:
+  de: <div class="cube">
+  en: <div class="cube">
+25363523569766f8:
+  de: '  renderAll({DataTable, DataCubes, Cube, data})'
+  en: '  renderAll({DataTable, DataCubes, Cube, data})'
+257af10575e8f785:
+  de: >-
+    <script type="module" src="{{'js/render.js'|file}}"></script>
+  en: >-
+    <script type="module" src="{{'js/render.js'|file}}"></script>
+26d2de241e54dfe6:
+  de: '                   && row.income < incomeGroup.max).length'
+  en: >2-
+                       && row.income &lt; incomeGroup.max).length
+28d86778615f6af4:
+  de: '    }'
+  en: '    }'
+2a44168318e224e1:
+  de: '        }'
+  en: '        }'
+2a71a904e39b4d11:
+  de: '      return k'
+  en: '      return k'
+2b431bf2a54791fc:
+  de: >-
+    Um solche Angriffe zu erschweren, könnten wir dem Ergebniswert
+    $X_g$ einen Zufallswert $n$ hinzufügen: $ X _ g' = X _ g +
+    n $
+  en: >-
+    To make such attacks more difficult, we could add a random
+    value $n$ to the result value $X_g$: $ X _ g' = X _ g + n
+    $
+2bb52a1eefbbd4dd:
+  de: X_g = \sum\limits_{i=1}^N x_i
+  en: X_g = \sum\limits_{i=1}^N x_i
+2c100c1c5df29105:
+  de: <!--translate(ignore)-->
+  en: <!--translate(ignore)-->
+2c8d5382c498bfcf:
+  de: <div id="cubes"></div>
+  en: <div id="cubes"></div>
+2d6bc211ca7e3345:
+  de: >-
+    Das heißt entscheidend für die Sicherheit unserer rauschbasierten
+    Anonymisierung ist das minimale (oder maximale) Verhältnis
+    der Wahrscheinlichkeiten für einen gegebenen Ergebniswert
+    für die beiden Differenzdatensätze $ D $ und $ D' $:
+  en: >-
+    That is, crucial to the security of our noise-based anonymization
+    is the minimum (or maximum) ratio of the probabilities for
+    a given outcome value for the two difference datasets $ D
+    $ and $ D' $:
+2df2d1e49292add5:
+  de: '## Beispiel: Geometrischer Mechanismus'
+  en: '## Example: Geometric mechanism'
+2e4f465cfd00a871:
+  de: '  <script type="module">'
+  en: '  <script type="module">'
+301e6359c0d74f4d:
+  de: <div class="cube is-red is-xl">
+  en: <div class="cube is-red is-xl">
+31daaa8483c00323:
+  de: '    const geometricNoise = (epseilon, symmetric) => {'
+  en: '    const geometricNoise = (epseilon, symmetric) =&gt;
+    {'
+3255a1b77077940d:
+  de: '  const tableElement = document.getElementByID(''table'');'
+  en: '  const tableElement = document.getElementByID(''table'');'
+32576558addad4bb:
+  de: >-
+    Generell repräsentieren wir Daten im Folgenden als einzelne
+    Blöcke. Ein roter Block <span data-render="Cube({color: 'red',
+    size: 'xs'})"></span> repräsentiert vertrauliche, personenbezogene
+    Daten. Ein grüner Block <span data-render="Cube({color: 'green',
+    size: 'xs'})"></span> hingegen anonyme oder aggregierte Daten
+    ohne vermeintlichen Personenbezug.
+  en: >-
+    In general, we represent data as individual blocks in the
+    following. A red block <span data-render="Cube({color: 'red',
+    size: 'xs'})"></span> represents confidential, personal data.
+    A green block <span data-render="Cube({color: 'green', size:
+    'xs'})"></span>, on the other hand, represents anonymous or
+    aggregated data without any alleged personal reference.
+33aea5142b31191b:
+  de: '  <div class=''face front''></div>'
+  en: '  <div class=''face front''></div>'
+3479a6ff733e44ea:
+  de: '  language = ''{{site.language}}'''
+  en: '  language = ''{{site.language}}'''
+355d643374d7b953:
+  de: '  renderAll({DataTable, DataCubes, Cube, ResultBoxes, data})'
+  en: '  renderAll({DataTable, DataCubes, Cube, ResultBoxes, data})'
+370f2b3e0e5f7083:
+  de: '  barChart("result-exact", [[1,2,3,4]], {});'
+  en: '  barChart("result-exact", [[1,2,3,4]], {});'
+3910c4a794b32f19:
+  de: '      d.filter(row => row.income >= incomeGroup.min'
+  en: '      d.filter(row =&gt; row.income &gt;= incomeGroup.min'
+3973907c7954799c:
+  de: '  import { barChart } from ''{{"js/plotting.js"|file}}'';'
+  en: '  import { barChart } from ''{{"js/plotting.js"|file}}'';'
+3a91a5de254e06b1:
+  de: >-
+    Je höher der Wert $\alpha$, umso mehr Informationen kann ein
+    Angreifer im schlimmsten Fall aus einem beobachteten Ergebniswert
+    ableiten.
+  en: >-
+    The higher the value $\alpha$, the more information an attacker
+    can derive from an observed result value in the worst case.
+3cdeb9a9206c2512:
+  de: >-
+    wobei $ x _i = 1 $ falls das Einkommen des Datenpunktes $
+    i $ im Bereich der Gruppe $ g $ liegt, und $ x _ i = 0 $ andernfalls:
+  en: >-
+    where $ x _i = 1 $ if the income of the data point $ i $ is
+    in the range of the group $ g $, and $ x _ i = 0 $ otherwise:
+3f9b8761709a61ae:
+  de: >-
+    \frac{\mathrm{P}(X_g = x, Y_g = y|D)}{\mathrm{P}(X_g = x,
+    Y_g = y|D')} = \frac{\mathrm{P}(X_g = x|D)}{\mathrm{P}(X_g
+    = x|D')}\cdot \frac{\mathrm{P}(Y_g = x|D)}{\mathrm{P}(Y_g
+    = x|D')} \le \alpha^2 = \exp{2\epsilon}
+  en: >-
+    \frac {\mathrm{P}(X_g = x, Y_g = y|D)}{\mathrm{P}(X_g = x,
+    Y_g = y|D')} = \frac {\mathrm{P}(X_g = x|D)}{\mathrm{P}(X_g
+    = x|D')}\cdot \frac {\mathrm{P}(Y_g = x|D)}{\mathrm{P}(Y_g
+    = x|D')} \le \alpha^2 = \exp {2\epsilon}
+402b45c31aa6f767:
+  de: '  render(tableElement, DataTable(data))'
+  en: '  render(tableElement, DataTable(data))'
+40b9552b58c8951b:
+  de: >2-
+      import { render, renderAll } from '{{"js/render.js"|file}}';
+  en: >2-
+      import { render, renderAll } from '{{"js/render.js"|file}}';
+40bbbd6ccbd9f9c9:
+  de: '        return -k'
+  en: '        return -k'
+425f798714a8fbe5:
+  de: <div class="cube is-green is-sm">
+  en: <div class="cube is-green is-sm">
+42b828c62e45b528:
+  de: '  language = ''{{lang}}'''
+  en: '  language = ''{{lang}}'''
+457de1ab9da35e10:
+  de: '    barChart("geometric-noise-example", [values], {});'
+  en: '    barChart("geometric-noise-example", [values], {});'
+46711101d4c2ae92:
+  de: '  <span class="face right"></span>'
+  en: '  <span class="face right"></span>'
+485feec58a6e7906:
+  de: '# Unsere Daten'
+  en: '# Our data'
+4c55e47554c70582:
+  de: \begin{equation*}
+  en: \begin {equation*}
+4c57a8afdb033368:
+  de: '  </div>'
+  en: '  </div>'
+4cc1666bb3c7ac15:
+  de: console.log("hi")
+  en: console.log("hi")
+4d0259fdce27e5f2:
+  de: <div class="chart sick box" id="geometric-noise-example">
+  en: <div class="chart sick box" id="geometric-noise-example">
+4d22cf1682ed1b13:
+  de: >2-
+      import { DataTable, DataCubes } from '{{"js/sites/intro.js"|file}}';
+  en: >2-
+      import { DataTable, DataCubes } from '{{"js/sites/intro.js"|file}}';
+4d62d67ade3c0eb7:
+  de: >-
+    Generell repräsentieren wir Daten im Folgenden als einzelne
+    Blöcke. Ein roter Block (<span data-render="Cube({color: 'red'})"></span>)repräsentiert
+    vertrauliche, personenbezogene Daten. Ein grüner Block (<span
+    data-render="Cube({color: 'green'})"></span>) hingegen anonyme
+    oder aggregierte Daten ohne vermeintlichen Personenbezug.
+  en: >-
+    In general, we represent data as individual blocks in the
+    following. A red block (<span data-render="Cube({color: 'red'})"></span>)represents
+    confidential, personal data. A green block (<span data-render="Cube({color:
+    'green'})"></span>), on the other hand, represents anonymous
+    or aggregated data without any alleged personal reference.
+506dade61e47d777:
+  de: '      if (pv > p) {'
+  en: '      if (pv &gt; p) {'
+51fdece3d50729b5:
+  de: <div id="table">
+  en: <div id="table">
+52dc099602f72e3d:
+  de: >-
+    <div id="table" data-render="this.DataTable(this.data)"></div>
+  en: >-
+    <div id="table" data-render="this.DataTable(this.data)"></div>
+56fad126f2d4276c:
+  de: 1 & , & E_i \in [E^g_\mathrm{min},E^g_\mathrm{max}] \\
+  en: 1 & , & E_i \in [E^g_\mathrm {min},E^g_\mathrm {max}] \\
+57ae117778f9e160:
+  de: 1 & , & E_i \in [E^g_{min},E^g_{max}] \\
+  en: 1 & , & E_i \in [E^g_{min},E^g_{max}] \
+57db60465194ed75:
+  de: >2-
+      import { DataTable, DataCubes, Cube, ResultBoxes } from
+    '{{"js/sites/intro.js"|file}}';
+  en: >2-
+      import { DataTable, DataCubes, Cube, ResultBoxes } from
+    '{{"js/sites/intro.js"|file}}';
+5861cfd84d61e060:
+  de: '{% set distribution %}'
+  en: '{% set distribution %}'
+5b63e5b2097fc690:
+  de: <script>
+  en: <script>
+5b64d6fd384b9050:
+  de: <div id="table" data-render="DataTable(this.data)">
+  en: <div id="table" data-render="DataTable(this.data)">
+5bf8aa57fc5a6bc5:
+  de: dddd
+  en: dddd
+5c04c294990da5ff:
+  de: >-
+    <div id="table" data-render="DataTable([...this.data.slice(0,10),{name:
+    '...', income: '...'}])">
+  en: >-
+    <div id="table" data-render="DataTable([...this.data.slice(0,10),{name:
+    '...', income: '...'}])">
+5cc3208cb904c8c5:
+  de: '  {% endset -%}'
+  en: '  {% endset -%}'
+612858d6f83d566e:
+  de: '## Ergebnis'
+  en: '## Result'
+617cf1b878c6d992:
+  de: <div id="cubes" data-render="DataCubes(data)">
+  en: <div id="cubes" data-render="DataCubes(data)">
+620b7be47d622f85:
+  de: '  renderAll()'
+  en: '  renderAll()'
+63551eee25cfc411:
+  de: 1 & , & E_i \in [E^g_{min},G^g_{max}]
+  en: 1 & , & E_i \in [E^g_{min},G^g_] [{max}]
+662a51caa9ae5ea8:
+  de: '  import { render } from ''{{''js/render.js''|file}}'';'
+  en: '  import { render } from ''{{''js/render.js''|file}}'';'
+67e900f6f98cd8f9:
+  de: '  ]'
+  en: '  ]'
+6866fe96020f90c1:
+  de: >-
+    Entscheidend für den Angreifer ist das Verhältnis der Wahrscheinlichkeiten
+    der beobachteten Werte: Ist ein gegebener Wert in $ D $ und
+    $ D' $ gleich wahrscheinlich, kann der Angreifer im Besten
+    Fall nur raten, wie der Datenpunkt $ x _ j $ zu dem Ergebnis
+    beigetragen hat. Je stärker jedoch das Verhältnis von einer
+    von 1 abweicht, umso mehr Informationen liefert das beobachtete
+    Ergebnis dem Angreifer.
+  en: >-
+    Crucial for the attacker is the ratio of the probabilities
+    of the observed values: If a given value in $ D $ and $ D'
+    $ is equally likely, the attacker can at best only guess how
+    the data point $ x _ j $ contributed to the result. However,
+    the more the ratio of one differs from 1, the more information
+    the observed result provides to the attacker.
+6c179f21e6f62b62:
+  de: '  '
+  en: '  '
+6c9656210a020271:
+  de: </script>
+  en: </script>
+6cee40f3ff5bb96a:
+  de: \end{equation}
+  en: \ending {equation}
+6d274ea89a215540:
+  de: '      let pv = Math.random()'
+  en: '      let pv = Math.random()'
+6fcf3d4a4d8e9555:
+  de: Das ist das Ergebnis
+  en: This is the result
+736a88feb2471bf3:
+  de: '      if (p < 1e-6) {'
+  en: '      if (p &lt; 1e-6) {'
+77885ad5ce27a0ac:
+  de: '        } else {'
+  en: '        } else {'
+78e89faf5d790e5e:
+  de: '  ssss'
+  en: '  ssss'
+7a7654e20e8ef7be:
+  de: '      let k'
+  en: '      let k'
+7b95a494fd251ebd:
+  de: '  renderAll({DataTable, DataCubes, data})'
+  en: '  renderAll({DataTable, DataCubes, data})'
+8088bc31fa3811c0:
+  de: >-
+    Um solche Angriffe zu erschweren, könnten wir dem Ergebniswert
+    $X_g$ einen Zufallswert $n$ hinzufügen: $ X _ g' = X _ g +
+    n $. Dies erschwert dem Angreifer die Schätzung des Ursprungswertes
+    $ x _ j $, denn er/sie kennt den hinzugefügten Zufallswert
+    $ n $ nicht:
+  en: >-
+    To make such attacks more difficult, we could add a random
+    value $n$ to the result value $X_g$: $ X _ g' = X _ g + n
+    $. This makes it difficult for the attacker to estimate the
+    original value $ x _ j $, because he/she does not know the
+    added random value $ n $:
+82e33956c07a5fde:
+  de: >-
+    wobei $ x_i = 1 $ falls das Einkommen des Datenpunktes $ i
+    $ im Bereich der Gruppe $ g $ liegt, und $ x_i = 0 $ andernfalls:
+  en: >-
+    where $ x_i = 1 $ if the income of the data point $ i $ is
+    in the range of the group $ g $, and $ x_i = 0 $ otherwise:
+84a5e715899e1c4b:
+  de: '# '
+  en: '# '
+852d025864123c89:
+  de: '{% endfilter %}'
+  en: '{% endfilter %}'
+85caafc15b0814ee:
+  de: '  \end{array}\right.'
+  en: '  \end {array}\right.'
+865a950ee81e8ebc:
+  de: '  <div class="face top"></div>'
+  en: '  <div class="face top"></div>'
+882b185a7ee5eaba:
+  de: '      let pe = 1.0 - p + p*pv'
+  en: '      let pe = 1.0 - p + p*pv'
+883dece2134e9e46:
+  de: 1 & , & E_i \in [E^g_\mathrm{min},E^g_{max}] \\
+  en: 1 & , & E_i \in [E^g_\mathrm {min},E^g_{max}] \\
+89a5d557b9e985a5:
+  de: >-
+    Wir repräsentieren diese Daten im Folgenden als einzelne Blöcke.
+  en: >-
+    We represent this data as individual blocks in the following.
+89d3e6c2a59bfc61:
+  de: '  import { render } from ''{{"js/render.js"|file}}'';'
+  en: '  import { render } from ''{{"js/render.js"|file}}'';'
+8a1384d6f4dbdbcd:
+  de: '            return 0'
+  en: '            return 0'
+8da2256b5ded4e22:
+  de: '          return 0'
+  en: '          return 0'
+8ecbaf4764e5a14b:
+  de: '  <span class="face top"></span>'
+  en: '  <span class="face top"></span>'
+91e6122301a65a4a:
+  de: <div class="cube is-red">
+  en: <div class="cube is-red">
+950e7b6e240162de:
+  de: >-
+    Ein Angreifer, der bis auf einen einzigen Wert $x _ j $ alle
+    Datenwerte $x _ i$ kennt, kann aus dem Ergebnis $ X _ g $
+    leicht den fehlenden Wert $ x _ j $ berechnen:
+  en: >-
+    An attacker who knows all data values $x _ i$ except for a
+    single value $x _ j $ can easily calculate the missing value
+    $ x _ j $ from the result $ X _ g $:
+96095dace0802704:
+  de: '  <div class="chart sick box" id="result-exact"></div>'
+  en: '  <div class="chart sick box" id="result-exact"></div>'
+9827ff7a0d28ce73:
+  de: <div id="table" data-render="DataTable(data)"></div>
+  en: <div id="table" data-render="DataTable(data)"></div>
+985e3d648149422c:
+  de: x_j = X_g - \sum\limit_{i \ne j}^N x_i
+  en: x_j = X_g - \sum\limit_{i \ne j}^N x_i
+9b29899409358cb4:
+  de: '# Hinzufügen von Rauschen'
+  en: '# Adding noise'
+9b878fc5856223e4:
+  de: '  const tableElement = document.getElementById(''table'');'
+  en: '  const tableElement = document.getElementById(''table'');'
+9be5d0dcc648f53a:
+  de: >-
+    Generell repräsentieren wir Daten im Folgenden als einzelne
+    Blöcke. Ein roter Block (<span data-render="Cube({color: 'red',
+    size: 'xs'})"></span>)repräsentiert vertrauliche, personenbezogene
+    Daten. Ein grüner Block (<span data-render="Cube({color: 'green'})"></span>)
+    hingegen anonyme oder aggregierte Daten ohne vermeintlichen
+    Personenbezug.
+  en: >-
+    In general, we represent data as individual blocks in the
+    following. A red block (<span data-render="Cube({color: 'red',
+    size: 'xs'})"></span>)represents confidential, personal data.
+    A green block (<span data-render="Cube({color: 'green'})"></span>),
+    on the other hand, represents anonymous or aggregated data
+    without any alleged personal reference.
+9befc599c061a619:
+  de: '      if (symmetric && Math.random() < 0.5) {'
+  en: '      if (symmetric && Math.random() &lt; 0.5) {'
+9d22b5a9480ea891:
+  de: <div id="result-boxes" data-render="ResultBoxes()"
+  en: '&lt;div id="result-boxes" data-render="ResultBoxes()"'
+9e4527fb137f0b37:
+  de: <div>
+  en: <div>
+a08ce592d13f6d7c:
+  de: '  render(tableElement, DataTable, data)'
+  en: '  render(tableElement, DataTable, data)'
+a0d77e1316d1d83d:
+  de: 0 & , & E_i \notin [E^g_{min},G^g_{max}] \\
+  en: 0 & , & E_i \notin [E^g_{min},G^g_{max}] \\
+a0f389de849cb80c:
+  de: '  console.log(this)'
+  en: '  console.log(this)'
+a0fa8d3432210ae7:
+  de: '  1 & , & E_i \in [E^g_\mathrm{min},E^g_\mathrm{max}] \\'
+  en: '  1 & , & E_i \in [E^g_\mathrm {min},E^g_\mathrm {max}]
+    \\'
+a3bf2c54848ca1cb:
+  de: >-
+    wobei $x_i = 1$ falls das Einkommen des Datenpunktes $i$ im
+    Bereich der Gruppe $g$ liegt, und $x_i = 0$ andernfalls:
+  en: >-
+    where $x_i = 1$ if the income of the data point $i$ is in
+    the range of the group $g$, and $x_i = 0$ otherwise:
+a715ab659c32cc96:
+  de: <div id="cubes" data-render="DataCubes(data)"></div>
+  en: <div id="cubes" data-render="DataCubes(data)"></div>
+a777d83385611f06:
+  de: '  {% set geometricNoise -%}'
+  en: '  {% set geometricNoise -%}'
+a81a95991b683958:
+  de: '{% set jsCode %}'
+  en: '{% set jsCode %}'
+a980ccd6872b59de:
+  de: '    import { barChart } from ''{{"js/plotting.js"|file}}'';'
+  en: '    import { barChart } from ''{{"js/plotting.js"|file}}'';'
+a9bc5143b4851096:
+  de: '  </script>'
+  en: '  </script>'
+aac32651b10f567c:
+  de: </div>
+  en: </div>
+ad4287736086e068:
+  de: \end{array}\right.
+  en: \end {array}\right.
+adc9b607490f9be6:
+  de: '# Eine erste Statistik'
+  en: '# A first statistic'
+b094cc1fc365e2fb:
+  de: >-
+    wobei $ x _ i = 1 $ falls das Einkommen des Datenpunktes $
+    i $ im Bereich der Gruppe $ g $ liegt, und $ x _ i = 0 $ andernfalls:
+  en: >-
+    where $ x _ i = 1 $ if the income of the data point $ i $
+    is in the range of the group $ g $, and $ x _ i = 0 $ otherwise:
+b1ce08e182292faf:
+  de: >-
+    Um den schlimmstmöglichen Fall zu finden, müssen wir dieses
+    Wahrscheinlichkeitsverhältnis über alle möglichen Ergebnismengen
+    betrachten:
+  en: >-
+    To find the worst possible case, we need to consider this
+    likelihood ratio over all possible outcome sets:
+b1d7b5e04558d0f4:
+  de: <div id="frequency-table-geometric">
+  en: <div id="frequency-table-geometric">
+b2a6d9402f3b0e1e:
+  de: '## Angriff auf die anonymisierten Daten'
+  en: '## Attack on the anonymized data'
+b2b01425dff90ad3:
+  de: <div class="chart sick box" id="result-exact"></div>
+  en: <div class="chart sick box" id="result-exact"></div>
+b37c900ec5ded7d4:
+  de: '        return 0'
+  en: '        return 0'
+b5542137ad385324:
+  de: >-
+    Im folgenden nutzen wir Beispieldaten, die das Einkommen verschiedener
+    Personen beschreiben.
+  en: >-
+    In the following, we use sample data describing the income
+    of different individuals.
+b6582bc89c437f7a:
+  de: >-
+    Um solche Angriffe zu erschweren, könnten wir dem Ergebniswert
+    $X_g$ einen Zufallswert $n$ hinzufügen: $ X _ g' = X _ g +
+    n $ Dies erschwert dem Angreifer die Schätzung des Ursprungswertes
+    $ x _ j $, denn er/sie kennt den hinzugefügten Zufallswert
+    $ n $ nicht:
+  en: >-
+    To make such attacks more difficult, we could add a random
+    value $n$ to the result value $X_g$: $ X _ g' = X _ g + n
+    $ This makes it difficult for the attacker to estimate the
+    original value $ x _ j $, because he/she does not know the
+    added random value $ n $:
+b745301a9fe97cbd:
+  de: '## Umsetzung in Code'
+  en: '## Conversion to code'
+b80238d83196593b:
+  de: >-
+    <script type="module" src="{{'js/sites/intro.js'|file}}"></script>
+  en: >-
+    <script type="module" src="{{'js/sites/intro.js'|file}}"></script>
+bb3a2f29e76e0d75:
+  de: '  renderAll(window)'
+  en: '  renderAll(window)'
+bb66fb83595ecb94:
+  de: \begin{equation}
+  en: \begin {equation}
+bcbb160baf203da1:
+  de: <div class="cube"></div>
+  en: <div class="cube"></div>
+bd3f431598a5da84:
+  de: '# Sensitivität'
+  en: '# Sensitivity'
+bdce37206febeba8:
+  de: <div id="table"></div>
+  en: <div id="table"></div>
+be73d3e884d25b0a:
+  de: 0 & , & E_i \notin [E^g_\mathrm{min},E^g_{max}] \\
+  en: 0 & , & E_i \notin [E^g_\mathrm {min},E^g_{max}] \\\
+bf4d3096a1694195:
+  de: '  <div class="face side"></div>'
+  en: '  <div class="face side"></div>'
+c167865828c19855:
+  de: '    {name: "Max Mustermann", income: 53242},'
+  en: '    {name: "Max Mustermann", income: 53242} ,'
+c1abe070ee4729f0:
+  de: 0 & , & E_i \nin [E^g_{min},G^g_{max}] \\
+  en: 0 & , & E_i \nin [E^g_{min},G^g_{max}] \
+c2213afa3589c5e1:
+  de: '  <div>'
+  en: '  <div>'
+c36903fbf5f6f28d:
+  de: x_i = \left\{\begin{array}{rcl}
+  en: x_i = \left\{\begin{array}{rcl}
+c3de7d4935aa97bc:
+  de: '{% endset %}'
+  en: '{% endset %}'
+c4eee1166c5d2288:
+  de: '  const data = ['
+  en: '  const data = ['
+c83d4085ca5dfe0a:
+  de: '  \end{equation}'
+  en: '  \ending {equation}'
+c8a5f3b34a70ea51:
+  de: '        if (symmetric) {'
+  en: '        if (symmetric) {'
+c8e2142023a38c28:
+  de: >-
+    <div id="result-boxes" data-render="ResultBoxes({min: 10,
+    max: 20})"
+  en: >-
+    &lt;div id="result-boxes" data-render="ResultBoxes({min: 10,
+    max: 20})"
+ca5694b305132768:
+  de: >-
+    Je höher der Wert $\alpha$, umso mehr Informationen kann ein
+    Angreifer im schlimmsten Fall aus einem beobachteten Ergebniswert
+    ableiten. In der Praxis schreiben wir zusätzlich $\alpha =
+    \exp{\epsilon}$, da es uns dies ermöglicht, den Privatsphäre-Verlust
+    auch für komplexere Fälle abzuschätzen. Oft wollen wir nämlich
+    nicht nur eine Statistik veröffentlichen, sondern gleiche
+    mehrere. Z.B. könnten wir zu unseren Einkommensdaten einen
+    Mittelwert, die oben betrachteten Häufigkeiten sowie Quantilwerte
+    veröffentlichen. Jeder einzelne Datenpunkt würde dann zu allen
+    dieser Werte beitragen. Dementsprechend müssen wir nicht nur
+    das Wahrscheinlichkeitsverhältnis für einzelne Werte, sondern
+    für alle Werte zusammen betrachten um eine Abschätzung des
+    Privatsphäre-Verlustes zu erhalten. Geht unser Datenpunkt
+    z.B. in zwei unterschiedliche Werte $X _ g $ und $Y _ g$ ein,
+    könnte ein Angreifer wiederum die Wahrscheinlichkeiten für
+    Wertekombinationen $(X _ g, Y _ g)$ betrachten. Falls die
+    Werte $X _ g$ und $ Y _ g$ unabhängig sind, gilt für ihre
+    Wahrscheinlichkeiten
+  en: >-
+    The higher the value $\alpha$, the more information an attacker
+    can derive from an observed result value in the worst case.
+    In practice, we additionally write $\alpha = \exp{\epsilon}$,
+    as this allows us to estimate the privacy loss even for more
+    complex cases. Indeed, we often do not want to publish only
+    one statistic, but equal several. For example, we might publish
+    a mean, the frequencies considered above, and quantile values
+    for our income data. Each individual data point would then
+    contribute to all of these values. Accordingly, we need to
+    consider not only the likelihood ratio for individual values,
+    but for all values together to obtain an estimate of the privacy
+    loss. For example, if our data point goes into two different
+    values $X _ g $ and $Y _ g$, an attacker could again look
+    at the probabilities for combinations of values $(X _ g, Y
+    _ g)$. If the values $X _ g$ and $ Y _ g$ are independent,
+    then their probabilities are
+cae841417a97c73a:
+  de: <div class='cube'>
+  en: <div class='cube'>
+cce669907b5a2e88:
+  de: <div class="cube is-red is-sm">
+  en: <div class="cube is-red is-sm">
+cd5019ca9c19688e:
+  de: >2-
+      import { DataTable, DataCubes, Cube } from '{{"js/sites/intro.js"|file}}';
+  en: >2-
+      import { DataTable, DataCubes, Cube } from '{{"js/sites/intro.js"|file}}';
+cdd5f9a9b7bf319a:
+  de: '  0 & , & E_i \notin [E^g_\mathrm{min},E^g_\mathrm{max}]
+    \\'
+  en: >2-
+      0 & , & E_i \notin [E^g_\mathrm {min},E^g_\mathrm {max}]
+    \\
+cf0d910eda143b3a:
+  de: '{% filter highlight(language=''javascript'') %}'
+  en: '{% filter highlight(language=''javascript'') %}'
+d138ecd0cb92e92e:
+  de: '    const values = []'
+  en: '    const values = []'
+d5b611578b11f527:
+  de: >-
+    wobei $ x _ i = 1 $ falls das Einkommen des Datenpunktes $
+    i $ im Bereich der Einkommen aus Gruppe $ g $ liegt $ [E^g
+    _ \mathm{min}, E^g _ \mathrm{max}] $, und $ x _ i = 0 $ andernfalls:
+  en: >-
+    Where $ x _ i = 1 $ if the income of the data point $ i $
+    is in the range of income from group $ g $ $ [E^g _ \mathm{min},
+    E^g _ \mathrm{max}] $ , and $ x _ i = 0 $ otherwise:
+d675f02176294d59:
+  de: '  language = ''{{site.config}}'''
+  en: '  language = ''{{site.config}}'''
+d7ad5244a61dbb7b:
+  de: '      countD: frequency(dataD),'
+  en: '      countD: frequency(dataD),'
+d855c12a5449a320:
+  de: '    for(let i=0;i<10000;i++){'
+  en: '    for(let i=0;i&lt;10000;i++){'
+d86fc95339d4b352:
+  de: '  language = ''{{site}}'''
+  en: '  language = ''{{site}}'''
+da240084a221f00e:
+  de: '  <span class="face left"></span>'
+  en: '  <span class="face left"></span>'
+db405ba385545e66:
+  de: '# Ergebnis'
+  en: '# Result'
+dc11f1ba8da49943:
+  de: '  const cubesElement = document.getElementById(''cubes'');'
+  en: '  const cubesElement = document.getElementById(''cubes'');'
+df61298ef1831b17:
+  de: '    const frequency = (d) => '
+  en: '    const frequency = (d) =&gt; '
+e13c0703cbfd1b70:
+  de: '  x_j = X_g'' - \sum\limits_{i \ne j}^N x_i - n'
+  en: '  x_j = X_g'' - \sum\limits_{i \ne j}^N x_i - n'
+e175c4a81b54b553:
+  de: '    // {{''intro.exact.store-value''|translate}}'
+  en: '    // {{''intro.exact.store-value''|translate}}'
+e18e22d406550661:
+  de: >-
+    Eine der einfachsten Erkenntnisse, die wir aus unseren Daten
+    gewinnen können ist die Verteilung der Einkommen der Personen
+    im Datensatz. Hierzu bilden wir zunächst Einkommensgruppen.
+    Beispielsweise kann eine Gruppe alle Datensätze enthalten
+    die ein Einkommen zwischen 50-60 T€ aufweisen. Anschließend
+    zählen wir die Anzahl der Datensätze in jeder Gruppe, was
+    der statistischen Häufigkeit dieser Gruppe entspricht.
+  en: >-
+    One of the simplest insights we can gain from our data is
+    the distribution of the incomes of the individuals in the
+    dataset. To do this, we first form income groups. For example,
+    a group may contain all records that have an income between
+    50-60k€. We then count the number of records in each group,
+    which corresponds to the statistical frequency of that group.
+e22df8060c226395:
+  de: 1 & , & E_i \in [E^g_{min},G^g_{max}] \\
+  en: 1 & , & E_i \in [E^g_{min},G^g_{max}] \
+e3b0c44298fc1c14:
+  de: ''
+  en: ''
+e69200ae0c7313e3:
+  de: <script type="module">
+  en: <script type="module">
+e6c8ca49a1823483:
+  de: >-
+    wobei $ x _ i = 1 $ falls das Einkommen des Datenpunktes $
+    i $ im Bereich der Einkommen aus Gruppe $ g $ liegt $ [E^g
+    _ \mathrm{min}, E^g _ \mathrm{max}] $, und $ x _ i = 0 $ andernfalls:
+  en: >-
+    Where $ x _ i = 1 $ if the income of the data point $ i $
+    is in the range of income from group $ g $ $ [E^g _ \mathrm{min},
+    E^g _ \mathrm{max}] $ , and $ x _ i = 0 $ otherwise:
+e7b138a9a60eeec3:
+  de: >-
+    , unter der Annahme, dass die beiden Wahrscheinlichkeitswerte
+    jeweils DP mit Wert $\epsilon$ erfüllen. Für den Fall, dass
+    die Werte $X _ g $ und $ Y _ g $ nicht unabhängig sind, bleibt
+    der Wert unter der Grenze (der Beweis hiervon ist allerdings
+    etwas kompliziert). Der oben definierte Privatshpäre-Verlust
+    ist somit additiv, was eine sehr nützliche Eigenschaft ist:
+    Wissen wir, dass wir insgesamt $n$ Ergebnisse veröffentlichen
+    wollen die auf einem Datenwert $x$ basieren, können wir den
+    maximalen Privatsphäre-Verlust einfach als $n\cdot\epsilon$
+    abschätzen. Wir können somit ein **Privatsphäre-Budget** definieren,
+    anhand dessen wir unsere Veröffentlichung planen können.
+  en: >-
+    assuming that the two probability values satisfy DP with value
+    $\epsilon$ respectively. In the case that the values $X _
+    g $ and $ Y _ g $ are not independent, the value remains below
+    the bound (the proof of this is a bit complicated, though).
+    The privacy loss defined above is thus additive, which is
+    a very useful property: if we know that we want to publish
+    a total of $n$ results based on a data value $x$, we can easily
+    estimate the maximum privacy loss as $n\cdot\epsilon$. We
+    can thus define a **privacy budget** against which we can
+    plan our publication.
+e7dba0b556e6d88b:
+  de: '      pv = Math.random()'
+  en: '      pv = Math.random()'
+e874ff33bb2d1049:
+  de: '    barChart("result-exact", [[1,2,3,4]], {});'
+  en: '    barChart("result-exact", [[1,2,3,4]], {});'
+f01f4c46d13105f3:
+  de: '# Einführung'
+  en: '# Introduction'
+f02efeb0c4f06b8f:
+  de: '  <div class=''face top''></div>'
+  en: '  <div class=''face top''></div>'
+f263148ebc3fa901:
+  de: 0 & , & E_i \notin [E^g_{min},E^g_{max}] \\
+  en: 0 & , & E_i \notin [E^g_{min},E^g_{max}] \\
+f5280ef03c25ba4e:
+  de: <div class="highlight">
+  en: <div class="highlight">
+f61f5bbc379fd349:
+  de: '      }'
+  en: '      }'
+f71347faf50a21a0:
+  de: >2-
+        barChart("result-with-noise", [values, valuesD], {classNames:
+    ['is-green', 'is-red'], xTicks: ticks,blocks: [{x: nv, class:
+    'is-green'}, {x: nvD, class: 'is-red'}], height: 200});
+  en: >2-
+        barChart("result-with-noise", [values, valuesD], {classNames:
+    ['is-green', 'is-red'], xTicks: ticks,blocks: [{x: nv, class:
+    'is-green'}, {x: nvD, class: 'is-red'}], height: 200});
+f83b14a13c67614d:
+  de: <div id="table" data-render="DataTable(this.data)"></div>
+  en: <div id="table" data-render="DataTable(this.data)"></div>
+f98092410e0e7dd9:
+  de: '  translations = {{site.translations.intro|tojson}};'
+  en: '  translations = {{site.translations.intro|tojson}};'
+fa7f8633cd807cbd:
+  de: '  <div class="face front"></div>'
+  en: '  <div class="face front"></div>'
+fb05b17f89301fcd:
+  de: '    dp.exact = {'
+  en: '    dp.exact = {'
+fb14dff5b747a8cc:
+  de: '  {{aggregate}}'
+  en: '  {{aggregate}}'
+fe86ca09c85e14f1:
+  de: <div class="cube is-red is-lg">
+  en: <div class="cube is-red is-lg">
+fe8faea807e9310e:
+  de: '      count: frequency(data),'
+  en: '      count: frequency(data),'
+ff34c171c807ca72:
+  de: '  const data = [{name: "Max Mustermann", income: 53242}]'
+  en: '  const data = [{name: "Max Mustermann", income: 53242}]'

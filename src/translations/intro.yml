@@ -1,0 +1,63 @@
+intro:
+  exact:
+    calculate-frequencies:
+      _t:
+        de: 308866d2ae98589b
+        en: 308866d2ae98589b
+      de: Wir berechnen die Häufigkeiten in den Datensätzen D
+        und D'
+      en: We calculate the frequencies in data sets D and D'
+    store-value:
+      _t:
+        de: f0b1aea6ec112adf
+        en: f0b1aea6ec112adf
+      de: Wir speichern die Ergebnisse im 'dp' Objekt
+      en: We store the results in the 'dp' object
+  freq:
+    _t:
+      de: 0c6de9d1b4e7a921
+      en: 0c6de9d1b4e7a921
+    de: Häufigkeit in D
+    en: Frequency in D
+  freq-d:
+    _t:
+      de: 61f9bfa511bd1f32
+      en: 61f9bfa511bd1f32
+    de: Häufigkeit in D'
+    en: Frequency in D'
+  income:
+    _t:
+      de: 8099bc894b7dc013
+      en: 8099bc894b7dc013
+    de: Einkommen
+    en: Income
+  infinite:
+    _t:
+      de: 360aa4a91c2c8f7a
+      en: 360aa4a91c2c8f7a
+    de: unendlich
+    en: infinite
+  name:
+    _t:
+      de: dcd1d5223f73b3a9
+      en: dcd1d5223f73b3a9
+    de: Name
+    en: Name
+  ratio:
+    _t:
+      de: ae46664ba67ffee0
+      en: ae46664ba67ffee0
+    de: Verhältnis
+    en: Ratio
+  ratio-with-epsilon:
+    _t:
+      de: 41cd6b324f228eb4
+      en: 41cd6b324f228eb4
+    de: Verhältnis (exp(ε))
+    en: Ratio (exp(ε))
+  result:
+    _t:
+      de: 9950f5c8dc2cca86
+      en: 9950f5c8dc2cca86
+    de: Beobachtetes Ergebnis
+    en: Observed result

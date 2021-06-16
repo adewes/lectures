@@ -1,0 +1,38 @@
+$include:
+- intro.yml
+hp:
+  site-title:
+    _t:
+      de: cdd16e000993c5d8
+      en: cdd16e000993c5d8
+    de: Differential Privacy
+    en: Differential Privacy
+  translation-note:
+    _t:
+      de: 61cf1a0868a8f0f7
+      en: 61cf1a0868a8f0f7
+    de: >-
+      Diese Website wurde überwiegend automatisch von der [deutschen
+      Version]({url}) übersetzt. Wir entschuldigen uns für eventuelle
+      Übersetzungsfehler.
+    en: >-
+      This website was mostly translated automatically from the
+      [German version]({url}). We apologize for any translation
+      errors.
+not-found:
+  text:
+    _t:
+      de: 3bf9265400f2407f
+      en: 3bf9265400f2407f
+    de: >-
+      Die angeforderte URL existiert leider nicht auf dieser Seite.
+      Wir entschuldigen uns für die Unannehmlichkeiten.
+    en: >-
+      Unfortunately, the requested URL does not exist on this
+      page. We apologize for the inconvenience.
+  title:
+    _t:
+      de: d722ca73221914dd
+      en: d722ca73221914dd
+    de: Nicht gefunden (404)
+    en: Not found (404)
