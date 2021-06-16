@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta name="generator" content=
+"HTML Tidy for HTML5 for Linux version 5.6.0">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content=
+"width=device-width, initial-scale=1">
+<title>Differential Privacy | Einführung</title>
+<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script src="/static/js/mathjax/tex-chtml.js" id="MathJax-script"
+async></script>
+<style type="text/css">
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #8f5902; font-style: italic } /* Comment */
+.highlight .err { color: #a40000; border: 1px solid #ef2929 } /* Error */
+.highlight .g { color: #000000 } /* Generic */
+.highlight .k { color: #204a87; font-weight: bold } /* Keyword */
+.highlight .l { color: #000000 } /* Literal */
+.highlight .n { color: #000000 } /* Name */
+.highlight .o { color: #ce5c00; font-weight: bold } /* Operator */
+.highlight .x { color: #000000 } /* Other */
+.highlight .p { color: #000000; font-weight: bold } /* Punctuation */
+.highlight .ch { color: #8f5902; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #8f5902; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #8f5902; font-style: italic } /* Comment.Preproc */
+.highlight .cpf { color: #8f5902; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #8f5902; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #8f5902; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #a40000 } /* Generic.Deleted */
+.highlight .ge { color: #000000; font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #ef2929 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #000000; font-style: italic } /* Generic.Output */
+.highlight .gp { color: #8f5902 } /* Generic.Prompt */
+.highlight .gs { color: #000000; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #a40000; font-weight: bold } /* Generic.Traceback */
+.highlight .kc { color: #204a87; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #204a87; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #204a87; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #204a87; font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { color: #204a87; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #204a87; font-weight: bold } /* Keyword.Type */
+.highlight .ld { color: #000000 } /* Literal.Date */
+.highlight .m { color: #0000cf; font-weight: bold } /* Literal.Number */
+.highlight .s { color: #4e9a06 } /* Literal.String */
+.highlight .na { color: #c4a000 } /* Name.Attribute */
+.highlight .nb { color: #204a87 } /* Name.Builtin */
+.highlight .nc { color: #000000 } /* Name.Class */
+.highlight .no { color: #000000 } /* Name.Constant */
+.highlight .nd { color: #5c35cc; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #ce5c00 } /* Name.Entity */
+.highlight .ne { color: #cc0000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #000000 } /* Name.Function */
+.highlight .nl { color: #f57900 } /* Name.Label */
+.highlight .nn { color: #000000 } /* Name.Namespace */
+.highlight .nx { color: #000000 } /* Name.Other */
+.highlight .py { color: #000000 } /* Name.Property */
+.highlight .nt { color: #204a87; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #000000 } /* Name.Variable */
+.highlight .ow { color: #204a87; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #f8f8f8; text-decoration: underline } /* Text.Whitespace */
+.highlight .mb { color: #0000cf; font-weight: bold } /* Literal.Number.Bin */
+.highlight .mf { color: #0000cf; font-weight: bold } /* Literal.Number.Float */
+.highlight .mh { color: #0000cf; font-weight: bold } /* Literal.Number.Hex */
+.highlight .mi { color: #0000cf; font-weight: bold } /* Literal.Number.Integer */
+.highlight .mo { color: #0000cf; font-weight: bold } /* Literal.Number.Oct */
+.highlight .sa { color: #4e9a06 } /* Literal.String.Affix */
+.highlight .sb { color: #4e9a06 } /* Literal.String.Backtick */
+.highlight .sc { color: #4e9a06 } /* Literal.String.Char */
+.highlight .dl { color: #4e9a06 } /* Literal.String.Delimiter */
+.highlight .sd { color: #8f5902; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4e9a06 } /* Literal.String.Double */
+.highlight .se { color: #4e9a06 } /* Literal.String.Escape */
+.highlight .sh { color: #4e9a06 } /* Literal.String.Heredoc */
+.highlight .si { color: #4e9a06 } /* Literal.String.Interpol */
+.highlight .sx { color: #4e9a06 } /* Literal.String.Other */
+.highlight .sr { color: #4e9a06 } /* Literal.String.Regex */
+.highlight .s1 { color: #4e9a06 } /* Literal.String.Single */
+.highlight .ss { color: #4e9a06 } /* Literal.String.Symbol */
+.highlight .bp { color: #3465a4 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #000000 } /* Name.Function.Magic */
+.highlight .vc { color: #000000 } /* Name.Variable.Class */
+.highlight .vg { color: #000000 } /* Name.Variable.Global */
+.highlight .vi { color: #000000 } /* Name.Variable.Instance */
+.highlight .vm { color: #000000 } /* Name.Variable.Magic */
+.highlight .il { color: #0000cf; font-weight: bold } /* Literal.Number.Integer.Long */
+</style>
+</head>
+<body>
+<script>
+var notice = document.getElementById("translation-notice")
+if (localStorage.getItem("translation-notice") === null && notice !== null){
+        notice.style.display = "block"
+}
+</script>
+<nav class="navbar is-dark">
+<div class="navbar-brand"><a class="navbar-item" href="/">
+<div class="cube is-red is-sm" style=
+"display: block; margin: 0 auto; padding-top: 0px;">
+<div class="face front"></div>
+<div class="face side"></div>
+<div class="face top"></div>
+</div>
+Differential Privacy</a> <span class="navbar-burger burger"
+data-target="side-menu" data-toggle="collapse"><span>&nbsp;</span>
+<span>&nbsp;</span> <span>&nbsp;</span></span></div>
+</nav>
+<div class="main">
+<div class="side-menu" id="side-menu" data-toggle-class=
+"is-active">
+<aside class="menu">
+<p class="menu-label" style="text-align:center"><a href="/">
+<div class="cube is-red is-lg" style=
+"display: block; margin: 0 auto; padding-top: 0px;">
+<div class="face front"></div>
+<div class="face side"></div>
+<div class="face top"></div>
+</div>
+Differential Privacy</a></p>
+<ul class="menu-list">
+<li><a href="/">Start</a></li>
+<li><a href="/einfuehrung">Einführung</a></li>
+<li><a href="/kontakt">Kontakt</a></li>
+<li><a href="#" data-toggle="collapse" data-target=
+"menu-language-dropdown">Sprachen</a>
+<ul id="menu-language-dropdown" class="is-hidden">
+<li><a class="" href="/en/introduction">English</a></li>
+<li><a class="is-open is-active" href=
+"/einfuehrung">Deutsch</a></li>
+</ul>
+</li>
+</ul>
+</aside>
+</div>
+<section class="section first">
+<div class="content markdown">
+<h1>Einführung</h1>
+<!--translate:ignore-->
+<script>
+  translations = {"exact": {"calculate-frequencies": {"_t": {"de": "308866d2ae98589b", "en": "308866d2ae98589b"}, "de": "Wir berechnen die H\u00e4ufigkeiten in den Datens\u00e4tzen D und D\u0027", "en": "We calculate the frequencies in data sets D and D\u0027"}, "store-value": {"_t": {"de": "f0b1aea6ec112adf", "en": "f0b1aea6ec112adf"}, "de": "Wir speichern die Ergebnisse im \u0027dp\u0027 Objekt", "en": "We store the results in the \u0027dp\u0027 object"}}, "freq": {"_t": {"de": "0c6de9d1b4e7a921", "en": "0c6de9d1b4e7a921"}, "de": "H\u00e4ufigkeit in D", "en": "Frequency in D"}, "freq-d": {"_t": {"de": "61f9bfa511bd1f32", "en": "61f9bfa511bd1f32"}, "de": "H\u00e4ufigkeit in D\u0027", "en": "Frequency in D\u0027"}, "income": {"_t": {"de": "8099bc894b7dc013", "en": "8099bc894b7dc013"}, "de": "Einkommen", "en": "Income"}, "infinite": {"_t": {"de": "360aa4a91c2c8f7a", "en": "360aa4a91c2c8f7a"}, "de": "unendlich", "en": "infinite"}, "name": {"_t": {"de": "dcd1d5223f73b3a9", "en": "dcd1d5223f73b3a9"}, "de": "Name", "en": "Name"}, "ratio": {"_t": {"de": "ae46664ba67ffee0", "en": "ae46664ba67ffee0"}, "de": "Verh\u00e4ltnis", "en": "Ratio"}, "ratio-with-epsilon": {"_t": {"de": "41cd6b324f228eb4", "en": "41cd6b324f228eb4"}, "de": "Verh\u00e4ltnis (exp(\u03b5))", "en": "Ratio (exp(\u03b5))"}, "result": {"_t": {"de": "9950f5c8dc2cca86", "en": "9950f5c8dc2cca86"}, "de": "Beobachtetes Ergebnis", "en": "Observed result"}};
+  language = 'de'
+</script> <!--translate:ignore-->
+<h1>Unsere Daten</h1>
+<p>Im folgenden nutzen wir Beispieldaten, die das Einkommen
+verschiedener Personen beschreiben.</p>
+<div id="table" data-render=
+"DataTable([...this.data.slice(0,10),{name: '...', income: '...'}])">
+</div>
+<p>Generell repräsentieren wir Daten im Folgenden als einzelne
+Blöcke. Ein roter Block repräsentiert vertrauliche,
+personenbezogene Daten. Ein grüner Block hingegen anonyme oder
+aggregierte Daten ohne vermeintlichen Personenbezug.</p>
+<div id="cubes" data-render="DataCubes(data)"></div>
+<!--translate:ignore-->
+<script type="module">
+  import { renderAll } from '/static/js/render.js';
+  import { random } from '/static/js/stats.js';
+  import { DataTable, DataCubes, Cube, ResultBoxes } from '/static/js/sites/intro.js';
+const firstNames = ['James', 'Robert', 'John', 'Michael', 'Joseph', 'Mary', 'Patricia', 'Jennifer', 'Linda', 'Elizabeth', 'Andreas', 'Christian', 'Thomas', 'Lukas', 'Tristan', 'Isolde', 'Wolfgang', 'Herbert', 'Brunhile']
+const lastNames = ['Meier', 'Müller', 'Schmidt', 'Kachelmann','Weintraut', 'Schwarz', 'Manning', 'Johnson', 'Biden', 'Maurer', 'Kemmerling', 'Gott', 'Liefers', 'Duchrow', 'Lohse']
+const zipCodes = ['66606', '72070', '80331', '10625', '54315', '12421', '92151']
+const randomName = () => `${firstNames[random(firstNames.length)]} ${lastNames[random(lastNames.length)]}`
+const randomZipCode = () => zipCodes[random(zipCodes.length)]
+const randomAge = () => 24+random(40)
+const randomIncome = (age) => 31000+age*500+random(1000)*10-random(1000)*10
+
+  const data = []
+
+  for(let i=0;i<200;i++){
+    const age = randomAge()
+    data.push({
+      income: randomIncome(age),
+      name: randomName(),
+      age: age,
+      zipCode: randomZipCode(),
+    })
+  }
+
+  const differencePoint = data[random(data.length)]
+  const minIncome = Math.floor(differencePoint.income/10000)*10000
+
+  window.dp = {
+    differencePoint: differencePoint,
+    incomeGroup: {
+      min: minIncome,
+      max: minIncome+10000,
+    },
+    data: data,
+    dataD: data.filter(row => row !== differencePoint)
+  }
+
+  renderAll({DataTable, DataCubes, Cube, ResultBoxes, data})
+
+</script> <!--translate:ignore-->
+<h1>Eine erste Statistik</h1>
+<p>Eine der einfachsten Erkenntnisse, die wir aus unseren Daten
+gewinnen können ist die Verteilung der Einkommen der Personen im
+Datensatz. Hierzu bilden wir zunächst Einkommensgruppen.
+Beispielsweise kann eine Gruppe alle Datensätze enthalten die ein
+Einkommen zwischen 50-60 T€ aufweisen. Anschließend zählen wir die
+Anzahl der Datensätze in jeder Gruppe, was der statistischen
+Häufigkeit dieser Gruppe entspricht.</p>
+<!--translate:ignore-->
+<div>\begin{equation} X_g = \sum\limits_{i=1}^N x_i
+\end{equation}</div>
+<!--translate:ignore-->
+<p>wobei $ x _ i = 1 $ falls das Einkommen des Datenpunktes $ i $
+im Bereich der Einkommen aus Gruppe $ g $ liegt $ [E^g _
+\mathrm{min}, E^g _ \mathrm{max}] $, und $ x _ i = 0 $
+andernfalls:</p>
+<!--translate:ignore-->
+<div>\begin{equation} x_i = \left\{\begin{array}{rcl} 1 & , & E_i
+\in [E^g_\mathrm{min},E^g_\mathrm{max}] \\ 0 & , & E_i \notin
+[E^g_\mathrm{min},E^g_\mathrm{max}] \\ \end{array}\right.
+\end{equation}</div>
+<!--translate:ignore-->
+<h2>Umsetzung in Code</h2>
+<!--translate:ignore-->
+<script type="module">
+
+  const { dp } = window;
+    const { data, dataD, incomeGroup } = dp;
+    // Wir berechnen die Häufigkeiten in den Datensätzen D und D'
+    const frequency = (d) => 
+      d.filter(row => row.income >= incomeGroup.min
+                   && row.income < incomeGroup.max).length
+    // Wir speichern die Ergebnisse im 'dp' Objekt
+    dp.exact = {
+      count: frequency(data),
+      countD: frequency(dataD),
+    }
+  
+</script> <!--translate:ignore-->
+ <!--translate:ignore-->
+<div class="highlight">
+<div class="tango">
+<pre><span class="kd">const</span> <span class=
+"p">{</span> <span class="nx">dp</span> <span class=
+"p">}</span> <span class="o">=</span> <span class=
+"nb">window</span><span class="p">;</span>
+    <span class="kd">const</span> <span class=
+"p">{</span> <span class="nx">data</span><span class=
+"p">,</span> <span class="nx">dataD</span><span class=
+"p">,</span> <span class="nx">incomeGroup</span> <span class=
+"p">}</span> <span class="o">=</span> <span class=
+"nx">dp</span><span class="p">;</span>
+    <span class=
+"c1">// Wir berechnen die Häufigkeiten in den Datensätzen D und D'</span>
+    <span class="kd">const</span> <span class=
+"nx">frequency</span> <span class="o">=</span> <span class=
+"p">(</span><span class="nx">d</span><span class=
+"p">)</span> <span class="p">=&gt;</span> 
+      <span class="nx">d</span><span class="p">.</span><span class=
+"nx">filter</span><span class="p">(</span><span class=
+"nx">row</span> <span class="p">=&gt;</span> <span class=
+"nx">row</span><span class="p">.</span><span class=
+"nx">income</span> <span class="o">&gt;=</span> <span class=
+"nx">incomeGroup</span><span class="p">.</span><span class=
+"nx">min</span>
+                   <span class="o">&amp;&</span> <span class=
+"nx">row</span><span class="p">.</span><span class=
+"nx">income</span> <span class="o">&lt;</span> <span class=
+"nx">incomeGroup</span><span class="p">.</span><span class=
+"nx">max</span><span class="p">).</span><span class=
+"nx">length</span>
+    <span class=
+"c1">// Wir speichern die Ergebnisse im 'dp' Objekt</span>
+    <span class="nx">dp</span><span class="p">.</span><span class=
+"nx">exact</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">count</span><span class=
+"o">:</span> <span class="nx">frequency</span><span class=
+"p">(</span><span class="nx">data</span><span class="p">),</span>
+      <span class="nx">countD</span><span class=
+"o">:</span> <span class="nx">frequency</span><span class=
+"p">(</span><span class="nx">dataD</span><span class="p">),</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<!--translate:ignore-->
+<h2>Ergebnis</h2>
+<!--translate:ignore-->
+<div class="chart box" id="result-exact"></div>
+<script type="module">
+  import { barChart } from '/static/js/plotting.js';
+  const { dp } = window;
+  const left = Math.max(0, dp.exact.count - 20)
+  const right = Math.max(0, dp.exact.count + 20)
+  const values = []
+  const ticks = []
+  for(let i=left;i<=right;i++){
+    values.push(0)
+    ticks.push(i)
+  }
+  barChart("result-exact", [values], {xTicks: ticks,blocks: [{x: dp.exact.count, class: 'is-green'}, {x: dp.exact.countD, class: 'is-red'}], height: 50});
+</script> <!--translate:ignore-->
+<h2>Angriff auf die anonymisierten Daten</h2>
+<p>Ein Angreifer, der bis auf einen einzigen Wert $x _ j $ alle
+Datenwerte $x _ i$ kennt, kann aus dem Ergebnis $ X _ g $ leicht
+den fehlenden Wert $ x _ j $ berechnen:</p>
+<!--translate:ignore-->
+<div>\begin{equation} x_j = X_g - \sum\limits_{i \ne j}^N x_i
+\end{equation}</div>
+<!--translate:ignore-->
+<h1>Hinzufügen von Rauschen</h1>
+<p>Um solche Angriffe zu erschweren, könnten wir dem Ergebniswert
+$X_g$ einen Zufallswert $n$ hinzufügen: $ X _ g' = X _ g + n $.
+Dies erschwert dem Angreifer die Schätzung des Ursprungswertes $ x
+_ j $, denn er/sie kennt den hinzugefügten Zufallswert $ n $
+nicht:</p>
+<!--translate:ignore-->
+<div>\begin{equation} x_j = X_g' - \sum\limits_{i \ne j}^N x_i - n
+\end{equation}</div>
+<!--translate:ignore-->
+<p>Allerdings gibt es immer noch Randfälle, bei denen solche
+verrauschten Daten Ursprungswerte preisgeben können. Hierzu ein
+Beispiel: Wir fügen dem Ergebnis von oben einen zufälligen Wert im
+Bereich $[-3, 3]$ hinzu. Wir wiederholen dies und tragen die
+Häufigkeit der beobachteten Werte auf. Wie vorher markieren grüne
+Balken das Ergebnis für den Datensatz $D$, und rote Balken das
+Ergebnis für den Datensatz $D'$.</p>
+<!--translate:ignore-->
+<div class="chart box" id="result-with-noise"></div>
+<script type="module">
+  import { FrequencyTable } from '/static/js/sites/intro.js';
+  import { render } from '/static/js/render.js';
+  import { barChart } from '/static/js/plotting.js';
+  import { random } from '/static/js/stats.js';
+  const { dp } = window;
+  const left = Math.max(0, dp.exact.count - 20)
+  const right = Math.max(0, dp.exact.count + 20)
+  const values = []
+  const valuesD = []
+  const ticks = []
+  for(let i=left;i<=right;i++){
+    values.push(0)
+    valuesD.push(0)
+    ticks.push(i)
+  }
+  const N = 3
+  setInterval(() => {
+    let nv, nvD
+
+    const r = () => {
+      return random(7)-3
+    }
+
+    for(let i=0;i<10;i++){
+      nv = r()+dp.exact.count
+      values[nv-left] += 1
+      nvD = r()+dp.exact.countD
+      valuesD[nvD-left] += 1      
+    }
+    barChart("result-with-noise", [values, valuesD], {classNames: ['is-green', 'is-red'], xTicks: ticks,blocks: [{x: nv, class: 'is-green'}, {x: nvD, class: 'is-red'}], height: 200});
+    render(document.getElementById('frequency-table'), FrequencyTable, {values: ticks, frequencies: values, frequenciesD: valuesD})
+  }, 500);
+</script> <!--translate:ignore-->
+<p>Fällt Ihnen hier ein Problem auf? Nein? Dann schauen Sie mal auf
+die Ränder der Häufigkeitsverteilung: Durch Hinzufügen des
+Differenz-Datensatzes verschiebt sich die
+Wahrscheinlichkeitsverteilung maximal um den Betrag 1 nach rechts
+(falls der Datenpunkt Teil der betrachteten Gruppe ist). D.h.
+beobachtet ein Angreifer den Wert ganz rechts, weiß er/sie sofort,
+dass der gesuchte Datenpunkt in der Gruppe sein muss, und hat damit
+das Einkommen der Person aufgedeckt. Warum? Schauen wir uns dazu
+die Häufigkeiten an:</p>
+<div id="frequency-table"></div>
+<p>Entscheidend für den Angreifer ist das Verhältnis der
+Wahrscheinlichkeiten der beobachteten Werte: Ist ein gegebener Wert
+in $ D $ und $ D' $ gleich wahrscheinlich, kann der Angreifer im
+Besten Fall nur raten, wie der Datenpunkt $ x _ j $ zu dem Ergebnis
+beigetragen hat. Je stärker jedoch das Verhältnis von einer von 1
+abweicht, umso mehr Informationen liefert das beobachtete Ergebnis
+dem Angreifer.</p>
+<p>Das heißt entscheidend für die Sicherheit unserer
+rauschbasierten Anonymisierung ist das minimale (oder maximale)
+Verhältnis der Wahrscheinlichkeiten für einen gegebenen
+Ergebniswert für die beiden Differenzdatensätze $ D $ und $ D'
+$:</p>
+<!--translate:ignore-->
+<div>\begin{equation} \frac{\mathrm{P}(X_g = x|D)}{\mathrm{P}(X_g =
+x|D')} \end{equation}</div>
+<!--translate:ignore-->
+<p>Um den schlimmstmöglichen Fall zu finden, müssen wir dieses
+Wahrscheinlichkeitsverhältnis über alle möglichen Ergebnismengen
+betrachten:</p>
+<!--translate:ignore-->
+<div>\begin{equation} \alpha = \sup\limits_{x} \frac{\mathrm{P}(X_g
+= x|D)}{\mathrm{P}(X_g = x|D')} \end{equation}</div>
+<!--translate:ignore-->
+<p>Je höher der Wert $\alpha$, umso mehr Informationen kann ein
+Angreifer im schlimmsten Fall aus einem beobachteten Ergebniswert
+ableiten. In der Praxis schreiben wir zusätzlich $\alpha =
+\exp{\epsilon}$, da es uns dies ermöglicht, den
+Privatsphäre-Verlust auch für komplexere Fälle abzuschätzen. Oft
+wollen wir nämlich nicht nur eine Statistik veröffentlichen,
+sondern gleiche mehrere. Z.B. könnten wir zu unseren
+Einkommensdaten einen Mittelwert, die oben betrachteten
+Häufigkeiten sowie Quantilwerte veröffentlichen. Jeder einzelne
+Datenpunkt würde dann zu allen dieser Werte beitragen.
+Dementsprechend müssen wir nicht nur das
+Wahrscheinlichkeitsverhältnis für einzelne Werte, sondern für alle
+Werte zusammen betrachten um eine Abschätzung des
+Privatsphäre-Verlustes zu erhalten. Geht unser Datenpunkt z.B. in
+zwei unterschiedliche Werte $X _ g $ und $Y _ g$ ein, könnte ein
+Angreifer wiederum die Wahrscheinlichkeiten für Wertekombinationen
+$(X _ g, Y _ g)$ betrachten. Falls die Werte $X _ g$ und $ Y _ g$
+unabhängig sind, gilt für ihre Wahrscheinlichkeiten</p>
+<!--translate:ignore-->
+<div>\begin{equation} \frac{\mathrm{P}(X_g = x, Y_g =
+y|D)}{\mathrm{P}(X_g = x, Y_g = y|D')} = \frac{\mathrm{P}(X_g =
+x|D)}{\mathrm{P}(X_g = x|D')}\frac{\mathrm{P}(Y_g =
+x|D)}{\mathrm{P}(Y_g = x|D')} \le \alpha^2 = \exp{2\epsilon}
+\end{equation}</div>
+<!--translate:ignore-->
+<p>, unter der Annahme, dass die beiden Wahrscheinlichkeitswerte
+jeweils DP mit Wert $\epsilon$ erfüllen. Für den Fall, dass die
+Werte $X _ g $ und $ Y _ g $ nicht unabhängig sind, bleibt der Wert
+unter der Grenze (der Beweis hiervon ist allerdings etwas
+kompliziert). Der oben definierte Privatshpäre-Verlust ist somit
+additiv, was eine sehr nützliche Eigenschaft ist: Wissen wir, dass
+wir insgesamt $n$ Ergebnisse veröffentlichen wollen die auf einem
+Datenwert $x$ basieren, können wir den maximalen
+Privatsphäre-Verlust einfach als $n\cdot\epsilon$ abschätzen. Wir
+können somit ein <strong>Privatsphäre-Budget</strong> definieren,
+anhand dessen wir unsere Veröffentlichung planen können.</p>
+<h2>Beispiel: Geometrischer Mechanismus</h2>
+<!--translate:ignore-->
+<script type="module">
+
+  const geometricNoise = (epsilon, symmetric) => {
+  let p = Math.exp(-epsilon)
+  let pv = Math.random()
+  if (pv > p) {
+    if (symmetric) {
+      if (Math.random() > 0.5)
+        return 0
+    } else {
+      return 0
+    }
+  }
+  if (p < 1e-6) {
+    return 0
+  }
+  pv = Math.random()
+  let pe = 1.0 - p + p*pv
+  let k = Math.floor(Math.log(1-pe)/Math.log(p))
+  if (symmetric && Math.random() < 0.5) {
+    return -k
+  }
+  return k
+}
+
+const frequencies = {}
+for(let i=0;i<10000;i++){
+  let v = geometricNoise(0.5, true);
+  if (frequencies[v] === undefined)
+    frequencies[v] = 0;
+  frequencies[v]++;
+}
+
+const { dp } = window;
+
+dp.geometricNoise = geometricNoise;
+
+const sf = Object.entries(frequencies).sort((a, b) => a[0]-b[0]);
+
+import { barChart } from '/static/js/plotting.js';
+
+barChart("geometric-noise-example",
+    [sf.map(s => s[1])],
+    {xTicks: sf.map(s => s[0])});
+
+  
+</script> <!--translate:ignore-->
+ <!--translate:ignore-->
+<div class="highlight">
+<div class="tango">
+<pre><span class="kd">const</span> <span class=
+"nx">geometricNoise</span> <span class="o">=</span> <span class=
+"p">(</span><span class="nx">epsilon</span><span class=
+"p">,</span> <span class="nx">symmetric</span><span class=
+"p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class=
+"nx">p</span> <span class="o">=</span> <span class=
+"nb">Math</span><span class="p">.</span><span class=
+"nx">exp</span><span class="p">(</span><span class=
+"o">-</span><span class="nx">epsilon</span><span class="p">)</span>
+  <span class="kd">let</span> <span class=
+"nx">pv</span> <span class="o">=</span> <span class=
+"nb">Math</span><span class="p">.</span><span class=
+"nx">random</span><span class="p">()</span>
+  <span class="k">if</span> <span class="p">(</span><span class=
+"nx">pv</span> <span class="o">&gt;</span> <span class=
+"nx">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class=
+"nx">symmetric</span><span class="p">)</span> <span class=
+"p">{</span>
+      <span class="k">if</span> <span class=
+"p">(</span><span class="nb">Math</span><span class=
+"p">.</span><span class="nx">random</span><span class=
+"p">()</span> <span class="o">&gt;</span> <span class=
+"mf">0.5</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mf">0</span>
+    <span class="p">}</span> <span class=
+"k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="mf">0</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class=
+"nx">p</span> <span class="o">&lt;</span> <span class=
+"mf">1e-6</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mf">0</span>
+  <span class="p">}</span>
+  <span class="nx">pv</span> <span class="o">=</span> <span class=
+"nb">Math</span><span class="p">.</span><span class=
+"nx">random</span><span class="p">()</span>
+  <span class="kd">let</span> <span class=
+"nx">pe</span> <span class="o">=</span> <span class=
+"mf">1.0</span> <span class="o">-</span> <span class=
+"nx">p</span> <span class="o">+</span> <span class=
+"nx">p</span><span class="o">*</span><span class="nx">pv</span>
+  <span class="kd">let</span> <span class=
+"nx">k</span> <span class="o">=</span> <span class=
+"nb">Math</span><span class="p">.</span><span class=
+"nx">floor</span><span class="p">(</span><span class=
+"nb">Math</span><span class="p">.</span><span class=
+"nx">log</span><span class="p">(</span><span class=
+"mf">1</span><span class="o">-</span><span class=
+"nx">pe</span><span class="p">)</span><span class=
+"o">/</span><span class="nb">Math</span><span class=
+"p">.</span><span class="nx">log</span><span class=
+"p">(</span><span class="nx">p</span><span class="p">))</span>
+  <span class="k">if</span> <span class="p">(</span><span class=
+"nx">symmetric</span> <span class="o">&amp;&</span> <span class=
+"nb">Math</span><span class="p">.</span><span class=
+"nx">random</span><span class="p">()</span> <span class=
+"o">&lt;</span> <span class="mf">0.5</span><span class=
+"p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class=
+"o">-</span><span class="nx">k</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">k</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class=
+"nx">frequencies</span> <span class="o">=</span> <span class=
+"p">{}</span>
+<span class="k">for</span><span class="p">(</span><span class=
+"kd">let</span> <span class="nx">i</span><span class=
+"o">=</span><span class="mf">0</span><span class=
+"p">;</span><span class="nx">i</span><span class=
+"o">&lt;</span><span class="mf">10000</span><span class=
+"p">;</span><span class="nx">i</span><span class=
+"o">++</span><span class="p">){</span>
+  <span class="kd">let</span> <span class=
+"nx">v</span> <span class="o">=</span> <span class=
+"nx">geometricNoise</span><span class="p">(</span><span class=
+"mf">0.5</span><span class="p">,</span> <span class=
+"kc">true</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class=
+"nx">frequencies</span><span class="p">[</span><span class=
+"nx">v</span><span class="p">]</span> <span class=
+"o">===</span> <span class="kc">undefined</span><span class=
+"p">)</span>
+    <span class="nx">frequencies</span><span class=
+"p">[</span><span class="nx">v</span><span class=
+"p">]</span> <span class="o">=</span> <span class=
+"mf">0</span><span class="p">;</span>
+  <span class="nx">frequencies</span><span class=
+"p">[</span><span class="nx">v</span><span class=
+"p">]</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="p">{</span> <span class=
+"nx">dp</span> <span class="p">}</span> <span class=
+"o">=</span> <span class="nb">window</span><span class="p">;</span>
+
+<span class="nx">dp</span><span class="p">.</span><span class=
+"nx">geometricNoise</span> <span class="o">=</span> <span class=
+"nx">geometricNoise</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class=
+"nx">sf</span> <span class="o">=</span> <span class=
+"nb">Object</span><span class="p">.</span><span class=
+"nx">entries</span><span class="p">(</span><span class=
+"nx">frequencies</span><span class="p">).</span><span class=
+"nx">sort</span><span class="p">((</span><span class=
+"nx">a</span><span class="p">,</span> <span class=
+"nx">b</span><span class="p">)</span> <span class=
+"p">=&gt;</span> <span class="nx">a</span><span class=
+"p">[</span><span class="mf">0</span><span class=
+"p">]</span><span class="o">-</span><span class=
+"nx">b</span><span class="p">[</span><span class=
+"mf">0</span><span class="p">]);</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class=
+"nx">barChart</span> <span class="p">}</span> <span class=
+"k">from</span> <span class=
+"s1">'/static/js/plotting.js'</span><span class="p">;</span>
+
+<span class="nx">barChart</span><span class=
+"p">(</span><span class="s2">"geometric-noise-example"</span><span class="p">,</span>
+    <span class="p">[</span><span class="nx">sf</span><span class=
+"p">.</span><span class="nx">map</span><span class=
+"p">(</span><span class="nx">s</span> <span class=
+"p">=&gt;</span> <span class="nx">s</span><span class=
+"p">[</span><span class="mf">1</span><span class="p">])],</span>
+    <span class="p">{</span><span class=
+"nx">xTicks</span><span class="o">:</span> <span class=
+"nx">sf</span><span class="p">.</span><span class=
+"nx">map</span><span class="p">(</span><span class=
+"nx">s</span> <span class="p">=&gt;</span> <span class=
+"nx">s</span><span class="p">[</span><span class=
+"mf">0</span><span class="p">])});</span>
+</pre></div>
+</div>
+<!--translate:ignore-->
+<div class="chart sick box" id="geometric-noise-example"></div>
+<!--translate:ignore-->
+<div class="chart box" id="result-with-geometric-noise"></div>
+<script type="module">
+  import { FrequencyTable } from '/static/js/sites/intro.js';
+  import { render } from '/static/js/render.js';
+  import { barChart } from '/static/js/plotting.js';
+  import { random } from '/static/js/stats.js';
+  const { dp } = window;
+  const { geometricNoise } = dp;
+  const left = Math.max(0, dp.exact.count - 20)
+  const right = Math.max(0, dp.exact.count + 20)
+  const values = []
+  const valuesD = []
+  const ticks = []
+  for(let i=left;i<=right;i++){
+    values.push(0)
+    valuesD.push(0)
+    ticks.push(i)
+  }
+  const N = 3
+  const epsilon = 1.0
+  setInterval(() => {
+    let nv, nvD
+    for(let i=0;i<100;i++){
+      nv = geometricNoise(epsilon, true)+dp.exact.count
+      values[nv-left] += 1
+      nvD = geometricNoise(epsilon, true)+dp.exact.countD
+      valuesD[nvD-left] += 1      
+    }
+    barChart("result-with-geometric-noise", [values, valuesD], {classNames: ['is-green', 'is-red'], xTicks: ticks,blocks: [{x: nv, class: 'is-green'}, {x: nvD, class: 'is-red'}], height: 200});
+    render(document.getElementById('frequency-table-geometric'), FrequencyTable, {values: ticks, frequencies: values, frequenciesD: valuesD, epsilon: epsilon})
+  }, 1000);
+</script> <!--translate:ignore-->
+<div id="frequency-table-geometric"></div>
+<h1>Sensitivität</h1>
+</div>
+</section>
+</div>
+<script defer type="text/javascript" src=
+"/static/js/bulma.js"></script>
+</body>
+</html>
