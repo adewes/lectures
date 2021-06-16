@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content=
 "width=device-width, initial-scale=1">
-<title>Differential Privacy | Introduction</title>
+<title>Lectures | Differential Privacy - Introduction</title>
 <link rel="stylesheet" type="text/css" href=
 "/lectures/static/css/main.css">
 <script>
@@ -113,8 +113,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="message is-info">
 <div class="message-body">
 <p>This website was mostly translated automatically from the
-<a href="/lectures/einfuehrung">German version</a>. We apologize
-for any translation errors.</p>
+<a href="/lectures/differential-privacy/einfuehrung">German
+version</a>. We apologize for any translation errors.</p>
 <span class="x" onclick=
 "localStorage.setItem('translation-notice', true);notice.style.display = 'none'">x</span></div>
 </div>
@@ -127,40 +127,38 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
 </script>
 <nav class="navbar is-dark">
 <div class="navbar-brand"><a class="navbar-item" href=
-"/lectures/en">
-<div class="cube is-red is-sm" style=
-"display: block; margin: 0 auto; padding-top: 0px;">
-<div class="face front"></div>
-<div class="face side"></div>
-<div class="face top"></div>
-</div>
-Differential Privacy</a> <span class="navbar-burger burger"
-data-target="side-menu" data-toggle="collapse"><span>&nbsp;</span>
+"/lectures/en"><span class="cube is-red is-sm" style=
+"display: block; margin: 0 auto; padding-top: 0px;"></span>
+Lectures</a> <span class="navbar-burger burger" data-target=
+"side-menu" data-toggle="collapse"><span>&nbsp;</span>
 <span>&nbsp;</span> <span>&nbsp;</span></span></div>
 </nav>
 <div class="main">
 <div class="side-menu" id="side-menu" data-toggle-class=
 "is-active">
 <aside class="menu">
-<p class="menu-label" style="text-align:center"><a href=
-"/lectures/en">
-<div class="cube is-red is-lg" style=
-"display: block; margin: 0 auto; padding-top: 0px;">
-<div class="face front"></div>
-<div class="face side"></div>
-<div class="face top"></div>
-</div>
-Differential Privacy</a></p>
+<p class="menu-label"><a href="/lectures/en"><!--start-->
+ <span class="cube is-red is-lg" style=
+"display: block; margin: 0 auto; padding-top: 0px;"></span> 
+<!--stop-->
+ <span>Lectures</span></a></p>
 <ul class="menu-list">
 <li><a href="/lectures/en">Start</a></li>
-<li><a href="/lectures/en/introduction">Introduction</a></li>
+<li><a class="is-active" href="#" data-toggle="collapse"
+data-target="page-dp-nav">Differential Privacy</a>
+<ul class="" id="page-dp-nav">
+<li><a href=
+"/lectures/en/differential-privacy/introduction">Introduction</a></li>
+</ul>
+</li>
 <li><a href="/lectures/en/contact">Contact</a></li>
 <li><a href="#" data-toggle="collapse" data-target=
 "menu-language-dropdown">Languages</a>
 <ul id="menu-language-dropdown" class="is-hidden">
 <li><a class="is-open is-active" href=
-"/lectures/en/introduction">English</a></li>
-<li><a class="" href="/lectures/einfuehrung">Deutsch</a></li>
+"/lectures/en/differential-privacy/introduction">English</a></li>
+<li><a class="" href=
+"/lectures/differential-privacy/einfuehrung">Deutsch</a></li>
 </ul>
 </li>
 </ul>
@@ -170,7 +168,7 @@ Differential Privacy</a></p>
 <div class="content markdown">
 <h1>Introduction</h1>
 <script>
-  translations = {"exact": {"calculate-frequencies": {"_t": {"de": "308866d2ae98589b", "en": "308866d2ae98589b"}, "de": "Wir berechnen die H\u00e4ufigkeiten in den Datens\u00e4tzen D und D\u0027", "en": "We calculate the frequencies in data sets D and D\u0027"}, "store-value": {"_t": {"de": "f0b1aea6ec112adf", "en": "f0b1aea6ec112adf"}, "de": "Wir speichern die Ergebnisse im \u0027dp\u0027 Objekt", "en": "We store the results in the \u0027dp\u0027 object"}}, "freq": {"_t": {"de": "0c6de9d1b4e7a921", "en": "0c6de9d1b4e7a921"}, "de": "H\u00e4ufigkeit in D", "en": "Frequency in D"}, "freq-d": {"_t": {"de": "61f9bfa511bd1f32", "en": "61f9bfa511bd1f32"}, "de": "H\u00e4ufigkeit in D\u0027", "en": "Frequency in D\u0027"}, "income": {"_t": {"de": "8099bc894b7dc013", "en": "8099bc894b7dc013"}, "de": "Einkommen", "en": "Income"}, "infinite": {"_t": {"de": "360aa4a91c2c8f7a", "en": "360aa4a91c2c8f7a"}, "de": "unendlich", "en": "infinite"}, "name": {"_t": {"de": "dcd1d5223f73b3a9", "en": "dcd1d5223f73b3a9"}, "de": "Name", "en": "Name"}, "ratio": {"_t": {"de": "ae46664ba67ffee0", "en": "ae46664ba67ffee0"}, "de": "Verh\u00e4ltnis", "en": "Ratio"}, "ratio-with-epsilon": {"_t": {"de": "41cd6b324f228eb4", "en": "41cd6b324f228eb4"}, "de": "Verh\u00e4ltnis (exp(\u03b5))", "en": "Ratio (exp(\u03b5))"}, "result": {"_t": {"de": "9950f5c8dc2cca86", "en": "9950f5c8dc2cca86"}, "de": "Beobachtetes Ergebnis", "en": "Observed result"}};
+  translations = {"d": {"title": {"_t": {"de": "c387acb26a61e4c3", "en": "c387acb26a61e4c3"}, "de": "Datensatz $ D $", "en": "Data set $ D $"}}, "dp": {"title": {"_t": {"de": "4bf72bbeeb7bc6b9", "en": "4bf72bbeeb7bc6b9"}, "de": "Datensatz $ D\u0027 $", "en": "Data set $ D\u0027 $"}}, "exact": {"calculate-frequencies": {"_t": {"de": "308866d2ae98589b", "en": "308866d2ae98589b"}, "de": "Wir berechnen die H\u00e4ufigkeiten in den Datens\u00e4tzen D und D\u0027", "en": "We calculate the frequencies in data sets D and D\u0027"}, "calculate-mean": {"_t": {"de": "ac3ef9656fc2c879", "en": "ac3ef9656fc2c879"}, "de": "Wir berechnen den Mittelwert der Einkommen", "en": "We calculate the mean value of the incomes"}, "store-value": {"_t": {"de": "f0b1aea6ec112adf", "en": "f0b1aea6ec112adf"}, "de": "Wir speichern die Ergebnisse im \u0027dp\u0027 Objekt", "en": "We store the results in the \u0027dp\u0027 object"}}, "freq": {"_t": {"de": "0c6de9d1b4e7a921", "en": "0c6de9d1b4e7a921"}, "de": "H\u00e4ufigkeit in D", "en": "Frequency in D"}, "freq-d": {"_t": {"de": "61f9bfa511bd1f32", "en": "61f9bfa511bd1f32"}, "de": "H\u00e4ufigkeit in D\u0027", "en": "Frequency in D\u0027"}, "income": {"_t": {"de": "8099bc894b7dc013", "en": "8099bc894b7dc013"}, "de": "Einkommen", "en": "Income"}, "infinite": {"_t": {"de": "360aa4a91c2c8f7a", "en": "360aa4a91c2c8f7a"}, "de": "unendlich", "en": "infinite"}, "name": {"_t": {"de": "dcd1d5223f73b3a9", "en": "dcd1d5223f73b3a9"}, "de": "Name", "en": "Name"}, "of": {"_t": {"de": "43ce6022b9318e93", "en": "43ce6022b9318e93"}, "de": "von", "en": "of"}, "ratio": {"_t": {"de": "ae46664ba67ffee0", "en": "ae46664ba67ffee0"}, "de": "Verh\u00e4ltnis", "en": "Ratio"}, "ratio-with-epsilon": {"_t": {"de": "41cd6b324f228eb4", "en": "41cd6b324f228eb4"}, "de": "Verh\u00e4ltnis (exp(\u03b5))", "en": "Ratio (exp(\u03b5))"}, "result": {"_t": {"de": "9950f5c8dc2cca86", "en": "9950f5c8dc2cca86"}, "de": "Beobachtetes Ergebnis", "en": "Observed result"}};
   language = 'en'
 </script>
 <h1>Our data</h1>
@@ -179,15 +177,28 @@ different individuals.</p>
 <div id="table" data-render=
 "DataTable([...this.data.slice(0,10),{name: '...', income: '...'}])">
 </div>
-<p>In general, we represent data as individual blocks in the
-following. A red block represents confidential, personal data. A
-green block , on the other hand, represents anonymous or aggregated
-data without any alleged personal reference.</p>
-<div id="cubes" data-render="DataCubes(data)"></div>
+<p>In the following, we represent individual records as individual
+blocks.</p>
+<div style="display: flex; flex-direction: row;">
+<div style="margin-right: 10px;">
+<h2>Data set $ D $</h2>
+<div style="margin-left: 10px;" id="cubes-d" data-render=
+"DataCubes({data, color: 'red'})"></div>
+</div>
+<div>
+<h2>Data set $ D' $</h2>
+<div id="cubes-dp" data-render=
+"DataCubes({data: dataD, color: 'green'})"></div>
+</div>
+</div>
+<h1>Data set $ D' $</h1>
+<p>The data set $ D' $ is identical to the data set $ D $ except
+for a single remote data point . In the following, we call this
+remote data point the difference point.</p>
 <script type="module">
   import { renderAll } from '/lectures/static/js/render.js';
   import { random } from '/lectures/static/js/stats.js';
-  import { DataTable, DataCubes, Cube, ResultBoxes } from '/lectures/static/js/sites/intro.js';
+  import { DataTable, SuccessRate, Literal, DataCubes, Cube } from '/lectures/static/js/sites/intro.js';
 const firstNames = ['James', 'Robert', 'John', 'Michael', 'Joseph', 'Mary', 'Patricia', 'Jennifer', 'Linda', 'Elizabeth', 'Andreas', 'Christian', 'Thomas', 'Lukas', 'Tristan', 'Isolde', 'Wolfgang', 'Herbert', 'Brunhile']
 const lastNames = ['Meier', 'Müller', 'Schmidt', 'Kachelmann','Weintraut', 'Schwarz', 'Manning', 'Johnson', 'Biden', 'Maurer', 'Kemmerling', 'Gott', 'Liefers', 'Duchrow', 'Lohse']
 const zipCodes = ['66606', '72070', '80331', '10625', '54315', '12421', '92151']
@@ -211,6 +222,8 @@ const randomIncome = (age) => 31000+age*500+random(1000)*10-random(1000)*10
   const differencePoint = data[random(data.length)]
   const minIncome = Math.floor(differencePoint.income/10000)*10000
 
+  const dataD = data.filter(row => row !== differencePoint)
+
   window.dp = {
     differencePoint: differencePoint,
     incomeGroup: {
@@ -218,10 +231,10 @@ const randomIncome = (age) => 31000+age*500+random(1000)*10-random(1000)*10
       max: minIncome+10000,
     },
     data: data,
-    dataD: data.filter(row => row !== differencePoint)
+    dataD: dataD,
   }
 
-  renderAll({DataTable, DataCubes, Cube, ResultBoxes, data})
+  renderAll({DataTable, SuccessRate, DataCubes, Literal, n: data.length, Cube, data, dataD})
 
 </script>
 <h1>A first statistic</h1>
@@ -313,7 +326,7 @@ the range of income from group $ g $ $ [E^g _ \mathrm{min}, E^g _
     values.push(0)
     ticks.push(i)
   }
-  barChart("result-exact", [values], {xTicks: ticks,blocks: [{x: dp.exact.count, class: 'is-green'}, {x: dp.exact.countD, class: 'is-red'}], height: 50});
+  barChart("result-exact", [values], {xTicks: ticks,blocks: [{x: dp.exact.count, class: 'is-green'}, {x: dp.exact.countD, class: 'is-red'}], height: 20});
 </script>
 <h2>Attack on the anonymized data</h2>
 <p>An attacker who knows all data values $x _ i$ except for a
@@ -321,6 +334,8 @@ single value $x _ j $ can easily calculate the missing value $ x _
 j $ from the result $ X _ g $:</p>
 <div>\begin{equation} x_j = X_g - \sum\limits_{i \ne j}^N x_i
 \end{equation}</div>
+<div data-render="SuccessRate({trials: 100, successes: 100})">
+</div>
 <h1>Adding noise</h1>
 <p>To make such attacks more difficult, we could add a random value
 $n$ to the result value $X_g$: $ X _ g' = X _ g + n $. This makes
@@ -383,7 +398,8 @@ the observed values: If a given value in $ D $ and $ D' $ is
 equally likely, the attacker can at best only guess how the data
 point $ x _ j $ contributed to the result. However, the more the
 ratio of one differs from 1, the more information the observed
-result provides to the attacker.</p>
+result provides to the attacker. In the above case, the probability
+that an attacker will uncover our data is still 25%!</p>
 <p>That is, crucial to the security of our noise-based
 anonymization is the minimum (or maximum) ratio of the
 probabilities for a given outcome value for the two difference
@@ -448,28 +464,28 @@ budget</strong> against which we can plan our publication.</p>
   }
   return k
 }
-
-const frequencies = {}
-for(let i=0;i<10000;i++){
-  let v = geometricNoise(0.5, true);
-  if (frequencies[v] === undefined)
-    frequencies[v] = 0;
-  frequencies[v]++;
-}
-
-const { dp } = window;
-
-dp.geometricNoise = geometricNoise;
-
-const sf = Object.entries(frequencies).sort((a, b) => a[0]-b[0]);
-
-import { barChart } from '/lectures/static/js/plotting.js';
-
-barChart("geometric-noise-example",
-    [sf.map(s => s[1])],
-    {xTicks: sf.map(s => s[0])});
-
   
+
+  const frequencies = {}
+  for(let i=0;i<10000;i++){
+    let v = geometricNoise(0.5, true);
+    if (frequencies[v] === undefined)
+      frequencies[v] = 0;
+    frequencies[v]++;
+  }
+
+  const { dp } = window;
+
+  dp.geometricNoise = geometricNoise;
+
+  const sf = Object.entries(frequencies).sort((a, b) => a[0]-b[0]);
+
+  import { barChart } from '/lectures/static/js/plotting.js';
+
+  barChart("geometric-noise-example",
+      [sf.map(s => s[1])],
+      {xTicks: sf.map(s => s[0])});
+
 </script>
 <div class="highlight">
 <div class="tango">
@@ -539,84 +555,11 @@ barChart("geometric-noise-example",
   <span class="p">}</span>
   <span class="k">return</span> <span class="nx">k</span>
 <span class="p">}</span>
-
-<span class="kd">const</span> <span class=
-"nx">frequencies</span> <span class="o">=</span> <span class=
-"p">{}</span>
-<span class="k">for</span><span class="p">(</span><span class=
-"kd">let</span> <span class="nx">i</span><span class=
-"o">=</span><span class="mf">0</span><span class=
-"p">;</span><span class="nx">i</span><span class=
-"o">&lt;</span><span class="mf">10000</span><span class=
-"p">;</span><span class="nx">i</span><span class=
-"o">++</span><span class="p">){</span>
-  <span class="kd">let</span> <span class=
-"nx">v</span> <span class="o">=</span> <span class=
-"nx">geometricNoise</span><span class="p">(</span><span class=
-"mf">0.5</span><span class="p">,</span> <span class=
-"kc">true</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class=
-"nx">frequencies</span><span class="p">[</span><span class=
-"nx">v</span><span class="p">]</span> <span class=
-"o">===</span> <span class="kc">undefined</span><span class=
-"p">)</span>
-    <span class="nx">frequencies</span><span class=
-"p">[</span><span class="nx">v</span><span class=
-"p">]</span> <span class="o">=</span> <span class=
-"mf">0</span><span class="p">;</span>
-  <span class="nx">frequencies</span><span class=
-"p">[</span><span class="nx">v</span><span class=
-"p">]</span><span class="o">++</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="p">{</span> <span class=
-"nx">dp</span> <span class="p">}</span> <span class=
-"o">=</span> <span class="nb">window</span><span class="p">;</span>
-
-<span class="nx">dp</span><span class="p">.</span><span class=
-"nx">geometricNoise</span> <span class="o">=</span> <span class=
-"nx">geometricNoise</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class=
-"nx">sf</span> <span class="o">=</span> <span class=
-"nb">Object</span><span class="p">.</span><span class=
-"nx">entries</span><span class="p">(</span><span class=
-"nx">frequencies</span><span class="p">).</span><span class=
-"nx">sort</span><span class="p">((</span><span class=
-"nx">a</span><span class="p">,</span> <span class=
-"nx">b</span><span class="p">)</span> <span class=
-"p">=&gt;</span> <span class="nx">a</span><span class=
-"p">[</span><span class="mf">0</span><span class=
-"p">]</span><span class="o">-</span><span class=
-"nx">b</span><span class="p">[</span><span class=
-"mf">0</span><span class="p">]);</span>
-
-<span class="k">import</span> <span class="p">{</span> <span class=
-"nx">barChart</span> <span class="p">}</span> <span class=
-"k">from</span> <span class=
-"s1">'/lectures/static/js/plotting.js'</span><span class=
-"p">;</span>
-
-<span class="nx">barChart</span><span class=
-"p">(</span><span class="s2">"geometric-noise-example"</span><span class="p">,</span>
-    <span class="p">[</span><span class="nx">sf</span><span class=
-"p">.</span><span class="nx">map</span><span class=
-"p">(</span><span class="nx">s</span> <span class=
-"p">=&gt;</span> <span class="nx">s</span><span class=
-"p">[</span><span class="mf">1</span><span class="p">])],</span>
-    <span class="p">{</span><span class=
-"nx">xTicks</span><span class="o">:</span> <span class=
-"nx">sf</span><span class="p">.</span><span class=
-"nx">map</span><span class="p">(</span><span class=
-"nx">s</span> <span class="p">=&gt;</span> <span class=
-"nx">s</span><span class="p">[</span><span class=
-"mf">0</span><span class="p">])});</span>
 </pre></div>
 </div>
-<div class="chart sick box" id="geometric-noise-example"></div>
-<div class="chart box" id="result-with-geometric-noise"></div>
+<div class="chart box" id="geometric-noise-example"></div>
 <script type="module">
-  import { FrequencyTable } from '/lectures/static/js/sites/intro.js';
+  import { FrequencyTable, SuccessRate, Epsilon } from '/lectures/static/js/sites/intro.js';
   import { render } from '/lectures/static/js/render.js';
   import { barChart } from '/lectures/static/js/plotting.js';
   import { random } from '/lectures/static/js/stats.js';
@@ -624,30 +567,196 @@ barChart("geometric-noise-example",
   const { geometricNoise } = dp;
   const left = Math.max(0, dp.exact.count - 20)
   const right = Math.max(0, dp.exact.count + 20)
-  const values = []
-  const valuesD = []
-  const ticks = []
-  for(let i=left;i<=right;i++){
-    values.push(0)
-    valuesD.push(0)
-    ticks.push(i)
+  let values = []
+  let valuesD = []
+  let ticks = []
+  let successes = 0
+  let epsilon = 0.2
+  let trials = 0
+
+  const reset = () => {
+
+    values = []
+    valuesD = []
+    ticks = []
+    successes = 0
+    trials = 0
+
+    for(let i=left;i<=right;i++){
+      values.push(0)
+      valuesD.push(0)
+      ticks.push(i)
+    }
+
+    window.tests = {
+      values: values,
+      valuesD: valuesD,
+      ticks: ticks,
+    }
+
   }
+
+  window.epsilonChanged = (e) => {
+    epsilon = e.target.value
+    reset()
+  }
+
+  reset()
+
   const N = 3
-  const epsilon = 1.0
   setInterval(() => {
     let nv, nvD
-    for(let i=0;i<100;i++){
-      nv = geometricNoise(epsilon, true)+dp.exact.count
-      values[nv-left] += 1
-      nvD = geometricNoise(epsilon, true)+dp.exact.countD
-      valuesD[nvD-left] += 1      
+    let n = 0
+    while(true){
+      nv = geometricNoise(epsilon, true)
+      nvD = geometricNoise(epsilon, true)
+      if (Math.abs(nv) > 20 || Math.abs(nvD) > 20)
+        continue // we do not count unplottable values
+      values[nv-left+dp.exact.count] += 1
+      valuesD[nvD-left+dp.exact.countD] += 1
+      trials++
+      if (nv+dp.exact.count >= nvD + dp.exact.countD){
+        // an attacker would estimate "yes" if the x > x', no otherwise
+        successes++
+      }
+      if (n++ > 10)
+        break
     }
-    barChart("result-with-geometric-noise", [values, valuesD], {classNames: ['is-green', 'is-red'], xTicks: ticks,blocks: [{x: nv, class: 'is-green'}, {x: nvD, class: 'is-red'}], height: 200});
+
+    barChart("result-with-geometric-noise", [values, valuesD], {classNames: ['is-green', 'is-red'], xTicks: ticks,blocks: [{x: nv+dp.exact.count, class: 'is-green'}, {x: nvD+dp.exact.countD, class: 'is-red'}], height: 200});
     render(document.getElementById('frequency-table-geometric'), FrequencyTable, {values: ticks, frequencies: values, frequenciesD: valuesD, epsilon: epsilon})
+    render(document.getElementById('success-rate'), SuccessRate, {trials: trials, successes: successes})
+    render(document.getElementById('epsilon'), Epsilon, {epsilon: epsilon})
   }, 1000);
 </script>
+<h3>Epsilon</h3>
+<p>Change the value of $ \epsilon $ to get a sense of how the
+parameter affects the accuracy of the result values and the
+likelihood of success for an attacker. In general, the smaller $
+\epsilon $, the lower the potential privacy loss for victims, but
+the higher the standard deviation of the resulting data.</p>
+<p><input type="range" min="0.05" max="10.0" step="0.1" value="0.2"
+onchange="epsilonChanged(event)"> <span id="epsilon"></span></p>
+<div class="chart box" id="result-with-geometric-noise"></div>
 <div id="frequency-table-geometric"></div>
+<div id="success-rate"></div>
 <h1>Sensitivity</h1>
+<p>In our example above, adding a data point to our data set
+changed the result by at most an amount of 1 (since we were
+calculating frequencies). But what if we want to calculate a
+function where a single data point has a larger effect on the
+result? For example, we might be interested in the mean, which is
+calculated as</p>
+<div>\begin{equation} \bar{E} = \frac{1}{N}\sum\limits_{i=1}^N e_i
+\end{equation}</div>
+<p>where $e _ i$ is the respective income of a person. The extent
+to which a single data point for this function can influence the
+result depends on the one hand on the possible range of values (in
+this case the possible salary range), and on the other hand on the
+number of data points $N$. If $e _ \mathrm{max}$ is the maximum
+salary to be considered, the <strong>sensitivity of</strong> the
+mean value $\bar{E}$ is therefore</p>
+<p>\begin{equation} \mathcal{S}(\bar{E}) = \frac{e_\mathrm{max}}{N}
+\end{equation}</p>
+<p>Our dataset has entries. If we assume a maximum income of
+100,000 €, the sensitivity is $\mathcal{S}(\bar{E}) = $ . To
+protect the mean using differential privacy, we would actually need
+a different mechanism, since the value is reel and the geometric
+mechanism can only be applied to discrete data. However, we can
+discretize the mean to be able to process it using the mechanism.
+If we choose the discretization interval identical to the
+sensitivity $\mathcal{S}$, we do not need to modify our mechanism
+above. If we want greater accuracy, we need to modify the mechanism
+accordingly.</p>
+<script type="module">
+
+  const { dp } = window;
+    const { data, dataD, incomeGroup } = dp;
+
+    // We calculate the mean value of the incomes
+const mean = (d, min, max) => {
+  if (d.length === 0)
+    throw 'empty list received'
+  let m = 0
+  d.forEach(row => {
+    if (row.income < min || row.income > max)
+      throw 'out of bounds value detected'
+    m += row.income
+  })
+  return m/d.length
+}
+  
+
+    dp.exact = {
+      ...dp.exact,
+      mean: mean(data),
+      meanD: mean(dataD),
+    }
+</script>
+<div class="highlight">
+<div class="tango">
+<pre><span class=
+"c1">// We calculate the mean value of the incomes</span>
+<span class="kd">const</span> <span class=
+"nx">mean</span> <span class="o">=</span> <span class=
+"p">(</span><span class="nx">d</span><span class=
+"p">,</span> <span class="nx">min</span><span class=
+"p">,</span> <span class="nx">max</span><span class=
+"p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class=
+"nx">d</span><span class="p">.</span><span class=
+"nx">length</span> <span class="o">===</span> <span class=
+"mf">0</span><span class="p">)</span>
+    <span class="k">throw</span> <span class=
+"s1">'empty list received'</span>
+  <span class="kd">let</span> <span class=
+"nx">m</span> <span class="o">=</span> <span class="mf">0</span>
+  <span class="nx">d</span><span class="p">.</span><span class=
+"nx">forEach</span><span class="p">(</span><span class=
+"nx">row</span> <span class="p">=&gt;</span> <span class=
+"p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class=
+"nx">row</span><span class="p">.</span><span class=
+"nx">income</span> <span class="o">&lt;</span> <span class=
+"nx">min</span> <span class="o">||</span> <span class=
+"nx">row</span><span class="p">.</span><span class=
+"nx">income</span> <span class="o">&gt;</span> <span class=
+"nx">max</span><span class="p">)</span>
+      <span class="k">throw</span> <span class=
+"s1">'out of bounds value detected'</span>
+    <span class="nx">m</span> <span class=
+"o">+=</span> <span class="nx">row</span><span class=
+"p">.</span><span class="nx">income</span>
+  <span class="p">})</span>
+  <span class="k">return</span> <span class=
+"nx">m</span><span class="o">/</span><span class=
+"nx">d</span><span class="p">.</span><span class="nx">length</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<h1>Further topics</h1>
+<h2>Testing DP mechanisms</h2>
+<script type="module">
+
+  import { render } from '/lectures/static/js/render.js';
+  import { barChart } from '/lectures/static/js/plotting.js';
+
+  setInterval(() =&gt; {
+    const testStatistic = [];
+    const { tests } = window;
+    const { values, valuesD, ticks } = tests;
+    for(let i=0;i&lt;values.length;i++){
+      const ratio = valuesi/valuesDi
+      if (isNaN(ratio) || !isFinite(ratio))
+        testStatistic.push(0)
+      else
+        testStatistic.push(ratio)
+    }
+    barChart("test-statistic", [testStatistic], {hLines: [{y: 1.0, width: 3, color: '#000', style: 'dotted'}], xTicks: ticks, height: 200});    
+  }, 1000)
+</script>
+<div class="chart box" id="test-statistic"></div>
+<h2>Attacking DP mechanisms</h2>
 </div>
 </section>
 </div>

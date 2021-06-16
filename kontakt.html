@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content=
 "width=device-width, initial-scale=1">
-<title>Differential Privacy | Kontakt</title>
+<title>Vorlesungen | Kontakt</title>
 <link rel="stylesheet" type="text/css" href=
 "/lectures/static/css/main.css">
 <script>
@@ -116,33 +116,31 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
 }
 </script>
 <nav class="navbar is-dark">
-<div class="navbar-brand"><a class="navbar-item" href="/lectures">
-<div class="cube is-red is-sm" style=
-"display: block; margin: 0 auto; padding-top: 0px;">
-<div class="face front"></div>
-<div class="face side"></div>
-<div class="face top"></div>
-</div>
-Differential Privacy</a> <span class="navbar-burger burger"
-data-target="side-menu" data-toggle="collapse"><span>&nbsp;</span>
+<div class="navbar-brand"><a class="navbar-item" href=
+"/lectures"><span class="cube is-red is-sm" style=
+"display: block; margin: 0 auto; padding-top: 0px;"></span>
+Vorlesungen</a> <span class="navbar-burger burger" data-target=
+"side-menu" data-toggle="collapse"><span>&nbsp;</span>
 <span>&nbsp;</span> <span>&nbsp;</span></span></div>
 </nav>
 <div class="main">
 <div class="side-menu" id="side-menu" data-toggle-class=
 "is-active">
 <aside class="menu">
-<p class="menu-label" style="text-align:center"><a href=
-"/lectures">
-<div class="cube is-red is-lg" style=
-"display: block; margin: 0 auto; padding-top: 0px;">
-<div class="face front"></div>
-<div class="face side"></div>
-<div class="face top"></div>
-</div>
-Differential Privacy</a></p>
+<p class="menu-label"><a href="/lectures"><!--start-->
+ <span class="cube is-red is-lg" style=
+"display: block; margin: 0 auto; padding-top: 0px;"></span> 
+<!--stop-->
+ <span>Vorlesungen</span></a></p>
 <ul class="menu-list">
 <li><a href="/lectures">Start</a></li>
-<li><a href="/lectures/einfuehrung">Einführung</a></li>
+<li><a class="" href="#" data-toggle="collapse" data-target=
+"page-dp-nav">Differential Privacy</a>
+<ul class="is-hidden" id="page-dp-nav">
+<li><a href=
+"/lectures/differential-privacy/einfuehrung">Einführung</a></li>
+</ul>
+</li>
 <li><a href="/lectures/kontakt">Kontakt</a></li>
 <li><a href="#" data-toggle="collapse" data-target=
 "menu-language-dropdown">Sprachen</a>

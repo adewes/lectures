@@ -5,25 +5,36 @@ export const BarChart = ({min, max}) => {
     return ''
 }
 
-export const ResultBoxes = ({min, max, values}) => {
-    const boxes = []
-    const d = 20;
-    for(let i=min;i<=max;i++){
-        const left = (i-min)*d;
-        boxes.push(`<li style="left: ${left}px; width:${d} height:${d}">${i}</li>`)
-    }
-    return `<ul class="result-boxes">
-        ${boxes.join(" ")}
-    </ul>`
+export const Epsilon = ({epsilon}) => {
+    return `${epsilon}`
+}
+
+export const SuccessRate = ({trials, successes}) => {
+    const percentage = Math.floor(successes/trials*1000)/10.0
+    let leftText = '', rightText = ''
+    const text = `&nbsp; ${percentage} % (${successes} ${t('of')} ${trials})`
+    if (percentage < 50)
+        rightText = text
+    else
+        leftText = text
+    return `
+    <div class="box success-rate">
+        <span style="width: ${percentage}%">${leftText}</span>
+        <span style="width: ${100-percentage}%">${rightText}</span>
+    </div>
+    `
+    return `Success rate: ${successes} of ${trials} (${percentage})`
 }
 
 
-export const DataCubes = data => {
-    const cubes = data.map(() => Cube({size: 'sm', color: 'red'}))
+export const DataCubes = ({data, color = 'red'}) => {
+    const cubes = data.map(() => Cube({size: 'xs', color: color}))
     return `
         ${cubes.join(' ')}
     `
 }
+
+export const Literal = (l) => `${l}`
 
 export const Cube = ({size = 'sm', color = 'red'}) => {
     return `<div class="cube is-${color} is-${size}">
@@ -37,7 +48,7 @@ export const Cube = ({size = 'sm', color = 'red'}) => {
 const DataRow = row => `
     <tr>
         <td>
-            ${Cube({size: "sm"})}
+            ${Cube({size: "xs", color: "grey"})}
         </td>
         <td>
             ${row.name}

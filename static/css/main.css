@@ -1,5 +1,15 @@
-/* open-sans-300 - latin */
+/* noto-sans-regular - latin */
 @import url(../css/bulma.min.css);
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/noto-sans-v12-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../fonts/noto-sans-v12-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/noto-sans-v12-latin-regular.woff2") format("woff2"), url("../fonts/noto-sans-v12-latin-regular.woff") format("woff"), url("../fonts/noto-sans-v12-latin-regular.ttf") format("truetype"), url("../fonts/noto-sans-v12-latin-regular.svg#NotoSans") format("svg");
+  /* Legacy iOS */ }
+
+/* open-sans-300 - latin */
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -323,19 +333,6 @@ div.sequence-container {
 .chart span.refbar {
   background: #aaa; }
 
-ul.result-boxes {
-  width: 100%;
-  list-style: none;
-  margin: 0;
-  position: relative;
-  padding: 0; }
-  ul.result-boxes li {
-    position: absolute;
-    background: #eee;
-    margin: 0;
-    padding: 0;
-    display: inline-block; }
-
 .cube {
   overflow: hidden;
   display: inline-block; }
@@ -343,6 +340,7 @@ ul.result-boxes {
     width: 24px;
     height: 24px; }
     .cube.is-xs .face {
+      display: block;
       transform-origin: 0 0;
       position: absolute;
       width: 9.9px;
@@ -360,6 +358,7 @@ ul.result-boxes {
     width: 48px;
     height: 48px; }
     .cube.is-sm .face {
+      display: block;
       transform-origin: 0 0;
       position: absolute;
       width: 19.8px;
@@ -377,6 +376,7 @@ ul.result-boxes {
     width: 96px;
     height: 96px; }
     .cube.is-md .face {
+      display: block;
       transform-origin: 0 0;
       position: absolute;
       width: 39.6px;
@@ -394,6 +394,7 @@ ul.result-boxes {
     width: 192px;
     height: 192px; }
     .cube.is-lg .face {
+      display: block;
       transform-origin: 0 0;
       position: absolute;
       width: 79.2px;
@@ -411,6 +412,7 @@ ul.result-boxes {
     width: 384px;
     height: 384px; }
     .cube.is-xl .face {
+      display: block;
       transform-origin: 0 0;
       position: absolute;
       width: 158.4px;
@@ -436,6 +438,25 @@ ul.result-boxes {
     background: #7eb; }
   .cube.is-green .face.side {
     background: #6fa; }
+  .cube.is-grey .face.front {
+    background: #eee; }
+  .cube.is-grey .face.top {
+    background: #aaa; }
+  .cube.is-grey .face.side {
+    background: #bbb; }
+
+ul.result-boxes {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  position: relative;
+  padding: 0; }
+  ul.result-boxes li {
+    position: absolute;
+    background: #eee;
+    margin: 0;
+    padding: 0;
+    display: inline-block; }
 
 table.frequency-table tr td:first-child, table.frequency-table tr th:first-child {
   text-align: right;
@@ -447,6 +468,22 @@ table.frequency-table tr td.is-excessive {
 
 table.frequency-table tr td.is-ok {
   background: #9fa; }
+
+.success-rate {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; }
+  .success-rate span {
+    display: inline-block;
+    color: #fff;
+    flex-grow: 0; }
+  .success-rate span:first-child {
+    background: #e53; }
+  .success-rate span:nth-child(2) {
+    color: #000;
+    background: #9fa; }
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -468,6 +505,10 @@ body {
   margin-top: 30px; }
   .content h1:not(:first-child), .content h2:not(:first-child), .content h3:not(:first-child), .content h4:not(:first-child), .content h5:not(:first-child), .content h6:not(:first-child) {
     margin-top: 40px; }
+
+p {
+  margin-top: 20px;
+  margin-bottom: 10px; }
 
 h1,
 h2,
@@ -536,7 +577,10 @@ pre, code {
   font-family: Source Code Pro, monospace;
   font-weight: 400;
   background: #fafafa;
-  font-size: 0.9rem; }
+  font-size: 20px; }
+  @media (max-width: 1024px) {
+    pre, code {
+      font-size: 16px; } }
 
 @media (min-width: 1024px) {
   .main {
