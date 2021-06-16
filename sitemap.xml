@@ -3,12 +3,12 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://adewes.github.io/dp-lecture/einfuehrung</loc>
+    <loc>https://adewes.github.io/dp-lecture/lectures</loc>
   </url>
   <url>
-    <loc>https://adewes.github.io/dp-lecture/kontakt</loc>
+    <loc>https://adewes.github.io/dp-lecture/lectures/kontakt</loc>
   </url>
   <url>
-    <loc>https://adewes.github.io/dp-lecture/</loc>
+    <loc>https://adewes.github.io/dp-lecture/lectures/einfuehrung</loc>
   </url>
 </urlset>

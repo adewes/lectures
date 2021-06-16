@@ -8,7 +8,8 @@
 <meta name="viewport" content=
 "width=device-width, initial-scale=1">
 <title>Differential Privacy | Introduction</title>
-<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+<link rel="stylesheet" type="text/css" href=
+"/lectures/static/css/main.css">
 <script>
   window.MathJax = {
     tex: {
@@ -20,8 +21,8 @@
     }
   };
 </script>
-<script src="/static/js/mathjax/tex-chtml.js" id="MathJax-script"
-async></script>
+<script src="/lectures/static/js/mathjax/tex-chtml.js" id=
+"MathJax-script" async></script>
 <style type="text/css">
 pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -112,8 +113,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="message is-info">
 <div class="message-body">
 <p>This website was mostly translated automatically from the
-<a href="/einfuehrung">German version</a>. We apologize for any
-translation errors.</p>
+<a href="/lectures/einfuehrung">German version</a>. We apologize
+for any translation errors.</p>
 <span class="x" onclick=
 "localStorage.setItem('translation-notice', true);notice.style.display = 'none'">x</span></div>
 </div>
@@ -125,7 +126,8 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
 }
 </script>
 <nav class="navbar is-dark">
-<div class="navbar-brand"><a class="navbar-item" href="/en">
+<div class="navbar-brand"><a class="navbar-item" href=
+"/lectures/en">
 <div class="cube is-red is-sm" style=
 "display: block; margin: 0 auto; padding-top: 0px;">
 <div class="face front"></div>
@@ -140,7 +142,8 @@ data-target="side-menu" data-toggle="collapse"><span>&nbsp;</span>
 <div class="side-menu" id="side-menu" data-toggle-class=
 "is-active">
 <aside class="menu">
-<p class="menu-label" style="text-align:center"><a href="/en">
+<p class="menu-label" style="text-align:center"><a href=
+"/lectures/en">
 <div class="cube is-red is-lg" style=
 "display: block; margin: 0 auto; padding-top: 0px;">
 <div class="face front"></div>
@@ -149,15 +152,15 @@ data-target="side-menu" data-toggle="collapse"><span>&nbsp;</span>
 </div>
 Differential Privacy</a></p>
 <ul class="menu-list">
-<li><a href="/en">Start</a></li>
-<li><a href="/en/introduction">Introduction</a></li>
-<li><a href="/en/contact">Contact</a></li>
+<li><a href="/lectures/en">Start</a></li>
+<li><a href="/lectures/en/introduction">Introduction</a></li>
+<li><a href="/lectures/en/contact">Contact</a></li>
 <li><a href="#" data-toggle="collapse" data-target=
 "menu-language-dropdown">Languages</a>
 <ul id="menu-language-dropdown" class="is-hidden">
 <li><a class="is-open is-active" href=
-"/en/introduction">English</a></li>
-<li><a class="" href="/einfuehrung">Deutsch</a></li>
+"/lectures/en/introduction">English</a></li>
+<li><a class="" href="/lectures/einfuehrung">Deutsch</a></li>
 </ul>
 </li>
 </ul>
@@ -182,9 +185,9 @@ green block , on the other hand, represents anonymous or aggregated
 data without any alleged personal reference.</p>
 <div id="cubes" data-render="DataCubes(data)"></div>
 <script type="module">
-  import { renderAll } from '/static/js/render.js';
-  import { random } from '/static/js/stats.js';
-  import { DataTable, DataCubes, Cube, ResultBoxes } from '/static/js/sites/intro.js';
+  import { renderAll } from '/lectures/static/js/render.js';
+  import { random } from '/lectures/static/js/stats.js';
+  import { DataTable, DataCubes, Cube, ResultBoxes } from '/lectures/static/js/sites/intro.js';
 const firstNames = ['James', 'Robert', 'John', 'Michael', 'Joseph', 'Mary', 'Patricia', 'Jennifer', 'Linda', 'Elizabeth', 'Andreas', 'Christian', 'Thomas', 'Lukas', 'Tristan', 'Isolde', 'Wolfgang', 'Herbert', 'Brunhile']
 const lastNames = ['Meier', 'Müller', 'Schmidt', 'Kachelmann','Weintraut', 'Schwarz', 'Manning', 'Johnson', 'Biden', 'Maurer', 'Kemmerling', 'Gott', 'Liefers', 'Duchrow', 'Lohse']
 const zipCodes = ['66606', '72070', '80331', '10625', '54315', '12421', '92151']
@@ -300,7 +303,7 @@ the range of income from group $ g $ $ [E^g _ \mathrm{min}, E^g _
 <h2>Result</h2>
 <div class="chart box" id="result-exact"></div>
 <script type="module">
-  import { barChart } from '/static/js/plotting.js';
+  import { barChart } from '/lectures/static/js/plotting.js';
   const { dp } = window;
   const left = Math.max(0, dp.exact.count - 20)
   const right = Math.max(0, dp.exact.count + 20)
@@ -333,10 +336,10 @@ mark the result for the data set $D$, and red bars mark the result
 for the data set $D'$.</p>
 <div class="chart box" id="result-with-noise"></div>
 <script type="module">
-  import { FrequencyTable } from '/static/js/sites/intro.js';
-  import { render } from '/static/js/render.js';
-  import { barChart } from '/static/js/plotting.js';
-  import { random } from '/static/js/stats.js';
+  import { FrequencyTable } from '/lectures/static/js/sites/intro.js';
+  import { render } from '/lectures/static/js/render.js';
+  import { barChart } from '/lectures/static/js/plotting.js';
+  import { random } from '/lectures/static/js/stats.js';
   const { dp } = window;
   const left = Math.max(0, dp.exact.count - 20)
   const right = Math.max(0, dp.exact.count + 20)
@@ -460,7 +463,7 @@ dp.geometricNoise = geometricNoise;
 
 const sf = Object.entries(frequencies).sort((a, b) => a[0]-b[0]);
 
-import { barChart } from '/static/js/plotting.js';
+import { barChart } from '/lectures/static/js/plotting.js';
 
 barChart("geometric-noise-example",
     [sf.map(s => s[1])],
@@ -591,7 +594,8 @@ barChart("geometric-noise-example",
 <span class="k">import</span> <span class="p">{</span> <span class=
 "nx">barChart</span> <span class="p">}</span> <span class=
 "k">from</span> <span class=
-"s1">'/static/js/plotting.js'</span><span class="p">;</span>
+"s1">'/lectures/static/js/plotting.js'</span><span class=
+"p">;</span>
 
 <span class="nx">barChart</span><span class=
 "p">(</span><span class="s2">"geometric-noise-example"</span><span class="p">,</span>
@@ -612,10 +616,10 @@ barChart("geometric-noise-example",
 <div class="chart sick box" id="geometric-noise-example"></div>
 <div class="chart box" id="result-with-geometric-noise"></div>
 <script type="module">
-  import { FrequencyTable } from '/static/js/sites/intro.js';
-  import { render } from '/static/js/render.js';
-  import { barChart } from '/static/js/plotting.js';
-  import { random } from '/static/js/stats.js';
+  import { FrequencyTable } from '/lectures/static/js/sites/intro.js';
+  import { render } from '/lectures/static/js/render.js';
+  import { barChart } from '/lectures/static/js/plotting.js';
+  import { random } from '/lectures/static/js/stats.js';
   const { dp } = window;
   const { geometricNoise } = dp;
   const left = Math.max(0, dp.exact.count - 20)
@@ -648,6 +652,6 @@ barChart("geometric-noise-example",
 </section>
 </div>
 <script defer type="text/javascript" src=
-"/static/js/bulma.js"></script>
+"/lectures/static/js/bulma.js"></script>
 </body>
 </html>
