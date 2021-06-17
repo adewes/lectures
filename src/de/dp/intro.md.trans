@@ -240,6 +240,9 @@
 2a71a904e39b4d11:
   de: '      return k'
   en: '      return k'
+2b1c96af70df6315:
+  de: '        ratio = 1.0/ratio'
+  en: '        ratio = 1.0/ratio'
 2b431bf2a54791fc:
   de: >-
     Um solche Angriffe zu erschweren, könnten wir dem Ergebniswert
@@ -385,6 +388,9 @@
     Change the value of $ \epsilon $ to get a feel for how the
     parameter affects the accuracy of the result values and the
     likelihood of success for an attacker.
+3f389450b1d1a143:
+  de: '      let ratio = values[i]/valuesD[i]'
+  en: '      let ratio = valuesi/valuesDi'
 3f9b8761709a61ae:
   de: >-
     \frac{\mathrm{P}(X_g = x, Y_g = y|D)}{\mathrm{P}(X_g = x,
@@ -666,6 +672,9 @@
 7a7654e20e8ef7be:
   de: '      let k'
   en: '      let k'
+7b712881ca90da61:
+  de: '      ratio /= Math.exp(tests.epsilon)'
+  en: '      ratio /= Math.exp(tests.epsilon)'
 7b95a494fd251ebd:
   de: '  renderAll({DataTable, DataCubes, data})'
   en: '  renderAll({DataTable, DataCubes, data})'
@@ -920,6 +929,9 @@ b5542137ad385324:
   en: >-
     In the following, we use sample data describing the income
     of different individuals.
+b63b8a5681f1a5f9:
+  de: '    const { tests, dp } = window;'
+  en: '    const { tests, dp } = window;'
 b6582bc89c437f7a:
   de: >-
     Um solche Angriffe zu erschweren, könnten wir dem Ergebniswert
@@ -957,6 +969,9 @@ baf8dc953dd75acc:
 bb3a2f29e76e0d75:
   de: '  renderAll(window)'
   en: '  renderAll(window)'
+bb3f83ee7e4e74c1:
+  de: '      ratio /= Math.exp(dp.epsilon)'
+  en: '      ratio /= Math.exp(dp.epsilon)'
 bb66fb83595ecb94:
   de: \begin{equation}
   en: \begin {equation}
@@ -969,6 +984,9 @@ bcbb160baf203da1:
 bd3f431598a5da84:
   de: '# Sensitivität'
   en: '# Sensitivity'
+bdc27341a40113ae:
+  de: '      if (ratio < 1.0)'
+  en: '      if (ratio &lt; 1.0)'
 bdce37206febeba8:
   de: <div id="table"></div>
   en: <div id="table"></div>
@@ -1196,6 +1214,12 @@ df1e3988f3b18a4e:
 df61298ef1831b17:
   de: '    const frequency = (d) => '
   en: '    const frequency = (d) =&gt; '
+df6bf0fc42ae5358:
+  de: '    console.log(dp)'
+  en: '    console.log(dp)'
+e132f77714c6ba07:
+  de: '    console.log(tests)'
+  en: '    console.log(tests)'
 e13c0703cbfd1b70:
   de: '  x_j = X_g'' - \sum\limits_{i \ne j}^N x_i - n'
   en: '  x_j = X_g'' - \sum\limits_{i \ne j}^N x_i - n'

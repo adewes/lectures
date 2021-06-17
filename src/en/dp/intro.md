@@ -359,6 +359,7 @@ const geometricNoise = (epsilon, symmetric) => {
     }
 
     window.tests = {
+      epsilon: epsilon,
       values: values,
       valuesD: valuesD,
       ticks: ticks,
@@ -375,15 +376,17 @@ const geometricNoise = (epsilon, symmetric) => {
 
   const N = 3
   setInterval(() => {
-    let nv, nvD
+    let nv, nvD, i, iD
     let n = 0
     while(true){
       nv = geometricNoise(epsilon, true)
       nvD = geometricNoise(epsilon, true)
-      if (Math.abs(nv) > 20 || Math.abs(nvD) > 20)
+      i = nv-left+dp.exact.count
+      iD = nvD-left+dp.exact.countD 
+      if (i < 0 || i >= values.length || iD < 0 || iD >= valuesD.length)
         continue // we do not count unplottable values
-      values[nv-left+dp.exact.count] += 1
-      valuesD[nvD-left+dp.exact.countD] += 1
+      values[i] += 1
+      valuesD[iD] += 1
       trials++
       if (nv+dp.exact.count >= nvD + dp.exact.countD){
         // an attacker would estimate "yes" if the x > x', no otherwise
@@ -487,9 +490,13 @@ const mean = (d, min, max) => {
   setInterval(() =&gt; {
     const testStatistic = [];
     const { tests } = window;
+    console.log(tests)
     const { values, valuesD, ticks } = tests;
     for(let i=0;i&lt;values.length;i++){
-      const ratio = valuesi/valuesDi
+      let ratio = valuesi/valuesDi
+      if (ratio &lt; 1.0)
+        ratio = 1.0/ratio
+      ratio /= Math.exp(tests.epsilon)
       if (isNaN(ratio) || !isFinite(ratio))
         testStatistic.push(0)
       else
