@@ -170,13 +170,21 @@ data-target="page-dp-nav">Differential Privacy</a>
 <section class="section first">
 <div class="content markdown">
 <h1>Introduction</h1>
+<p>This is an interactive supplement to the lecture "Privacy with
+Ɛ-Differential Privacy". Currently, this is not a stand-alone
+manuscript and is only really complete in combination with the
+presentation, but the content will be continuously expanded and
+improved.</p>
 <script>
   translations = {"d": {"title": {"_t": {"de": "c387acb26a61e4c3", "en": "c387acb26a61e4c3"}, "de": "Datensatz $ D $", "en": "Data set $ D $"}}, "dp": {"title": {"_t": {"de": "4bf72bbeeb7bc6b9", "en": "4bf72bbeeb7bc6b9"}, "de": "Datensatz $ D\u0027 $", "en": "Data set $ D\u0027 $"}}, "exact": {"calculate-frequencies": {"_t": {"de": "308866d2ae98589b", "en": "308866d2ae98589b"}, "de": "Wir berechnen die H\u00e4ufigkeiten in den Datens\u00e4tzen D und D\u0027", "en": "We calculate the frequencies in data sets D and D\u0027"}, "calculate-mean": {"_t": {"de": "ac3ef9656fc2c879", "en": "ac3ef9656fc2c879"}, "de": "Wir berechnen den Mittelwert der Einkommen", "en": "We calculate the mean value of the incomes"}, "store-value": {"_t": {"de": "f0b1aea6ec112adf", "en": "f0b1aea6ec112adf"}, "de": "Wir speichern die Ergebnisse im \u0027dp\u0027 Objekt", "en": "We store the results in the \u0027dp\u0027 object"}}, "freq": {"_t": {"de": "0c6de9d1b4e7a921", "en": "0c6de9d1b4e7a921"}, "de": "H\u00e4ufigkeit in D", "en": "Frequency in D"}, "freq-d": {"_t": {"de": "61f9bfa511bd1f32", "en": "61f9bfa511bd1f32"}, "de": "H\u00e4ufigkeit in D\u0027", "en": "Frequency in D\u0027"}, "income": {"_t": {"de": "8099bc894b7dc013", "en": "8099bc894b7dc013"}, "de": "Einkommen", "en": "Income"}, "infinite": {"_t": {"de": "360aa4a91c2c8f7a", "en": "360aa4a91c2c8f7a"}, "de": "unendlich", "en": "infinite"}, "name": {"_t": {"de": "dcd1d5223f73b3a9", "en": "dcd1d5223f73b3a9"}, "de": "Name", "en": "Name"}, "of": {"_t": {"de": "43ce6022b9318e93", "en": "43ce6022b9318e93"}, "de": "von", "en": "of"}, "ratio": {"_t": {"de": "ae46664ba67ffee0", "en": "ae46664ba67ffee0"}, "de": "Verh\u00e4ltnis", "en": "Ratio"}, "ratio-with-epsilon": {"_t": {"de": "41cd6b324f228eb4", "en": "41cd6b324f228eb4"}, "de": "Verh\u00e4ltnis (exp(\u03b5))", "en": "Ratio (exp(\u03b5))"}, "result": {"_t": {"de": "9950f5c8dc2cca86", "en": "9950f5c8dc2cca86"}, "de": "Beobachtetes Ergebnis", "en": "Observed result"}};
   language = 'en'
 </script>
 <h1>Our data</h1>
 <p>In the following, we use sample data describing the income of
-different individuals.</p>
+different individuals. We examine how adding a single data point
+changes the outcome of statistical analyses on the dataset, and how
+this compromises the privacy of the person to whom the added data
+belongs.</p>
 <div id="table" data-render=
 "DataTable([...this.data.slice(0,10),{name: '...', income: '...'}])">
 </div>
@@ -185,19 +193,22 @@ blocks.</p>
 <div style="display: flex; flex-direction: row;">
 <div style="margin-right: 10px;">
 <h2>Data set $ D $</h2>
-<div style="margin-left: 10px;" id="cubes-d" data-render=
-"DataCubes({data, color: 'red'})"></div>
+<div style="margin-left: 0px;" id="cubes-d" data-render=
+"DataCubes({data: dataD, color: 'red'})"></div>
 </div>
 <div>
 <h2>Data set $ D' $</h2>
 <div id="cubes-dp" data-render=
-"DataCubes({data: dataD, color: 'green'})"></div>
+"DataCubes({data: data, color: 'green'})"></div>
 </div>
 </div>
+<h1>Data set $ D $</h1>
+<p>The dataset $ D $ contains all points from dataset $ D ' $,
+except for one which is added to it.</p>
 <h1>Data set $ D' $</h1>
 <p>The data set $ D' $ is identical to the data set $ D $ except
-for a single remote data point . In the following, we call this
-remote data point the difference point.</p>
+for a single added data point . In the following, we call this
+added data point the difference point.</p>
 <script type="module">
   import { renderAll } from '/lectures/static/js/render.js';
   import { random } from '/lectures/static/js/stats.js';
@@ -247,7 +258,7 @@ do this, we first form income groups. For example, a group may
 contain all records that have an income between 50-60k€. We then
 count the number of records in each group, which corresponds to the
 statistical frequency of that group.</p>
-<div>\begin{equation} X_g = \sum\limits_{i=1}^N x_i
+<div>\begin{equation} X = X_t = \sum\limits_{i=1}^N x_i
 \end{equation}</div>
 <p>Where $ x _ i = 1 $ if the income of the data point $ i $ is in
 the range of income from group $ g $ $ [E^g _ \mathrm{min}, E^g _
@@ -260,31 +271,24 @@ the range of income from group $ g $ $ [E^g _ \mathrm{min}, E^g _
 <script type="module">
 
   const { dp } = window;
-    const { data, dataD, incomeGroup } = dp;
-    // We calculate the frequencies in data sets D and D'
+  const { data, dataD, incomeGroup } = dp;
+
+  // We calculate the frequencies in data sets D and D'
     const frequency = (d) => 
       d.filter(row => row.income >= incomeGroup.min
                    && row.income < incomeGroup.max).length
-    // We store the results in the 'dp' object
-    dp.exact = {
-      count: frequency(data),
-      countD: frequency(dataD),
-    }
   
+
+  // We store the results in the 'dp' object
+  dp.exact = {
+    count: frequency(data),
+    countD: frequency(dataD),
+  }
+
 </script>
 <div class="highlight">
 <div class="tango">
-<pre><span class="kd">const</span> <span class=
-"p">{</span> <span class="nx">dp</span> <span class=
-"p">}</span> <span class="o">=</span> <span class=
-"nb">window</span><span class="p">;</span>
-    <span class="kd">const</span> <span class=
-"p">{</span> <span class="nx">data</span><span class=
-"p">,</span> <span class="nx">dataD</span><span class=
-"p">,</span> <span class="nx">incomeGroup</span> <span class=
-"p">}</span> <span class="o">=</span> <span class=
-"nx">dp</span><span class="p">;</span>
-    <span class=
+<pre><span class=
 "c1">// We calculate the frequencies in data sets D and D'</span>
     <span class="kd">const</span> <span class=
 "nx">frequency</span> <span class="o">=</span> <span class=
@@ -303,17 +307,6 @@ the range of income from group $ g $ $ [E^g _ \mathrm{min}, E^g _
 "nx">incomeGroup</span><span class="p">.</span><span class=
 "nx">max</span><span class="p">).</span><span class=
 "nx">length</span>
-    <span class=
-"c1">// We store the results in the 'dp' object</span>
-    <span class="nx">dp</span><span class="p">.</span><span class=
-"nx">exact</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">count</span><span class=
-"o">:</span> <span class="nx">frequency</span><span class=
-"p">(</span><span class="nx">data</span><span class="p">),</span>
-      <span class="nx">countD</span><span class=
-"o">:</span> <span class="nx">frequency</span><span class=
-"p">(</span><span class="nx">dataD</span><span class="p">),</span>
-    <span class="p">}</span>
 </pre></div>
 </div>
 <h2>Result</h2>
@@ -334,17 +327,17 @@ the range of income from group $ g $ $ [E^g _ \mathrm{min}, E^g _
 <h2>Attack on the anonymized data</h2>
 <p>An attacker who knows all data values $x _ i$ except for a
 single value $x _ j $ can easily calculate the missing value $ x _
-j $ from the result $ X _ g $:</p>
-<div>\begin{equation} x_j = X_g - \sum\limits_{i \ne j}^N x_i
+j $ from the result $ X _ t $:</p>
+<div>\begin{equation} x_j = X_t - \sum\limits_{i \ne j}^N x_i
 \end{equation}</div>
 <div data-render="SuccessRate({trials: 100, successes: 100})">
 </div>
 <h1>Adding noise</h1>
 <p>To make such attacks more difficult, we could add a random value
-$n$ to the result value $X_g$: $ X _ g' = X _ g + n $. This makes
+$n$ to the true result value $X _ t$: $ X = X _ t + n $. This makes
 it difficult for the attacker to estimate the original value $ x _
 j $, because he/she does not know the added random value $ n $:</p>
-<div>\begin{equation} x_j = X_g' - \sum\limits_{i \ne j}^N x_i - n
+<div>\begin{equation} x_j = X - \sum\limits_{i \ne j}^N x_i - n
 \end{equation}</div>
 <p>However, there are still edge cases where such noisy data can
 reveal origin values. Here is an example: We add a random value in
@@ -407,39 +400,38 @@ that an attacker will uncover our data is still 25%!</p>
 anonymization is the minimum (or maximum) ratio of the
 probabilities for a given outcome value for the two difference
 datasets $ D $ and $ D' $:</p>
-<div>\begin{equation} \frac{\mathrm{P}(X_g = x|D)}{\mathrm{P}(X_g =
+<div>\begin{equation} \frac{\mathrm{P}(X = x|D)}{\mathrm{P}(X =
 x|D')} \end{equation}</div>
 <p>To find the worst possible case, we need to consider this
 likelihood ratio over all possible outcome sets:</p>
-<div>\begin{equation} \alpha = \sup\limits_{x} \frac{\mathrm{P}(X_g
-= x|D)}{\mathrm{P}(X_g = x|D')} \end{equation}</div>
+<div>\begin{equation} \alpha = \sup\limits_{x} \frac{\mathrm{P}(X =
+x|D)}{\mathrm{P}(X = x|D')} \end{equation}</div>
 <p>The higher the value $\alpha$, the more information an attacker
 can derive from an observed result value in the worst case. In
 practice, we additionally write $\alpha = \exp{\epsilon}$, as this
 allows us to estimate the privacy loss even for more complex cases.
 Indeed, we often do not want to publish only one statistic, but
-equal several. For example, we might publish a mean, the
-frequencies considered above, and quantile values for our income
-data. Each individual data point would then contribute to all of
-these values. Accordingly, we need to consider not only the
-likelihood ratio for individual values, but for all values together
-to obtain an estimate of the privacy loss. For example, if our data
-point goes into two different values $X _ g $ and $Y _ g$, an
-attacker could again look at the probabilities for combinations of
-values $(X _ g, Y _ g)$. If the values $X _ g$ and $ Y _ g$ are
-independent, then their probabilities are</p>
-<div>\begin{equation} \frac{\mathrm{P}(X_g = x, Y_g =
-y|D)}{\mathrm{P}(X_g = x, Y_g = y|D')} = \frac{\mathrm{P}(X_g =
-x|D)}{\mathrm{P}(X_g = x|D')}\frac{\mathrm{P}(Y_g =
-x|D)}{\mathrm{P}(Y_g = x|D')} \le \alpha^2 = \exp{2\epsilon}
-\end{equation}</div>
+equal several. For example, for our income data we might publish a
+mean, the frequencies considered above, and quantile values. Each
+individual data point would then contribute to all of these values.
+Accordingly, we need to consider not only the likelihood ratio for
+individual values, but for all values together to obtain an
+estimate of the privacy loss. For example, if our data point goes
+into two different values $X$ and $Y$, an attacker could again look
+at the probabilities for combinations of values $(X, Y)$. If the
+values $X$ and $Y$ are independent, then their probabilities
+are</p>
+<div>\begin{equation} \frac{\mathrm{P}(X = x, Y =
+y|D)}{\mathrm{P}(X = x, Y = y|D')} = \frac{\mathrm{P}(X =
+x|D)}{\mathrm{P}(X = x|D')}\frac{\mathrm{P}(Y = x|D)}{\mathrm{P}(Y
+= x|D')} \le \alpha^2 = \exp{2\epsilon} \end{equation}</div>
 <p>assuming that the two probability values satisfy DP with value
-$\epsilon$ respectively. In the case that the values $X _ g $ and $
-Y _ g $ are not independent, the value remains below the bound (the
-proof of this is a bit complicated, though). The privacy loss
-defined above is thus additive, which is a very useful property: if
-we know that we want to publish a total of $n$ results based on a
-data value $x$, we can easily estimate the maximum privacy loss as
+$\epsilon$ respectively. In the case that the values $X$ and $Y$
+are not independent, the value remains below the bound (the proof
+of this is a bit complicated, though). The privacy loss defined
+above is thus additive, which is a very useful property: if we know
+that we want to publish a total of $n$ results based on a data
+value $x$, we can easily estimate the maximum privacy loss as
 $n\cdot\epsilon$. We can thus define a <strong>privacy
 budget</strong> against which we can plan our publication.</p>
 <h2>Example: Geometric mechanism</h2>
@@ -661,17 +653,17 @@ result depends on the one hand on the possible range of values (in
 this case the possible salary range), and on the other hand on the
 number of data points $N$. If $e _ \mathrm{max}$ is the maximum
 salary to be considered, the <strong>sensitivity of</strong> the
-mean value $\bar{E}$ is therefore</p>
-<p>\begin{equation} \mathcal{S}(\bar{E}) = \frac{e_\mathrm{max}}{N}
-\end{equation}</p>
-<p>Our dataset has entries. If we assume a maximum income of
-100,000 €, the sensitivity is $\mathcal{S}(\bar{E}) = $ . To
-protect the mean using differential privacy, we would actually need
-a different mechanism, since the value is reel and the geometric
-mechanism can only be applied to discrete data. However, we can
-discretize the mean to be able to process it using the mechanism.
-If we choose the discretization interval identical to the
-sensitivity $\mathcal{S}$, we do not need to modify our mechanism
+mean value $\bar{E}$ is therefore approximately</p>
+<p>\begin{equation} \delta f(\bar{E}) \approx
+\frac{e_\mathrm{max}}{N} - \hdots \end{equation}</p>
+<p>Our data set has entries. If we assume a maximum income of
+100,000 €, the sensitivity is approximately $\delta f(\bar{E}) = $
+. To protect the mean using differential privacy, we would actually
+need a different mechanism, since the value is reel and the
+geometric mechanism can only be applied to discrete data. However,
+we can discretize the mean to be able to process it using the
+mechanism. If we choose the discretization interval identical to
+the sensitivity $\delta f$, we do not need to modify our mechanism
 above. If we want greater accuracy, we need to modify the mechanism
 accordingly.</p>
 <script type="module">
@@ -740,8 +732,7 @@ const mean = (d, min, max) => {
 <span class="p">}</span>
 </pre></div>
 </div>
-<h1>Further topics</h1>
-<h2>Testing DP mechanisms</h2>
+<h1>Testing DP mechanisms</h1>
 <script type="module">
 
   import { render } from '/lectures/static/js/render.js';
@@ -766,7 +757,6 @@ const mean = (d, min, max) => {
   }, 1000)
 </script>
 <div class="chart box" id="test-statistic"></div>
-<h2>Attacking DP mechanisms</h2>
 </div>
 </section>
 </div>

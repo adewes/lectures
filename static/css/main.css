@@ -322,10 +322,10 @@ div.sequence-container {
   background: #f70; }
 
 .chart span.bar.is-green, .chart span.block.is-green {
-  background: #8f7; }
+  background: #9fa; }
 
 .chart span.bar.is-red, .chart span.block.is-red {
-  background: #f77; }
+  background: #c7b; }
 
 .chart span.block {
   background: #aaa; }
