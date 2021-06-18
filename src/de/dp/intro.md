@@ -185,6 +185,8 @@ Ein Angreifer, der bis auf einen einzigen Wert $x _ j $ alle Datenwerte $x _ i$ 
 </div>
 <!--translate:ignore-->
 
+Da die Beziehung zwischen dem Ausgabewert und den Eingabewerten deterministisch ist, kann der Angreifer mit 100 % Sicherheit vorhersagen, ob der hinzugefügte Datenpunkt im betrachteten Einkommensbereich liegt:
+
 <div data-render="SuccessRate({trials: 100, successes: 100})">
 </div>
 
@@ -263,7 +265,7 @@ Um den schlimmstmöglichen Fall zu finden, müssen wir dieses Wahrscheinlichkeit
 <!--translate:ignore-->
 <div>
 \begin{equation}
-\alpha = \sup\limits_{x} \frac{\mathrm{P}(X = x|D)}{\mathrm{P}(X = x|D')}
+\alpha = \max\limits_{x} \frac{\mathrm{P}(X = x|D)}{\mathrm{P}(X = x|D')}
 \end{equation}
 </div>
 <!--translate:ignore-->
@@ -273,7 +275,7 @@ Je höher der Wert $\alpha$, umso mehr Informationen kann ein Angreifer im schli
 <!--translate:ignore-->
 <div>
 \begin{equation}
-\frac{\mathrm{P}(X = x, Y = y|D)}{\mathrm{P}(X = x, Y = y|D')} = \frac{\mathrm{P}(X = x|D)}{\mathrm{P}(X = x|D')}\frac{\mathrm{P}(Y = x|D)}{\mathrm{P}(Y = x|D')} \le \alpha^2 = \exp{2\epsilon}
+\frac{\mathrm{P}(X = x, Y = y|D)}{\mathrm{P}(X = x, Y = y|D')} = \frac{\mathrm{P}(X = x|D)}{\mathrm{P}(X = x|D')}\frac{\mathrm{P}(Y = y|D)}{\mathrm{P}(Y = y|D')} \le \alpha^2 = \exp{2\epsilon}
 \end{equation}
 </div>
 <!--translate:ignore-->
@@ -281,6 +283,32 @@ Je höher der Wert $\alpha$, umso mehr Informationen kann ein Angreifer im schli
 , unter der Annahme, dass die beiden Wahrscheinlichkeitswerte jeweils DP mit Wert $\epsilon$ erfüllen. Für den Fall, dass die Werte $X$ und $Y$ nicht unabhängig sind, bleibt der Wert unter der Grenze (der Beweis hiervon ist allerdings etwas kompliziert). Der oben definierte Privatshpäre-Verlust ist somit additiv, was eine sehr nützliche Eigenschaft ist: Wissen wir, dass wir insgesamt $n$ Ergebnisse veröffentlichen wollen die auf einem Datenwert $x$ basieren, können wir den maximalen Privatsphäre-Verlust einfach als $n\cdot\epsilon$ abschätzen. Wir können somit ein **Privatsphäre-Budget** definieren, anhand dessen wir unsere Veröffentlichung planen können.
 
 ## Beispiel: Geometrischer Mechanismus
+
+Der geometrische Mechanismus fügt zu einem diskreten Ergebniswert einen Zufallswert hinzu, dessen Verteilung der geometrischen Verteilung folgt:
+
+<!--translate:ignore-->
+<div>
+  \begin{equation}
+  P(X = x) = (1-p)^n\cdot p
+  \end{equation}
+</div>
+<!--translate:ignore-->
+
+Diese Verteilung gilt für den Wertebereich $\mathbb{N}^0 = {1,2,3,\ldots}$. Die geometrische Verteilung kann auch zweiseitig sein, d.h. alle ganzzahligen Werte $\mathbb{N}$ definiert werden:
+
+<!--translate:ignore-->
+<div>
+\begin{equation}
+P(X = x) = \left\{ \
+  \begin{array}{lc} \
+    p & x = 0 \\ \
+    0.5(1-p)^n\cdot p & x \ne 0 \
+  \end{array} \ \right.
+\end{equation}
+</div>
+<!--translate:ignore-->
+
+Der folgende Code-Schnipsel implementiert die beidseitige Funktion:
 
 <!--translate:ignore-->
 <script type="module">
@@ -458,7 +486,7 @@ wobei $e _ i$ das jeweilige Einkommen einer Person ist. Wie stark ein einzelner 
 
 <!--translate:ignore-->
 \begin{equation}
-\delta f(\bar{E}) \approx \frac{e_\mathrm{max}}{N} - \hdots
+\delta f(\bar{E}) \approx \frac{e_\mathrm{max}}{N} - \ldots
 \end{equation}
 <!--translate:ignore-->
 

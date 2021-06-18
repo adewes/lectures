@@ -78,6 +78,16 @@
 0b6233d4c302a303:
   de: '      values.push(geometricNoise(0.5, true))'
   en: '      values.push(geometricNoise(0.5, true))'
+0c3a79f782a5b8ec:
+  de: >-
+    Diese Verteilung gilt für den Wertebereich $\mathbb{N}^0 =
+    {1,2,3,\ldots}$. Die geometrische Verteilung kann auch zweiseitig
+    sein, d.h. alle ganzzahligen Werte $\mathbb{N}$ definiert
+    werden:
+  en: >-
+    This distribution applies to the range of values $\mathbb{N}^0
+    = {1,2,3,\ldots}$. The geometric distribution can also be
+    two-sided, i.e. all integer values $\mathbb{N}$ are defined:
 0d73ad0cde568bbf:
   de: '  x_i = \left\{\begin{array}{rcl}'
   en: '  x_i = \left\{\begin{array}{rcl}'
@@ -515,6 +525,12 @@
 5861cfd84d61e060:
   de: '{% set distribution %}'
   en: '{% set distribution %}'
+58ced7d175fd8da5:
+  de: >-
+    Der folgende Code-Schnipsel implementiert die beidseitige
+    Funktion:
+  en: >-
+    The following code snippet implements the two-sided function:
 5b63e5b2097fc690:
   de: <script>
   en: <script>
@@ -694,6 +710,17 @@
 6fcf3d4a4d8e9555:
   de: Das ist das Ergebnis
   en: This is the result
+72060559d62d7d2e:
+  de: >-
+    Da die Beziehung zwischen dem Ausgabewert und den Eingabewerten
+    deterministisch ist, kann der Angreifer mit 100 % Sicherheit
+    vorhersagen, ob der hinzugefügte Datenpunkt im betrachteten
+    Einkommensbereich liegt:
+  en: >-
+    Since the relationship between the output value and the input
+    values is deterministic, the attacker can predict with 100%
+    confidence whether the added data point is in the income range
+    under consideration:
 72a0b6d9d6f86e1c:
   de: >-
     wobei $e _ i$ das jeweilige Einkommen einer Person ist. Wie
@@ -720,6 +747,14 @@
 77885ad5ce27a0ac:
   de: '        } else {'
   en: '        } else {'
+77bab0fabe8ec505:
+  de: >-
+    Der geometrische Mechanismus fügt zu einem diskreten Ergebniswert
+    einen Zufallswert hinzu, dessen Verteilung der geometrischen
+    Verteilung folgt:
+  en: >-
+    The geometric mechanism adds to a discrete result value a
+    random value whose distribution follows the geometric distribution:
 77f91e37c5571b91:
   de: >-
     Der Datensatz $ D' $ ist bis auf einen einzelnen entfernten
@@ -1363,6 +1398,13 @@ da240084a221f00e:
 db405ba385545e66:
   de: '# Ergebnis'
   en: '# Result'
+dbc9e7877854605b:
+  de: >-
+    P(X = x) = \left\{\begin{array}{lr}p & x = 0 \\ 0.5(1-p)^n\cdot
+    p & x \ne 0 \end{array}\right\.
+  en: >-
+    P(X = x) = \left\{\begin{array}{lr}p & x = 0 \ 0.5(1-p)^n\cdot
+    p & x \ne 0 \end {array}\right\.
 dc11f1ba8da49943:
   de: '  const cubesElement = document.getElementById(''cubes'');'
   en: '  const cubesElement = document.getElementById(''cubes'');'

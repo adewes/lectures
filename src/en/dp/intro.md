@@ -179,6 +179,8 @@ An attacker who knows all data values $x _ i$ except for a single value $x _ j $
 </div>
 
 
+Since the relationship between the output value and the input values is deterministic, the attacker can predict with 100% confidence whether the added data point is in the income range under consideration:
+
 <div data-render="SuccessRate({trials: 100, successes: 100})">
 </div>
 
@@ -253,7 +255,7 @@ To find the worst possible case, we need to consider this likelihood ratio over 
 
 <div>
 \begin{equation}
-\alpha = \sup\limits_{x} \frac{\mathrm{P}(X = x|D)}{\mathrm{P}(X = x|D')}
+\alpha = \max\limits_{x} \frac{\mathrm{P}(X = x|D)}{\mathrm{P}(X = x|D')}
 \end{equation}
 </div>
 
@@ -262,7 +264,7 @@ The higher the value $\alpha$, the more information an attacker can derive from 
 
 <div>
 \begin{equation}
-\frac{\mathrm{P}(X = x, Y = y|D)}{\mathrm{P}(X = x, Y = y|D')} = \frac{\mathrm{P}(X = x|D)}{\mathrm{P}(X = x|D')}\frac{\mathrm{P}(Y = x|D)}{\mathrm{P}(Y = x|D')} \le \alpha^2 = \exp{2\epsilon}
+\frac{\mathrm{P}(X = x, Y = y|D)}{\mathrm{P}(X = x, Y = y|D')} = \frac{\mathrm{P}(X = x|D)}{\mathrm{P}(X = x|D')}\frac{\mathrm{P}(Y = y|D)}{\mathrm{P}(Y = y|D')} \le \alpha^2 = \exp{2\epsilon}
 \end{equation}
 </div>
 
@@ -270,6 +272,30 @@ The higher the value $\alpha$, the more information an attacker can derive from 
 assuming that the two probability values satisfy DP with value $\epsilon$ respectively. In the case that the values $X$ and $Y$ are not independent, the value remains below the bound (the proof of this is a bit complicated, though). The privacy loss defined above is thus additive, which is a very useful property: if we know that we want to publish a total of $n$ results based on a data value $x$, we can easily estimate the maximum privacy loss as $n\cdot\epsilon$. We can thus define a **privacy budget** against which we can plan our publication.
 
 ## Example: Geometric mechanism
+
+The geometric mechanism adds to a discrete result value a random value whose distribution follows the geometric distribution:
+
+<div>
+  \begin{equation}
+  P(X = x) = (1-p)^n\cdot p
+  \end{equation}
+</div>
+
+
+This distribution applies to the range of values $\mathbb{N}^0 = {1,2,3,\ldots}$. The geometric distribution can also be two-sided, i.e. all integer values $\mathbb{N}$ are defined:
+
+<div>
+\begin{equation}
+P(X = x) = \left\{ \
+  \begin{array}{lc} \
+    p & x = 0 \\ \
+    0.5(1-p)^n\cdot p & x \ne 0 \
+  \end{array} \ \right.
+\end{equation}
+</div>
+
+
+The following code snippet implements the two-sided function:
 
 <script type="module">
 
@@ -441,7 +467,7 @@ In our example above, adding a data point to our data set changed the result by 
 where $e _ i$ is the respective income of a person. The extent to which a single data point for this function can influence the result depends on the one hand on the possible range of values (in this case the possible salary range), and on the other hand on the number of data points $N$. If $e _ \mathrm{max}$ is the maximum salary to be considered, the **sensitivity of** the mean value $\bar{E}$ is therefore approximately
 
 \begin{equation}
-\delta f(\bar{E}) \approx \frac{e_\mathrm{max}}{N} - \hdots
+\delta f(\bar{E}) \approx \frac{e_\mathrm{max}}{N} - \ldots
 \end{equation}
 
 

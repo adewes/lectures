@@ -110,10 +110,10 @@ export const FrequencyTable = ({values, frequencies, frequenciesD, epsilon}) => 
                         ${t('result')}
                     </th>
                     <th>
-                        ${t('freq')}
+                       ${t('freq-d')}
                     </th>
                     <th>
-                        ${t('freq-d')}
+                        ${t('freq')}
                     </th>
                     <th>
                         ${t(epsilon === undefined ? 'ratio' : 'ratio-with-epsilon')}
