@@ -330,6 +330,10 @@ single value $x _ j $ can easily calculate the missing value $ x _
 j $ from the result $ X _ t $:</p>
 <div>\begin{equation} x_j = X_t - \sum\limits_{i \ne j}^N x_i
 \end{equation}</div>
+<p>Since the relationship between the output value and the input
+values is deterministic, the attacker can predict with 100%
+confidence whether the added data point is in the income range
+under consideration:</p>
 <div data-render="SuccessRate({trials: 100, successes: 100})">
 </div>
 <h1>Adding noise</h1>
@@ -404,7 +408,7 @@ datasets $ D $ and $ D' $:</p>
 x|D')} \end{equation}</div>
 <p>To find the worst possible case, we need to consider this
 likelihood ratio over all possible outcome sets:</p>
-<div>\begin{equation} \alpha = \sup\limits_{x} \frac{\mathrm{P}(X =
+<div>\begin{equation} \alpha = \max\limits_{x} \frac{\mathrm{P}(X =
 x|D)}{\mathrm{P}(X = x|D')} \end{equation}</div>
 <p>The higher the value $\alpha$, the more information an attacker
 can derive from an observed result value in the worst case. In
@@ -423,8 +427,8 @@ values $X$ and $Y$ are independent, then their probabilities
 are</p>
 <div>\begin{equation} \frac{\mathrm{P}(X = x, Y =
 y|D)}{\mathrm{P}(X = x, Y = y|D')} = \frac{\mathrm{P}(X =
-x|D)}{\mathrm{P}(X = x|D')}\frac{\mathrm{P}(Y = x|D)}{\mathrm{P}(Y
-= x|D')} \le \alpha^2 = \exp{2\epsilon} \end{equation}</div>
+x|D)}{\mathrm{P}(X = x|D')}\frac{\mathrm{P}(Y = y|D)}{\mathrm{P}(Y
+= y|D')} \le \alpha^2 = \exp{2\epsilon} \end{equation}</div>
 <p>assuming that the two probability values satisfy DP with value
 $\epsilon$ respectively. In the case that the values $X$ and $Y$
 are not independent, the value remains below the bound (the proof
@@ -435,6 +439,18 @@ value $x$, we can easily estimate the maximum privacy loss as
 $n\cdot\epsilon$. We can thus define a <strong>privacy
 budget</strong> against which we can plan our publication.</p>
 <h2>Example: Geometric mechanism</h2>
+<p>The geometric mechanism adds to a discrete result value a random
+value whose distribution follows the geometric distribution:</p>
+<div>\begin{equation} P(X = x) = (1-p)^n\cdot p
+\end{equation}</div>
+<p>This distribution applies to the range of values $\mathbb{N}^0 =
+{1,2,3,\ldots}$. The geometric distribution can also be two-sided,
+i.e. all integer values $\mathbb{N}$ are defined:</p>
+<div>\begin{equation} P(X = x) = \left\{ \ \begin{array}{lc} \ p &
+x = 0 \\ \ 0.5(1-p)^n\cdot p & x \ne 0 \ \end{array} \ \right.
+\end{equation}</div>
+<p>The following code snippet implements the two-sided
+function:</p>
 <script type="module">
 
   const geometricNoise = (epsilon, symmetric) => {
@@ -655,7 +671,7 @@ number of data points $N$. If $e _ \mathrm{max}$ is the maximum
 salary to be considered, the <strong>sensitivity of</strong> the
 mean value $\bar{E}$ is therefore approximately</p>
 <p>\begin{equation} \delta f(\bar{E}) \approx
-\frac{e_\mathrm{max}}{N} - \hdots \end{equation}</p>
+\frac{e_\mathrm{max}}{N} - \ldots \end{equation}</p>
 <p>Our data set has entries. If we assume a maximum income of
 100,000 €, the sensitivity is approximately $\delta f(\bar{E}) = $
 . To protect the mean using differential privacy, we would actually

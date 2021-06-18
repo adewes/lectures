@@ -334,6 +334,10 @@ den fehlenden Wert $ x _ j $ berechnen:</p>
 <div>\begin{equation} x_j = X_t - \sum\limits_{i \ne j}^N x_i
 \end{equation}</div>
 <!--translate:ignore-->
+<p>Da die Beziehung zwischen dem Ausgabewert und den Eingabewerten
+deterministisch ist, kann der Angreifer mit 100 % Sicherheit
+vorhersagen, ob der hinzugefügte Datenpunkt im betrachteten
+Einkommensbereich liegt:</p>
 <div data-render="SuccessRate({trials: 100, successes: 100})">
 </div>
 <h1>Hinzufügen von Rauschen</h1>
@@ -420,7 +424,7 @@ x|D')} \end{equation}</div>
 Wahrscheinlichkeitsverhältnis über alle möglichen Ergebnismengen
 betrachten:</p>
 <!--translate:ignore-->
-<div>\begin{equation} \alpha = \sup\limits_{x} \frac{\mathrm{P}(X =
+<div>\begin{equation} \alpha = \max\limits_{x} \frac{\mathrm{P}(X =
 x|D)}{\mathrm{P}(X = x|D')} \end{equation}</div>
 <!--translate:ignore-->
 <p>Je höher der Wert $\alpha$, umso mehr Informationen kann ein
@@ -444,8 +448,8 @@ ihre Wahrscheinlichkeiten</p>
 <!--translate:ignore-->
 <div>\begin{equation} \frac{\mathrm{P}(X = x, Y =
 y|D)}{\mathrm{P}(X = x, Y = y|D')} = \frac{\mathrm{P}(X =
-x|D)}{\mathrm{P}(X = x|D')}\frac{\mathrm{P}(Y = x|D)}{\mathrm{P}(Y
-= x|D')} \le \alpha^2 = \exp{2\epsilon} \end{equation}</div>
+x|D)}{\mathrm{P}(X = x|D')}\frac{\mathrm{P}(Y = y|D)}{\mathrm{P}(Y
+= y|D')} \le \alpha^2 = \exp{2\epsilon} \end{equation}</div>
 <!--translate:ignore-->
 <p>, unter der Annahme, dass die beiden Wahrscheinlichkeitswerte
 jeweils DP mit Wert $\epsilon$ erfüllen. Für den Fall, dass die
@@ -459,6 +463,24 @@ $n\cdot\epsilon$ abschätzen. Wir können somit ein
 <strong>Privatsphäre-Budget</strong> definieren, anhand dessen wir
 unsere Veröffentlichung planen können.</p>
 <h2>Beispiel: Geometrischer Mechanismus</h2>
+<p>Der geometrische Mechanismus fügt zu einem diskreten
+Ergebniswert einen Zufallswert hinzu, dessen Verteilung der
+geometrischen Verteilung folgt:</p>
+<!--translate:ignore-->
+<div>\begin{equation} P(X = x) = (1-p)^n\cdot p
+\end{equation}</div>
+<!--translate:ignore-->
+<p>Diese Verteilung gilt für den Wertebereich $\mathbb{N}^0 =
+{1,2,3,\ldots}$. Die geometrische Verteilung kann auch zweiseitig
+sein, d.h. alle ganzzahligen Werte $\mathbb{N}$ definiert
+werden:</p>
+<!--translate:ignore-->
+<div>\begin{equation} P(X = x) = \left\{ \ \begin{array}{lc} \ p &
+x = 0 \\ \ 0.5(1-p)^n\cdot p & x \ne 0 \ \end{array} \ \right.
+\end{equation}</div>
+<!--translate:ignore-->
+<p>Der folgende Code-Schnipsel implementiert die beidseitige
+Funktion:</p>
 <!--translate:ignore-->
 <script type="module">
 
@@ -689,7 +711,7 @@ betrachtende Gehalt beträgt die <strong>Sensitivität</strong> des
 Mittelwertes $\bar{E}$ daher annäherungsweise</p>
 <p><!--translate:ignore-->
 \begin{equation} \delta f(\bar{E}) \approx \frac{e_\mathrm{max}}{N}
-- \hdots \end{equation} <!--translate:ignore--></p>
+- \ldots \end{equation} <!--translate:ignore--></p>
 <p>Unser Datensatz hat Einträge. Legen wir ein maximales Einkommen
 von 100.000 € zu Grunde, beträgt die Sensitivität damit angenähert
 $\delta f(\bar{E}) = $ . Um den Mittelwert mithilfe von
