@@ -615,6 +615,54 @@
 691b1d065da10cb4:
   de: '    console.log(testStatistic)'
   en: '    console.log(testStatistic)'
+6a6d89071169cf13:
+  de: >-
+    Um solche Angriffe zu erschweren, könnten wir dem Ergebniswert
+    $X_g$ einen Zufallswert $n$ hinzufügen: $ X = X _ t + n $.
+    Dies erschwert dem Angreifer die Schätzung des Ursprungswertes
+    $ x _ j $, denn er/sie kennt den hinzugefügten Zufallswert
+    $ n $ nicht:
+  en: >-
+    To make such attacks more difficult, we could add a random
+    value $n$ to the result value $X_g$: $ X = X _ t + n $. This
+    makes it difficult for the attacker to estimate the original
+    value $ x _ j $, because he/she does not know the added random
+    value $ n $:
+6a8ff28227cf3fc0:
+  de: >-
+    Je höher der Wert $\alpha$, umso mehr Informationen kann ein
+    Angreifer im schlimmsten Fall aus einem beobachteten Ergebniswert
+    ableiten. In der Praxis schreiben wir zusätzlich $\alpha =
+    \exp{\epsilon}$, da es uns dies ermöglicht, den Privatsphäre-Verlust
+    auch für komplexere Fälle abzuschätzen. Oft wollen wir nämlich
+    nicht nur eine Statistik veröffentlichen, sondern gleiche
+    mehrere. Z.B. könnten wir zu unseren Einkommensdaten einen
+    Mittelwert, die oben betrachteten Häufigkeiten sowie Quantilwerte
+    veröffentlichen. Jeder einzelne Datenpunkt würde dann zu allen
+    dieser Werte beitragen. Dementsprechend müssen wir nicht nur
+    das Wahrscheinlichkeitsverhältnis für einzelne Werte, sondern
+    für alle Werte zusammen betrachten um eine Abschätzung des
+    Privatsphäre-Verlustes zu erhalten. Geht unser Datenpunkt
+    z.B. in zwei unterschiedliche Werte $X$ und $Y$ ein, könnte
+    ein Angreifer wiederum die Wahrscheinlichkeiten für Wertekombinationen
+    $(X, Y)$ betrachten. Falls die Werte $X$ und $Y$ unabhängig
+    sind, gilt für ihre Wahrscheinlichkeiten
+  en: >-
+    The higher the value $\alpha$, the more information an attacker
+    can derive from an observed result value in the worst case.
+    In practice, we additionally write $\alpha = \exp{\epsilon}$,
+    as this allows us to estimate the privacy loss even for more
+    complex cases. Indeed, we often do not want to publish only
+    one statistic, but equal several. For example, for our income
+    data we might publish a mean, the frequencies considered above,
+    and quantile values. Each individual data point would then
+    contribute to all of these values. Accordingly, we need to
+    consider not only the likelihood ratio for individual values,
+    but for all values together to obtain an estimate of the privacy
+    loss. For example, if our data point goes into two different
+    values $X$ and $Y$, an attacker could again look at the probabilities
+    for combinations of values $(X, Y)$. If the values $X$ and
+    $Y$ are independent, then their probabilities are
 6b928a3b4402e59d:
   de: >-
     Unser Datensatz hat <span data-render="Literal(n)"></span>
@@ -646,6 +694,23 @@
 6fcf3d4a4d8e9555:
   de: Das ist das Ergebnis
   en: This is the result
+72a0b6d9d6f86e1c:
+  de: >-
+    wobei $e _ i$ das jeweilige Einkommen einer Person ist. Wie
+    stark ein einzelner Datenpunkt für diese Funktion das Ergebnis
+    beeinflussen kann, hängt zum einen von dem möglichen Wertebereich
+    (hier also der möglichen Gehaltsspanne) ab, als auch von der
+    Anzahl der Datenpunkte $N$. Ist $e _ \mathrm{max}$ das maximal
+    zu betrachtende Gehalt beträgt die **Sensitivität** des Mittelwertes
+    $\bar{E}$ daher annäherungsweise
+  en: >-
+    where $e _ i$ is the respective income of a person. The extent
+    to which a single data point for this function can influence
+    the result depends on the one hand on the possible range of
+    values (in this case the possible salary range), and on the
+    other hand on the number of data points $N$. If $e _ \mathrm{max}$
+    is the maximum salary to be considered, the **sensitivity
+    of** the mean value $\bar{E}$ is therefore approximately
 736a88feb2471bf3:
   de: '      if (p < 1e-6) {'
   en: '      if (p &lt; 1e-6) {'
@@ -736,6 +801,17 @@
 8a1384d6f4dbdbcd:
   de: '            return 0'
   en: '            return 0'
+8bd81b873824f3b6:
+  de: >-
+    Der Datensatz $ D' $ ist bis auf einen einzelnen hinzugefügten
+    Datenpunkt <span data-render="Cube({color: 'red', size: 'xs'})"></span>
+    identisch zum Datensatz $ D $. Diesen hinzugefügten Datenpunkt
+    nennen wir im Folgenden Differenzpunkt.
+  en: >-
+    The data set $ D' $ is identical to the data set $ D $ except
+    for a single added data point <span data-render="Cube({color:
+    'red', size: 'xs'})"></span>. In the following, we call this
+    added data point the difference point.
 8c622b24dab4d168:
   de: >2-
       barChart("test-statistic", [testStatistic], {classNames:
@@ -752,6 +828,13 @@
 91e6122301a65a4a:
   de: <div class="cube is-red">
   en: <div class="cube is-red">
+927366fcbea5431c:
+  de: >2-
+      <div style="margin-left: 10px;" id="cubes-d" data-render="DataCubes({dataD,
+    color: 'red'})">
+  en: >2-
+      <div style="margin-left: 10px;" id="cubes-d" data-render="DataCubes({dataD,
+    color: 'red'})">
 950e7b6e240162de:
   de: >-
     Ein Angreifer, der bis auf einen einzigen Wert $x _ j $ alle
@@ -809,6 +892,13 @@
 9d22b5a9480ea891:
   de: <div id="result-boxes" data-render="ResultBoxes()"
   en: '&lt;div id="result-boxes" data-render="ResultBoxes()"'
+9d41f9e000ced621:
+  de: >2-
+      <div id="cubes-dp" data-render="DataCubes({data: data, color:
+    'green'})">
+  en: >2-
+      <div id="cubes-dp" data-render="DataCubes({data: data, color:
+    'green'})">
 9e4527fb137f0b37:
   de: <div>
   en: <div>
@@ -825,6 +915,13 @@ a0fa8d3432210ae7:
   de: '  1 & , & E_i \in [E^g_\mathrm{min},E^g_\mathrm{max}] \\'
   en: '  1 & , & E_i \in [E^g_\mathrm {min},E^g_\mathrm {max}]
     \\'
+a1c0dae46794d6d6:
+  de: >2-
+      <div style="margin-left: 10px;" id="cubes-d" data-render="DataCubes({data:
+    dataD, color: 'red'})">
+  en: >2-
+      <div style="margin-left: 10px;" id="cubes-d" data-render="DataCubes({data:
+    dataD, color: 'red'})">
 a3bf2c54848ca1cb:
   de: >-
     wobei $x_i = 1$ falls das Einkommen des Datenpunktes $i$ im
@@ -884,6 +981,13 @@ adbb19ee86bd2d61:
 adc9b607490f9be6:
   de: '# Eine erste Statistik'
   en: '# A first statistic'
+ae0e57938dac702c:
+  de: >-
+    Der Datensatz $ D $ enthält alle Punkte aus Datensatz $ D
+    ' $, bis auf einen einzigen der diesem hinzugefügt wird.
+  en: >-
+    The dataset $ D $ contains all points from dataset $ D ' $,
+    except for one which is added to it.
 b094cc1fc365e2fb:
   de: >-
     wobei $ x _ i = 1 $ falls das Einkommen des Datenpunktes $
@@ -913,6 +1017,33 @@ b1ce08e182292faf:
 b1d7b5e04558d0f4:
   de: <div id="frequency-table-geometric">
   en: <div id="frequency-table-geometric">
+b27c2a287c8fce79:
+  de: >-
+    Unser Datensatz hat <span data-render="Literal(n)"></span>
+    Einträge. Legen wir ein maximales Einkommen von 100.000 €
+    zu Grunde, beträgt die Sensitivität damit angenähert $\mathcal{S}(\bar{E})
+    = $ <span data-render="Literal(Math.floor(100000/n))"></span>.
+    Um den Mittelwert mithilfe von Differential Privacy zu schützen
+    bräuchten wir eigentlich einen anderen Mechanismus, da der
+    Wert reel ist und der geometrische Mechanismus nur auf diskrete
+    Daten angewandt werden kann. Wir können jedoch den Mittelwert
+    diskretisieren, um ihn mit dem Mechanismus verarbeiten zu
+    können. Wählen wir das Diskretisierungsintervall identisch
+    zur Sensitivität $\mathcal{S}$, brauchen wir unseren Mechanismus
+    oben nicht zu modifizieren. Wollen wir eine größere Genauigkeit,
+    müssen wir den Mechanismus entsprechend anpassen.
+  en: >-
+    Our data set has <span data-render="Literal(n)"></span> entries.
+    If we assume a maximum income of 100,000 €, the sensitivity
+    is approximately $\mathcal{S}(\bar{E}) = $ <span data-render="Literal(Math.floor(100000/n))"></span>.
+    To protect the mean using differential privacy, we would actually
+    need a different mechanism, since the value is reel and the
+    geometric mechanism can only be applied to discrete data.
+    However, we can discretize the mean to be able to process
+    it using the mechanism. If we choose the discretization interval
+    identical to the sensitivity $\mathcal{S}$, we do not need
+    to modify our mechanism above. If we want greater accuracy,
+    we need to modify the mechanism accordingly.
 b2a6d9402f3b0e1e:
   de: '## Angriff auf die anonymisierten Daten'
   en: '## Attack on the anonymized data'
@@ -984,6 +1115,33 @@ bcbb160baf203da1:
 bd3f431598a5da84:
   de: '# Sensitivität'
   en: '# Sensitivity'
+bd8efe7f45597d91:
+  de: >-
+    Unser Datensatz hat <span data-render="Literal(n)"></span>
+    Einträge. Legen wir ein maximales Einkommen von 100.000 €
+    zu Grunde, beträgt die Sensitivität damit angenähert $\delta
+    f(\bar{E}) = $ <span data-render="Literal(Math.floor(100000/n))"></span>.
+    Um den Mittelwert mithilfe von Differential Privacy zu schützen
+    bräuchten wir eigentlich einen anderen Mechanismus, da der
+    Wert reel ist und der geometrische Mechanismus nur auf diskrete
+    Daten angewandt werden kann. Wir können jedoch den Mittelwert
+    diskretisieren, um ihn mit dem Mechanismus verarbeiten zu
+    können. Wählen wir das Diskretisierungsintervall identisch
+    zur Sensitivität $\delta f$, brauchen wir unseren Mechanismus
+    oben nicht zu modifizieren. Wollen wir eine größere Genauigkeit,
+    müssen wir den Mechanismus entsprechend anpassen.
+  en: >-
+    Our data set has <span data-render="Literal(n)"></span> entries.
+    If we assume a maximum income of 100,000 €, the sensitivity
+    is approximately $\delta f(\bar{E}) = $ <span data-render="Literal(Math.floor(100000/n))"></span>.
+    To protect the mean using differential privacy, we would actually
+    need a different mechanism, since the value is reel and the
+    geometric mechanism can only be applied to discrete data.
+    However, we can discretize the mean to be able to process
+    it using the mechanism. If we choose the discretization interval
+    identical to the sensitivity $\delta f$, we do not need to
+    modify our mechanism above. If we want greater accuracy, we
+    need to modify the mechanism accordingly.
 bdc27341a40113ae:
   de: '      if (ratio < 1.0)'
   en: '      if (ratio &lt; 1.0)'
@@ -996,6 +1154,15 @@ be73d3e884d25b0a:
 bf4d3096a1694195:
   de: '  <div class="face side"></div>'
   en: '  <div class="face side"></div>'
+bfc5e6cf90c59e54:
+  de: >-
+    Ein Angreifer, der bis auf einen einzigen Wert $x _ j $ alle
+    Datenwerte $x _ i$ kennt, kann aus dem Ergebnis $ X _ t $
+    leicht den fehlenden Wert $ x _ j $ berechnen:
+  en: >-
+    An attacker who knows all data values $x _ i$ except for a
+    single value $x _ j $ can easily calculate the missing value
+    $ x _ j $ from the result $ X _ t $:
 c167865828c19855:
   de: '    {name: "Max Mustermann", income: 53242},'
   en: '    {name: "Max Mustermann", income: 53242} ,'
@@ -1217,6 +1384,19 @@ df61298ef1831b17:
 df6bf0fc42ae5358:
   de: '    console.log(dp)'
   en: '    console.log(dp)'
+dfb68fea1f40bed2:
+  de: >-
+    Dies ist eine interaktive Ergänzung zur Vorlesung "Datenschutz
+    mit Ɛ-Differential Privacy". Aktuell ist dies kein eigenständiges
+    Manuskript und nur in Kombination mit der Präsentation wirklich
+    vollständig, die Inhalte werden jedoch kontinuierlich ausgebaut
+    und verbessert.
+  en: >-
+    This is an interactive supplement to the lecture "Privacy
+    with Ɛ-Differential Privacy". Currently, this is not a stand-alone
+    manuscript and is only really complete in combination with
+    the presentation, but the content will be continuously expanded
+    and improved.
 e132f77714c6ba07:
   de: '    console.log(tests)'
   en: '    console.log(tests)'
@@ -1288,6 +1468,13 @@ e6c8ca49a1823483:
     Where $ x _ i = 1 $ if the income of the data point $ i $
     is in the range of income from group $ g $ $ [E^g _ \mathrm{min},
     E^g _ \mathrm{max}] $ , and $ x _ i = 0 $ otherwise:
+e731019ace3294f4:
+  de: >2-
+      <div style="margin-left: 0px;" id="cubes-d" data-render="DataCubes({data:
+    dataD, color: 'red'})">
+  en: >2-
+      <div style="margin-left: 0px;" id="cubes-d" data-render="DataCubes({data:
+    dataD, color: 'red'})">
 e7b138a9a60eeec3:
   de: >-
     , unter der Annahme, dass die beiden Wahrscheinlichkeitswerte
@@ -1321,9 +1508,33 @@ e861e505a8c1ba66:
 e874ff33bb2d1049:
   de: '    barChart("result-exact", [[1,2,3,4]], {});'
   en: '    barChart("result-exact", [[1,2,3,4]], {});'
+e92a52709ead4488:
+  de: >-
+    Im folgenden nutzen wir Beispieldaten, die das Einkommen verschiedener
+    Personen beschreiben. Wir untersuchen, wie das Hinzufügen
+    eines einzelnen Datenpunktes dsa Ergebnis statistischer Analysen
+    auf dem Datensatz verändert, und wie dies die Privatsphäre
+    der Person gefährdet, der die zugefügten Daten gehören.
+  en: >-
+    In the following, we use sample data describing the income
+    of different individuals. We examine how adding a single data
+    point changes the outcome of statistical analyses on the dataset,
+    and how this compromises the privacy of the person to whom
+    the added data belongs.
 eb8f7c3f6a481214:
   de: '    const testStatistic = [];'
   en: '    const testStatistic = [];'
+eba4c6810632807e:
+  de: >-
+    Der Datensatz $ D' $ ist bis auf einen einzelnen entfernten
+    Datenpunkt <span data-render="Cube({color: 'red', size: 'xs'})"></span>
+    identisch zum Datensatz $ D $. Diesen hinzugefügten Datenpunkt
+    nennen wir im Folgenden Differenzpunkt.
+  en: >-
+    The dataset $ D' $ is identical to the dataset $ D $ except
+    for a single removed data point <span data-render="Cube({color:
+    'red', size: 'xs'})"></span>. In the following, we call this
+    added data point the difference point.
 ed77a1d25d950db4:
   de: >-
     <div id="cubes" data-render="DataCubes({data, color: 'red'})">
@@ -1347,6 +1558,30 @@ f1b85b28c889bfd1:
 f263148ebc3fa901:
   de: 0 & , & E_i \notin [E^g_{min},E^g_{max}] \\
   en: 0 & , & E_i \notin [E^g_{min},E^g_{max}] \\
+f2cb3ad04a798e7b:
+  de: >-
+    , unter der Annahme, dass die beiden Wahrscheinlichkeitswerte
+    jeweils DP mit Wert $\epsilon$ erfüllen. Für den Fall, dass
+    die Werte $X$ und $Y$ nicht unabhängig sind, bleibt der Wert
+    unter der Grenze (der Beweis hiervon ist allerdings etwas
+    kompliziert). Der oben definierte Privatshpäre-Verlust ist
+    somit additiv, was eine sehr nützliche Eigenschaft ist: Wissen
+    wir, dass wir insgesamt $n$ Ergebnisse veröffentlichen wollen
+    die auf einem Datenwert $x$ basieren, können wir den maximalen
+    Privatsphäre-Verlust einfach als $n\cdot\epsilon$ abschätzen.
+    Wir können somit ein **Privatsphäre-Budget** definieren, anhand
+    dessen wir unsere Veröffentlichung planen können.
+  en: >-
+    assuming that the two probability values satisfy DP with value
+    $\epsilon$ respectively. In the case that the values $X$ and
+    $Y$ are not independent, the value remains below the bound
+    (the proof of this is a bit complicated, though). The privacy
+    loss defined above is thus additive, which is a very useful
+    property: if we know that we want to publish a total of $n$
+    results based on a data value $x$, we can easily estimate
+    the maximum privacy loss as $n\cdot\epsilon$. We can thus
+    define a **privacy budget** against which we can plan our
+    publication.
 f4e6254fdba0b91e:
   de: '      if (isNan(ratio) || !isFinite(ratio))'
   en: '      if (isNan(ratio) || !isFinite(ratio))'
@@ -1368,6 +1603,19 @@ f71347faf50a21a0:
 f83b14a13c67614d:
   de: <div id="table" data-render="DataTable(this.data)"></div>
   en: <div id="table" data-render="DataTable(this.data)"></div>
+f84d11dd4d8e9108:
+  de: >-
+    Um solche Angriffe zu erschweren, könnten wir dem wahren Ergebniswert
+    $X _ t$ einen Zufallswert $n$ hinzufügen: $ X = X _ t + n
+    $. Dies erschwert dem Angreifer die Schätzung des Ursprungswertes
+    $ x _ j $, denn er/sie kennt den hinzugefügten Zufallswert
+    $ n $ nicht:
+  en: >-
+    To make such attacks more difficult, we could add a random
+    value $n$ to the true result value $X _ t$: $ X = X _ t +
+    n $. This makes it difficult for the attacker to estimate
+    the original value $ x _ j $, because he/she does not know
+    the added random value $ n $:
 f98092410e0e7dd9:
   de: '  translations = {{site.translations.intro|tojson}};'
   en: '  translations = {{site.translations.intro|tojson}};'

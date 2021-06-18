@@ -1,5 +1,7 @@
 # Einführung
 
+Dies ist eine interaktive Ergänzung zur Vorlesung "Datenschutz mit Ɛ-Differential Privacy". Aktuell ist dies kein eigenständiges Manuskript und nur in Kombination mit der Präsentation wirklich vollständig, die Inhalte werden jedoch kontinuierlich ausgebaut und verbessert.
+
 <!--translate:ignore-->
 <script>
   translations = {{site.translations.intro|tojson}};
@@ -9,7 +11,7 @@
 
 # Unsere Daten
 
-Im folgenden nutzen wir Beispieldaten, die das Einkommen verschiedener Personen beschreiben.
+Im folgenden nutzen wir Beispieldaten, die das Einkommen verschiedener Personen beschreiben. Wir untersuchen, wie das Hinzufügen eines einzelnen Datenpunktes dsa Ergebnis statistischer Analysen auf dem Datensatz verändert, und wie dies die Privatsphäre der Person gefährdet, der die zugefügten Daten gehören.
 
 <div id="table" data-render="DataTable([...this.data.slice(0,10),{name: '...', income: '...'}])">
 </div>
@@ -22,7 +24,7 @@ Im Folgenden repräsentieren wir einzelne Datensätze als einzelne Blöcke.
 
   <h2>{{'intro.d.title'|translate}}</h2>
 
-  <div style="margin-left: 10px;" id="cubes-d" data-render="DataCubes({data, color: 'red'})">
+  <div style="margin-left: 0px;" id="cubes-d" data-render="DataCubes({data: dataD, color: 'red'})">
   </div>
 </div>
 
@@ -30,17 +32,19 @@ Im Folgenden repräsentieren wir einzelne Datensätze als einzelne Blöcke.
 
   <h2>{{'intro.dp.title'|translate}}</h2>
 
-  <div id="cubes-dp" data-render="DataCubes({data: dataD, color: 'green'})">
+  <div id="cubes-dp" data-render="DataCubes({data: data, color: 'green'})">
   </div>
 </div>
 
 </div>
 
+# Datensatz $ D $
 
+Der Datensatz $ D $ enthält alle Punkte aus Datensatz $ D ' $, bis auf einen einzigen der diesem hinzugefügt wird.
 
 # Datensatz $ D' $
 
-Der Datensatz $ D' $ ist bis auf einen einzelnen entfernten Datenpunkt <span data-render="Cube({color: 'red', size: 'xs'})"></span> identisch zum Datensatz $ D $. Diesen entfernten Datenpunkt nennen wir im Folgenden Differenzpunkt.
+Der Datensatz $ D' $ ist bis auf einen einzelnen hinzugefügten Datenpunkt <span data-render="Cube({color: 'red', size: 'xs'})"></span> identisch zum Datensatz $ D $. Diesen hinzugefügten Datenpunkt nennen wir im Folgenden Differenzpunkt.
 
 
 <!--translate:ignore-->
@@ -97,7 +101,7 @@ Eine der einfachsten Erkenntnisse, die wir aus unseren Daten gewinnen können is
 <!--translate:ignore-->
 <div>
   \begin{equation}
-  X_g = \sum\limits_{i=1}^N x_i
+  X = X_t = \sum\limits_{i=1}^N x_i
   \end{equation}
 </div>
 <!--translate:ignore-->
@@ -121,20 +125,23 @@ wobei $ x _ i = 1 $ falls das Einkommen des Datenpunktes $ i $ im Bereich der Ei
 <script type="module">
 
   {% set aggregate -%}
-    const { dp } = window;
-    const { data, dataD, incomeGroup } = dp;
     // {{'intro.exact.calculate-frequencies'|translate}}
     const frequency = (d) => 
       d.filter(row => row.income >= incomeGroup.min
                    && row.income < incomeGroup.max).length
-    // {{'intro.exact.store-value'|translate}}
-    dp.exact = {
-      count: frequency(data),
-      countD: frequency(dataD),
-    }
   {% endset -%}
 
+  const { dp } = window;
+  const { data, dataD, incomeGroup } = dp;
+
   {{aggregate}}
+
+  // {{'intro.exact.store-value'|translate}}
+  dp.exact = {
+    count: frequency(data),
+    countD: frequency(dataD),
+  }
+
 </script>
 <!--translate:ignore-->
 
@@ -168,12 +175,12 @@ wobei $ x _ i = 1 $ falls das Einkommen des Datenpunktes $ i $ im Bereich der Ei
 
 ## Angriff auf die anonymisierten Daten
 
-Ein Angreifer, der bis auf einen einzigen Wert $x _ j $ alle Datenwerte $x _ i$ kennt, kann aus dem Ergebnis $ X _ g $ leicht den fehlenden Wert $ x _ j $ berechnen:
+Ein Angreifer, der bis auf einen einzigen Wert $x _ j $ alle Datenwerte $x _ i$ kennt, kann aus dem Ergebnis $ X _ t $ leicht den fehlenden Wert $ x _ j $ berechnen:
 
 <!--translate:ignore-->
 <div>
   \begin{equation}
-  x_j = X_g - \sum\limits_{i \ne j}^N x_i
+  x_j = X_t - \sum\limits_{i \ne j}^N x_i
   \end{equation}
 </div>
 <!--translate:ignore-->
@@ -183,12 +190,12 @@ Ein Angreifer, der bis auf einen einzigen Wert $x _ j $ alle Datenwerte $x _ i$ 
 
 # Hinzufügen von Rauschen
 
-Um solche Angriffe zu erschweren, könnten wir dem Ergebniswert $X_g$ einen Zufallswert $n$ hinzufügen: $ X _ g' = X _ g + n $. Dies erschwert dem Angreifer die Schätzung des Ursprungswertes $ x _ j $, denn er/sie kennt den hinzugefügten Zufallswert $ n $ nicht:
+Um solche Angriffe zu erschweren, könnten wir dem wahren Ergebniswert $X _ t$ einen Zufallswert $n$ hinzufügen: $ X = X _ t + n $. Dies erschwert dem Angreifer die Schätzung des Ursprungswertes $ x _ j $, denn er/sie kennt den hinzugefügten Zufallswert $ n $ nicht:
 
 <!--translate:ignore-->
 <div>
   \begin{equation}
-  x_j = X_g' - \sum\limits_{i \ne j}^N x_i - n
+  x_j = X - \sum\limits_{i \ne j}^N x_i - n
   \end{equation}
 </div>
 <!--translate:ignore-->
@@ -246,7 +253,7 @@ Das heißt entscheidend für die Sicherheit unserer rauschbasierten Anonymisieru
 <!--translate:ignore-->
 <div>
 \begin{equation}
-\frac{\mathrm{P}(X_g = x|D)}{\mathrm{P}(X_g = x|D')}
+\frac{\mathrm{P}(X = x|D)}{\mathrm{P}(X = x|D')}
 \end{equation}
 </div>
 <!--translate:ignore-->
@@ -256,22 +263,22 @@ Um den schlimmstmöglichen Fall zu finden, müssen wir dieses Wahrscheinlichkeit
 <!--translate:ignore-->
 <div>
 \begin{equation}
-\alpha = \sup\limits_{x} \frac{\mathrm{P}(X_g = x|D)}{\mathrm{P}(X_g = x|D')}
+\alpha = \sup\limits_{x} \frac{\mathrm{P}(X = x|D)}{\mathrm{P}(X = x|D')}
 \end{equation}
 </div>
 <!--translate:ignore-->
 
-Je höher der Wert $\alpha$, umso mehr Informationen kann ein Angreifer im schlimmsten Fall aus einem beobachteten Ergebniswert ableiten. In der Praxis schreiben wir zusätzlich $\alpha = \exp{\epsilon}$, da es uns dies ermöglicht, den Privatsphäre-Verlust auch für komplexere Fälle abzuschätzen. Oft wollen wir nämlich nicht nur eine Statistik veröffentlichen, sondern gleiche mehrere. Z.B. könnten wir zu unseren Einkommensdaten einen Mittelwert, die oben betrachteten Häufigkeiten sowie Quantilwerte veröffentlichen. Jeder einzelne Datenpunkt würde dann zu allen dieser Werte beitragen. Dementsprechend müssen wir nicht nur das Wahrscheinlichkeitsverhältnis für einzelne Werte, sondern für alle Werte zusammen betrachten um eine Abschätzung des Privatsphäre-Verlustes zu erhalten. Geht unser Datenpunkt z.B. in zwei unterschiedliche Werte $X _ g $ und $Y _ g$ ein, könnte ein Angreifer wiederum die Wahrscheinlichkeiten für Wertekombinationen $(X _ g, Y _ g)$ betrachten. Falls die Werte $X _ g$ und $ Y _ g$ unabhängig sind, gilt für ihre Wahrscheinlichkeiten
+Je höher der Wert $\alpha$, umso mehr Informationen kann ein Angreifer im schlimmsten Fall aus einem beobachteten Ergebniswert ableiten. In der Praxis schreiben wir zusätzlich $\alpha = \exp{\epsilon}$, da es uns dies ermöglicht, den Privatsphäre-Verlust auch für komplexere Fälle abzuschätzen. Oft wollen wir nämlich nicht nur eine Statistik veröffentlichen, sondern gleiche mehrere. Z.B. könnten wir zu unseren Einkommensdaten einen Mittelwert, die oben betrachteten Häufigkeiten sowie Quantilwerte veröffentlichen. Jeder einzelne Datenpunkt würde dann zu allen dieser Werte beitragen. Dementsprechend müssen wir nicht nur das Wahrscheinlichkeitsverhältnis für einzelne Werte, sondern für alle Werte zusammen betrachten um eine Abschätzung des Privatsphäre-Verlustes zu erhalten. Geht unser Datenpunkt z.B. in zwei unterschiedliche Werte $X$ und $Y$ ein, könnte ein Angreifer wiederum die Wahrscheinlichkeiten für Wertekombinationen $(X, Y)$ betrachten. Falls die Werte $X$ und $Y$ unabhängig sind, gilt für ihre Wahrscheinlichkeiten
 
 <!--translate:ignore-->
 <div>
 \begin{equation}
-\frac{\mathrm{P}(X_g = x, Y_g = y|D)}{\mathrm{P}(X_g = x, Y_g = y|D')} = \frac{\mathrm{P}(X_g = x|D)}{\mathrm{P}(X_g = x|D')}\frac{\mathrm{P}(Y_g = x|D)}{\mathrm{P}(Y_g = x|D')} \le \alpha^2 = \exp{2\epsilon}
+\frac{\mathrm{P}(X = x, Y = y|D)}{\mathrm{P}(X = x, Y = y|D')} = \frac{\mathrm{P}(X = x|D)}{\mathrm{P}(X = x|D')}\frac{\mathrm{P}(Y = x|D)}{\mathrm{P}(Y = x|D')} \le \alpha^2 = \exp{2\epsilon}
 \end{equation}
 </div>
 <!--translate:ignore-->
 
-, unter der Annahme, dass die beiden Wahrscheinlichkeitswerte jeweils DP mit Wert $\epsilon$ erfüllen. Für den Fall, dass die Werte $X _ g $ und $ Y _ g $ nicht unabhängig sind, bleibt der Wert unter der Grenze (der Beweis hiervon ist allerdings etwas kompliziert). Der oben definierte Privatshpäre-Verlust ist somit additiv, was eine sehr nützliche Eigenschaft ist: Wissen wir, dass wir insgesamt $n$ Ergebnisse veröffentlichen wollen die auf einem Datenwert $x$ basieren, können wir den maximalen Privatsphäre-Verlust einfach als $n\cdot\epsilon$ abschätzen. Wir können somit ein **Privatsphäre-Budget** definieren, anhand dessen wir unsere Veröffentlichung planen können.
+, unter der Annahme, dass die beiden Wahrscheinlichkeitswerte jeweils DP mit Wert $\epsilon$ erfüllen. Für den Fall, dass die Werte $X$ und $Y$ nicht unabhängig sind, bleibt der Wert unter der Grenze (der Beweis hiervon ist allerdings etwas kompliziert). Der oben definierte Privatshpäre-Verlust ist somit additiv, was eine sehr nützliche Eigenschaft ist: Wissen wir, dass wir insgesamt $n$ Ergebnisse veröffentlichen wollen die auf einem Datenwert $x$ basieren, können wir den maximalen Privatsphäre-Verlust einfach als $n\cdot\epsilon$ abschätzen. Wir können somit ein **Privatsphäre-Budget** definieren, anhand dessen wir unsere Veröffentlichung planen können.
 
 ## Beispiel: Geometrischer Mechanismus
 
@@ -447,15 +454,15 @@ In unserem Beispiel oben hat das Hinzufügen eines Datenpunktes zu unserem Daten
 </div>
 <!--translate:ignore-->
 
-wobei $e _ i$ das jeweilige Einkommen einer Person ist. Wie stark ein einzelner Datenpunkt für diese Funktion das Ergebnis beeinflussen kann, hängt zum einen von dem möglichen Wertebereich (hier also der möglichen Gehaltsspanne) ab, als auch von der Anzahl der Datenpunkte $N$. Ist $e _ \mathrm{max}$ das maximal zu betrachtende Gehalt beträgt die **Sensitivität** des Mittelwertes $\bar{E}$ daher
+wobei $e _ i$ das jeweilige Einkommen einer Person ist. Wie stark ein einzelner Datenpunkt für diese Funktion das Ergebnis beeinflussen kann, hängt zum einen von dem möglichen Wertebereich (hier also der möglichen Gehaltsspanne) ab, als auch von der Anzahl der Datenpunkte $N$. Ist $e _ \mathrm{max}$ das maximal zu betrachtende Gehalt beträgt die **Sensitivität** des Mittelwertes $\bar{E}$ daher annäherungsweise
 
 <!--translate:ignore-->
 \begin{equation}
-\mathcal{S}(\bar{E}) = \frac{e_\mathrm{max}}{N}
+\delta f(\bar{E}) \approx \frac{e_\mathrm{max}}{N} - \hdots
 \end{equation}
 <!--translate:ignore-->
 
-Unser Datensatz hat <span data-render="Literal(n)"></span> Einträge. Legen wir ein maximales Einkommen von 100.000 € zu Grunde, beträgt die Sensitivität damit $\mathcal{S}(\bar{E}) = $ <span data-render="Literal(Math.floor(100000/n))"></span>. Um den Mittelwert mithilfe von Differential Privacy zu schützen bräuchten wir eigentlich einen anderen Mechanismus, da der Wert reel ist und der geometrische Mechanismus nur auf diskrete Daten angewandt werden kann. Wir können jedoch den Mittelwert diskretisieren, um ihn mit dem Mechanismus verarbeiten zu können. Wählen wir das Diskretisierungsintervall identisch zur Sensitivität $\mathcal{S}$, brauchen wir unseren Mechanismus oben nicht zu modifizieren. Wollen wir eine größere Genauigkeit, müssen wir den Mechanismus entsprechend anpassen.
+Unser Datensatz hat <span data-render="Literal(n)"></span> Einträge. Legen wir ein maximales Einkommen von 100.000 € zu Grunde, beträgt die Sensitivität damit angenähert $\delta f(\bar{E}) = $ <span data-render="Literal(Math.floor(100000/n))"></span>. Um den Mittelwert mithilfe von Differential Privacy zu schützen bräuchten wir eigentlich einen anderen Mechanismus, da der Wert reel ist und der geometrische Mechanismus nur auf diskrete Daten angewandt werden kann. Wir können jedoch den Mittelwert diskretisieren, um ihn mit dem Mechanismus verarbeiten zu können. Wählen wir das Diskretisierungsintervall identisch zur Sensitivität $\delta f$, brauchen wir unseren Mechanismus oben nicht zu modifizieren. Wollen wir eine größere Genauigkeit, müssen wir den Mechanismus entsprechend anpassen.
 
 <!--translate:ignore-->
 <script type="module">
@@ -497,9 +504,7 @@ const mean = (d, min, max) => {
 </div>
 <!--translate:ignore-->
 
-# Weiterführende Themen
-
-## Testen von DP-Mechanismen
+# Testen von DP-Mechanismen
 
 <script type="module">
 
@@ -527,7 +532,3 @@ const mean = (d, min, max) => {
 
 <div class="chart box" id="test-statistic">
 </div>
-
-## Angreifen von DP-Mechanismen
-
-## 

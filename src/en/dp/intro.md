@@ -1,5 +1,7 @@
 # Introduction
 
+This is an interactive supplement to the lecture "Privacy with Ɛ-Differential Privacy". Currently, this is not a stand-alone manuscript and is only really complete in combination with the presentation, but the content will be continuously expanded and improved.
+
 <script>
   translations = {{site.translations.intro|tojson}};
   language = '{{lang}}'
@@ -8,7 +10,7 @@
 
 # Our data
 
-In the following, we use sample data describing the income of different individuals.
+In the following, we use sample data describing the income of different individuals. We examine how adding a single data point changes the outcome of statistical analyses on the dataset, and how this compromises the privacy of the person to whom the added data belongs.
 
 <div id="table" data-render="DataTable([...this.data.slice(0,10),{name: '...', income: '...'}])">
 </div>
@@ -21,8 +23,8 @@ In the following, we represent individual records as individual blocks.
 
   <h2>{{'intro.d.title'|translate}}</h2>
 
-  <div style="margin-left: 10px;" id="cubes-d" data-render="DataCubes({data,
-color: 'red'})">
+  <div style="margin-left: 0px;" id="cubes-d" data-render="DataCubes({data:
+dataD, color: 'red'})">
   </div>
 </div>
 
@@ -30,18 +32,20 @@ color: 'red'})">
 
   <h2>{{'intro.dp.title'|translate}}</h2>
 
-  <div id="cubes-dp" data-render="DataCubes({data: dataD,
-color: 'green'})">
+  <div id="cubes-dp" data-render="DataCubes({data: data, color:
+'green'})">
   </div>
 </div>
 
 </div>
 
+# Data set $ D $
 
+The dataset $ D $ contains all points from dataset $ D ' $, except for one which is added to it.
 
 # Data set $ D' $
 
-The data set $ D' $ is identical to the data set $ D $ except for a single remote data point <span data-render="Cube({color: 'red', size: 'xs'})"></span>. In the following, we call this remote data point the difference point.
+The data set $ D' $ is identical to the data set $ D $ except for a single added data point <span data-render="Cube({color: 'red', size: 'xs'})"></span>. In the following, we call this added data point the difference point.
 
 
 
@@ -96,7 +100,7 @@ One of the simplest insights we can gain from our data is the distribution of th
 
 <div>
   \begin{equation}
-  X_g = \sum\limits_{i=1}^N x_i
+  X = X_t = \sum\limits_{i=1}^N x_i
   \end{equation}
 </div>
 
@@ -118,20 +122,23 @@ Where $ x _ i = 1 $ if the income of the data point $ i $ is in the range of inc
 <script type="module">
 
   {% set aggregate -%}
-    const { dp } = window;
-    const { data, dataD, incomeGroup } = dp;
     // {{'intro.exact.calculate-frequencies'|translate}}
     const frequency = (d) => 
       d.filter(row => row.income >= incomeGroup.min
                    && row.income < incomeGroup.max).length
-    // {{'intro.exact.store-value'|translate}}
-    dp.exact = {
-      count: frequency(data),
-      countD: frequency(dataD),
-    }
   {% endset -%}
 
+  const { dp } = window;
+  const { data, dataD, incomeGroup } = dp;
+
   {{aggregate}}
+
+  // {{'intro.exact.store-value'|translate}}
+  dp.exact = {
+    count: frequency(data),
+    countD: frequency(dataD),
+  }
+
 </script>
 
 
@@ -163,11 +170,11 @@ Where $ x _ i = 1 $ if the income of the data point $ i $ is in the range of inc
 
 ## Attack on the anonymized data
 
-An attacker who knows all data values $x _ i$ except for a single value $x _ j $ can easily calculate the missing value $ x _ j $ from the result $ X _ g $:
+An attacker who knows all data values $x _ i$ except for a single value $x _ j $ can easily calculate the missing value $ x _ j $ from the result $ X _ t $:
 
 <div>
   \begin{equation}
-  x_j = X_g - \sum\limits_{i \ne j}^N x_i
+  x_j = X_t - \sum\limits_{i \ne j}^N x_i
   \end{equation}
 </div>
 
@@ -177,11 +184,11 @@ An attacker who knows all data values $x _ i$ except for a single value $x _ j $
 
 # Adding noise
 
-To make such attacks more difficult, we could add a random value $n$ to the result value $X_g$: $ X _ g' = X _ g + n $. This makes it difficult for the attacker to estimate the original value $ x _ j $, because he/she does not know the added random value $ n $:
+To make such attacks more difficult, we could add a random value $n$ to the true result value $X _ t$: $ X = X _ t + n $. This makes it difficult for the attacker to estimate the original value $ x _ j $, because he/she does not know the added random value $ n $:
 
 <div>
   \begin{equation}
-  x_j = X_g' - \sum\limits_{i \ne j}^N x_i - n
+  x_j = X - \sum\limits_{i \ne j}^N x_i - n
   \end{equation}
 </div>
 
@@ -237,7 +244,7 @@ That is, crucial to the security of our noise-based anonymization is the minimum
 
 <div>
 \begin{equation}
-\frac{\mathrm{P}(X_g = x|D)}{\mathrm{P}(X_g = x|D')}
+\frac{\mathrm{P}(X = x|D)}{\mathrm{P}(X = x|D')}
 \end{equation}
 </div>
 
@@ -246,21 +253,21 @@ To find the worst possible case, we need to consider this likelihood ratio over 
 
 <div>
 \begin{equation}
-\alpha = \sup\limits_{x} \frac{\mathrm{P}(X_g = x|D)}{\mathrm{P}(X_g = x|D')}
+\alpha = \sup\limits_{x} \frac{\mathrm{P}(X = x|D)}{\mathrm{P}(X = x|D')}
 \end{equation}
 </div>
 
 
-The higher the value $\alpha$, the more information an attacker can derive from an observed result value in the worst case. In practice, we additionally write $\alpha = \exp{\epsilon}$, as this allows us to estimate the privacy loss even for more complex cases. Indeed, we often do not want to publish only one statistic, but equal several. For example, we might publish a mean, the frequencies considered above, and quantile values for our income data. Each individual data point would then contribute to all of these values. Accordingly, we need to consider not only the likelihood ratio for individual values, but for all values together to obtain an estimate of the privacy loss. For example, if our data point goes into two different values $X _ g $ and $Y _ g$, an attacker could again look at the probabilities for combinations of values $(X _ g, Y _ g)$. If the values $X _ g$ and $ Y _ g$ are independent, then their probabilities are
+The higher the value $\alpha$, the more information an attacker can derive from an observed result value in the worst case. In practice, we additionally write $\alpha = \exp{\epsilon}$, as this allows us to estimate the privacy loss even for more complex cases. Indeed, we often do not want to publish only one statistic, but equal several. For example, for our income data we might publish a mean, the frequencies considered above, and quantile values. Each individual data point would then contribute to all of these values. Accordingly, we need to consider not only the likelihood ratio for individual values, but for all values together to obtain an estimate of the privacy loss. For example, if our data point goes into two different values $X$ and $Y$, an attacker could again look at the probabilities for combinations of values $(X, Y)$. If the values $X$ and $Y$ are independent, then their probabilities are
 
 <div>
 \begin{equation}
-\frac{\mathrm{P}(X_g = x, Y_g = y|D)}{\mathrm{P}(X_g = x, Y_g = y|D')} = \frac{\mathrm{P}(X_g = x|D)}{\mathrm{P}(X_g = x|D')}\frac{\mathrm{P}(Y_g = x|D)}{\mathrm{P}(Y_g = x|D')} \le \alpha^2 = \exp{2\epsilon}
+\frac{\mathrm{P}(X = x, Y = y|D)}{\mathrm{P}(X = x, Y = y|D')} = \frac{\mathrm{P}(X = x|D)}{\mathrm{P}(X = x|D')}\frac{\mathrm{P}(Y = x|D)}{\mathrm{P}(Y = x|D')} \le \alpha^2 = \exp{2\epsilon}
 \end{equation}
 </div>
 
 
-assuming that the two probability values satisfy DP with value $\epsilon$ respectively. In the case that the values $X _ g $ and $ Y _ g $ are not independent, the value remains below the bound (the proof of this is a bit complicated, though). The privacy loss defined above is thus additive, which is a very useful property: if we know that we want to publish a total of $n$ results based on a data value $x$, we can easily estimate the maximum privacy loss as $n\cdot\epsilon$. We can thus define a **privacy budget** against which we can plan our publication.
+assuming that the two probability values satisfy DP with value $\epsilon$ respectively. In the case that the values $X$ and $Y$ are not independent, the value remains below the bound (the proof of this is a bit complicated, though). The privacy loss defined above is thus additive, which is a very useful property: if we know that we want to publish a total of $n$ results based on a data value $x$, we can easily estimate the maximum privacy loss as $n\cdot\epsilon$. We can thus define a **privacy budget** against which we can plan our publication.
 
 ## Example: Geometric mechanism
 
@@ -431,14 +438,14 @@ In our example above, adding a data point to our data set changed the result by 
 </div>
 
 
-where $e _ i$ is the respective income of a person. The extent to which a single data point for this function can influence the result depends on the one hand on the possible range of values (in this case the possible salary range), and on the other hand on the number of data points $N$. If $e _ \mathrm{max}$ is the maximum salary to be considered, the **sensitivity of** the mean value $\bar{E}$ is therefore
+where $e _ i$ is the respective income of a person. The extent to which a single data point for this function can influence the result depends on the one hand on the possible range of values (in this case the possible salary range), and on the other hand on the number of data points $N$. If $e _ \mathrm{max}$ is the maximum salary to be considered, the **sensitivity of** the mean value $\bar{E}$ is therefore approximately
 
 \begin{equation}
-\mathcal{S}(\bar{E}) = \frac{e_\mathrm{max}}{N}
+\delta f(\bar{E}) \approx \frac{e_\mathrm{max}}{N} - \hdots
 \end{equation}
 
 
-Our dataset has <span data-render="Literal(n)"></span> entries. If we assume a maximum income of 100,000 €, the sensitivity is $\mathcal{S}(\bar{E}) = $ <span data-render="Literal(Math.floor(100000/n))"></span>. To protect the mean using differential privacy, we would actually need a different mechanism, since the value is reel and the geometric mechanism can only be applied to discrete data. However, we can discretize the mean to be able to process it using the mechanism. If we choose the discretization interval identical to the sensitivity $\mathcal{S}$, we do not need to modify our mechanism above. If we want greater accuracy, we need to modify the mechanism accordingly.
+Our data set has <span data-render="Literal(n)"></span> entries. If we assume a maximum income of 100,000 €, the sensitivity is approximately $\delta f(\bar{E}) = $ <span data-render="Literal(Math.floor(100000/n))"></span>. To protect the mean using differential privacy, we would actually need a different mechanism, since the value is reel and the geometric mechanism can only be applied to discrete data. However, we can discretize the mean to be able to process it using the mechanism. If we choose the discretization interval identical to the sensitivity $\delta f$, we do not need to modify our mechanism above. If we want greater accuracy, we need to modify the mechanism accordingly.
 
 <script type="module">
 
@@ -478,9 +485,7 @@ const mean = (d, min, max) => {
 </div>
 
 
-# Further topics
-
-## Testing DP mechanisms
+# Testing DP mechanisms
 
 <script type="module">
 
@@ -509,6 +514,3 @@ const mean = (d, min, max) => {
 <div class="chart box" id="test-statistic">
 </div>
 
-## Attacking DP mechanisms
-
-## 
