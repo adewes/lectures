@@ -318,13 +318,12 @@ Der folgende Code-Schnipsel implementiert die beidseitige Funktion:
 const geometricNoise = (epsilon, symmetric) => {
   let p = Math.exp(-epsilon)
   let pv = Math.random()
-  if (pv > p) {
-    if (symmetric) {
-      if (Math.random() > 0.5)
-        return 0
-    } else {
+  if (symmetric){
+    if (pv < (1-p)/(1+p)) {
       return 0
     }
+  } else if (pv > p) {
+    return 0
   }
   if (p < 1e-6) {
     return 0
