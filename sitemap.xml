@@ -3,12 +3,12 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://adewes.github.io/lectures/lectures/differential-privacy/einfuehrung</loc>
+    <loc>https://adewes.github.io/lectures/lectures</loc>
   </url>
   <url>
     <loc>https://adewes.github.io/lectures/lectures/kontakt</loc>
   </url>
   <url>
-    <loc>https://adewes.github.io/lectures/lectures</loc>
+    <loc>https://adewes.github.io/lectures/lectures/differential-privacy/einfuehrung</loc>
   </url>
 </urlset>

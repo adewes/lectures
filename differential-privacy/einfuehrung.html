@@ -487,13 +487,12 @@ Funktion:</p>
   const geometricNoise = (epsilon, symmetric) => {
   let p = Math.exp(-epsilon)
   let pv = Math.random()
-  if (pv > p) {
-    if (symmetric) {
-      if (Math.random() > 0.5)
-        return 0
-    } else {
+  if (symmetric){
+    if (pv < (1-p)/(1+p)) {
       return 0
     }
+  } else if (pv > p) {
+    return 0
   }
   if (p < 1e-6) {
     return 0
@@ -547,21 +546,22 @@ Funktion:</p>
 "nb">Math</span><span class="p">.</span><span class=
 "nx">random</span><span class="p">()</span>
   <span class="k">if</span> <span class="p">(</span><span class=
-"nx">pv</span> <span class="o">&gt;</span> <span class=
-"nx">p</span><span class="p">)</span> <span class="p">{</span>
+"nx">symmetric</span><span class="p">){</span>
     <span class="k">if</span> <span class="p">(</span><span class=
-"nx">symmetric</span><span class="p">)</span> <span class=
-"p">{</span>
-      <span class="k">if</span> <span class=
-"p">(</span><span class="nb">Math</span><span class=
-"p">.</span><span class="nx">random</span><span class=
-"p">()</span> <span class="o">&gt;</span> <span class=
-"mf">0.5</span><span class="p">)</span>
-        <span class="k">return</span> <span class="mf">0</span>
-    <span class="p">}</span> <span class=
-"k">else</span> <span class="p">{</span>
+"nx">pv</span> <span class="o">&lt;</span> <span class=
+"p">(</span><span class="mf">1</span><span class=
+"o">-</span><span class="nx">p</span><span class=
+"p">)</span><span class="o">/</span><span class=
+"p">(</span><span class="mf">1</span><span class=
+"o">+</span><span class="nx">p</span><span class=
+"p">))</span> <span class="p">{</span>
       <span class="k">return</span> <span class="mf">0</span>
     <span class="p">}</span>
+  <span class="p">}</span> <span class="k">else</span> <span class=
+"k">if</span> <span class="p">(</span><span class=
+"nx">pv</span> <span class="o">&gt;</span> <span class=
+"nx">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mf">0</span>
   <span class="p">}</span>
   <span class="k">if</span> <span class="p">(</span><span class=
 "nx">p</span> <span class="o">&lt;</span> <span class=
