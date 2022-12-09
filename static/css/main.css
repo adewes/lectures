@@ -377,41 +377,41 @@ div.sequence-container {
         background: #ddd;
         transform: rotate(90deg) skewX(-30deg) scaleY(0.864) translate(13.6px, -26.2px); }
   .cube.is-md {
+    width: 48px;
+    height: 48px; }
+    .cube.is-md .face {
+      display: block;
+      transform-origin: 0 0;
+      position: absolute;
+      width: 19.8px;
+      height: 19.8px; }
+      .cube.is-md .face.front {
+        background: #eee;
+        transform: rotate(-30deg) skewX(-30deg) translate(26px, 34.4px) scaleY(0.864); }
+      .cube.is-md .face.top {
+        background: #ccc;
+        transform: rotate(210deg) skew(-30deg) translate(-40px, -12px) scaleY(0.864); }
+      .cube.is-md .face.side {
+        background: #ddd;
+        transform: rotate(90deg) skewX(-30deg) scaleY(0.864) translate(13.6px, -26.2px); }
+  .cube.is-lg {
     width: 96px;
     height: 96px; }
-    .cube.is-md .face {
+    .cube.is-lg .face {
       display: block;
       transform-origin: 0 0;
       position: absolute;
       width: 39.6px;
       height: 39.6px; }
-      .cube.is-md .face.front {
-        background: #eee;
-        transform: rotate(-30deg) skewX(-30deg) translate(52px, 68.8px) scaleY(0.864); }
-      .cube.is-md .face.top {
-        background: #ccc;
-        transform: rotate(210deg) skew(-30deg) translate(-80px, -24px) scaleY(0.864); }
-      .cube.is-md .face.side {
-        background: #ddd;
-        transform: rotate(90deg) skewX(-30deg) scaleY(0.864) translate(27.2px, -52.4px); }
-  .cube.is-lg {
-    width: 192px;
-    height: 192px; }
-    .cube.is-lg .face {
-      display: block;
-      transform-origin: 0 0;
-      position: absolute;
-      width: 79.2px;
-      height: 79.2px; }
       .cube.is-lg .face.front {
         background: #eee;
-        transform: rotate(-30deg) skewX(-30deg) translate(104px, 137.6px) scaleY(0.864); }
+        transform: rotate(-30deg) skewX(-30deg) translate(52px, 68.8px) scaleY(0.864); }
       .cube.is-lg .face.top {
         background: #ccc;
-        transform: rotate(210deg) skew(-30deg) translate(-160px, -48px) scaleY(0.864); }
+        transform: rotate(210deg) skew(-30deg) translate(-80px, -24px) scaleY(0.864); }
       .cube.is-lg .face.side {
         background: #ddd;
-        transform: rotate(90deg) skewX(-30deg) scaleY(0.864) translate(54.4px, -104.8px); }
+        transform: rotate(90deg) skewX(-30deg) scaleY(0.864) translate(27.2px, -52.4px); }
   .cube.is-xl {
     width: 384px;
     height: 384px; }
