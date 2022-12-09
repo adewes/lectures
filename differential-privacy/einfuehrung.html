@@ -80,7 +80,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .nt { color: #204a87; font-weight: bold } /* Name.Tag */
 .highlight .nv { color: #000000 } /* Name.Variable */
 .highlight .ow { color: #204a87; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #f8f8f8; text-decoration: underline } /* Text.Whitespace */
+.highlight .pm { color: #000000; font-weight: bold } /* Punctuation.Marker */
+.highlight .w { color: #f8f8f8 } /* Text.Whitespace */
 .highlight .mb { color: #0000cf; font-weight: bold } /* Literal.Number.Bin */
 .highlight .mf { color: #0000cf; font-weight: bold } /* Literal.Number.Float */
 .highlight .mh { color: #0000cf; font-weight: bold } /* Literal.Number.Hex */
@@ -144,6 +145,24 @@ data-target="page-dp-nav">Differential Privacy</a>
 "/lectures/differential-privacy/einfuehrung">Einführung</a></li>
 </ul>
 </li>
+<li><a class="" href="#" data-toggle="collapse" data-target=
+"page-pe-nav">Privacy Engineering</a>
+<ul class="is-hidden" id="page-pe-nav">
+<li><a href=
+"/lectures/privacy-engineering/einfuehrung">Einführung</a></li>
+<li><a href=
+"/lectures/privacy-engineering/frameworks">Frameworks</a></li>
+<li><a class="" href="#" data-toggle="collapse" data-target=
+"page-pe.case-study-nav">Fallstudie</a>
+<ul class="is-hidden" id="page-pe.case-study-nav">
+<li><a href=
+"/lectures/privacy-engineering/fallstudie/einfuehrung">Einführung</a></li>
+<li><a href=
+"/lectures/privacy-engineering/fallstudie/anforderungsanalyse">Anforderungsanalyse</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="/lectures/kontakt">Kontakt</a></li>
 <li><a href="#" data-toggle="collapse" data-target=
 "menu-language-dropdown">Sprachen</a>
@@ -157,8 +176,8 @@ data-target="page-dp-nav">Differential Privacy</a>
 </ul>
 </aside>
 </div>
-<section class="section first">
-<div class="content markdown">
+<section class="section first wide">
+<div class="content markdown with-comments">
 <h1>Einführung</h1>
 <p>Dies ist eine interaktive Ergänzung zur Vorlesung "Datenschutz
 mit Ɛ-Differential Privacy". Aktuell ist dies kein eigenständiges
@@ -290,20 +309,27 @@ andernfalls:</p>
 <div class="tango">
 <pre><span class=
 "c1">// Wir berechnen die Häufigkeiten in den Datensätzen D und D'</span>
-    <span class="kd">const</span> <span class=
-"nx">frequency</span> <span class="o">=</span> <span class=
+<span class="w">    </span><span class=
+"kd">const</span><span class="w"> </span><span class=
+"nx">frequency</span><span class="w"> </span><span class=
+"o">=</span><span class="w"> </span><span class=
 "p">(</span><span class="nx">d</span><span class=
-"p">)</span> <span class="p">=&gt;</span> 
-      <span class="nx">d</span><span class="p">.</span><span class=
-"nx">filter</span><span class="p">(</span><span class=
-"nx">row</span> <span class="p">=&gt;</span> <span class=
+"p">)</span><span class="w"> </span><span class=
+"p">=&gt;</span><span class="w"> </span>
+<span class="w">      </span><span class="nx">d</span><span class=
+"p">.</span><span class="nx">filter</span><span class=
+"p">(</span><span class="nx">row</span><span class=
+"w"> </span><span class="p">=&gt;</span><span class=
+"w"> </span><span class="nx">row</span><span class=
+"p">.</span><span class="nx">income</span><span class=
+"w"> </span><span class="o">&gt;=</span><span class=
+"w"> </span><span class="nx">incomeGroup</span><span class=
+"p">.</span><span class="nx">min</span>
+<span class="w">                   </span><span class=
+"o">&amp;&</span><span class="w"> </span><span class=
 "nx">row</span><span class="p">.</span><span class=
-"nx">income</span> <span class="o">&gt;=</span> <span class=
-"nx">incomeGroup</span><span class="p">.</span><span class=
-"nx">min</span>
-                   <span class="o">&amp;&</span> <span class=
-"nx">row</span><span class="p">.</span><span class=
-"nx">income</span> <span class="o">&lt;</span> <span class=
+"nx">income</span><span class="w"> </span><span class=
+"o">&lt;</span><span class="w"> </span><span class=
 "nx">incomeGroup</span><span class="p">.</span><span class=
 "nx">max</span><span class="p">).</span><span class=
 "nx">length</span>
@@ -531,72 +557,103 @@ Funktion:</p>
  <!--translate:ignore-->
 <div class="highlight">
 <div class="tango">
-<pre><span class="kd">const</span> <span class=
-"nx">geometricNoise</span> <span class="o">=</span> <span class=
-"p">(</span><span class="nx">epsilon</span><span class=
-"p">,</span> <span class="nx">symmetric</span><span class=
-"p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class=
-"nx">p</span> <span class="o">=</span> <span class=
-"nb">Math</span><span class="p">.</span><span class=
-"nx">exp</span><span class="p">(</span><span class=
-"o">-</span><span class="nx">epsilon</span><span class="p">)</span>
-  <span class="kd">let</span> <span class=
-"nx">pv</span> <span class="o">=</span> <span class=
-"nb">Math</span><span class="p">.</span><span class=
-"nx">random</span><span class="p">()</span>
-  <span class="k">if</span> <span class="p">(</span><span class=
+<pre><span class="kd">const</span><span class=
+"w"> </span><span class="nx">geometricNoise</span><span class=
+"w"> </span><span class="o">=</span><span class=
+"w"> </span><span class="p">(</span><span class=
+"nx">epsilon</span><span class="p">,</span><span class=
+"w"> </span><span class="nx">symmetric</span><span class=
+"p">)</span><span class="w"> </span><span class=
+"p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class=
+"w"> </span><span class="nx">p</span><span class=
+"w"> </span><span class="o">=</span><span class=
+"w"> </span><span class="nb">Math</span><span class=
+"p">.</span><span class="nx">exp</span><span class=
+"p">(</span><span class="o">-</span><span class=
+"nx">epsilon</span><span class="p">)</span>
+<span class="w">  </span><span class="kd">let</span><span class=
+"w"> </span><span class="nx">pv</span><span class=
+"w"> </span><span class="o">=</span><span class=
+"w"> </span><span class="nb">Math</span><span class=
+"p">.</span><span class="nx">random</span><span class="p">()</span>
+<span class="w">  </span><span class="k">if</span><span class=
+"w"> </span><span class="p">(</span><span class=
 "nx">symmetric</span><span class="p">){</span>
-    <span class="k">if</span> <span class="p">(</span><span class=
-"nx">pv</span> <span class="o">&lt;</span> <span class=
+<span class="w">    </span><span class="k">if</span><span class=
+"w"> </span><span class="p">(</span><span class=
+"nx">pv</span><span class="w"> </span><span class=
+"o">&lt;</span><span class="w"> </span><span class=
 "p">(</span><span class="mf">1</span><span class=
 "o">-</span><span class="nx">p</span><span class=
 "p">)</span><span class="o">/</span><span class=
 "p">(</span><span class="mf">1</span><span class=
 "o">+</span><span class="nx">p</span><span class=
-"p">))</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="mf">0</span>
-    <span class="p">}</span>
-  <span class="p">}</span> <span class="k">else</span> <span class=
-"k">if</span> <span class="p">(</span><span class=
-"nx">pv</span> <span class="o">&gt;</span> <span class=
-"nx">p</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="mf">0</span>
-  <span class="p">}</span>
-  <span class="k">if</span> <span class="p">(</span><span class=
-"nx">p</span> <span class="o">&lt;</span> <span class=
-"mf">1e-6</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="mf">0</span>
-  <span class="p">}</span>
-  <span class="nx">pv</span> <span class="o">=</span> <span class=
-"nb">Math</span><span class="p">.</span><span class=
-"nx">random</span><span class="p">()</span>
-  <span class="kd">let</span> <span class=
-"nx">pe</span> <span class="o">=</span> <span class=
-"mf">1.0</span> <span class="o">-</span> <span class=
-"nx">p</span> <span class="o">+</span> <span class=
-"nx">p</span><span class="o">*</span><span class="nx">pv</span>
-  <span class="kd">let</span> <span class=
-"nx">k</span> <span class="o">=</span> <span class=
-"nb">Math</span><span class="p">.</span><span class=
-"nx">floor</span><span class="p">(</span><span class=
+"p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class=
+"k">return</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span><span class=
+"w"> </span><span class="k">else</span><span class=
+"w"> </span><span class="k">if</span><span class=
+"w"> </span><span class="p">(</span><span class=
+"nx">pv</span><span class="w"> </span><span class=
+"o">&gt;</span><span class="w"> </span><span class=
+"nx">p</span><span class="p">)</span><span class=
+"w"> </span><span class="p">{</span>
+<span class="w">    </span><span class=
+"k">return</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">if</span><span class=
+"w"> </span><span class="p">(</span><span class=
+"nx">p</span><span class="w"> </span><span class=
+"o">&lt;</span><span class="w"> </span><span class=
+"mf">1e-6</span><span class="p">)</span><span class=
+"w"> </span><span class="p">{</span>
+<span class="w">    </span><span class=
+"k">return</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">pv</span><span class=
+"w"> </span><span class="o">=</span><span class=
+"w"> </span><span class="nb">Math</span><span class=
+"p">.</span><span class="nx">random</span><span class="p">()</span>
+<span class="w">  </span><span class="kd">let</span><span class=
+"w"> </span><span class="nx">pe</span><span class=
+"w"> </span><span class="o">=</span><span class=
+"w"> </span><span class="mf">1.0</span><span class=
+"w"> </span><span class="o">-</span><span class=
+"w"> </span><span class="nx">p</span><span class=
+"w"> </span><span class="o">+</span><span class=
+"w"> </span><span class="nx">p</span><span class=
+"o">*</span><span class="nx">pv</span>
+<span class="w">  </span><span class="kd">let</span><span class=
+"w"> </span><span class="nx">k</span><span class=
+"w"> </span><span class="o">=</span><span class=
+"w"> </span><span class="nb">Math</span><span class=
+"p">.</span><span class="nx">floor</span><span class=
+"p">(</span><span class="nb">Math</span><span class=
+"p">.</span><span class="nx">log</span><span class=
+"p">(</span><span class="mf">1</span><span class=
+"o">-</span><span class="nx">pe</span><span class=
+"p">)</span><span class="o">/</span><span class=
 "nb">Math</span><span class="p">.</span><span class=
 "nx">log</span><span class="p">(</span><span class=
-"mf">1</span><span class="o">-</span><span class=
-"nx">pe</span><span class="p">)</span><span class=
-"o">/</span><span class="nb">Math</span><span class=
-"p">.</span><span class="nx">log</span><span class=
-"p">(</span><span class="nx">p</span><span class="p">))</span>
-  <span class="k">if</span> <span class="p">(</span><span class=
-"nx">symmetric</span> <span class="o">&amp;&</span> <span class=
+"nx">p</span><span class="p">))</span>
+<span class="w">  </span><span class="k">if</span><span class=
+"w"> </span><span class="p">(</span><span class=
+"nx">symmetric</span><span class="w"> </span><span class=
+"o">&amp;&</span><span class="w"> </span><span class=
 "nb">Math</span><span class="p">.</span><span class=
-"nx">random</span><span class="p">()</span> <span class=
-"o">&lt;</span> <span class="mf">0.5</span><span class=
-"p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class=
+"nx">random</span><span class="p">()</span><span class=
+"w"> </span><span class="o">&lt;</span><span class=
+"w"> </span><span class="mf">0.5</span><span class=
+"p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class=
+"k">return</span><span class="w"> </span><span class=
 "o">-</span><span class="nx">k</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">k</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class=
+"w"> </span><span class="nx">k</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -756,40 +813,55 @@ const mean = (d, min, max) => {
 <div class="tango">
 <pre><span class=
 "c1">// Wir berechnen den Mittelwert der Einkommen</span>
-<span class="kd">const</span> <span class=
-"nx">mean</span> <span class="o">=</span> <span class=
+<span class="kd">const</span><span class="w"> </span><span class=
+"nx">mean</span><span class="w"> </span><span class=
+"o">=</span><span class="w"> </span><span class=
 "p">(</span><span class="nx">d</span><span class=
-"p">,</span> <span class="nx">min</span><span class=
-"p">,</span> <span class="nx">max</span><span class=
-"p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class=
+"p">,</span><span class="w"> </span><span class=
+"nx">min</span><span class="p">,</span><span class=
+"w"> </span><span class="nx">max</span><span class=
+"p">)</span><span class="w"> </span><span class=
+"p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class=
+"w"> </span><span class="p">(</span><span class=
 "nx">d</span><span class="p">.</span><span class=
-"nx">length</span> <span class="o">===</span> <span class=
+"nx">length</span><span class="w"> </span><span class=
+"o">===</span><span class="w"> </span><span class=
 "mf">0</span><span class="p">)</span>
-    <span class="k">throw</span> <span class=
-"s1">'empty list received'</span>
-  <span class="kd">let</span> <span class=
-"nx">m</span> <span class="o">=</span> <span class="mf">0</span>
-  <span class="nx">d</span><span class="p">.</span><span class=
-"nx">forEach</span><span class="p">(</span><span class=
-"nx">row</span> <span class="p">=&gt;</span> <span class=
-"p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class=
+<span class="w">    </span><span class="k">throw</span><span class=
+"w"> </span><span class="s1">'empty list received'</span>
+<span class="w">  </span><span class="kd">let</span><span class=
+"w"> </span><span class="nx">m</span><span class=
+"w"> </span><span class="o">=</span><span class=
+"w"> </span><span class="mf">0</span>
+<span class="w">  </span><span class="nx">d</span><span class=
+"p">.</span><span class="nx">forEach</span><span class=
+"p">(</span><span class="nx">row</span><span class=
+"w"> </span><span class="p">=&gt;</span><span class=
+"w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class=
+"w"> </span><span class="p">(</span><span class=
 "nx">row</span><span class="p">.</span><span class=
-"nx">income</span> <span class="o">&lt;</span> <span class=
-"nx">min</span> <span class="o">||</span> <span class=
+"nx">income</span><span class="w"> </span><span class=
+"o">&lt;</span><span class="w"> </span><span class=
+"nx">min</span><span class="w"> </span><span class=
+"o">||</span><span class="w"> </span><span class=
 "nx">row</span><span class="p">.</span><span class=
-"nx">income</span> <span class="o">&gt;</span> <span class=
+"nx">income</span><span class="w"> </span><span class=
+"o">&gt;</span><span class="w"> </span><span class=
 "nx">max</span><span class="p">)</span>
-      <span class="k">throw</span> <span class=
+<span class="w">      </span><span class=
+"k">throw</span><span class="w"> </span><span class=
 "s1">'out of bounds value detected'</span>
-    <span class="nx">m</span> <span class=
-"o">+=</span> <span class="nx">row</span><span class=
+<span class="w">    </span><span class="nx">m</span><span class=
+"w"> </span><span class="o">+=</span><span class=
+"w"> </span><span class="nx">row</span><span class=
 "p">.</span><span class="nx">income</span>
-  <span class="p">})</span>
-  <span class="k">return</span> <span class=
-"nx">m</span><span class="o">/</span><span class=
-"nx">d</span><span class="p">.</span><span class="nx">length</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="k">return</span><span class=
+"w"> </span><span class="nx">m</span><span class=
+"o">/</span><span class="nx">d</span><span class=
+"p">.</span><span class="nx">length</span>
 <span class="p">}</span>
 </pre></div>
 </div>

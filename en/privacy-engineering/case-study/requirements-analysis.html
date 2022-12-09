@@ -7,7 +7,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content=
 "width=device-width, initial-scale=1">
-<title>Lectures | Contact</title>
+<title>Lectures | Privacy Engineering - Case study - Requirements
+analysis</title>
 <link rel="stylesheet" type="text/css" href=
 "/lectures/static/css/main.css">
 <script>
@@ -114,8 +115,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="message is-info">
 <div class="message-body">
 <p>This website was mostly translated automatically from the
-<a href="/lectures/kontakt">German version</a>. We apologize for
-any translation errors.</p>
+<a href=
+"/lectures/privacy-engineering/fallstudie/anforderungsanalyse">German
+version</a>. We apologize for any translation errors.</p>
 <span class="x" onclick=
 "localStorage.setItem('translation-notice', true);notice.style.display = 'none'">x</span></div>
 </div>
@@ -155,16 +157,16 @@ data-toggle="collapse"><span>&nbsp;</span> <span>&nbsp;</span>
 "/lectures/en/differential-privacy/introduction">Introduction</a></li>
 </ul>
 </li>
-<li><a class="" href="#" data-toggle="collapse" data-target=
-"page-pe-nav">Privacy Engineering</a>
-<ul class="is-hidden" id="page-pe-nav">
+<li><a class="is-active" href="#" data-toggle="collapse"
+data-target="page-pe-nav">Privacy Engineering</a>
+<ul class="" id="page-pe-nav">
 <li><a href=
 "/lectures/en/privacy-engineering/introduction">Introduction</a></li>
 <li><a href=
 "/lectures/en/privacy-engineering/frameworks">Frameworks</a></li>
-<li><a class="" href="#" data-toggle="collapse" data-target=
-"page-pe.case-study-nav">Case study</a>
-<ul class="is-hidden" id="page-pe.case-study-nav">
+<li><a class="is-active" href="#" data-toggle="collapse"
+data-target="page-pe.case-study-nav">Case study</a>
+<ul class="" id="page-pe.case-study-nav">
 <li><a href=
 "/lectures/en/privacy-engineering/case-study/introduction">Introduction</a></li>
 <li><a href=
@@ -179,8 +181,10 @@ Requirements analysis</a></li>
 "menu-language-dropdown">Languages</a>
 <ul id="menu-language-dropdown" class="is-hidden">
 <li><a class="is-open is-active" href=
-"/lectures/en/contact">English</a></li>
-<li><a class="" href="/lectures/kontakt">Deutsch</a></li>
+"/lectures/en/privacy-engineering/case-study/requirements-analysis">
+English</a></li>
+<li><a class="" href=
+"/lectures/privacy-engineering/fallstudie/anforderungsanalyse">Deutsch</a></li>
 </ul>
 </li>
 </ul>
@@ -188,21 +192,47 @@ Requirements analysis</a></li>
 </div>
 <section class="section first wide">
 <div class="content markdown with-comments">
-<h2>Contact me</h2>
-<p>Responsible for the content of these pages is <a href=
-"mailto:dp@andreas-dewes.de">Andreas Dewes</a>.</p>
-<pre>
-Andrew Dewes
-Sächsische Str. 26
-10707 Berlin
-</pre>
-<h2>Data protection</h2>
-<p>The controller within the meaning of the GDPR is also
-<strong>Andreas Dewes</strong>. This website does not contain any
-self-loading third-party resources such as analytics trackers or
-embedded content. If such content (e.g. external videos) is used,
-this is only done with the explicit consent of the user.</p>
-<p>This website does not collect any personal data.</p>
+<h1>Requirements analysis</h1>
+<h2>Lapwing - functions</h2>
+<p>Kiebitz is intended as general software for secure communication
+between users and providers of services (e.g. in public authorities
+or companies) can be used. In addition, the software should be able
+to automate various typical workflows, e.g. booking appointments
+and filling out forms.</p>
+<h3>User Stories</h3>
+<p>The product team identified the following user stories for
+Kiebitz:</p>
+<h4>User: Registration</h4>
+<p>Users should be able to register independently on the system. To
+do this, they should create one or more Provide contact options,
+typically an email address.</p>
+<h4>User: Appointment booking</h4>
+<h4>User: Data acquisition</h4>
+<h4>Provider: Registration</h4>
+<h4>Provider: Appointment provision</h4>
+<h4>Provider: Form creation</h4>
+<h2>Privacy engineering requirements</h2>
+<p>In order to develop concrete requirements from a privacy
+engineering perspective, appropriate frameworks and define
+policies, we first need to be clear about where and how we can the
+software is to be used. For this we ask the following
+questions:</p>
+<ul>
+<li>In which countries will the software be offered/used?
+<u><strong>In Europe, especially in Germany</strong></u>.</li>
+<li>In which areas should the software process data?
+<u><strong>General administration, health</strong></u>.</li>
+<li>Are there any special categories of personal data to be
+processed? <u><strong>Yes</strong></u>.</li>
+</ul>
+<p>In general, the fact that XY GmbH is domiciled in Germany
+results in the need for the Compliance with the General Data
+Protection Regulation (GDPR) and other guidelines such as ePrivacy.
+In view of this requirement and the answers to the above questions,
+we decide to for a German framework that is compatible with the
+requirements of the GDPR, the <strong>Standard Data Protection
+Model (SDM)</strong>. As a framework for technical requirements we
+decide us for the <strong>BSI basic protection model</strong>.</p>
 </div>
 </section>
 </div>

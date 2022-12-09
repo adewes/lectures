@@ -3,12 +3,24 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://adewes.github.io/lectures/lectures</loc>
+    <loc>https://adewes.github.io/lectures/lectures/differential-privacy/einfuehrung</loc>
   </url>
   <url>
     <loc>https://adewes.github.io/lectures/lectures/kontakt</loc>
   </url>
   <url>
-    <loc>https://adewes.github.io/lectures/lectures/differential-privacy/einfuehrung</loc>
+    <loc>https://adewes.github.io/lectures/lectures</loc>
+  </url>
+  <url>
+    <loc>https://adewes.github.io/lectures/lectures/privacy-engineering/frameworks</loc>
+  </url>
+  <url>
+    <loc>https://adewes.github.io/lectures/lectures/privacy-engineering/fallstudie/einfuehrung</loc>
+  </url>
+  <url>
+    <loc>https://adewes.github.io/lectures/lectures/privacy-engineering/fallstudie/anforderungsanalyse</loc>
+  </url>
+  <url>
+    <loc>https://adewes.github.io/lectures/lectures/privacy-engineering/einfuehrung</loc>
   </url>
 </urlset>

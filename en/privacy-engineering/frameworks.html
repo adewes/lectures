@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content=
 "width=device-width, initial-scale=1">
-<title>Lectures | Contact</title>
+<title>Lectures | Privacy Engineering - Frameworks</title>
 <link rel="stylesheet" type="text/css" href=
 "/lectures/static/css/main.css">
 <script>
@@ -114,8 +114,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="message is-info">
 <div class="message-body">
 <p>This website was mostly translated automatically from the
-<a href="/lectures/kontakt">German version</a>. We apologize for
-any translation errors.</p>
+<a href="/lectures/privacy-engineering/frameworks">German
+version</a>. We apologize for any translation errors.</p>
 <span class="x" onclick=
 "localStorage.setItem('translation-notice', true);notice.style.display = 'none'">x</span></div>
 </div>
@@ -155,9 +155,9 @@ data-toggle="collapse"><span>&nbsp;</span> <span>&nbsp;</span>
 "/lectures/en/differential-privacy/introduction">Introduction</a></li>
 </ul>
 </li>
-<li><a class="" href="#" data-toggle="collapse" data-target=
-"page-pe-nav">Privacy Engineering</a>
-<ul class="is-hidden" id="page-pe-nav">
+<li><a class="is-active" href="#" data-toggle="collapse"
+data-target="page-pe-nav">Privacy Engineering</a>
+<ul class="" id="page-pe-nav">
 <li><a href=
 "/lectures/en/privacy-engineering/introduction">Introduction</a></li>
 <li><a href=
@@ -179,8 +179,9 @@ Requirements analysis</a></li>
 "menu-language-dropdown">Languages</a>
 <ul id="menu-language-dropdown" class="is-hidden">
 <li><a class="is-open is-active" href=
-"/lectures/en/contact">English</a></li>
-<li><a class="" href="/lectures/kontakt">Deutsch</a></li>
+"/lectures/en/privacy-engineering/frameworks">English</a></li>
+<li><a class="" href=
+"/lectures/privacy-engineering/frameworks">Deutsch</a></li>
 </ul>
 </li>
 </ul>
@@ -188,21 +189,62 @@ Requirements analysis</a></li>
 </div>
 <section class="section first wide">
 <div class="content markdown with-comments">
-<h2>Contact me</h2>
-<p>Responsible for the content of these pages is <a href=
-"mailto:dp@andreas-dewes.de">Andreas Dewes</a>.</p>
-<pre>
-Andrew Dewes
-Sächsische Str. 26
-10707 Berlin
-</pre>
-<h2>Data protection</h2>
-<p>The controller within the meaning of the GDPR is also
-<strong>Andreas Dewes</strong>. This website does not contain any
-self-loading third-party resources such as analytics trackers or
-embedded content. If such content (e.g. external videos) is used,
-this is only done with the explicit consent of the user.</p>
-<p>This website does not collect any personal data.</p>
+<h1>Privacy Frameworks</h1>
+<p>Privacy engineering must always be oriented to the relevant
+legal framework. Frameworks can help us to more easily capture such
+requirements and translate them into concrete technical
+requirements and measures. Ideally, they represent the current
+state of the art and the current legal opinion and thus help us to
+reduce risks in the implementation of privacy engineering. In this
+sense, frameworks are a link between the often abstract legal
+requirements and concrete technical measures that can be
+implemented in practice.</p>
+<p>Choosing the right framework is not always easy. In general, one
+should first be clear about the context in which the framework is
+to be used. For example, if you are looking for a framework that is
+suitable for the development of a software solution in Europe (e.g.
+in Germany), it makes sense to orientate yourself towards national
+frameworks.</p>
+<p>In general, it should be noted that the use of a specific
+framework alone does not guarantee that the solution developed with
+it is automatically legally compliant. Frameworks have different
+overlaps with specific jurisdictions and international frameworks
+in particular are often not compliant.</p>
+<aside>
+<h4>Klausurwissen</h4>
+<ul>
+<li>In privacy engineering, frameworks help to transfer abstract
+legal requirements to concrete technical measures.</li>
+<li>A framework should be chosen with particular regard to the
+legal context of the solution to be developed.</li>
+<li>The use of a framework alone does not guarantee that a solution
+designed according to it is legally compliant.</li>
+</ul>
+</aside>
+<h2>Considered frameworks</h2>
+<p>In the following sections, we will take a look at some
+frameworks that are of great practical importance. In particular,
+we will focus on the European region and especially on Germany. The
+following frameworks will be discussed:</p>
+<h3>European & German Frameworks</h3>
+<ul>
+<li><strong>Standard Data Protection Model (SDM)</strong></li>
+<li><strong>BSI IT basic protection</strong></li>
+</ul>
+<h3>International frameworks</h3>
+<ul>
+<li><strong>OECD Guidelines</strong></li>
+<li><strong>Generally Accepted Privacy Principles
+(GAPP)</strong></li>
+<li><strong>ISO 2700X series</strong> (not specifically designed
+for privacy)</li>
+</ul>
+<h3>US-centric frameworks</h3>
+<ul>
+<li><strong>NIST Privacy Framework</strong></li>
+<li><strong>Federal Trade Commissions' (FTC) Fair Information
+Privacy Principles (FIPS)</strong></li>
+</ul>
 </div>
 </section>
 </div>
