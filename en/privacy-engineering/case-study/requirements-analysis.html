@@ -172,6 +172,13 @@ data-target="page-pe.case-study-nav">Case study</a>
 <li><a href=
 "/lectures/en/privacy-engineering/case-study/requirements-analysis">
 Requirements analysis</a></li>
+<li><a href=
+"/lectures/en/privacy-engineering/case-study/guidelines">Guidelines</a></li>
+<li><a href=
+"/lectures/en/privacy-engineering/case-study/technical-measures">Technical
+measures</a></li>
+<li><a href=
+"/lectures/en/privacy-engineering/case-study/processes">Processes</a></li>
 </ul>
 </li>
 </ul>
@@ -193,29 +200,33 @@ English</a></li>
 <section class="section first wide">
 <div class="content markdown with-comments">
 <h1>Requirements analysis</h1>
-<h2>Lapwing - functions</h2>
-<p>Kiebitz is intended as general software for secure communication
-between users and providers of services (e.g. in public authorities
-or companies) can be used. In addition, the software should be able
-to automate various typical workflows, e.g. booking appointments
-and filling out forms.</p>
-<h3>User Stories</h3>
-<p>The product team identified the following user stories for
-Kiebitz:</p>
-<h4>User: Registration</h4>
-<p>Users should be able to register independently on the system. To
-do this, they should create one or more Provide contact options,
-typically an email address.</p>
-<h4>User: Appointment booking</h4>
-<h4>User: Data acquisition</h4>
-<h4>Provider: Registration</h4>
-<h4>Provider: Appointment provision</h4>
-<h4>Provider: Form creation</h4>
+<h2>Lapwing 2.0 - Functions</h2>
+<p>Kiebitz 2.0 should be able to be used as general software for
+secure communication between users and service providers (e.g. in
+public authorities or companies). In addition, the software should
+be able to automate various typical workflows, such as booking
+appointments and filling out forms.</p>
+<h3>Scope of functions</h3>
+<p>The product team has planned the following extended
+functionality for Kiebitz 2.0:</p>
+<h4>Advanced appointment booking</h4>
+<p>Users should be able to book appointments with providers as
+before. However, appointment booking is to be enhanced with
+additional functions, including the option for providers to request
+additional information from users for appointments (e.g., contact
+data).</p>
+<h4>Workflow automation</h4>
+<p>Users and providers should be able to collaborate in digital
+business processes. Users should be able to enter information
+relevant to the provider (e.g., a medical history) via a form and
+transmit it to the provider in encrypted form. The provider, in
+turn, should be able to enter further data in the given process and
+thus digitize a specific business process.</p>
 <h2>Privacy engineering requirements</h2>
-<p>In order to develop concrete requirements from a privacy
-engineering perspective, appropriate frameworks and define
-policies, we first need to be clear about where and how we can the
-software is to be used. For this we ask the following
+<p>In order to work out concrete requirements from a privacy
+engineering point of view, select suitable frameworks and define
+policies, we first need to be clear about where and how the
+software is to be used. To do this, we ask the following
 questions:</p>
 <ul>
 <li>In which countries will the software be offered/used?
@@ -225,14 +236,24 @@ questions:</p>
 <li>Are there any special categories of personal data to be
 processed? <u><strong>Yes</strong></u>.</li>
 </ul>
-<p>In general, the fact that XY GmbH is domiciled in Germany
-results in the need for the Compliance with the General Data
-Protection Regulation (GDPR) and other guidelines such as ePrivacy.
-In view of this requirement and the answers to the above questions,
-we decide to for a German framework that is compatible with the
-requirements of the GDPR, the <strong>Standard Data Protection
-Model (SDM)</strong>. As a framework for technical requirements we
-decide us for the <strong>BSI basic protection model</strong>.</p>
+<p>In general, the fact that XY GmbH is based in Germany means that
+it is necessary to comply with the General Data Protection
+Regulation (DSGVO) and other guidelines such as ePrivacy. Given
+this requirement and the answers to the above questions, we decide
+to use a German framework that is compatible with the requirements
+of the GDPR, the <strong>Standard Data Protection Model
+(SDM)</strong>. As a framework for technical requirements, we
+choose the <strong>BSI Basic Protection Model</strong>.</p>
+<h3>Standard data protection model</h3>
+<p>In the following sections, we document the implementation of the
+standard data protection model according to the <a href=
+"https://www.datenschutz-mv.de/static/DS/Dateien/Datenschutzmodell/SDM-Methode_V3.pdf">
+official documentation</a>.</p>
+<h3>BSI IT basic protection</h3>
+<p>In the following sections, we document the <a href=
+"https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz_node.html">
+BSI IT Grundschutz</a> aspkete relevant for privacy
+engineering.</p>
 </div>
 </section>
 </div>

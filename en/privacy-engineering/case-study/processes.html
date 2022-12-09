@@ -7,7 +7,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content=
 "width=device-width, initial-scale=1">
-<title>Lectures | Privacy Engineering - Frameworks</title>
+<title>Lectures | Privacy Engineering - Case study -
+Processes</title>
 <link rel="stylesheet" type="text/css" href=
 "/lectures/static/css/main.css">
 <script>
@@ -114,7 +115,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="message is-info">
 <div class="message-body">
 <p>This website was mostly translated automatically from the
-<a href="/lectures/privacy-engineering/frameworks">German
+<a href="/lectures/privacy-engineering/fallstudie/prozesse">German
 version</a>. We apologize for any translation errors.</p>
 <span class="x" onclick=
 "localStorage.setItem('translation-notice', true);notice.style.display = 'none'">x</span></div>
@@ -162,9 +163,9 @@ data-target="page-pe-nav">Privacy Engineering</a>
 "/lectures/en/privacy-engineering/introduction">Introduction</a></li>
 <li><a href=
 "/lectures/en/privacy-engineering/frameworks">Frameworks</a></li>
-<li><a class="" href="#" data-toggle="collapse" data-target=
-"page-pe.case-study-nav">Case study</a>
-<ul class="is-hidden" id="page-pe.case-study-nav">
+<li><a class="is-active" href="#" data-toggle="collapse"
+data-target="page-pe.case-study-nav">Case study</a>
+<ul class="" id="page-pe.case-study-nav">
 <li><a href=
 "/lectures/en/privacy-engineering/case-study/introduction">Introduction</a></li>
 <li><a href=
@@ -186,9 +187,9 @@ measures</a></li>
 "menu-language-dropdown">Languages</a>
 <ul id="menu-language-dropdown" class="is-hidden">
 <li><a class="is-open is-active" href=
-"/lectures/en/privacy-engineering/frameworks">English</a></li>
+"/lectures/en/privacy-engineering/case-study/processes">English</a></li>
 <li><a class="" href=
-"/lectures/privacy-engineering/frameworks">Deutsch</a></li>
+"/lectures/privacy-engineering/fallstudie/prozesse">Deutsch</a></li>
 </ul>
 </li>
 </ul>
@@ -196,62 +197,10 @@ measures</a></li>
 </div>
 <section class="section first wide">
 <div class="content markdown with-comments">
-<h1>Privacy Frameworks</h1>
-<p>Privacy engineering must always be oriented to the relevant
-legal framework. Frameworks can help us to more easily capture such
-requirements and translate them into concrete technical
-requirements and measures. Ideally, they represent the current
-state of the art and the current legal opinion and thus help us to
-reduce risks in the implementation of privacy engineering. In this
-sense, frameworks are a link between the often abstract legal
-requirements and concrete technical measures that can be
-implemented in practice.</p>
-<p>Choosing the right framework is not always easy. In general, one
-should first be clear about the context in which the framework is
-to be used. For example, if you are looking for a framework that is
-suitable for the development of a software solution in Europe (e.g.
-in Germany), it makes sense to orientate yourself towards national
-frameworks.</p>
-<p>In general, it should be noted that the use of a specific
-framework alone does not guarantee that the solution developed with
-it is automatically legally compliant. Frameworks have different
-overlaps with specific jurisdictions and international frameworks
-in particular are often not compliant.</p>
-<aside>
-<h4>Klausurwissen</h4>
-<ul>
-<li>In privacy engineering, frameworks help to transfer abstract
-legal requirements to concrete technical measures.</li>
-<li>A framework should be chosen with particular regard to the
-legal context of the solution to be developed.</li>
-<li>The use of a framework alone does not guarantee that a solution
-designed according to it is legally compliant.</li>
-</ul>
-</aside>
-<h2>Considered frameworks</h2>
-<p>In the following sections, we will take a look at some
-frameworks that are of great practical importance. In particular,
-we will focus on the European region and especially on Germany. The
-following frameworks will be discussed:</p>
-<h3>European & German Frameworks</h3>
-<ul>
-<li><strong>Standard Data Protection Model (SDM)</strong></li>
-<li><strong>BSI IT basic protection</strong></li>
-</ul>
-<h3>International frameworks</h3>
-<ul>
-<li><strong>OECD Guidelines</strong></li>
-<li><strong>Generally Accepted Privacy Principles
-(GAPP)</strong></li>
-<li><strong>ISO 2700X series</strong> (not specifically designed
-for privacy)</li>
-</ul>
-<h3>US-centric frameworks</h3>
-<ul>
-<li><strong>NIST Privacy Framework</strong></li>
-<li><strong>Federal Trade Commissions' (FTC) Fair Information
-Privacy Principles (FIPS)</strong></li>
-</ul>
+<h1>Processes</h1>
+<p>In this section, we describe privacy engineering processes and
+how they are embedded in the software development and product
+lifecycle of Lapwing (2.0).</p>
 </div>
 </section>
 </div>
