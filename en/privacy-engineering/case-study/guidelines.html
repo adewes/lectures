@@ -205,14 +205,55 @@ measures</a></li>
 </div>
 <section class="section first wide">
 <div class="content markdown with-comments">
-<h1>Privacy Engineering Guidelines</h1>
-<p>In this section we describe the guidelines / policies developed
+<h1>Privacy Engineering Policy</h1>
+<p>In this section we describe the guideline / policy developed
 based on our <a href=
 "/lectures/en/privacy-engineering/case-study/requirements-analysis">
-requirements analysis</a>. These are intended to provide other
-teams (product development, software, design) with concrete
-guidelines and implementation aids for the design of the product
-and to simplify the work of the privacy engineering team.</p>
+requirements analysis</a>. This is intended to provide other teams
+(product development, software, design) with concrete guidelines
+and implementation aids for the design of the product and to
+simplify the work of the privacy engineering team.</p>
+<h2>Scope</h2>
+<p>This policy applies to the development of the Kiebitz 2.0
+software system and covers all relevant system components and
+related development & business processes. It does not apply to the
+processing of personal data in the context of internal customer
+processes, e.g. invoicing.</p>
+<h2>Basic principles of data processing</h2>
+<p>This Policy is guided by the General Data Protection Regulation
+(GDPR) and the Standard Data Protection Model (SDM). In terms of
+Privacy By Design (PbD), data processing is subject to the
+following fundamental principles:</p>
+<ul>
+<li><strong>Privacy-friendly default settings (Privacy By
+Default)</strong> : If multiple choices exist, the selection should
+default to the privacy-friendly alternative.</li>
+<li><strong>Transparency and control</strong> : Data subjects must
+be able to easily and robustly understand and control the
+processing of their data, i.e. in particular also to have the
+processing restricted or to request the deletion of the data.</li>
+<li><strong>Respect for user privacy</strong> : The design of the
+overall system and individual components should always focus on the
+interests of the users, especially the users' need for
+privacy.</li>
+</ul>
+<h2>Product Design</h2>
+<h2>User interface (UI) / front end</h2>
+<ul>
+<li>Data subjects must be able to easily exercise their rights via
+the user interface, i.e., to view their own data, correct it,
+restrict its processing, and request its deletion.</li>
+</ul>
+<h2>Infrastructure / Backend / Data management</h2>
+<ul>
+<li>All personal data should only be stored in the system in
+encrypted or pseudonymized form. Where possible and appropriate,
+end-to-end encryption should be used so that data can only be
+decrypted on end devices of authorized users.</li>
+<li>Data structures and data storage must be designed in such a way
+that personal data can be corrected and deleted and the processing
+of data by data subjects can be easily controlled.</li>
+</ul>
 </div>
 </section>
 </div>

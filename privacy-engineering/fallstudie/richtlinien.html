@@ -193,14 +193,60 @@ Maßnahmen</a></li>
 </div>
 <section class="section first wide">
 <div class="content markdown with-comments">
-<h1>Privacy Engineering Richtlinien</h1>
+<h1>Privacy Engineering Richtlinie</h1>
 <p>In diesem Abschnitt beschreiben wir die basierend auf unserer
 <a href=
 "/lectures/privacy-engineering/fallstudie/anforderungsanalyse">Anforderungsanalyse</a>
-entwickelten Richtlinien / Policies. Diese sollen anderen Teams
+entwickelten Richtlinie / Policy. Diese soll anderen Teams
 (Produktentwicklung, Software, Design) konkrete Handlungsvorgaben
 und Umsetzungshilfen bei der Gestaltung des Produkts liefern und
 die Arbeit des Privacy Engineering Teams vereinfachen.</p>
+<h2>Geltungsbereich</h2>
+<p>Diese Richtlinie gilt für die Entwicklung des Kiebitz 2.0
+Softwaresystems und umfasst alle relevanten Systemkomponenten und
+verbundene Entwicklungs- & Geschäftsprozesse. Sie betrifft nicht
+die Verarbeitung personenbezogener Daten im Rahmen interner
+Kundenprozesse, z.B. der Rechnungsstellung.</p>
+<h2>Grundlegende Prinzipien der Datenverarbeitung</h2>
+<p>Diese Policy orientiert sich an der Datenschutzgrundverordnung
+(DSGVO) und dem Standard-Datenschutzmodell (SDM). In Sinne von
+Privacy By Design (PbD) unterliegt die Datenverarbeitung folgenden
+grundlegenden Prinzipien:</p>
+<ul>
+<li><strong>Datenschutzfreundliche Voreinstellungen (Privacy By
+Default)</strong>: Wenn mehrere Auswahlmöglichkeiten bestehen,
+sollte die Auswahl so voreingestellt sein, dass die
+datenschutzfreundliche Alternative gewählt wird.</li>
+<li><strong>Transparenz und Kontrolle</strong>: Betroffene müssen
+in der Lage sein, die Verarbeitung ihrer Daten einfach und robust
+nachvollziehen und steuern zu können, d.h. insbesondere auch die
+Verarbeitung einschränken zu lassen oder die Löschung der Daten zu
+beantragen.</li>
+<li><strong>Respekt vor Privatsphäre der Nutzer</strong>: Bei der
+Gestaltung des Gesamtsystems und einzelner Komponenten sollten
+immer die Interessen der Nutzer im Vordergrund stehen, insbesondere
+das Bedürfnis der Nutzer für Privatsphäre.</li>
+</ul>
+<h2>Produktdesign</h2>
+<h2>Benutzerobfläche (UI) / Frontend</h2>
+<ul>
+<li>Betroffene müssen über die Benutzeroberfläche einfach in der
+Lage sein, ihre Rechte auszuüben, d.h. die eigenen Daten
+einzusehen, zu korrigieren, ihre Verarbeitung einzuschränken und
+ihre Löschung zu beantragen.</li>
+</ul>
+<h2>Infrastruktur / Backend / Datenhaltung</h2>
+<ul>
+<li>Alle personenbezogenen Daten sollen im System nur verschlüsselt
+oder pseudonymisiert gespeichert werden. Wo möglich und sinnvoll,
+soll Ende-zu-Ende Verschlüsselung eingesetzt werden, so dass eine
+Entschlüsselung von Daten nur auf Endgeräten berechtigter Nutzer
+erfolgt.</li>
+<li>Datenstrukturen und Datenhaltung müssen so gestaltet werden,
+dass personenbezogene Daten korrigier- und löschbar sind und die
+Verarbeitung der Daten durch Betroffene einfach gesteuert werden
+kann.</li>
+</ul>
 </div>
 </section>
 </div>

@@ -256,6 +256,117 @@ choose the <strong>BSI Basic Protection Model</strong>.</p>
 standard data protection model according to the <a href=
 "https://www.datenschutz-mv.de/static/DS/Dateien/Datenschutzmodell/SDM-Methode_V3.pdf">
 official documentation</a>.</p>
+<h4>Initial requirements analysis questions: Appointment
+booking</h4>
+<ul>
+<li>Are there concrete user stories or process descriptions for the
+planned functional scope?</li>
+<li>What specific personal data is to be collected?
+<ul>
+<li>In the appointment booking process, the user's e-mail address,
+a mobile phone number if applicable, and the address if applicable
+are recorded.</li>
+</ul>
+</li>
+<li>How and where should personal data be stored?
+<ul>
+<li>Unclear, to be determined by the software team in coordination
+with the privacy engineering team.</li>
+</ul>
+</li>
+<li>What additional metadata is captured for appointment booking?
+<ul>
+<li>The place (e.g. doctor's office), the time and, if necessary,
+further information about the appointment e.g. the type (doctor's
+appointment, administrative appointment etc.)</li>
+</ul>
+</li>
+<li>How is the user informed about the data collection?
+<ul>
+<li>To be developed by Privacy Engineering together with Legal /
+Data Protection Officer.</li>
+</ul>
+</li>
+<li>Should the user data also be processed for other purposes?
+<ul>
+<li>For Analytics / Business Intelligence / Data Science,
+Marketing.</li>
+</ul>
+</li>
+<li>Which stakeholders should the data be made available to?
+<ul>
+<li>For the parties involved in the appointment booking process,
+i.e. doctors or appointment providers in general, as well as the
+users and, if applicable, customer support.</li>
+</ul>
+</li>
+<li>Should sub-processors be used to process the data?
+<ul>
+<li>A CRM is to be set up for appointment providers in which their
+data is processed for sales purposes.</li>
+</ul>
+</li>
+<li>How long should the data be stored in the system?
+<ul>
+<li>As long as necessary, must be coordinated with customers,
+privacy engineering and software development.</li>
+</ul>
+</li>
+<li>How should the technical infrastructure be designed? For
+example, should an external cloud provider be used for
+hosting?</li>
+</ul>
+<h4>Processing activities and requirements</h4>
+<p>An overview of the planned processing operations in Kiebitz 2.0
+is given in the <a href=
+"https://kiebitz.eu/doku/system/konzept">software
+documentation</a>.</p>
+<h5>Requirements according to SDM</h5>
+<p>The legal framework and the standard data protection model as
+the chosen framework result in requirements in the following
+areas:</p>
+<ul>
+<li><strong>Availability</strong>
+<ul>
+<li><strong>Backup strategy</strong> : Booking & user data must be
+backed up regularly, ideally hourly or at least daily in an
+encrypted backup. Restoration of the data must be checked
+regularly.</li>
+<li><strong>Configuration management / DevOps</strong> :
+Infrastructure & software components must be able to be created
+automatically on the basis of a declarative configuration, or the
+creation must at least be documented precisely in writing.</li>
+<li><strong>Data model / audit logging / deletion strategy</strong>
+: A data dictionary must exist that describes all data types /
+model and their fields / attributes.</li>
+</ul>
+</li>
+<li><strong>Integrity</strong>
+<ul>
+<li><strong>Role management</strong> : Definition of rights (write,
+read, delete) based on assigned roles in the system via role-based
+access management (RBAC).</li>
+<li><strong>Data integrity</strong> : use of cryptographic and
+other mechanisms to ensure the integrity of data in the
+system.</li>
+<li><strong>Deletion & correction of data</strong> : Possibility to
+exercise data subject rights and, for example, have your own
+personal data deleted or corrected.</li>
+<li><strong>Protection against external influences</strong> :
+Ensuring the scalability / resilience of the system, e.g., during
+load peaks or denial of service (DoS) attacks, for example, through
+the use of CAPTCHAs. Protection against hacking or theft of data
+through cryptographic measures, e.g. encryption.</li>
+<li><strong>Data validation</strong> : checking of all input data
+before saving/processing in the system.</li>
+</ul>
+</li>
+<li><strong>Confidentiality</strong> :</li>
+<li><strong>Non-chaining</strong> :</li>
+<li><strong>Transparency</strong> :</li>
+<li><strong>Intervenability</strong> :</li>
+<li><strong>Data minimization</strong> :</li>
+</ul>
 <h3>BSI IT basic protection</h3>
 <p>In the following sections, we document the <a href=
 "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz_node.html">

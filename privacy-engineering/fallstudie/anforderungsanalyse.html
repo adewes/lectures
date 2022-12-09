@@ -248,6 +248,120 @@ für technische Anforderungen entscheiden wir uns für das
 Standard-Datenschutzmodells gemäß der <a href=
 "https://www.datenschutz-mv.de/static/DS/Dateien/Datenschutzmodell/SDM-Methode_V3.pdf">
 offiziellen Dokumentation</a>.</p>
+<h4>Initiale Fragen zur Anforderungsanalyse: Terminbuchung</h4>
+<ul>
+<li>Gibt es konkrete User Stories oder Prozessbeschreibungen für
+den geplanten Funktionsumfang?</li>
+<li>Welche konkreten personenbezogenen Daten sollen erfasst werden?
+<ul>
+<li>Im Terminbuchungsprozess werden die E-Mail Adresse des Nutzers,
+ggf. eine Mobilfunknummer sowie ggf. die Anschrift erfasst.</li>
+</ul>
+</li>
+<li>Wie und wo sollen personenbezogene Daten gespeichert werden?
+<ul>
+<li>Unklar, soll vom Softwareteam in Abstimmung mit dem Privacy
+Engineering Team festgelegt werden.</li>
+</ul>
+</li>
+<li>Welche zusätzlichen Metadaten werden für die Terminbuchung
+erfasst?
+<ul>
+<li>Der Ort (z.B. Arztpraxis), die Zeit und ggf. weitere
+Informationen zum Termin z.B. die Art (Arztbesuch, administrativer
+Termin etc.)</li>
+</ul>
+</li>
+<li>Wie wird der Nutzer über die Datenerfassung informiert?
+<ul>
+<li>Soll vom Privacy Engineering zusammen mit Legal /
+Datenschuztzbeauftragten erarbeitet werden.</li>
+</ul>
+</li>
+<li>Sollen die Nutzerdaten auch für andere Zwecke verarbeitet
+werden?
+<ul>
+<li>Für Analytics / Business Intelligence / Data Science,
+Marketing.</li>
+</ul>
+</li>
+<li>Welchen Akteuren sollen die Daten zur Verfügung gestellt
+werden?
+<ul>
+<li>Für die Beteiligten im Terminbuchungsprozess, d.h. Ärzte oder
+Terminanbieter allgmein, sowie die Nutzer und ggf.
+Kundensupport.</li>
+</ul>
+</li>
+<li>Sollen Untervearbeiter für die Verarbeitung der Daten
+eingesetzt werden?
+<ul>
+<li>Es soll für Anbieter von Terminen ein CRM eingerichtet werden
+in dem deren Daten für Vertriebszwecke verarbeitet werden.</li>
+</ul>
+</li>
+<li>Wie lange sollen die Daten im System gespeichert werden?
+<ul>
+<li>So lange wie nötig, muss abgestimmt werden mit Kunden, Privacy
+Engineering und Softwareentwicklung.</li>
+</ul>
+</li>
+<li>Wie soll die technische Infrastruktur gestaltet werden? Soll
+z.B. ein externer Cloud-Anbieter für das Hosting genutzt
+werden?</li>
+</ul>
+<h4>Verarbeitungstätigkeiten und Anforderungen</h4>
+<p>Eine Übersicht über die geplanten Verarbeitungsvorgänge in
+Kiebitz 2.0 ist in der <a href=
+"https://kiebitz.eu/doku/system/konzept">Softwaredokumentation</a>
+gegeben.</p>
+<h5>Anforderungen nach SDM</h5>
+<p>Aus dem rechtlichen Rahmen und dem Standard-Datenschutzmodell
+als gewähltes Framework ergeben sich Anforderungen in folgenden
+Bereichen:</p>
+<ul>
+<li><strong>Verfügbarkeit</strong>
+<ul>
+<li><strong>Backup-Strategie</strong>: Buchungs- & Nutzerdaten
+müssen regelmäßig, idealerweise stündlich oder zumindest täglich in
+einem verschlüsselten Backup gesichert werden. Die
+Wiederherstellung der Daten muss regelmäßig geprüft werden.</li>
+<li><strong>Konfigurationsmanagement / DevOps</strong>:
+Infrastruktur- & Softwarekomponenten müssen automatisiert erstellt
+werden können anhand einer deklarativen Konfiguration, oder die
+Erstellung muss zumindest genau schriftlich dokumentiert
+werden.</li>
+<li><strong>Datenmodell / Audit-Logging / Löschstrategie</strong>:
+Es muss ein Data Dictionary existieren, das sämtliche Datentypen /
+-modell und deren Felder / Attribute beschreibt.</li>
+</ul>
+</li>
+<li><strong>Integrität</strong>
+<ul>
+<li><strong>Rollenmanagement</strong>: Definition von Rechten
+(Schreiben, Lesen, Löschen) basierend auf zugewiesenen Rollen im
+System über ein rollenbasiertes Zugriffsmanagement (RBAC).</li>
+<li><strong>Datenintegrität</strong>: Nutzung kryptographischer und
+anderer Mechanismen um die Integrität von Daten im System zu
+sichern.</li>
+<li><strong>Löschen & Berichtigung von Daten</strong>: Möglichkeit,
+Betroffenrechte wahrzunehmen und z.B. eigene personenbezogene Daten
+löschen oder korrigieren zu lassen.</li>
+<li><strong>Schutz vor äußeren Einflüssen</strong>: Sicherstellung
+der Skalierbarkeit / Belastbarkeit des Systems z.B. bei Lastspitzen
+oder bei Denial of Service (DoS) Angriffen, beispielsweise durch
+den Einsatz von CAPTCHAs. Schutz vor Hacking oder Diebstahl der
+Daten durch kryptographische Maßnahmen z.B. Verschlüsselung.</li>
+<li><strong>Datenvalidierung</strong>: Prüfung aller Eingabedaten
+vor Speicherung/Verarbeitung im System.</li>
+</ul>
+</li>
+<li><strong>Vertraulichkeit</strong>:</li>
+<li><strong>Nichtverkettung</strong>:</li>
+<li><strong>Transparenz</strong>:</li>
+<li><strong>Intervenierbarkeit</strong>:</li>
+<li><strong>Datenminimierung</strong>:</li>
+</ul>
 <h3>BSI IT-Grundschutz</h3>
 <p>In den folgenden Abschnitten dokumentieren wir die für Privacy
 Engineering relevanten Aspkete des <a href=
