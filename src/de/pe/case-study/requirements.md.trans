@@ -12,9 +12,21 @@
   en: >-
     * In which countries will the software be offered/used? **In
     Europe**.
+05d4ffac7fc9745c:
+  de: '* **Intervenierbarkeit**:'
+  en: '* **Intervenability** :'
 07c1576a204004b3:
   de: '## Privacy Engineering Anforderungen'
   en: '## Privacy engineering requirements'
+07fa07c8d5409353:
+  de: >2-
+      * Der Ort (z.B. Arztpraxis), die Zeit und ggf. weitere Informationen
+    zum Termin z.B. die Art (Arztbesuch, administrativer Termin
+    etc.)
+  en: >2-
+      * The place (e.g. doctor's office), the time and, if necessary,
+    further information about the appointment e.g. the type (doctor's
+    appointment, administrative appointment etc.)
 0a0ba977c2a2ea57:
   de: >-
     * In welchen Ländern soll die Software angeboten/genutzt werden?
@@ -25,9 +37,45 @@
 0b2740959797f94e:
   de: '#### Terminbuchung'
   en: '#### Appointment booking'
+0c1c44cee5836e30:
+  de: >2-
+      * Für die Beteiligten im Terminbuchungsprozess, d.h. Ärzte
+    oder Terminanbieter allgmein, sowie die Nutzer und ggf. Kundensupport.
+  en: >2-
+      * For the parties involved in the appointment booking process,
+    i.e. doctors or appointment providers in general, as well
+    as the users and, if applicable, customer support.
+0f7b545d8aadd6a6:
+  de: >2-
+      * Im Terminbuchungsprozess werden die E-Mail Adresse des
+    Nutzers, ggf. eine Mobilfunknummer sowie ggf. die Anschrift
+    erfasst.
+  en: >2-
+      * In the appointment booking process, the user's e-mail
+    address, a mobile phone number if applicable, and the address
+    if applicable are recorded.
 107adcd585baf097:
   de: '### User Stories'
   en: '### User Stories'
+13788c40b1eae547:
+  de: >2-
+      * **Löschen & Berichtigung von Daten**: Möglichkeit, Betroffenrechte
+    wahrzunehmen und z.B. eigene personenbezogene Daten löschen
+    oder korrigieren zu lassen.
+  en: >2-
+      * **Deletion & correction of data** : Possibility to exercise
+    data subject rights and, for example, have your own personal
+    data deleted or corrected.
+15d92b6418f8ec45:
+  de: '* **Integrität*:'
+  en: '* **Integrity* :'
+15f5820fd9ec25a6:
+  de: >2-
+      * **Datenintegrität**: Nutzung kryptographischer und anderer
+    Mechanismen um die Integrität von Daten im System zu sichern.
+  en: >2-
+      * **Data integrity** : use of cryptographic and other mechanisms
+    to ensure the integrity of data in the system.
 1a77942a87407b27:
   de: >-
     Das Produktteam hat für Kiebitz 2.0 den folgenden erweiterten
@@ -35,6 +83,12 @@
   en: >-
     The product team has planned the following extended functionality
     for Kiebitz 2.0:
+1aaef49f56b1e624:
+  de: '* **Vertraulichkeit**'
+  en: '* **Confidentiality**'
+1bf88383824578e2:
+  de: '* **Integrität**'
+  en: '* **Integrity**'
 1c1d455640ff0705:
   de: >-
     Kiebitz 2.0 soll als generelle Software zur sicheren Kommunikation
@@ -44,9 +98,19 @@
     Kiebitz 2.0 should be able to be used as general software
     for secure communication between users and service providers
     (e.g. in public authorities or companies).
+1de13945e555c910:
+  de: >2-
+      * Soll vom Privacy Engineering zusammen mit Legal / Datenschuztzbeauftragten
+    erarbeitet werden.
+  en: >2-
+      * To be developed by Privacy Engineering together with Legal
+    / Data Protection Officer.
 1de26794eaf7a98b:
   de: '# Anforderungsanalyse'
   en: '# Requirements analysis'
+223aba23dd6b1ae4:
+  de: '##### Anforderungen nach SDM'
+  en: '##### Requirements according to SDM'
 25cf788b0298b1bd:
   de: >-
     Kiebitz soll als generelle Software zur sicheren Kommunikation
@@ -54,6 +118,16 @@
   en: >-
     Kiebitz is intended as general software for secure communication
     between users and providers of
+271191559fda9eea:
+  de: >2-
+      * **Backup-Strategie**: Buchungs- & Nutzerdaten müssen regelmäßig,
+    idealerweise stündlich oder zumindest täglich in einem verschlüsselten
+    Backup gesichert werden. Die Wiederherstellung der Daten muss
+    regelmäßig geprüft werden.
+  en: >2-
+      * **Backup strategy** : Booking & user data must be backed
+    up regularly, ideally hourly or at least daily in an encrypted
+    backup. Restoration of the data must be checked regularly.
 2c3a4044c369c667:
   de: >-
     In den folgenden Abschnitten dokumentieren wir die Umsetzung
@@ -62,6 +136,37 @@
     In the following sections, we document the implementation
     of the standard data protection model according to the [official
     documentation](https://www.datenschutz-mv.de/static/DS/Dateien/Datenschutzmodell/SDM-Methode_V3.pdf)
+2fd2714287d1e19f:
+  de: '* Wie wird der Nutzer über die Datenerfassung informiert?'
+  en: '* How is the user informed about the data collection?'
+3509984c83c2f8bc:
+  de: >2-
+      * Datenmodell / Audit-Logging / Löschstrategie: Es muss
+    ein Data Dictionary existieren, das sämtliche Datentypen /
+    -modell und deren Felder / Attribute beschreibt.
+  en: >2-
+      * Data model / audit logging / deletion strategy: A data
+    dictionary must exist that describes all data types / model
+    and their fields / attributes.
+3836fdec699a9e0c:
+  de: >2-
+      * **Datenmodell / Audit-Logging / Löschstrategie**: Es muss
+    ein Data Dictionary existieren, das sämtliche Datentypen /
+    -modell und deren Felder / Attribute beschreibt.
+  en: >2-
+      * **Data model / audit logging / deletion strategy** : A
+    data dictionary must exist that describes all data types /
+    model and their fields / attributes.
+3c51f995e784efd2:
+  de: '  * Konfigurationsmanagement / DevOps: '
+  en: '  * Configuration Management / DevOps: '
+3dac651a08cb0f78:
+  de: >2-
+      * **Rollenmanagement**: Definition von Rechten (Schreiben,
+    Lesen, Löschen) basierend auf zugewiesenen Rollen im System.
+  en: >2-
+      * **Role management** : definition of rights (write, read,
+    delete) based on assigned roles in the system.
 3dbe00fd26d826e9:
   de: >-
     Das Produktteam hat für Kiebitz die folgenden User Stories
@@ -69,6 +174,17 @@
   en: >-
     The product team identified the following user stories for
     Kiebitz:
+3dce193e4e01d7ee:
+  de: >2-
+      * Konfigurationsmanagement / DevOps: Infrastruktur- & Softwarekomponenten
+    müssen automatisiert erstellt werden können anhand einer deklarativen
+    Konfiguration, oder die Erstellung muss zumindest genau schriftlich
+    dokumentiert werden.
+  en: >2-
+      * Configuration management / DevOps: Infrastructure & software
+    components must be able to be created automatically on the
+    basis of a declarative configuration, or the creation must
+    at least be documented precisely in writing.
 3f0cb083719ef040:
   de: >-
     Nutzer und Anbieter sollen in digitalen Geschäftsprozessen
@@ -85,6 +201,16 @@
     and transmit it to the provider in encrypted form. The provider,
     in turn, should be able to enter further data in the given
     process and thus digitize a specific business process.
+4383400f299f8eff:
+  de: >2-
+      * Backup-Strategie: Buchungs- & Nutzerdaten müssen regelmäßig,
+    idealerweise stündlich oder zumindest täglich in einem verschlüsselten
+    Backup gesichert werden. Die Wiederherstellung der Daten muss
+    regelmäßig geprüft werden.
+  en: >2-
+      * Backup strategy: Booking & user data must be backed up
+    regularly, ideally hourly or at least daily in an encrypted
+    backup. Restoration of the data must be checked regularly.
 445a105dd29fab11:
   de: >-
     In Anbetracht dieser Anforderung und der Antworten auf die
@@ -95,15 +221,57 @@
 458fca1ca55a8860:
   de: für ein europäisches Framework
   en: for a European framework
+4f0130c7fd2f5436:
+  de: >-
+    Eine Übersicht über die geplanten Verarbeitungsvorgänge in
+    Kiebitz 2.0 ist in der [Softwaredokumentation](https://kiebitz.eu/doku/system/konzept)
+    gegeben.
+  en: >-
+    An overview of the planned processing operations in Kiebitz
+    2.0 is given in the [software documentation](https://kiebitz.eu/doku/system/konzept).
+4f1684eaa3963485:
+  de: >2-
+      * **Schutz vor äußeren Einflüssen**: Sicherstellung der
+    Skalierbarkeit / Belastbarkeit des Systems z.B. bei Lastspitzen
+    oder bei Denial of Service (DoS) Angriffen.
+  en: >2-
+      * **Protection against external influences** : Ensuring
+    the scalability / resilience of the system, e.g. during load
+    peaks or denial of service (DoS) attacks.
+51d49360850c6f9c:
+  de: '* Wie lange sollen die Daten im System gespeichert werden?'
+  en: '* How long should the data be stored in the system?'
 55b9e41ec970c7ec:
   de: >-
     * Sollen spezielle Kategorien personenbezogener Daten verarbeitet
     werden?
   en: '* Are special categories of personal data to be processed?'
+56425426d00ec023:
+  de: >2-
+      * **Schutz vor äußeren Einflüssen**: Sicherstellung der
+    Skalierbarkeit / Belastbarkeit des Systems z.B. bei Lastspitzen
+    oder bei Denial of Service (DoS) Angriffen, beispielsweise
+    durch den Einsatz von CAPTCHAs. Schutz vor Hacking oder Diebstahl
+    der Daten durch kryptographische Maßnahmen z.B. Verschlüsselung.
+  en: >2-
+      * **Protection against external influences** : Ensuring
+    the scalability / resilience of the system, e.g., during load
+    peaks or denial of service (DoS) attacks, for example, through
+    the use of CAPTCHAs. Protection against hacking or theft of
+    data through cryptographic measures, e.g. encryption.
+589493d83986e410:
+  de: '* **Transparenz**'
+  en: '* **Transparency**'
+5efdadc678bef4b2:
+  de: '  * **Rollenmanagement:**'
+  en: '  * **Role Management:**'
 5f19ea7d194e34a0:
   de: >-
     * In welchen Ländern soll die Software angeboten/genutzt werden?
   en: '* In which countries should the software be offered/used?'
+62dd01f145ad88df:
+  de: '* **Datenminimierung**:'
+  en: '* **Data minimization** :'
 63f926aa540dabb2:
   de: >-
     In Anbetracht dieser Anforderung und der Antworten auf die
@@ -133,6 +301,14 @@
 6a6c8d9cbb1789dd:
   de: '#### Dashboard'
   en: '#### Dashboard'
+70e5267bccd30ff5:
+  de: >2-
+      * Es soll für Anbieter von Terminen ein CRM eingerichtet
+    werden in dem deren Daten für Vertriebszwecke verarbeitet
+    werden.
+  en: >2-
+      * A CRM is to be set up for appointment providers in which
+    their data is processed for sales purposes.
 74fa3e90d8d9c0cf:
   de: >-
     **Standard-Datenschutzmodell (SDM)**. Als Framework für technische
@@ -146,6 +322,12 @@
 77035b8901fa4946:
   de: '#### Workflow-Automatisierung'
   en: '#### Workflow automation'
+775113f159aac4db:
+  de: '* **Vertraulichkeit**:'
+  en: '* **Confidentiality** :'
+79f60ef9c191224a:
+  de: '* **Transparenz**:'
+  en: '* **Transparency** :'
 7a0b16f3a53faabb:
   de: >-
     die Software eingesetzt werden soll. Hierzu stellen wir folgende
@@ -216,6 +398,14 @@
     In general, the fact that XY GmbH is based in Germany means
     that it is necessary to comply with the General Data Protection
     Regulation (DSGVO) and other guidelines such as ePrivacy.
+926dee87e743eea9:
+  de: >-
+    * Sollen die Nutzerdaten auch für andere Zwecke verarbeitet
+    werden?
+  en: '* Should the user data also be processed for other purposes?'
+9714eca21de9e5c3:
+  de: '  * Datenmodell / Audit-Logging / Löschstrategie:'
+  en: '  * Data model / audit logging / deletion strategy:'
 98989dadba7cd216:
   de: >-
     Generell ergibt sich aus der Ansässigkeit der XY GmbH in Deutschland
@@ -230,6 +420,9 @@
   en: >-
     for a German framework that is compatible with the requirements
     of the GDPR, the
+9aa110df26e38d9a:
+  de: '  * '
+  en: '  * '
 9ab8889d3255a790:
   de: >-
     Um konkrete Anforderungen aus Privacy Engineering Sicht zu
@@ -243,12 +436,52 @@
     define policies, we first need to be clear about where and
     how the software is to be used. To do this, we ask the following
     questions:
+9ad35f7cdb8f21c5:
+  de: '  * **'
+  en: '  * * *'
 9e8e4cf9bbaf0e01:
   de: '#### Nutzer: Terminbuchung'
   en: '#### User: Appointment booking'
+a085e934ce6fcb08:
+  de: >2-
+      * **Konfigurationsmanagement / DevOps**: Infrastruktur-
+    & Softwarekomponenten müssen automatisiert erstellt werden
+    können anhand einer deklarativen Konfiguration, oder die Erstellung
+    muss zumindest genau schriftlich dokumentiert werden.
+  en: >2-
+      * **Configuration management / DevOps** : Infrastructure
+    & software components must be able to be created automatically
+    on the basis of a declarative configuration, or the creation
+    must at least be documented precisely in writing.
+a0979bc85725e3c0:
+  de: >2-
+      * So lange wie nötig, muss abgestimmt werden mit Kunden,
+    Privacy Engineering und Softwareentwicklung.
+  en: >2-
+      * As long as necessary, must be coordinated with customers,
+    privacy engineering and software development.
+a217bedf23d48aaf:
+  de: '* **Verfügbarkeit**:'
+  en: '* **Availability** :'
+a29a83166f6d05cd:
+  de: >-
+    Aus dem rechtlichen Rahmen und dem Standard-Datenschutzmodell
+    als gewähltes Framework ergeben sich Anforderungen in folgenden
+    Bereichen:
+  en: >-
+    The legal framework and the standard data protection model
+    as the chosen framework result in requirements in the following
+    areas:
 a3a1ce09018cee54:
   de: uns für das **BSI Grundschutz-Modell**.
   en: us for the **BSI basic protection model**.
+a67aea92346674b1:
+  de: '* **Nichtverkettung**:'
+  en: '* **Non-chaining** :'
+a6df4fbcc5b3b60e:
+  de: >-
+    * Wie und wo sollen personenbezogene Daten gespeichert werden?
+  en: '* How and where should personal data be stored?'
 a98e55d0a8da9afe:
   de: >-
     Darüber hinaus soll die Software verschiedene typische Arbeitsabläufe
@@ -259,6 +492,11 @@ a98e55d0a8da9afe:
 aa77f019b1fb7579:
   de: '## Anforderungen ans Privacy Engineering'
   en: '## Privacy engineering requirements'
+abf4a80a9c7da6b6:
+  de: >-
+    * Sollen Untervearbeiter für die Verarbeitung der Daten eingesetzt
+    werden?
+  en: '* Should sub-processors be used to process the data?'
 ad2764daca6ce028:
   de: >-
     Um konkrete Anforderungen aus Privacy Engineering Sicht zu
@@ -269,6 +507,22 @@ ad2764daca6ce028:
 afbb9a4c8b3e051f:
   de: '#### Datenerfassung'
   en: '#### Data acquisition'
+b362e091558f1670:
+  de: '#### Initiale Fragen zur Anforderungsanalyse: Terminbuchung'
+  en: >-
+    #### Initial requirements analysis questions: Appointment
+    booking
+b5319f911eee3439:
+  de: >2-
+      * **Schutz vor äußeren Einflüssen**: Sicherstellung der
+    Skalierbarkeit / Belastbarkeit des Systems z.B. bei Lastspitzen
+    oder bei Denial of Service (DoS) Angriffen, beispielsweise
+    durch den Einsatz von CAPTCHAs.
+  en: >2-
+      * **Protection against external influences** : Ensuring
+    the scalability / resilience of the system, e.g. during load
+    peaks or denial of service (DoS) attacks, for example through
+    the use of CAPTCHAs.
 b95ea6fbcae50492:
   de: '* In welchen Bereichen soll die Software Daten verarbeiten?'
   en: '* In which areas should the software process data?'
@@ -283,6 +537,22 @@ bc4c4c45653c848b:
 bdd3bcaf5c81ee1b:
   de: '### Standard-Datenschutzmodell'
   en: '### Standard data protection model'
+bf30c11a33dd01e0:
+  de: >2-
+      * Für Analytics / Business Intelligence / Data Science,
+    Marketing.
+  en: >2-
+      * For Analytics / Business Intelligence / Data Science,
+    Marketing.
+bf58ce6b71475d0f:
+  de: '* **Datenminimierung**'
+  en: '* **Data minimization**'
+c21e63473fb7c90c:
+  de: '* '
+  en: '* '
+c257a25006838a00:
+  de: '* **Integrität**:'
+  en: '* **Integrity** :'
 c4b28c313f2ab62c:
   de: >-
     In den folgenden Abschnitten dokumentieren wir die für Privacy
@@ -290,9 +560,17 @@ c4b28c313f2ab62c:
   en: >-
     In the following sections, we document the [BSI IT Grundschutz](https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz_node.html)
     aspkete relevant for privacy engineering.
+c4c825d55a366961:
+  de: '* **Nichtverkettung**'
+  en: '* **Non-chaining**'
 c7f5fdeae38c66b0:
   de: '## Kiebitz 2.0 - Funktionen'
   en: '## Lapwing 2.0 - Functions'
+cd02f885d89ec9af:
+  de: >-
+    * Welche konkreten personenbezogenen Daten sollen erfasst
+    werden?
+  en: '* What specific personal data is to be collected?'
 d0f64cfa94ee4a6b:
   de: >-
     * Sollen spezielle Kategorien personenbezogener Daten verarbeitet
@@ -307,21 +585,46 @@ d8f01e596b90ccfd:
   en: >-
     Compliance with the General Data Protection Regulation (GDPR)
     and other guidelines such as ePrivacy.
+dc171696836f6b30:
+  de: '* **Intervenierbarkeit**'
+  en: '* **Intervenability**'
 dd621e7333c6e308:
   de: '#### Anbieter: Formularerstellung'
   en: '#### Provider: Form creation'
+de2da7219393cdfd:
+  de: '* **Verfügbarkeit**'
+  en: '* **Availability**'
 e34a74878bbec1b2:
   de: '### Funktionsumfang'
   en: '### Scope of functions'
 e3b0c44298fc1c14:
   de: ''
   en: ''
+e593f6940a9a29ef:
+  de: >2-
+      * Unklar, soll vom Softwareteam in Abstimmung mit dem Privacy
+    Engineering Team festgelegt werden.
+  en: >2-
+      * Unclear, to be determined by the software team in coordination
+    with the privacy engineering team.
 e751eba0b9dc6fbd:
   de: die Buchung von Terminen sowie das Ausfüllen von Formularen.
   en: booking appointments and filling out forms.
+e898f8fb1aab288a:
+  de: >-
+    * Welchen Akteuren sollen die Daten zur Verfügung gestellt
+    werden?
+  en: '* Which stakeholders should the data be made available
+    to?'
 e91f7765c37c02e1:
   de: '####  Terminbuchung'
   en: '#### Appointment booking'
+ea09a7d1085d319e:
+  de: >-
+    * Welche zusätzlichen Metadaten werden für die Terminbuchung
+    erfasst?
+  en: >-
+    * What additional metadata is captured for appointment booking?
 eb07e80ed56afe7a:
   de: '#### Nutzer: Datenerfassung'
   en: '#### User: Data acquisition'
@@ -334,6 +637,30 @@ eb94a6e520be8011:
     In addition, the software should be able to automate various
     typical workflows, such as booking appointments and filling
     out forms.
+ed314cc5aa7fc538:
+  de: >2-
+      * **Datenvalidierung**: Prüfung aller Eingabedaten vor Speicherung/Verarbeitung
+    im System.
+  en: >2-
+      * **Data validation** : checking of all input data before
+    saving/processing in the system.
+ef838c76ec77f9f3:
+  de: >-
+    * Wie soll die technische Infrastruktur gestaltet werden?
+    Soll z.B. ein externer Cloud-Anbieter für das Hosting genutzt
+    werden?
+  en: >-
+    * How should the technical infrastructure be designed? For
+    example, should an external cloud provider be used for hosting?
+f2991441d599e89e:
+  de: >2-
+      * **Rollenmanagement**: Definition von Rechten (Schreiben,
+    Lesen, Löschen) basierend auf zugewiesenen Rollen im System
+    über ein rollenbasiertes Zugriffsmanagement (RBAC).
+  en: >2-
+      * **Role management** : Definition of rights (write, read,
+    delete) based on assigned roles in the system via role-based
+    access management (RBAC).
 f2aa703ea15f9603:
   de: '#### Anbieter: Registrierung'
   en: '#### Provider: Registration'
@@ -345,6 +672,19 @@ f51b85eb1a18a0d0:
 f5edc8cca7a1f69b:
   de: '#### Anbieter: Terminbereitstellung'
   en: '#### Provider: Appointment provision'
+f8845d6819d15768:
+  de: >-
+    * Gibt es konkrete User Stories oder Prozessbeschreibungen
+    für den geplanten Funktionsumfang?
+  en: >-
+    * Are there concrete user stories or process descriptions
+    for the planned functional scope?
 fa4ee8d0a21134b7:
   de: '## Kiebitz - Funktionen'
   en: '## Lapwing - functions'
+fd06d96e634dcbc7:
+  de: '#### Verarbeitungstätigkeiten und Anforderungen'
+  en: '#### Processing activities and requirements'
+ff9c8ba3b6e2b789:
+  de: '  * Backup-Strategie:'
+  en: '  * Backup strategy:'

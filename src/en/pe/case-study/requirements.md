@@ -32,6 +32,67 @@ Given this requirement and the answers to the above questions, we decide to use 
 
 In the following sections, we document the implementation of the standard data protection model according to the [official documentation](https://www.datenschutz-mv.de/static/DS/Dateien/Datenschutzmodell/SDM-Methode_V3.pdf).
 
+#### Initial requirements analysis questions: Appointment booking
+
+* Are there concrete user stories or process descriptions for the planned functional scope?
+* What specific personal data is to be collected?
+  * In the appointment booking process, the user's e-mail
+address, a mobile phone number if applicable, and the address if applicable are recorded.
+* How and where should personal data be stored?
+  * Unclear, to be determined by the software team in coordination
+with the privacy engineering team.
+* What additional metadata is captured for appointment booking?
+  * The place (e.g. doctor's office), the time and, if necessary,
+further information about the appointment e.g. the type (doctor's appointment, administrative appointment etc.)
+* How is the user informed about the data collection?
+  * To be developed by Privacy Engineering together with Legal
+/ Data Protection Officer.
+* Should the user data also be processed for other purposes?
+  * For Analytics / Business Intelligence / Data Science,
+Marketing.
+* Which stakeholders should the data be made available to?
+  * For the parties involved in the appointment booking process,
+i.e. doctors or appointment providers in general, as well as the users and, if applicable, customer support.
+* Should sub-processors be used to process the data?
+  * A CRM is to be set up for appointment providers in which
+their data is processed for sales purposes.
+* How long should the data be stored in the system?
+  * As long as necessary, must be coordinated with customers,
+privacy engineering and software development.
+* How should the technical infrastructure be designed? For example, should an external cloud provider be used for hosting?
+
+#### Processing activities and requirements
+
+An overview of the planned processing operations in Kiebitz 2.0 is given in the [software documentation](https://kiebitz.eu/doku/system/konzept).
+
+##### Requirements according to SDM
+
+The legal framework and the standard data protection model as the chosen framework result in requirements in the following areas:
+
+* **Availability**
+  * **Backup strategy** : Booking & user data must be backed
+up regularly, ideally hourly or at least daily in an encrypted backup. Restoration of the data must be checked regularly.
+  * **Configuration management / DevOps** : Infrastructure
+& software components must be able to be created automatically on the basis of a declarative configuration, or the creation must at least be documented precisely in writing.
+  * **Data model / audit logging / deletion strategy** : A
+data dictionary must exist that describes all data types / model and their fields / attributes.
+* **Integrity**
+  * **Role management** : Definition of rights (write, read,
+delete) based on assigned roles in the system via role-based access management (RBAC).
+  * **Data integrity** : use of cryptographic and other mechanisms
+to ensure the integrity of data in the system.
+  * **Deletion & correction of data** : Possibility to exercise
+data subject rights and, for example, have your own personal data deleted or corrected.
+  * **Protection against external influences** : Ensuring
+the scalability / resilience of the system, e.g., during load peaks or denial of service (DoS) attacks, for example, through the use of CAPTCHAs. Protection against hacking or theft of data through cryptographic measures, e.g. encryption.
+  * **Data validation** : checking of all input data before
+saving/processing in the system.
+* **Confidentiality** :
+* **Non-chaining** :
+* **Transparency** :
+* **Intervenability** :
+* **Data minimization** :
+
 ### BSI IT basic protection
 
 In the following sections, we document the [BSI IT Grundschutz](https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz_node.html) aspkete relevant for privacy engineering.

@@ -32,6 +32,51 @@ In Anbetracht dieser Anforderung und der Antworten auf die obigen Fragen entsche
 
 In den folgenden Abschnitten dokumentieren wir die Umsetzung des Standard-Datenschutzmodells gemäß der [offiziellen Dokumentation](https://www.datenschutz-mv.de/static/DS/Dateien/Datenschutzmodell/SDM-Methode_V3.pdf).
 
+#### Initiale Fragen zur Anforderungsanalyse: Terminbuchung
+
+* Gibt es konkrete User Stories oder Prozessbeschreibungen für den geplanten Funktionsumfang?
+* Welche konkreten personenbezogenen Daten sollen erfasst werden?
+  * Im Terminbuchungsprozess werden die E-Mail Adresse des Nutzers, ggf. eine Mobilfunknummer sowie ggf. die Anschrift erfasst.
+* Wie und wo sollen personenbezogene Daten gespeichert werden?
+  * Unklar, soll vom Softwareteam in Abstimmung mit dem Privacy Engineering Team festgelegt werden.
+* Welche zusätzlichen Metadaten werden für die Terminbuchung erfasst?
+  * Der Ort (z.B. Arztpraxis), die Zeit und ggf. weitere Informationen zum Termin z.B. die Art (Arztbesuch, administrativer Termin etc.)
+* Wie wird der Nutzer über die Datenerfassung informiert?
+  * Soll vom Privacy Engineering zusammen mit Legal / Datenschuztzbeauftragten erarbeitet werden.
+* Sollen die Nutzerdaten auch für andere Zwecke verarbeitet werden?
+  * Für Analytics / Business Intelligence / Data Science, Marketing.
+* Welchen Akteuren sollen die Daten zur Verfügung gestellt werden?
+  * Für die Beteiligten im Terminbuchungsprozess, d.h. Ärzte oder Terminanbieter allgmein, sowie die Nutzer und ggf. Kundensupport.
+* Sollen Untervearbeiter für die Verarbeitung der Daten eingesetzt werden?
+  * Es soll für Anbieter von Terminen ein CRM eingerichtet werden in dem deren Daten für Vertriebszwecke verarbeitet werden.
+* Wie lange sollen die Daten im System gespeichert werden?
+  * So lange wie nötig, muss abgestimmt werden mit Kunden, Privacy Engineering und Softwareentwicklung.
+* Wie soll die technische Infrastruktur gestaltet werden? Soll z.B. ein externer Cloud-Anbieter für das Hosting genutzt werden?
+
+#### Verarbeitungstätigkeiten und Anforderungen
+
+Eine Übersicht über die geplanten Verarbeitungsvorgänge in Kiebitz 2.0 ist in der [Softwaredokumentation](https://kiebitz.eu/doku/system/konzept) gegeben.
+
+##### Anforderungen nach SDM
+
+Aus dem rechtlichen Rahmen und dem Standard-Datenschutzmodell als gewähltes Framework ergeben sich Anforderungen in folgenden Bereichen:
+
+* **Verfügbarkeit**
+  * **Backup-Strategie**: Buchungs- & Nutzerdaten müssen regelmäßig, idealerweise stündlich oder zumindest täglich in einem verschlüsselten Backup gesichert werden. Die Wiederherstellung der Daten muss regelmäßig geprüft werden.
+  * **Konfigurationsmanagement / DevOps**: Infrastruktur- & Softwarekomponenten müssen automatisiert erstellt werden können anhand einer deklarativen Konfiguration, oder die Erstellung muss zumindest genau schriftlich dokumentiert werden.
+  * **Datenmodell / Audit-Logging / Löschstrategie**: Es muss ein Data Dictionary existieren, das sämtliche Datentypen / -modell und deren Felder / Attribute beschreibt.
+* **Integrität**
+  * **Rollenmanagement**: Definition von Rechten (Schreiben, Lesen, Löschen) basierend auf zugewiesenen Rollen im System über ein rollenbasiertes Zugriffsmanagement (RBAC).
+  * **Datenintegrität**: Nutzung kryptographischer und anderer Mechanismen um die Integrität von Daten im System zu sichern.
+  * **Löschen & Berichtigung von Daten**: Möglichkeit, Betroffenrechte wahrzunehmen und z.B. eigene personenbezogene Daten löschen oder korrigieren zu lassen.
+  * **Schutz vor äußeren Einflüssen**: Sicherstellung der Skalierbarkeit / Belastbarkeit des Systems z.B. bei Lastspitzen oder bei Denial of Service (DoS) Angriffen, beispielsweise durch den Einsatz von CAPTCHAs. Schutz vor Hacking oder Diebstahl der Daten durch kryptographische Maßnahmen z.B. Verschlüsselung.
+  * **Datenvalidierung**: Prüfung aller Eingabedaten vor Speicherung/Verarbeitung im System.
+* **Vertraulichkeit**:
+* **Nichtverkettung**:
+* **Transparenz**:
+* **Intervenierbarkeit**:
+* **Datenminimierung**:
+
 ### BSI IT-Grundschutz
 
 In den folgenden Abschnitten dokumentieren wir die für Privacy Engineering relevanten Aspkete des [BSI IT Grundschutz](https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz_node.html).

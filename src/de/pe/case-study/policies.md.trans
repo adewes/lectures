@@ -1,6 +1,113 @@
+0a1bf78afadd8a16:
+  de: >-
+    Diese Policy orientiert sich an der Datenschutzgrundverordnung
+    (DSGVO) und dem Standard-Datenschutzmodell (SDM). In Sinne
+    von Privacy By Design (PbD)
+  en: >-
+    This Policy is based on the General Data Protection Regulation
+    (GDPR) and the Standard Data Protection Model (SDM). In terms
+    of Privacy By Design (PbD).
+0b63f11024eca25b:
+  de: >-
+    Diese Richtlinie gilt für die Entwicklung des Kiebitz 2.0
+    Softwaresystems und umfasst alle relevanten Systemkomponenten
+    und verbundene Entwicklungs- & Geschäftsprozesse. Sie betrifft
+    nicht die Verarbeitung personenbezogener Daten im Rahmen interner
+    Kundenprozesse, z.B. der Rechnungsstellung.
+  en: >-
+    This policy applies to the development of the Kiebitz 2.0
+    software system and covers all relevant system components
+    and related development & business processes. It does not
+    apply to the processing of personal data in the context of
+    internal customer processes, e.g. invoicing.
+10ce4382344fb8ed:
+  de: >-
+    Diese Policy orientiert sich an der Datenschutzgrundverordnung
+    (DSGVO) und dem Standard-Datenschutzmodell (SDM).
+  en: >-
+    This policy is based on the General Data Protection Regulation
+    (GDPR) and the Standard Data Protection Model (SDM).
+1c55fe444c0b5b42:
+  de: '## Geltungsbereich'
+  en: '## Scope'
+1e43c73296866ef6:
+  de: >-
+    * Betroffene müssen über die Benutzeroberfläche einfach in
+    der Lage sein, ihre Rechte auszuüben, d.h. die eigenen Daten
+    einzusehen, zu korrigieren, ihre Verarbeitung einzuschränken
+    und ihre Löschung zu beantragen.
+  en: >-
+    * Data subjects must be able to easily exercise their rights
+    via the user interface, i.e., to view their own data, correct
+    it, restrict its processing, and request its deletion.
+329054a53e561e9c:
+  de: >-
+    Diese Policy orientiert sich an der Datenschutzgrundverordnung
+    (DSGVO) und dem Standard-Datenschutzmodell (SDM). In Sinne
+    von Privacy By Design (PbD) unterliegt die Datenverarbeitung
+    folgenden grundlegenden Prinzipien:
+  en: >-
+    This Policy is guided by the General Data Protection Regulation
+    (GDPR) and the Standard Data Protection Model (SDM). In terms
+    of Privacy By Design (PbD), data processing is subject to
+    the following fundamental principles:
+362449a8a881b6f2:
+  de: >-
+    * **Transparenz und Kontrolle**: Betroffene müssen in der
+    Lage sein, die Verarbeitung ihrer Daten einfach und robust
+    nachvollziehen und steuern zu können, d.h. insbesondere auch
+    die Verarbeitung einschränken zu lassen oder die Löschung
+    der Daten zu beantragen.
+  en: >-
+    * **Transparency and control** : Data subjects must be able
+    to easily and robustly understand and control the processing
+    of their data, i.e. in particular also to have the processing
+    restricted or to request the deletion of the data.
+41942cd8baebd851:
+  de: '## Produktdesign'
+  en: '## Product Design'
+4f498285b89fa1ba:
+  de: >-
+    In diesem Abschnitt beschreiben wir die basierend auf unserer
+    [Anforderungsanalyse]({{'pe.case-study.requirements'|href}})
+    entwickelten Richtlinie / Policy. Diese soll anderen Teams
+    (Produktentwicklung, Software, Design) konkrete Handlungsvorgaben
+    und Umsetzungshilfen bei der Gestaltung des Produkts liefern
+    und die Arbeit des Privacy Engineering Teams vereinfachen.
+  en: >-
+    In this section we describe the guideline / policy developed
+    based on our [requirements analysis]({{'pe.case-study.requirements'|href}}).
+    This is intended to provide other teams (product development,
+    software, design) with concrete guidelines and implementation
+    aids for the design of the product and to simplify the work
+    of the privacy engineering team.
+4f8e343792193c37:
+  de: >-
+    * Datenstrukturen und Datenhaltung muss so gestaltet werden,
+    dass personenbezogene Daten korrigierbar und löschbar sind
+    und die Verarbeitung der Daten auf Betroffenenebene gesteuert
+    werden kann.
+  en: >-
+    * Data structures and data storage must be designed in such
+    a way that personal data can be corrected and deleted, and
+    the processing of data can be controlled at the data subject
+    level.
+53afecde872f9d85:
+  de: '## Infrastruktur / Backend / Datenhaltung'
+  en: '## Infrastructure / Backend / Data management'
 53f08f22a946d0d4:
   de: '# Privacy Engineering Richtlinien'
   en: '# Privacy Engineering Guidelines'
+5a6f7f52984c329b:
+  de: >-
+    * Datenschutzfreundliche Voreinstellungen (Privacy By Default):
+    Wenn mehrere Auswahlmöglichkeiten bestehen, sollte die Auswahl
+    so voreingestellt sein, dass die datenschutzfreundliche Alternative
+    bevorzugt wird.
+  en: >-
+    * Privacy-friendly default settings (Privacy By Default):
+    If multiple choices exist, the selection should be preset
+    to give preference to the privacy-friendly alternative.
 5f9d234d5bd286ac:
   de: >-
     In diesem Abschnitt beschreiben wir die basierend auf unserer
@@ -16,6 +123,130 @@
     software, design) with concrete guidelines and implementation
     aids for the design of the product and to simplify the work
     of the privacy engineering team.
+6a0e10f80c837842:
+  de: >-
+    * Datenstrukturen und Datenhaltung müssen so gestaltet werden,
+    dass personenbezogene Daten korrigierbar und löschbar sind
+    und die Verarbeitung der Daten auf Betroffenenebene gesteuert
+    werden kann.
+  en: >-
+    * Data structures and data storage must be designed in such
+    a way that personal data can be corrected and deleted and
+    the processing of data can be controlled at the data subject
+    level.
+73fd129dae3073d5:
+  de: >-
+    * Datenstrukturen und Datenhaltung müssen so gestaltet werden,
+    dass personenbezogene Daten korrigier- und löschbar sind und
+    die Verarbeitung der Daten auf Betroffenenebene gesteuert
+    werden kann.
+  en: >-
+    * Data structures and data storage must be designed in such
+    a way that personal data can be corrected and deleted and
+    the processing of data can be controlled at the data subject
+    level.
+852c0a531bdc7b34:
+  de: >-
+    * Transparenz und Kontrolle: Betroffene müssen in der Lage
+    sein, die Verarbeitung ihrer Daten einfach und robust nachvollziehen
+    und steuern zu können, d.h. insbesondere auch die Verarbeitung
+    einschränken zu lassen oder die Löschung der Daten zu beantragen.
+  en: >-
+    * Transparency and control: Data subjects must be able to
+    easily and robustly understand and control the processing
+    of their data, i.e. in particular also to have the processing
+    restricted or to request the deletion of the data.
+8a9d01fedaacb272:
+  de: '## Infrastruktur / Backend'
+  en: '## Infrastructure / Backend'
+8d1e13d669fc9ff5:
+  de: '# Privacy Engineering Richtlinie'
+  en: '# Privacy Engineering Policy'
+b6a3ae76da85f2d3:
+  de: >-
+    * Datenstrukturen und Datenhaltung müssen so gestaltet werden,
+    dass personenbezogene Daten korrigier- und löschbar sind und
+    die Verarbeitung der Daten durch Betroffene einfach gesteuert
+    werden kann.
+  en: >-
+    * Data structures and data storage must be designed in such
+    a way that personal data can be corrected and deleted and
+    the processing of data by data subjects can be easily controlled.
+c21e63473fb7c90c:
+  de: '* '
+  en: '* '
+c4380f02c34b28d4:
+  de: >-
+    * **Datenschutzfreundliche Voreinstellungen (Privacy By Default)**:
+    Wenn mehrere Auswahlmöglichkeiten bestehen, sollte die Auswahl
+    so voreingestellt sein, dass die datenschutzfreundliche Alternative
+    gewählt wird.
+  en: >-
+    * **Privacy-friendly default settings (Privacy By Default)**
+    : If multiple choices exist, the selection should default
+    to the privacy-friendly alternative.
+c8aaae4a61c78180:
+  de: >-
+    * **Respekt vor Privatsphäre der Nutzer**: Bei der Gestaltung
+    des Gesamtsystems und einzelner Komponenten sollten immer
+    die Interessen der Nutzer im Vordergrund stehen, insbesondere
+    das Bedürfnis der Nutzer für Privatsphäre.
+  en: >-
+    * **Respect for user privacy** : The design of the overall
+    system and individual components should always focus on the
+    interests of the users, especially the users' need for privacy.
+cf22c2cbf78e41ba:
+  de: '## Grundlegende Prinzipien der Datenverarbeitung'
+  en: '## Basic principles of data processing'
+cfef4bf864f1a6eb:
+  de: >-
+    * Transparenz und Kontrolle: Betroffene müssen in der Lage
+    sein, die Verarbeitung ihrer Daten einfach und robust nachvollziehen
+    und steuern zu können, d.h. insbesondere auch die Verarbeitung
+    ihrer Daten einschränken zu lassen oder die Löschung der Daten
+    zu beantragen.
+  en: >-
+    * Transparency and control: Data subjects must be able to
+    easily and robustly understand and control the processing
+    of their data, i.e. in particular also to have the processing
+    of their data restricted or to request the deletion of the
+    data.
+d07dd4b490a8aa6e:
+  de: >-
+    * Datenschutzfreundliche Voreinstellungen (Privacy By Default):
+    Wenn mehrere Auswahlmöglichkeiten bestehen, sollte die Auswahl
+    so voreingestellt sein, dass die datenschutzfreundliche Alternative
+    gewählt wird.
+  en: >-
+    * Privacy-friendly default settings (Privacy By Default):
+    If multiple choices exist, the selection should default to
+    the privacy-friendly alternative.
+d3f12e89ce47f0ab:
+  de: >-
+    * Alle personenbezogenen Daten sollen im System nur verschlüsselt
+    oder pseudonymisiert gespeichert werden. Wo möglich und sinnvoll,
+    soll Ende-zu-Ende Verschlüsselung eingesetzt werden, so dass
+    eine Entschlüsselung von Daten nur auf Endgeräten berechtigter
+    Nutzer erfolgt.
+  en: >-
+    * All personal data should only be stored in the system in
+    encrypted or pseudonymized form. Where possible and appropriate,
+    end-to-end encryption should be used so that data can only
+    be decrypted on end devices of authorized users.
 e3b0c44298fc1c14:
   de: ''
   en: ''
+f73c817edb3d3974:
+  de: >-
+    * Transparenz und Kontrolle: Betroffene müssen in der Lage
+    sein, die Verarbeitung ihrer Daten einfach und robust nachvollziehen
+    und steuern zu können, d.h. insbesondere auch die Verarbeitung
+    einschränken zu lassen oder die Löschung ihrer Daten zu beantragen.
+  en: >-
+    * Transparency and control: Data subjects must be able to
+    easily and robustly understand and control the processing
+    of their data, i.e. in particular also to have the processing
+    restricted or to request the deletion of their data.
+fa3ed7e75616d5e0:
+  de: '## Benutzerobfläche (UI) / Frontend'
+  en: '## User interface (UI) / front end'
