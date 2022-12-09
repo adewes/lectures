@@ -1,0 +1,302 @@
+0114cf29b19cfb8e:
+  de: >-
+    Frameworks sind in diesem Sinne ein Bindeglied zwischen den
+    oft abstrakten rechtlichen Anforderungen
+  en: >-
+    In this sense, frameworks are a link between the often abstract
+    legal requirements
+05b7f07c8be7b586:
+  de: "\t\t\tEin Framework sollte insbesondere unter Berücksichtigung\
+    \ des rechtlichen Kontexts der zu entwickelnden Lösung gewählt\
+    \ werden. "
+  en: "\t\t\tA framework should be chosen with particular regard\
+    \ to the legal context of the solution to be developed. "
+0703a4c2066bb355:
+  de: '* **NIST Privacy Framework**'
+  en: '* **NIST Privacy Framework**'
+09d7a2c75f04cf4f:
+  de: >-
+    * **Federal Trade Commissions' (FTC) Fair Information Privacy
+    Principles (FIPS)**
+  en: >-
+    * **Federal Trade Commissions' (FTC) Fair Information Privacy
+    Principles (FIPS)**
+0ba5ea9cb632c899:
+  de: </aside>
+  en: </aside>
+147aa513a147c4f0:
+  de: >-
+    * **ISO 2700X Serie** (nicht spezifisch auf Privatsphäre ausgelegt)
+  en: >-
+    * **ISO 2700X series** (not specifically designed for privacy)
+268541d92f1b71ec:
+  de: "\t\t\tFrameworks helfen im Privacy Engineering, abstrakte\
+    \ rechtliche Anforderungen auf"
+  en: "\t\t\tIn privacy engineering, frameworks help to translate\
+    \ abstract legal requirements to"
+2c65fff8fd0ff4e3:
+  de: '* **Standard-Datenschutzmodell (SDM)**'
+  en: '* **Standard Data Protection Model (SDM)**'
+2f799b28c848da12:
+  de: "\t\t\tEin Framework sollte insbesondere unter Berücksichtigung\
+    \ des rechtlichen Kontexts der"
+  en: "\t\t\tA framework should be developed, in particular, taking\
+    \ into account the legal context of the"
+3033556d220d0420:
+  de: >-
+    Sucht man z.B. ein Framework, das für die Entwicklung einer
+    Softwarelösung im europäischen Raum
+  en: >-
+    For example, if you are looking for a framework that can be
+    used for the development of a software solution in the European
+    region.
+3297d5923221eeaa:
+  de: '* **Generally Accepted Privacy Principles (GAPP)**'
+  en: '* **Generally Accepted Privacy Principles (GAPP)**'
+3c2c4d234f649212:
+  de: "\t</ul>"
+  en: "\t</ul>"
+3fc9ad1891230ce6:
+  de: '* **BSI IT-Grunschutz**'
+  en: '* **BSI IT basic protection**'
+42ce1f54cd0368d2:
+  de: '### US-zentrische Frameworks'
+  en: '### US-centric frameworks'
+454968f3a127be45:
+  de: '# Privacy Frameworks'
+  en: '# Privacy Frameworks'
+4c0549c90636f763:
+  de: >-
+    In den folgenden Abschnitten werden wir exemplarisch einige
+    Frameworks betrachten, die große praktische Bedeutung haben.
+    Wir legen hierbei insbesondere einen Fokus auf den europäischen
+    Raum und im Besonderen auf Deutschland. Folgende Frameworks
+    werden diskutiert:
+  en: >-
+    In the following sections, we will take a look at some frameworks
+    that are of great practical importance. In particular, we
+    will focus on the European region and especially on Germany.
+    The following frameworks will be discussed:
+'5109914074921559':
+  de: >-
+    Frameworks, zu Deutsch "Rahmenwerke", können uns dabei helfen,
+    solche Anforderungen einfacher zu erfassen und in konkrete
+    technische Anforderungen und Maßnahmen zu übersetzen.
+  en: >-
+    Frameworks can help us to more easily capture such requirements
+    and translate them into concrete technical requirements and
+    measures.
+527c5ff7fa8e3fc5:
+  de: >-
+    zu erfassen und in konkrete technische Anforderungen und Maßnahmen
+    zu übersetzen.
+  en: >-
+    and translate them into concrete technical requirements and
+    measures.
+535b9ecb0c8eb425:
+  de: >-
+    und konkreter technischer Maßnahmen die in der Praxis umgesetzt
+    werden können.
+  en: >-
+    and concrete technical measures that can be implemented in
+    practice.
+5e5184b8a436b9cd:
+  de: >-
+    Privacy Engineering muss sich immer an relevante rechtlichen
+    Rahmenbedingungen orientieren.
+  en: >-
+    Privacy engineering must always be oriented to the relevant
+    legal framework.
+6371994ed399fb64:
+  de: >-
+    Frameworks, zu Deutsch "Rahmenwerke", können uns dabei helfen,
+    solche Anforderungen einfacher
+  en: >-
+    Frameworks can help us to meet such requirements more easily.
+66173a3b18b53904:
+  de: "\t\t\tzu entwickelnden Lösung gewählt werden. "
+  en: "\t\t\tsolution to be developed can be selected. "
+6cc7914bcbfaa243:
+  de: "Generell sollte man beachten, dass die Nutzung eines spezifischen\
+    \ Frameworks alleine nicht garantiert, dass die damit entwickelte\
+    \ Lösung automatisch rechtskonform ist. Frameworks haben unterschiedlichen\
+    \ Überlapp mit spezifischen Rechtsordnungen und insbesondere\
+    \ internationale Frameworks stimmen oft nicht "
+  en: "In general, it should be noted that the use of a specific\
+    \ framework alone does not guarantee that the solution developed\
+    \ with it is automatically legally compliant. Frameworks have\
+    \ different overlaps with specific jurisdictions and international\
+    \ frameworks in particular are often not compliant. "
+704df4c681d00b2e:
+  de: orientieren.
+  en: orient
+756bc0bc26337de0:
+  de: >-
+    und helfen uns somit, Risiken bei der Umsetzung von Privacy
+    Engineering zu reduzieren.
+  en: >-
+    and thus help us to reduce risks in the implementation of
+    privacy engineering.
+78f7380cf14c0267:
+  de: "\t\t\tDie Nutzung eines Frameworks alleine garantiert nicht,\
+    \ dass eine danach gestaltete"
+  en: "\t\t\tThe use of a framework alone does not guarantee that\
+    \ a product designed according to it will be"
+7cb401482012af17:
+  de: "\t\t\tFrameworks helfen im Privacy Engineering, abstrakte\
+    \ rechtliche Anforderungen auf konkrete technische Maßnahmen\
+    \ zu übertragen."
+  en: "\t\t\tIn privacy engineering, frameworks help to transfer\
+    \ abstract legal requirements to concrete technical measures."
+7ebdfd1412c3fb96:
+  de: '### Europäische & deutsche Frameworks'
+  en: '### European & German Frameworks'
+81d281897f6b267a:
+  de: "\t<ul>"
+  en: "\t<ul>"
+84108e2aa8b89f1e:
+  de: '## Betrachtete Frameworks'
+  en: '## Considered frameworks'
+8c67f735b28ca2bd:
+  de: "\t\t\tLösung rechtskonform ist."
+  en: "\t\t\tsolution is legally compliant."
+8d7c798aa6f394ff:
+  de: "\t\t<li>"
+  en: "\t\t<li>"
+91149da497eca204:
+  de: '* **OECD Guidelines**'
+  en: '* **OECD Guidelines**'
+96ee00294edff6e2:
+  de: >-
+    und im Besonderen auf Deutschland. Folgende Frameworks werden
+    diskutiert:
+  en: >-
+    and in particular to Germany. The following frameworks are
+    discussed:
+9795fefd2455eea0:
+  de: >-
+    Die Auswahl des richtigen Frameworks ist nicht immer leicht.
+    Generell sollte man sich zunächst
+  en: >-
+    Choosing the right framework is not always easy. Generally,
+    one should first look at
+988cae44a45b85d5:
+  de: >-
+    Im Idealfall repräsentieren sie den aktuellen Stand der Technik
+    und die aktuelle Rechtsauffassung und helfen uns somit, Risiken
+    bei der Umsetzung von Privacy Engineering zu reduzieren.
+  en: >-
+    Ideally, they represent the current state of the art and the
+    current legal opinion and thus help us to reduce risks in
+    the implementation of privacy engineering.
+9a2876aea7d41d78:
+  de: '### Internationale Frameworks'
+  en: '### International frameworks'
+9be610efdb25fa4d:
+  de: >-
+    Generell sollte man beachten, dass die Nutzung eines spezifischen
+    Frameworks alleine nicht
+  en: >-
+    In general, it should be noted that the use of a specific
+    framework alone is not
+9f67a14c2730c5a8:
+  de: >-
+    unterschiedlichen Überlapp mit spezifischen Rechtsordnungen
+    und insbesondere internationale
+  en: >-
+    different overlap with specific jurisdictions and, in particular,
+    international
+a8888c4ae594b40c:
+  de: >-
+    Im Idealfall repräsentieren sie den aktuellen Stand der Technik
+    und die aktuelle Rechtsauffassung
+  en: >-
+    Ideally, they represent the current state of the art and the
+    current legal opinion
+aef78cfc04822550:
+  de: >-
+    Die Auswahl des richtigen Frameworks ist nicht immer leicht.
+    Generell sollte man sich zunächst darüber klar werden, in
+    welchem Kontext das Framework eingesetzt werden soll.
+  en: >-
+    Choosing the right framework is not always easy. In general,
+    one should first be clear about the context in which the framework
+    is to be used.
+b1e02761fe08356b:
+  de: >-
+    (z.B. in Deutschland) geeignet sein soll, so ist es sinnvoll
+    sich an nationalen Frameworks zu
+  en: >-
+    (e.g. in Germany), it makes sense to use national frameworks
+    as a basis.
+b4835baea31956a2:
+  de: "\t\t</li>"
+  en: "\t\t</li>"
+bc39ba9b9591cc58:
+  de: >-
+    praktische Bedeutung haben. Wir legen hierbei insbesondere
+    einen Fokus auf den europäischen Raum
+  en: >-
+    have practical significance. Here, we place a particular focus
+    on the European area
+cfee4976f574d5fa:
+  de: "\t\t\tkonkrete technische Maßnahmen zu übertragen."
+  en: "\t\t\ttransfer concrete technical measures."
+d57b61a3ce04ba83:
+  de: <aside>
+  en: <aside>
+de4d308d744377fd:
+  de: >-
+    In den folgenden Abschnitten werden wir exemplarisch einige
+    Frameworks betrachten, die große
+  en: >-
+    In the following sections, we will take an exemplary look
+    at some frameworks that have great
+e3a87add755b6198:
+  de: >-
+    garantiert, dass die damit entwickelte Lösung automatisch
+    rechtskonform ist. Frameworks haben
+  en: >-
+    guarantees that the solution developed with it is automatically
+    legally compliant. Frameworks have
+e3b0c44298fc1c14:
+  de: ''
+  en: ''
+e4a011f7d3c5948f:
+  de: >-
+    Sucht man z.B. ein Framework, das für die Entwicklung einer
+    Softwarelösung im europäischen Raum (z.B. in Deutschland)
+    geeignet sein soll, so ist es sinnvoll sich an nationalen
+    Frameworks zu orientieren.
+  en: >-
+    For example, if you are looking for a framework that is suitable
+    for the development of a software solution in Europe (e.g.
+    in Germany), it makes sense to orientate yourself towards
+    national frameworks.
+ec866dba8297d87b:
+  de: >-
+    Frameworks sind in diesem Sinne ein Bindeglied zwischen den
+    oft abstrakten rechtlichen Anforderungen und konkreter technischer
+    Maßnahmen die in der Praxis umgesetzt werden können.
+  en: >-
+    In this sense, frameworks are a link between the often abstract
+    legal requirements and concrete technical measures that can
+    be implemented in practice.
+ed82b1ce319e5644:
+  de: "\t<h4>Klausurwissen</h4>"
+  en: "\t<h4>Klausurwissen</h4>"
+eda71c9602dd5551:
+  de: "\t\t\tDie Nutzung eines Frameworks alleine garantiert nicht,\
+    \ dass eine danach gestaltete Lösung rechtskonform ist."
+  en: "\t\t\tThe use of a framework alone does not guarantee that\
+    \ a solution designed according to it is legally compliant."
+f36e699004fd3372:
+  de: 'Frameworks stimmen oft nicht '
+  en: 'Frameworks are often not right '
+f961826e6b721319:
+  de: >-
+    darüber klar werden, in welchem Kontext das Framework eingesetzt
+    werden soll.
+  en: >-
+    be clear about the context in which the framework is to be
+    used.

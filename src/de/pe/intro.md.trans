@@ -1,0 +1,60 @@
+03ca131b029b6849:
+  de: '* [Privacy Frameworks]({{''pe.frameworks''|href}})'
+  en: '* [Privacy Frameworks]({{''pe.frameworks''|href}})'
+375163ed7aaf5aa2:
+  de: erstellt.
+  en: created.
+409276dd25a912ef:
+  de: >-
+    Es enthält alle relevanten Informationen über die in der Vorlesung
+    behandelten Bereiche von
+  en: >-
+    It contains all relevant information about the areas covered
+    in the lecture from
+462bd50031108624:
+  de: '* Policies & Anforderungsanalyse'
+  en: '* Policies & Requirements Analysis'
+7256e51b9d5c8afe:
+  de: '* Web-Privacy & Einwilligungsmanagement'
+  en: '* Web Privacy & Consent Management'
+7493fc26cdb61d47:
+  de: '* Frameworks und rechtliche Rahmenbedingungen'
+  en: '* Frameworks and legal frameworks'
+ba3e7ba4f8b07477:
+  de: '* Privacy Enhancing Technologies (PETs)'
+  en: '* Privacy Enhancing Technologies (PETs)'
+bcd9133a82d1ae29:
+  de: '* Prozesse & Qualitätsmanagement'
+  en: '* Processes & Quality Management'
+c10e84cd490a4c61:
+  de: '**Hinweis: Dieses Unterlagen sind noch unvollständig.**'
+  en: '**Note: This document is still incomplete.**'
+c5a5c145c0a5415a:
+  de: >-
+    * ({{'pe.frameworks'|href}})[Frameworks und rechtliche Rahmenbedingungen]
+  en: >-
+    * ({{'pe.frameworks'|href}}) [Frameworks und rechtliche Rahmenbedingungen]
+d79d52f11dac6fa1:
+  de: 'Privacy Engineering:'
+  en: 'Privacy Engineering:'
+da697654925a0720:
+  de: >-
+    * [Frameworks und rechtliche Rahmenbedingungen]({{'pe.frameworks'|href}})
+  en: >-
+    * [Frameworks and legal frameworks]({{'pe.frameworks'|href}})
+e2301e6721188729:
+  de: '* Übersicht und Einführung'
+  en: '* Overview and introduction'
+e3b0c44298fc1c14:
+  de: ''
+  en: ''
+f01f4c46d13105f3:
+  de: '# Einführung'
+  en: '# Introduction'
+f6cd466c78b1c70e:
+  de: >-
+    Dieses Skript wurde zur Begleitung der Vorlesung **Privacy
+    Engineering** im Wintersemester 2022/23
+  en: >-
+    This script was developed to accompany the lecture **Privacy
+    Engineering in** winter term 2022/23.

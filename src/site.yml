@@ -20,3 +20,5 @@ translations:
   $include: translations/index.yml
 context:
   env: development
+markdown:
+  template: markdown_wide.html

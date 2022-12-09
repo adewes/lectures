@@ -13,6 +13,30 @@ pages:
   name: dp
   slug: differential-privacy
   title: Differential Privacy
+- children:
+  - name: intro
+    slug: einfuehrung
+    src: de/pe/intro.md
+    title: Einführung
+  - name: frameworks
+    slug: frameworks
+    src: de/pe/frameworks.md
+    title: Frameworks
+  - children:
+    - name: intro
+      slug: einfuehrung
+      src: de/pe/case-study/intro.md
+      title: Einführung
+    - name: requirements
+      slug: anforderungsanalyse
+      src: de/pe/case-study/requirements.md
+      title: Anforderungsanalyse
+    name: case-study
+    slug: fallstudie
+    title: Fallstudie
+  name: pe
+  slug: privacy-engineering
+  title: Privacy Engineering
 - name: imprint
   slug: kontakt
   src: de/imprint.md

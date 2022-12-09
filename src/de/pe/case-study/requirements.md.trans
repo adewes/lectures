@@ -1,0 +1,210 @@
+05d201da1fd52ace:
+  de: >-
+    * In welchen Ländern soll die Software angeboten/genutzt werden?
+    **In Europa**.
+  en: >-
+    * In which countries will the software be offered/used? **In
+    Europe**.
+07c1576a204004b3:
+  de: '## Privacy Engineering Anforderungen'
+  en: '## Privacy engineering requirements'
+0a0ba977c2a2ea57:
+  de: >-
+    * In welchen Ländern soll die Software angeboten/genutzt werden?
+    <u>**In Europa**</u>.
+  en: >-
+    * In which countries will the software be offered/used? <u>**In
+    Europe**</u>.
+0b2740959797f94e:
+  de: '#### Terminbuchung'
+  en: '#### Appointment booking'
+107adcd585baf097:
+  de: '### User Stories'
+  en: '### User Stories'
+1de26794eaf7a98b:
+  de: '# Anforderungsanalyse'
+  en: '# Requirements analysis'
+25cf788b0298b1bd:
+  de: >-
+    Kiebitz soll als generelle Software zur sicheren Kommunikation
+    zwischen Nutzern und Anbietern von
+  en: >-
+    Kiebitz is intended as general software for secure communication
+    between users and providers of
+3dbe00fd26d826e9:
+  de: >-
+    Das Produktteam hat für Kiebitz die folgenden User Stories
+    identifiziert:
+  en: >-
+    The product team identified the following user stories for
+    Kiebitz:
+445a105dd29fab11:
+  de: >-
+    In Anbetracht dieser Anforderung und der Antworten auf die
+    obigen Fragen entscheiden wir uns
+  en: >-
+    In view of this requirement and the answers to the above questions,
+    we decide to
+458fca1ca55a8860:
+  de: für ein europäisches Framework
+  en: for a European framework
+55b9e41ec970c7ec:
+  de: >-
+    * Sollen spezielle Kategorien personenbezogener Daten verarbeitet
+    werden?
+  en: '* Are special categories of personal data to be processed?'
+5f19ea7d194e34a0:
+  de: >-
+    * In welchen Ländern soll die Software angeboten/genutzt werden?
+  en: '* In which countries should the software be offered/used?'
+65fc44b7816b6ab4:
+  de: '#### Nutzer: Registrierung'
+  en: '#### User: Registration'
+665a87dc651a944f:
+  de: '#### Registrierung'
+  en: '#### Registration'
+682cd412e76949f4:
+  de: >-
+    * In welchen Bereichen soll die Software Daten verarbeiten?
+    <u>**Verwaltung allgemein, Gesundheit**</u>.
+  en: >-
+    * In which areas should the software process data? <u>**General
+    administration, health**</u>.
+6a6c8d9cbb1789dd:
+  de: '#### Dashboard'
+  en: '#### Dashboard'
+74fa3e90d8d9c0cf:
+  de: >-
+    **Standard-Datenschutzmodell (SDM)**. Als Framework für technische
+    Anforderungen entscheiden wir
+  en: >-
+    **Standard Data Protection Model (SDM)**. As a framework for
+    technical requirements we decide
+76a71fbef8a8339f:
+  de: '##'
+  en: '## '
+7a0b16f3a53faabb:
+  de: >-
+    die Software eingesetzt werden soll. Hierzu stellen wir folgende
+    Fragen:
+  en: >-
+    the software is to be used. For this we ask the following
+    questions:
+7f2e882cb3179767:
+  de: >-
+    auszuwählen und Policies zu definieren, müssen wir uns zunächst
+    darüber klar werden, wo und wie
+  en: >-
+    and define policies, we first need to be clear about where
+    and how we can
+7fd6924ba36d1e6e:
+  de: >-
+    * In welchen Ländern soll die Software angeboten/genutzt werden?
+    **In Europa**
+  en: >-
+    * In which countries will the software be offered/used? **In
+    Europe**
+81f9b948bf43b241:
+  de: >-
+    Nutzer sollen sich selbständig am System registrieren können.
+    Sie sollen hierzu eine oder mehrere
+  en: >-
+    Users should be able to register independently on the system.
+    To do this, they should create one or more
+85443b4483108487:
+  de: >-
+    Dienstleistungen (z.B. in Behörden oder Unternehmen) eingesetzt
+    werden können.
+  en: >-
+    services (e.g. in public authorities or companies) can be
+    used.
+8d5d3f65fb867457:
+  de: >-
+    * In welchen Ländern soll die Software angeboten/genutzt werden?
+    <u>**In Europa, insbesondere in Deutschland**</u>.
+  en: >-
+    * In which countries will the software be offered/used? <u>**In
+    Europe, especially in Germany**</u>.
+98989dadba7cd216:
+  de: >-
+    Generell ergibt sich aus der Ansässigkeit der XY GmbH in Deutschland
+    die Notwendigkeit der
+  en: >-
+    In general, the fact that XY GmbH is domiciled in Germany
+    results in the need for the
+9a76bb332c060a16:
+  de: >-
+    für ein deutsches Framework, das mit den Anforderungen der
+    DSGVO kompatibel ist, dem
+  en: >-
+    for a German framework that is compatible with the requirements
+    of the GDPR, the
+9e8e4cf9bbaf0e01:
+  de: '#### Nutzer: Terminbuchung'
+  en: '#### User: Appointment booking'
+a3a1ce09018cee54:
+  de: uns für das **BSI Grundschutz-Modell**.
+  en: us for the **BSI basic protection model**.
+a98e55d0a8da9afe:
+  de: >-
+    Darüber hinaus soll die Software verschiedene typische Arbeitsabläufe
+    automatisieren können, z.B.
+  en: >-
+    In addition, the software should be able to automate various
+    typical workflows, e.g.
+aa77f019b1fb7579:
+  de: '## Anforderungen ans Privacy Engineering'
+  en: '## Privacy engineering requirements'
+ad2764daca6ce028:
+  de: >-
+    Um konkrete Anforderungen aus Privacy Engineering Sicht zu
+    erarbeiten, geeignete Frameworks
+  en: >-
+    In order to develop concrete requirements from a privacy engineering
+    perspective, appropriate frameworks
+afbb9a4c8b3e051f:
+  de: '#### Datenerfassung'
+  en: '#### Data acquisition'
+b95ea6fbcae50492:
+  de: '* In welchen Bereichen soll die Software Daten verarbeiten?'
+  en: '* In which areas should the software process data?'
+d0f64cfa94ee4a6b:
+  de: >-
+    * Sollen spezielle Kategorien personenbezogener Daten verarbeitet
+    werden? <u>**Ja**</u>.
+  en: >-
+    * Are there any special categories of personal data to be
+    processed? <u>**Yes**</u>.
+d8f01e596b90ccfd:
+  de: >-
+    Beachtung der Datenschutzgrundverordnung (DSGVO) sowie weiterer
+    Richtlinien wie ePrivacy.
+  en: >-
+    Compliance with the General Data Protection Regulation (GDPR)
+    and other guidelines such as ePrivacy.
+dd621e7333c6e308:
+  de: '#### Anbieter: Formularerstellung'
+  en: '#### Provider: Form creation'
+e3b0c44298fc1c14:
+  de: ''
+  en: ''
+e751eba0b9dc6fbd:
+  de: die Buchung von Terminen sowie das Ausfüllen von Formularen.
+  en: booking appointments and filling out forms.
+eb07e80ed56afe7a:
+  de: '#### Nutzer: Datenerfassung'
+  en: '#### User: Data acquisition'
+f2aa703ea15f9603:
+  de: '#### Anbieter: Registrierung'
+  en: '#### Provider: Registration'
+f51b85eb1a18a0d0:
+  de: >-
+    Kontaktmöglichkeiten bereitstellen, typischerweise eine E-Mail
+    Adresse.
+  en: Provide contact options, typically an email address.
+f5edc8cca7a1f69b:
+  de: '#### Anbieter: Terminbereitstellung'
+  en: '#### Provider: Appointment provision'
+fa4ee8d0a21134b7:
+  de: '## Kiebitz - Funktionen'
+  en: '## Lapwing - functions'

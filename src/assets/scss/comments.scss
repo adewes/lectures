@@ -31,6 +31,12 @@ $cw: $widescreen;
             font-size: 13px;
         }
 
+        h4 {
+            margin-top: 0;
+            padding-top: 0;
+            font-weight: bolder;
+        }
+
         @media(min-width: $cw + 1px){
             position: absolute;
             right: 0;

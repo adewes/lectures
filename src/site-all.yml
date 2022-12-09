@@ -12,6 +12,30 @@ pages:
       src|f|exists?: "{target_language}/dp/intro.md" 
       name: intro
       slug|t||slugify: ''
+  - title|t: Privacy Engineering
+    name: pe
+    slug||slugify: ''
+    children:
+    - title|t: Einführung
+      src|f|exists?: "{target_language}/pe/intro.md" 
+      name: intro
+      slug|t||slugify: ''
+    - title|t: Frameworks
+      src|f|exists?: "{target_language}/pe/frameworks.md" 
+      name: frameworks
+      slug|t||slugify: ''
+    - title|t: Fallstudie
+      name: case-study
+      slug|t||slugify: ''
+      children:
+        - title|t: Einführung
+          name: intro
+          slug|t||slugify: ''
+          src|f|exists?: "{target_language}/pe/case-study/intro.md" 
+        - title|t: Anforderungsanalyse
+          name: requirements
+          slug|t||slugify: ''
+          src|f|exists?: "{target_language}/pe/case-study/requirements.md" 
   - title|t: Kontakt
     name: imprint
     slug||slugify: ''
