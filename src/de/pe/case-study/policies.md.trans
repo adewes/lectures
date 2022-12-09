@@ -1,0 +1,21 @@
+53f08f22a946d0d4:
+  de: '# Privacy Engineering Richtlinien'
+  en: '# Privacy Engineering Guidelines'
+5f9d234d5bd286ac:
+  de: >-
+    In diesem Abschnitt beschreiben wir die basierend auf unserer
+    [Anforderungsanalyse]({{'pe.case-study.requirements'|href}})
+    entwickelten Richtlinien / Policies. Diese sollen anderen
+    Teams (Produktentwicklung, Software, Design) konkrete Handlungsvorgaben
+    und Umsetzungshilfen bei der Gestaltung des Produkts liefern
+    und die Arbeit des Privacy Engineering Teams vereinfachen.
+  en: >-
+    In this section we describe the guidelines / policies developed
+    based on our [requirements analysis]({{'pe.case-study.requirements'|href}}).
+    These are intended to provide other teams (product development,
+    software, design) with concrete guidelines and implementation
+    aids for the design of the product and to simplify the work
+    of the privacy engineering team.
+e3b0c44298fc1c14:
+  de: ''
+  en: ''

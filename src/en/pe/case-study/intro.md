@@ -12,7 +12,8 @@ to support data protection.
 
 In this case study, you will learn the essential tasks of a Privacy Engineer:
 
-* Gather **requirements** in collaboration with product, data protection & software development.
-* Development of an internal technical **guideline** for the processing of personal data.
-* Support product & software teams in designing technical data protection measures.
-* Integrating privacy engineering into product development.
+* Gather [requirements]({{'pe.case-study.requirements'|href}}) in collaboration with product, data protection & software development.
+* Develop internal [technical guidelines]({{'pe.case-study.policies'|href}}) for the processing of personal data.
+* Provide concrete support to product & software teams in designing [technical data protection measures]({{'pe.case-study.technical-measures'|href}}).
+* Integrating privacy engineering into [product development processes]({{'pe.case-study.processes'|href}}).
+

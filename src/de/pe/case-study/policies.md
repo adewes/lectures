@@ -1,0 +1,3 @@
+# Privacy Engineering Richtlinien
+
+In diesem Abschnitt beschreiben wir die basierend auf unserer [Anforderungsanalyse]({{'pe.case-study.requirements'|href}}) entwickelten Richtlinien / Policies. Diese sollen anderen Teams (Produktentwicklung, Software, Design) konkrete Handlungsvorgaben und Umsetzungshilfen bei der Gestaltung des Produkts liefern und die Arbeit des Privacy Engineering Teams vereinfachen.

@@ -36,6 +36,18 @@ pages:
           name: requirements
           slug|t||slugify: ''
           src|f|exists?: "{target_language}/pe/case-study/requirements.md" 
+        - title|t: Richtlinien
+          name: policies
+          slug|t||slugify: ''
+          src|f|exists?: "{target_language}/pe/case-study/policies.md" 
+        - title|t: Technische Maßnahmen
+          name: technical-measures
+          slug|t||slugify: ''
+          src|f|exists?: "{target_language}/pe/case-study/technical-measures.md" 
+        - title|t: Prozesse
+          name: processes
+          slug|t||slugify: ''
+          src|f|exists?: "{target_language}/pe/case-study/processes.md" 
   - title|t: Kontakt
     name: imprint
     slug||slugify: ''

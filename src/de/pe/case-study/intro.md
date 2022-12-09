@@ -12,7 +12,7 @@ Datenschutz zu untersützen.
 
 Im Rahmen dieser Fallstudie lernen Sie die wesentlichen Aufgaben eines Privacy Engineers kennen:
 
-* Sammeln von **Anforderungen** in Zusammenarbeit mit Produkt, Datenschutz & Softwareentwicklung.
-* Entwicklung einer internen technischen **Richtlinie** für die Verarbeitung personenbezogener Daten.
-* Unterstützung der Produkt- & Softwareteams bei der Gestaltung technischer Datenschutzmaßnahmen.
-* Integration von Privacy Engineering in die Produktentwicklung.
+* Sammeln von [Anforderungen]({{'pe.case-study.requirements'|href}}) in Zusammenarbeit mit Produkt, Datenschutz & Softwareentwicklung.
+* Entwicklung von internen [technischen Richtlinien]({{'pe.case-study.policies'|href}}) für die Verarbeitung personenbezogener Daten.
+* Konkrete Unterstützung der Produkt- & Softwareteams bei der Gestaltung [technischer Datenschutzmaßnahmen]({{'pe.case-study.technical-measures'|href}}).
+* Integration von Privacy Engineering in [Produktentwicklungsprozesse]({{'pe.case-study.processes'|href}}).

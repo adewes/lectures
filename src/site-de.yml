@@ -31,6 +31,18 @@ pages:
       slug: anforderungsanalyse
       src: de/pe/case-study/requirements.md
       title: Anforderungsanalyse
+    - name: policies
+      slug: richtlinien
+      src: de/pe/case-study/policies.md
+      title: Richtlinien
+    - name: technical-measures
+      slug: technische-massnahmen
+      src: de/pe/case-study/technical-measures.md
+      title: Technische Maßnahmen
+    - name: processes
+      slug: prozesse
+      src: de/pe/case-study/processes.md
+      title: Prozesse
     name: case-study
     slug: fallstudie
     title: Fallstudie

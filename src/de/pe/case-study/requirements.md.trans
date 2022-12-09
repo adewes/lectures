@@ -1,3 +1,10 @@
+03e96db083215755:
+  de: >-
+    Kiebitz 2.0 soll als generelle Software zur sicheren Kommunikation
+    zwischen Nutzern und Anbietern von
+  en: >-
+    Kiebitz 2.0 is intended as a general software for secure communication
+    between users and providers of
 05d201da1fd52ace:
   de: >-
     * In welchen Ländern soll die Software angeboten/genutzt werden?
@@ -21,6 +28,22 @@
 107adcd585baf097:
   de: '### User Stories'
   en: '### User Stories'
+1a77942a87407b27:
+  de: >-
+    Das Produktteam hat für Kiebitz 2.0 den folgenden erweiterten
+    Funktionsumfang vorgesehen:
+  en: >-
+    The product team has planned the following extended functionality
+    for Kiebitz 2.0:
+1c1d455640ff0705:
+  de: >-
+    Kiebitz 2.0 soll als generelle Software zur sicheren Kommunikation
+    zwischen Nutzern und Anbietern von Dienstleistungen (z.B.
+    in Behörden oder Unternehmen) eingesetzt werden können.
+  en: >-
+    Kiebitz 2.0 should be able to be used as general software
+    for secure communication between users and service providers
+    (e.g. in public authorities or companies).
 1de26794eaf7a98b:
   de: '# Anforderungsanalyse'
   en: '# Requirements analysis'
@@ -31,6 +54,14 @@
   en: >-
     Kiebitz is intended as general software for secure communication
     between users and providers of
+2c3a4044c369c667:
+  de: >-
+    In den folgenden Abschnitten dokumentieren wir die Umsetzung
+    des Standard-Datenschutzmodells gemäß der [offiziellen Dokumentation](https://www.datenschutz-mv.de/static/DS/Dateien/Datenschutzmodell/SDM-Methode_V3.pdf)
+  en: >-
+    In the following sections, we document the implementation
+    of the standard data protection model according to the [official
+    documentation](https://www.datenschutz-mv.de/static/DS/Dateien/Datenschutzmodell/SDM-Methode_V3.pdf)
 3dbe00fd26d826e9:
   de: >-
     Das Produktteam hat für Kiebitz die folgenden User Stories
@@ -38,6 +69,22 @@
   en: >-
     The product team identified the following user stories for
     Kiebitz:
+3f0cb083719ef040:
+  de: >-
+    Nutzer und Anbieter sollen in digitalen Geschäftsprozessen
+    zusammenarbeiten können. Nutzer sollen in der Lage sein, über
+    eine Formulareingabe z.B. für den Anbieter relevante Angaben
+    (z.B. eine Krankheitshistorie) zu erfassen und diese verschlüsselt
+    an den Anbieter zu übermitteln. Der Anbieter soll seinerseits
+    in der Lage sein, im gegebenen Prozess weitere Daten einzugeben
+    und so einen spezifischen Geschäftsprozess zu digitialisieren.
+  en: >-
+    Users and providers should be able to collaborate in digital
+    business processes. Users should be able to enter information
+    relevant to the provider (e.g., a medical history) via a form
+    and transmit it to the provider in encrypted form. The provider,
+    in turn, should be able to enter further data in the given
+    process and thus digitize a specific business process.
 445a105dd29fab11:
   de: >-
     In Anbetracht dieser Anforderung und der Antworten auf die
@@ -57,6 +104,19 @@
   de: >-
     * In welchen Ländern soll die Software angeboten/genutzt werden?
   en: '* In which countries should the software be offered/used?'
+63f926aa540dabb2:
+  de: >-
+    In Anbetracht dieser Anforderung und der Antworten auf die
+    obigen Fragen entscheiden wir uns für ein deutsches Framework,
+    das mit den Anforderungen der DSGVO kompatibel ist, dem **Standard-Datenschutzmodell
+    (SDM)**. Als Framework für technische Anforderungen entscheiden
+    wir uns für das **BSI Grundschutz-Modell**.
+  en: >-
+    Given this requirement and the answers to the above questions,
+    we decide to use a German framework that is compatible with
+    the requirements of the GDPR, the **Standard Data Protection
+    Model (SDM)**. As a framework for technical requirements,
+    we choose the **BSI Basic Protection Model**.
 65fc44b7816b6ab4:
   de: '#### Nutzer: Registrierung'
   en: '#### User: Registration'
@@ -83,6 +143,9 @@
 76a71fbef8a8339f:
   de: '##'
   en: '## '
+77035b8901fa4946:
+  de: '#### Workflow-Automatisierung'
+  en: '#### Workflow automation'
 7a0b16f3a53faabb:
   de: >-
     die Software eingesetzt werden soll. Hierzu stellen wir folgende
@@ -90,6 +153,12 @@
   en: >-
     the software is to be used. For this we ask the following
     questions:
+7d7cfa1bf844df65:
+  de: '#### Erweiterte Terminbuchung'
+  en: '#### Advanced appointment booking'
+7e7ce09d878a0b51:
+  de: '### BSI IT-Grundschutz'
+  en: '### BSI IT basic protection'
 7f2e882cb3179767:
   de: >-
     auszuwählen und Policies zu definieren, müssen wir uns zunächst
@@ -118,6 +187,19 @@
   en: >-
     services (e.g. in public authorities or companies) can be
     used.
+8d18b5746d36c9af:
+  de: >-
+    Nutzer sollen wie bisher in der Lage sein, Termine bei Anbietern
+    zu buchen. Die Terminbuchung soll jedoch durch zusätzliche
+    Funktionen erweitert werden, u.a. sollen Anbieter die Möglichkeit
+    haben, bei Terminen zusätzliche Angaben von Nutzern anzufordern
+    (z.B. Kontakdaten).
+  en: >-
+    Users should be able to book appointments with providers as
+    before. However, appointment booking is to be enhanced with
+    additional functions, including the option for providers to
+    request additional information from users for appointments
+    (e.g., contact data).
 8d5d3f65fb867457:
   de: >-
     * In welchen Ländern soll die Software angeboten/genutzt werden?
@@ -125,6 +207,15 @@
   en: >-
     * In which countries will the software be offered/used? <u>**In
     Europe, especially in Germany**</u>.
+8f86741885ba307b:
+  de: >-
+    Generell ergibt sich aus der Ansässigkeit der XY GmbH in Deutschland
+    die Notwendigkeit der Beachtung der Datenschutzgrundverordnung
+    (DSGVO) sowie weiterer Richtlinien wie ePrivacy.
+  en: >-
+    In general, the fact that XY GmbH is based in Germany means
+    that it is necessary to comply with the General Data Protection
+    Regulation (DSGVO) and other guidelines such as ePrivacy.
 98989dadba7cd216:
   de: >-
     Generell ergibt sich aus der Ansässigkeit der XY GmbH in Deutschland
@@ -139,6 +230,19 @@
   en: >-
     for a German framework that is compatible with the requirements
     of the GDPR, the
+9ab8889d3255a790:
+  de: >-
+    Um konkrete Anforderungen aus Privacy Engineering Sicht zu
+    erarbeiten, geeignete Frameworks auszuwählen und Policies
+    zu definieren, müssen wir uns zunächst darüber klar werden,
+    wo und wie die Software eingesetzt werden soll. Hierzu stellen
+    wir folgende Fragen:
+  en: >-
+    In order to work out concrete requirements from a privacy
+    engineering point of view, select suitable frameworks and
+    define policies, we first need to be clear about where and
+    how the software is to be used. To do this, we ask the following
+    questions:
 9e8e4cf9bbaf0e01:
   de: '#### Nutzer: Terminbuchung'
   en: '#### User: Appointment booking'
@@ -168,6 +272,27 @@ afbb9a4c8b3e051f:
 b95ea6fbcae50492:
   de: '* In welchen Bereichen soll die Software Daten verarbeiten?'
   en: '* In which areas should the software process data?'
+bc4c4c45653c848b:
+  de: >-
+    In den folgenden Abschnitten dokumentieren wir die Umsetzung
+    des Standard-Datenschutzmodells gemäß der [offiziellen Dokumentation](https://www.datenschutz-mv.de/static/DS/Dateien/Datenschutzmodell/SDM-Methode_V3.pdf).
+  en: >-
+    In the following sections, we document the implementation
+    of the standard data protection model according to the [official
+    documentation](https://www.datenschutz-mv.de/static/DS/Dateien/Datenschutzmodell/SDM-Methode_V3.pdf).
+bdd3bcaf5c81ee1b:
+  de: '### Standard-Datenschutzmodell'
+  en: '### Standard data protection model'
+c4b28c313f2ab62c:
+  de: >-
+    In den folgenden Abschnitten dokumentieren wir die für Privacy
+    Engineering relevanten Aspkete des [BSI IT Grundschutz](https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz_node.html).
+  en: >-
+    In the following sections, we document the [BSI IT Grundschutz](https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz_node.html)
+    aspkete relevant for privacy engineering.
+c7f5fdeae38c66b0:
+  de: '## Kiebitz 2.0 - Funktionen'
+  en: '## Lapwing 2.0 - Functions'
 d0f64cfa94ee4a6b:
   de: >-
     * Sollen spezielle Kategorien personenbezogener Daten verarbeitet
@@ -185,15 +310,30 @@ d8f01e596b90ccfd:
 dd621e7333c6e308:
   de: '#### Anbieter: Formularerstellung'
   en: '#### Provider: Form creation'
+e34a74878bbec1b2:
+  de: '### Funktionsumfang'
+  en: '### Scope of functions'
 e3b0c44298fc1c14:
   de: ''
   en: ''
 e751eba0b9dc6fbd:
   de: die Buchung von Terminen sowie das Ausfüllen von Formularen.
   en: booking appointments and filling out forms.
+e91f7765c37c02e1:
+  de: '####  Terminbuchung'
+  en: '#### Appointment booking'
 eb07e80ed56afe7a:
   de: '#### Nutzer: Datenerfassung'
   en: '#### User: Data acquisition'
+eb94a6e520be8011:
+  de: >-
+    Darüber hinaus soll die Software verschiedene typische Arbeitsabläufe
+    automatisieren können, z.B. die Buchung von Terminen sowie
+    das Ausfüllen von Formularen.
+  en: >-
+    In addition, the software should be able to automate various
+    typical workflows, such as booking appointments and filling
+    out forms.
 f2aa703ea15f9603:
   de: '#### Anbieter: Registrierung'
   en: '#### Provider: Registration'
