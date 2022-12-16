@@ -174,6 +174,18 @@ data-target="page-pe.case-study-nav">Fallstudie</a>
 Maßnahmen</a></li>
 <li><a href=
 "/lectures/privacy-engineering/fallstudie/prozesse">Prozesse</a></li>
+<li><a class="" href="#" data-toggle="collapse" data-target=
+"page-pe.case-study.product-nav">Produkt</a>
+<ul class="is-hidden" id="page-pe.case-study.product-nav">
+<li><a href=
+"/lectures/privacy-engineering/fallstudie/produkt/user-stories">User
+Stories</a></li>
+<li><a href=
+"/lectures/privacy-engineering/fallstudie/produkt/data-model">Datenmodel</a></li>
+<li><a href=
+"/lectures/privacy-engineering/fallstudie/produkt/mockups">Mockups</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -318,7 +330,8 @@ gegeben.</p>
 <h5>Anforderungen nach SDM</h5>
 <p>Aus dem rechtlichen Rahmen und dem Standard-Datenschutzmodell
 als gewähltes Framework ergeben sich Anforderungen in folgenden
-Bereichen:</p>
+Bereichen. Es wurden für die Fallstudie nur die relevantesten
+Anforderungen ausgewählt.</p>
 <ul>
 <li><strong>Verfügbarkeit</strong>
 <ul>
@@ -356,11 +369,77 @@ Daten durch kryptographische Maßnahmen z.B. Verschlüsselung.</li>
 vor Speicherung/Verarbeitung im System.</li>
 </ul>
 </li>
-<li><strong>Vertraulichkeit</strong>:</li>
-<li><strong>Nichtverkettung</strong>:</li>
-<li><strong>Transparenz</strong>:</li>
-<li><strong>Intervenierbarkeit</strong>:</li>
-<li><strong>Datenminimierung</strong>:</li>
+<li><strong>Vertraulichkeit</strong>:
+<ul>
+<li><strong>Rollenmanagement</strong>: Einführung eines
+Berechtigungs- & Rollenkonzept basierend auf dem
+Erforderlichkeitsprinzip, sowie eines zugehörigen
+Identitätsmanagements; sowohl für die Software als auch die
+notwendige Infrastruktur.</li>
+<li><strong>Sicheres Authentifizierungsverfahren</strong>:
+Implementierung eines sicheren Verfahrens zur Authentifizierung von
+Nutzern nach dem Stand der Technik.</li>
+<li><strong>Verschlüsselung</strong>: Implementierung von
+Transportverschlüsselung und ggf. Verschlüsselung gespeicherter
+Daten sowie Ende-zu-Ende Verschlüsselung zwischen Akteuren im
+System.</li>
+<li><strong>Schutz vor äußeren Einflüssen</strong>: Implementierung
+geeigneter technischer und organisatorischer Maßnahmen zur Abwehr,
+Erkennung und Behebung von Sicherheitszwischenfällen (z.B. durch
+Hacking).</li>
+</ul>
+</li>
+<li><strong>Nichtverkettung</strong>:
+<ul>
+<li><strong>Technische Rechtsbindung</strong>: Einschränkung der
+Verarbeitung, Übermittlung und Nutzung von Daten durch geeignete
+technische Maßnahmen.</li>
+<li><strong>Schnittstellen-Minimierung</strong>: Einschränkung der
+Möglichkeit des Datenabrufs über technische Schnittstellen auf das
+Mindestmaß an benötigter Information.</li>
+<li><strong>Anonymisierung & Pseudonymisierung</strong>: Umsetzung
+geeigneter Verfahren zur Pseudonymisierung und Anyonmisierung von
+Daten, um die Verkettung oder missbräuchliche Nutzung zu
+erschweren.</li>
+</ul>
+</li>
+<li><strong>Transparenz</strong>:
+<ul>
+<li><strong>Dokumentation</strong>: Erfassung und schriftliche
+Dokumentation aller relevanten technischen Verarbeitungsvoränge der
+Software.</li>
+<li><strong>Automatisierte Tests</strong>: Umsetzung
+automatisierter Software-Tests zur Prüfung kritischer,
+datenschutzrelevanter Funktionalität.</li>
+</ul>
+</li>
+<li><strong>Intervenierbarkeit</strong>:
+<ul>
+<li><strong>Einwilligungsmanagement</strong>: Umsetzung eines
+rechtskonformen Einwilligungsmanagements, das alle Einwilligungen
+die als Grundlage für die Datenverarbeitung genutzt werden
+dokumentiert und es Nutzern erlaubt, Einwilligungen
+nachzuvollziehen und anzupassen.</li>
+<li><strong>Technische Realisierung der Betroffenenrechte</strong>:
+Umsetzung einer Schnittstelle für die Realisierung der
+Betroffenenrechte, d.h. zur Einschränkung der Verarbeitung, zur
+Anforderung eines Datenauszugs sowie zur Berichtigung und zur
+Löschung der eigenen Daten.</li>
+</ul>
+</li>
+<li><strong>Datenminimierung</strong>:
+<ul>
+<li><strong>Reduzierung der Datenerfassung</strong>: Systematische
+Reduzierung der Erfassung personenbezogener Daten in allen
+Verarbeitungsvorgängen.</li>
+<li><strong>Reduzierung der Kenntnisnahme</strong>: Systematische
+Reduzierung der Kenntnisnahme personenbezogener Daten in internen
+und externen Verarbeitungsvorgängen ("need to know" Prinzip).</li>
+<li><strong>Löschkonzept</strong>: Implementierung eines geeigneten
+technischen Löschkonzepts für alle an der Informationsverarbeitung
+beteiligte Systeme.</li>
+</ul>
+</li>
 </ul>
 <h3>BSI IT-Grundschutz</h3>
 <p>In den folgenden Abschnitten dokumentieren wir die für Privacy

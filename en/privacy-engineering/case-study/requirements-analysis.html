@@ -186,6 +186,19 @@ Requirements analysis</a></li>
 measures</a></li>
 <li><a href=
 "/lectures/en/privacy-engineering/case-study/processes">Processes</a></li>
+<li><a class="" href="#" data-toggle="collapse" data-target=
+"page-pe.case-study.product-nav">Product</a>
+<ul class="is-hidden" id="page-pe.case-study.product-nav">
+<li><a href=
+"/lectures/en/privacy-engineering/case-study/product/user-stories">User
+Stories</a></li>
+<li><a href=
+"/lectures/en/privacy-engineering/case-study/product/data-model">Data
+model</a></li>
+<li><a href=
+"/lectures/en/privacy-engineering/case-study/product/mockups">Mockups</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -323,8 +336,9 @@ is given in the <a href=
 documentation</a>.</p>
 <h5>Requirements according to SDM</h5>
 <p>The legal framework and the standard data protection model as
-the chosen framework result in requirements in the following
-areas:</p>
+the chosen framework result in requirements in the following areas.
+Only the most relevant requirements were selected for the case
+study.</p>
 <ul>
 <li><strong>Availability</strong>
 <ul>
@@ -361,11 +375,72 @@ through cryptographic measures, e.g. encryption.</li>
 before saving/processing in the system.</li>
 </ul>
 </li>
-<li><strong>Confidentiality</strong> :</li>
-<li><strong>Non-chaining</strong> :</li>
-<li><strong>Transparency</strong> :</li>
-<li><strong>Intervenability</strong> :</li>
-<li><strong>Data minimization</strong> :</li>
+<li><strong>Confidentiality</strong> :
+<ul>
+<li><strong>Role management</strong> : Introduction of an
+authorization & role concept based on the principle of necessity,
+as well as an associated identity management; both for the software
+and the necessary infrastructure.</li>
+<li><strong>Secure authentication procedure</strong> :
+Implementation of a secure procedure for authenticating users
+according to the state of the art.</li>
+<li><strong>Encryption</strong> : Implementation of transport
+encryption and, if necessary, encryption of stored data, as well as
+end-to-end encryption between actors in the system.</li>
+<li><strong>Protection against external influences</strong> :
+Implementation of appropriate technical and organizational measures
+to defend against, detect, and remedy security incidents (e.g.,
+through hacking).</li>
+</ul>
+</li>
+<li><strong>Non-chaining</strong> :
+<ul>
+<li><strong>Technical legal binding</strong> : Restriction of
+processing, transmission and use of data by appropriate technical
+measures.</li>
+<li><strong>Interface minimization</strong> : Limiting the
+possibility of data retrieval via technical interfaces to the
+minimum amount of information required.</li>
+<li><strong>Anonymization & Pseudonymization</strong> : Implement
+appropriate procedures for pseudonymization and anyonmization of
+data to discourage chaining or misuse.</li>
+</ul>
+</li>
+<li><strong>Transparency</strong> :
+<ul>
+<li><strong>Documentation</strong> : Recording and written
+documentation of all relevant technical processing operations of
+the software.</li>
+<li>Automated <strong>testing</strong> : Implementation of
+automated software tests to check critical functionality relevant
+to data protection.</li>
+</ul>
+</li>
+<li><strong>Intervenability</strong> :
+<ul>
+<li><strong>Consent management</strong> : Implementation of a
+legally compliant consent management system that documents all
+consents used as the basis for data processing and allows users to
+track and adjust consents.</li>
+<li><strong>Technical realization of data subject rights</strong> :
+Implementation of an interface for the realization of data subject
+rights, i.e. to restrict processing, to request a data extract, and
+to correct and delete one's own data.</li>
+</ul>
+</li>
+<li><strong>Data minimization</strong> :
+<ul>
+<li><strong>Reduction of data collection</strong> : systematic
+reduction of personal data collection in all processing
+operations.</li>
+<li><strong>Reduction of need</strong> -to-know: Systematic
+reduction of the need-to-know of personal data in internal and
+external processing operations ("need-to-know" principle).</li>
+<li><strong>Deletion concept</strong> : Implementation of a
+suitable technical deletion concept for all systems involved in
+information processing.</li>
+</ul>
+</li>
 </ul>
 <h3>BSI IT basic protection</h3>
 <p>In the following sections, we document the <a href=
