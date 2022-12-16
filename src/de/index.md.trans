@@ -9,6 +9,13 @@
     and talks. Currently, this is just an [introduction to Differential
     Privacy]({'dp.intro'|href}). All materials are licensed under
     CC-BY 3.0.
+3ada378e51030953:
+  de: >-
+    Diese Seite enthält ergänzende Materialien zu meinen Vorlesungen
+    und Vorträgen:
+  en: >-
+    This page contains supplementary materials to my lectures
+    and talks:
 3d111a9375d5e0d4:
   de: '# Willkommen!'
   en: '# Welcome!'
@@ -37,6 +44,13 @@
     and talks. Currently, this is just an [introduction to Differential
     Privacy]({'dp'|href}). All materials are licensed under CC-BY
     3.0.
+b9422c5c7e24b7ac:
+  de: '* [Einführung in Privacy Engineering]({{''pe.intro''|href}})'
+  en: '* [Introduction to Privacy Engineering]({{''pe.intro''|href}})'
+bcc5750bac62496e:
+  de: '* [Einführung in Differential Privacy]({{''dp.intro''|href}})'
+  en: >-
+    * [Introduction to Differential Privacy]({{'dp.intro'|href}})
 bf57dd4e532b6760:
   de: >-
     Diese Seite enthält ergänzende Materialien zu meinen Vorlesungen
@@ -60,3 +74,6 @@ d11859fd3b269340:
 e3b0c44298fc1c14:
   de: ''
   en: ''
+f8e73c2e17efa0d2:
+  de: Alle Materialien sind unter CC-BY 3.0 lizensiert.
+  en: All materials are licensed under CC-BY 3.0.

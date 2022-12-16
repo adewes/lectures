@@ -59,7 +59,7 @@ Eine Übersicht über die geplanten Verarbeitungsvorgänge in Kiebitz 2.0 ist in
 
 ##### Anforderungen nach SDM
 
-Aus dem rechtlichen Rahmen und dem Standard-Datenschutzmodell als gewähltes Framework ergeben sich Anforderungen in folgenden Bereichen:
+Aus dem rechtlichen Rahmen und dem Standard-Datenschutzmodell als gewähltes Framework ergeben sich Anforderungen in folgenden Bereichen. Es wurden für die Fallstudie nur die relevantesten Anforderungen ausgewählt.
 
 * **Verfügbarkeit**
   * **Backup-Strategie**: Buchungs- & Nutzerdaten müssen regelmäßig, idealerweise stündlich oder zumindest täglich in einem verschlüsselten Backup gesichert werden. Die Wiederherstellung der Daten muss regelmäßig geprüft werden.
@@ -72,10 +72,24 @@ Aus dem rechtlichen Rahmen und dem Standard-Datenschutzmodell als gewähltes Fra
   * **Schutz vor äußeren Einflüssen**: Sicherstellung der Skalierbarkeit / Belastbarkeit des Systems z.B. bei Lastspitzen oder bei Denial of Service (DoS) Angriffen, beispielsweise durch den Einsatz von CAPTCHAs. Schutz vor Hacking oder Diebstahl der Daten durch kryptographische Maßnahmen z.B. Verschlüsselung.
   * **Datenvalidierung**: Prüfung aller Eingabedaten vor Speicherung/Verarbeitung im System.
 * **Vertraulichkeit**:
+  * **Rollenmanagement**: Einführung eines Berechtigungs- & Rollenkonzept basierend auf dem Erforderlichkeitsprinzip, sowie eines zugehörigen Identitätsmanagements; sowohl für die Software als auch die notwendige Infrastruktur.
+  * **Sicheres Authentifizierungsverfahren**: Implementierung eines sicheren Verfahrens zur Authentifizierung von Nutzern nach dem Stand der Technik. 
+  * **Verschlüsselung**: Implementierung von Transportverschlüsselung und ggf. Verschlüsselung gespeicherter Daten sowie Ende-zu-Ende Verschlüsselung zwischen Akteuren im System.
+  * **Schutz vor äußeren Einflüssen**: Implementierung geeigneter technischer und organisatorischer Maßnahmen zur Abwehr, Erkennung und Behebung von Sicherheitszwischenfällen (z.B. durch Hacking).
 * **Nichtverkettung**:
+  * **Technische Rechtsbindung**: Einschränkung der Verarbeitung, Übermittlung und Nutzung von Daten durch geeignete technische Maßnahmen.
+  * **Schnittstellen-Minimierung**: Einschränkung der Möglichkeit des Datenabrufs über technische Schnittstellen auf das Mindestmaß an benötigter Information.
+  * **Anonymisierung & Pseudonymisierung**: Umsetzung geeigneter Verfahren zur Pseudonymisierung und Anyonmisierung von Daten, um die Verkettung oder missbräuchliche Nutzung zu erschweren.
 * **Transparenz**:
+  * **Dokumentation**: Erfassung und schriftliche Dokumentation aller relevanten technischen Verarbeitungsvoränge der Software.
+  * **Automatisierte Tests**: Umsetzung automatisierter Software-Tests zur Prüfung kritischer, datenschutzrelevanter Funktionalität.
 * **Intervenierbarkeit**:
+  * **Einwilligungsmanagement**: Umsetzung eines rechtskonformen Einwilligungsmanagements, das alle Einwilligungen die als Grundlage für die Datenverarbeitung genutzt werden dokumentiert und es Nutzern erlaubt, Einwilligungen nachzuvollziehen und anzupassen.
+  * **Technische Realisierung der Betroffenenrechte**: Umsetzung einer Schnittstelle für die Realisierung der Betroffenenrechte, d.h. zur Einschränkung der Verarbeitung, zur Anforderung eines Datenauszugs sowie zur Berichtigung und zur Löschung der eigenen Daten. 
 * **Datenminimierung**:
+  * **Reduzierung der Datenerfassung**: Systematische Reduzierung der Erfassung personenbezogener Daten in allen Verarbeitungsvorgängen.
+  * **Reduzierung der Kenntnisnahme**: Systematische Reduzierung der Kenntnisnahme personenbezogener Daten in internen und externen Verarbeitungsvorgängen ("need to know" Prinzip).
+  * **Löschkonzept**: Implementierung eines geeigneten technischen Löschkonzepts für alle an der Informationsverarbeitung beteiligte Systeme.
 
 ### BSI IT-Grundschutz
 

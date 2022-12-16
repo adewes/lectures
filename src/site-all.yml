@@ -48,6 +48,19 @@ pages:
           name: processes
           slug|t||slugify: ''
           src|f|exists?: "{target_language}/pe/case-study/processes.md" 
+        - title|t: Produkt
+          name: product
+          slug|t||slugify: ''
+          children:
+            - title|t: User Stories
+              name: user-stories
+              src|f|exists?: "{target_language}/pe/case-study/product/user-stories.md" 
+            - title|t: Datenmodel
+              name: data-model
+              src|f|exists?: "{target_language}/pe/case-study/product/data-model.md" 
+            - title|t: Mockups
+              name: mockups
+              src|f|exists?: "{target_language}/pe/case-study/product/mockups.md" 
   - title|t: Kontakt
     name: imprint
     slug||slugify: ''

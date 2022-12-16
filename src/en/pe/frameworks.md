@@ -11,7 +11,9 @@ For example, if you are looking for a framework that is suitable for the develop
 In general, it should be noted that the use of a specific framework alone does not guarantee that the solution developed with it is automatically legally compliant. Frameworks have different overlaps with specific jurisdictions and international frameworks in particular are often not compliant. 
 
 <aside>
-	<h4>Klausurwissen</h4>
+	<h4>
+		Summary
+	</h4>
 
 	<ul>
 		<li>

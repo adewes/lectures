@@ -116,6 +116,9 @@
 66173a3b18b53904:
   de: "\t\t\tzu entwickelnden Lösung gewählt werden. "
   en: "\t\t\tsolution to be developed can be selected. "
+6c6061238640a04f:
+  de: "\t<h4>"
+  en: "\t<h4>"
 6cc7914bcbfaa243:
   de: "Generell sollte man beachten, dass die Nutzung eines spezifischen\
     \ Frameworks alleine nicht garantiert, dass die damit entwickelte\
@@ -157,6 +160,9 @@
 84108e2aa8b89f1e:
   de: '## Betrachtete Frameworks'
   en: '## Considered frameworks'
+8c6321afaaaad656:
+  de: "\t\tZusammenfassung"
+  en: "\t\tSummary"
 8c67f735b28ca2bd:
   de: "\t\t\tLösung rechtskonform ist."
   en: "\t\t\tsolution is legally compliant."
@@ -189,6 +195,9 @@
     Ideally, they represent the current state of the art and the
     current legal opinion and thus help us to reduce risks in
     the implementation of privacy engineering.
+9a02b6b4510f9d54:
+  de: "\t\tKlausurwissen"
+  en: "\t\tKlausurwissen"
 9a2876aea7d41d78:
   de: '### Internationale Frameworks'
   en: '### International frameworks'
@@ -206,6 +215,9 @@
   en: >-
     different overlap with specific jurisdictions and, in particular,
     international
+a4ba16127ce08c4c:
+  de: "\t</h4>"
+  en: "\t</h4>"
 a8888c4ae594b40c:
   de: >-
     Im Idealfall repräsentieren sie den aktuellen Stand der Technik

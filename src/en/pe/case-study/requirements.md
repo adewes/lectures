@@ -67,7 +67,7 @@ An overview of the planned processing operations in Kiebitz 2.0 is given in the 
 
 ##### Requirements according to SDM
 
-The legal framework and the standard data protection model as the chosen framework result in requirements in the following areas:
+The legal framework and the standard data protection model as the chosen framework result in requirements in the following areas. Only the most relevant requirements were selected for the case study.
 
 * **Availability**
   * **Backup strategy** : Booking & user data must be backed
@@ -88,10 +88,36 @@ the scalability / resilience of the system, e.g., during load peaks or denial of
   * **Data validation** : checking of all input data before
 saving/processing in the system.
 * **Confidentiality** :
+  * **Role management** : Introduction of an authorization
+& role concept based on the principle of necessity, as well as an associated identity management; both for the software and the necessary infrastructure.
+  * **Secure authentication procedure** : Implementation of a secure procedure for authenticating users according to the state of the art. 
+  * **Encryption** : Implementation of transport encryption
+and, if necessary, encryption of stored data, as well as end-to-end encryption between actors in the system.
+  * **Protection against external influences** : Implementation
+of appropriate technical and organizational measures to defend against, detect, and remedy security incidents (e.g., through hacking).
 * **Non-chaining** :
+  * **Technical legal binding** : Restriction of processing,
+transmission and use of data by appropriate technical measures.
+  * **Interface minimization** : Limiting the possibility
+of data retrieval via technical interfaces to the minimum amount of information required.
+  * **Anonymization & Pseudonymization** : Implement appropriate
+procedures for pseudonymization and anyonmization of data to discourage chaining or misuse.
 * **Transparency** :
+  * **Documentation** : Recording and written documentation
+of all relevant technical processing operations of the software.
+  * Automated **testing** : Implementation of automated software
+tests to check critical functionality relevant to data protection.
 * **Intervenability** :
+  * **Consent management** : Implementation of a legally compliant
+consent management system that documents all consents used as the basis for data processing and allows users to track and adjust consents.
+  * **Technical realization of data subject rights** : Implementation of an interface for the realization of data subject rights, i.e. to restrict processing, to request a data extract, and to correct and delete one's own data. 
 * **Data minimization** :
+  * **Reduction of data collection** : systematic reduction
+of personal data collection in all processing operations.
+  * **Reduction of need** -to-know: Systematic reduction of
+the need-to-know of personal data in internal and external processing operations ("need-to-know" principle).
+  * **Deletion concept** : Implementation of a suitable technical
+deletion concept for all systems involved in information processing.
 
 ### BSI IT basic protection
 

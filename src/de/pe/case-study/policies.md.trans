@@ -27,6 +27,18 @@
   en: >-
     This policy is based on the General Data Protection Regulation
     (GDPR) and the Standard Data Protection Model (SDM).
+163efe5b4a1bae05:
+  de: >-
+    * Einstellungen, welche die Privatsphäre betreffen, müssen
+    klar verständlich und einfach gehalten sein. Es dürfen keine
+    **Dark Patterns** eingesetzt werden, um z.B. Nutzer zur Einwilligung
+    zu drängen (z.B. Auswahl eines Newsletters direkt unter der
+    Bestätigung der Geschäftsbedingungen).
+  en: >-
+    * Settings that affect privacy must be kept clear and simple.
+    **Dark patterns** must not be used, e.g. to pressure users
+    into consent (e.g. selection of a newsletter directly below
+    confirmation of the terms and conditions).
 1c55fe444c0b5b42:
   de: '## Geltungsbereich'
   en: '## Scope'
@@ -40,6 +52,9 @@
     * Data subjects must be able to easily exercise their rights
     via the user interface, i.e., to view their own data, correct
     it, restrict its processing, and request its deletion.
+21160d3ee083aa03:
+  de: '## Drittanbieter'
+  en: '## Third-party supplier'
 329054a53e561e9c:
   de: >-
     Diese Policy orientiert sich an der Datenschutzgrundverordnung
@@ -66,6 +81,18 @@
 41942cd8baebd851:
   de: '## Produktdesign'
   en: '## Product Design'
+4d31c344ee5bb8ea:
+  de: >-
+    * Features müssen so ausgestaltet werden, dass sie die obigen
+    Prinzipien der Datenverarbeitung erfüllen, d.h. sie müssen
+    insbesondere darauf ausgelegt sein, die zu verarbeitenden
+    personenbezogenen Daten zu minimieren und Nutzern einfache
+    und effektive Kontrollmöglichkeiten bieten.
+  en: >-
+    * Features must be designed to comply with the above data
+    processing principles, i.e., in particular, they must be designed
+    to minimize the personal data to be processed and provide
+    users with simple and effective control options.
 4f498285b89fa1ba:
   de: >-
     In diesem Abschnitt beschreiben wir die basierend auf unserer
@@ -92,6 +119,19 @@
     a way that personal data can be corrected and deleted, and
     the processing of data can be controlled at the data subject
     level.
+52945ea15c6b37d8:
+  de: >-
+    Analytics & Data Science sind wichtige Bestandteile der Produktentwicklung,
+    da sie uns ermöglichen, die Nutzung unserer Produkte zu verstehen
+    und zu optimieren. Die hierfür notwendige Datenerhebung birgt
+    jedoch auch Datenschutzrisiken, weswegen wir verschiedene
+    Maßnahmen treffen, um diese Risiken zu minimieren.
+  en: >-
+    Analytics & Data Science are important components of product
+    development, as they enable us to understand and optimize
+    the use of our products. However, the data collection required
+    for this also entails data protection risks, which is why
+    we take various measures to minimize these risks.
 53afecde872f9d85:
   de: '## Infrastruktur / Backend / Datenhaltung'
   en: '## Infrastructure / Backend / Data management'
@@ -134,6 +174,9 @@
     a way that personal data can be corrected and deleted and
     the processing of data can be controlled at the data subject
     level.
+6abccb4645f29f2e:
+  de: '## Analytics & Data Science'
+  en: '## Analytics & Data Science'
 73fd129dae3073d5:
   de: >-
     * Datenstrukturen und Datenhaltung müssen so gestaltet werden,

@@ -11,7 +11,9 @@ Sucht man z.B. ein Framework, das für die Entwicklung einer Softwarelösung im 
 Generell sollte man beachten, dass die Nutzung eines spezifischen Frameworks alleine nicht garantiert, dass die damit entwickelte Lösung automatisch rechtskonform ist. Frameworks haben unterschiedlichen Überlapp mit spezifischen Rechtsordnungen und insbesondere internationale Frameworks stimmen oft nicht 
 
 <aside>
-	<h4>Klausurwissen</h4>
+	<h4>
+		Zusammenfassung
+	</h4>
 
 	<ul>
 		<li>

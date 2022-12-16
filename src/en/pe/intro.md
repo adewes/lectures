@@ -12,3 +12,18 @@ Privacy Engineering:
 * Web Privacy & Consent Management
 * Policies & Requirements Analysis
 * Processes & Quality Management
+
+# Topics for the exam
+
+The written exam tests your understanding of the lecture content. It includes questions from the following topics:
+
+* Definition of Privacy Engineering
+* Privacy By Design (PbD) principles
+* Privacy Engineering Frameworks, in particular Standard Data Protection Model (SDM), and their application in Privacy Engineering.
+* Privacy Enhancing Technologies (PETs), in particular encryption, pseudonymization and anonymization.
+* Web Privacy & Consent Management
+* Privacy Policies: Basics, Requirements, Development
+* Privacy Engineering Processes: Data & System Development Life Cycle
+
+Practical examples of privacy engineering discussed in lecture, such as the Corona Warn App (CWA) or The Onion Router (Tor) will **not** be covered in the exam.
+

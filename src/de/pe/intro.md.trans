@@ -1,6 +1,9 @@
 03ca131b029b6849:
   de: '* [Privacy Frameworks]({{''pe.frameworks''|href}})'
   en: '* [Privacy Frameworks]({{''pe.frameworks''|href}})'
+1b342474654c6dcc:
+  de: '* Web Privacy & Einwilligungsmanagement'
+  en: '* Web Privacy & Consent Management'
 375163ed7aaf5aa2:
   de: erstellt.
   en: created.
@@ -14,12 +17,49 @@
 462bd50031108624:
   de: '* Policies & Anforderungsanalyse'
   en: '* Policies & Requirements Analysis'
+7033a9f606c56995:
+  de: >-
+    Die Klausur prüft Ihr Verständnis der Vorlesungsinhalte. Sie
+    beinhaltet Fragen aus den folgenden Themenbereichen:
+  en: >-
+    The written exam tests your understanding of the lecture content.
+    It includes questions from the following topics:
 7256e51b9d5c8afe:
   de: '* Web-Privacy & Einwilligungsmanagement'
   en: '* Web Privacy & Consent Management'
+73de0e2f238e0e3a:
+  de: >-
+    * Privacy Engineering Prozesse: Data & System Development
+    Life Cycle
+  en: >-
+    * Privacy Engineering Processes: Data & System Development
+    Life Cycle
 7493fc26cdb61d47:
   de: '* Frameworks und rechtliche Rahmenbedingungen'
   en: '* Frameworks and legal frameworks'
+762d492f4c1dbcdd:
+  de: '* Privacy By Design (PbD) Prinzipien'
+  en: '* Privacy By Design (PbD) principles'
+936f6f7595ef2f63:
+  de: >-
+    * Privacy Enhancing Technologies (PETs), insbesondere Verschlüsselung,
+    Pseudonymisierung und Anonymisierung
+  en: >-
+    * Privacy Enhancing Technologies (PETs), in particular encryption,
+    pseudonymization and anonymization.
+99f188474fdf3187:
+  de: >-
+    * Privacy Engineering Frameworks, insbesondere Standard Datenschutzmodell
+    (SDM), und deren Anwendung im Privacy Engineering
+  en: >-
+    * Privacy Engineering Frameworks, in particular Standard Data
+    Protection Model (SDM), and their application in Privacy Engineering.
+9db3c09e3300e0cd:
+  de: '* Definition von Privacy Engineering'
+  en: '* Definition of Privacy Engineering'
+b4fb18ff783b3eb1:
+  de: '* Privacy Policies: Grundlagen, Anforderungen, Entwicklung'
+  en: '* Privacy Policies: Basics, Requirements, Development'
 ba3e7ba4f8b07477:
   de: '* Privacy Enhancing Technologies (PETs)'
   en: '* Privacy Enhancing Technologies (PETs)'
@@ -34,6 +74,18 @@ c5a5c145c0a5415a:
     * ({{'pe.frameworks'|href}})[Frameworks und rechtliche Rahmenbedingungen]
   en: >-
     * ({{'pe.frameworks'|href}}) [Frameworks und rechtliche Rahmenbedingungen]
+c8c20a5450aa6d5b:
+  de: >-
+    Praxisbeispiele zum Privacy Engineering die in der Vorlesung
+    besprochen wurden, wie z.B. die Corona Warn App (CWA) oder
+    The Onion Router (Tor) werden **nicht** in der Klausur behandelt.
+  en: >-
+    Practical examples of privacy engineering discussed in lecture,
+    such as the Corona Warn App (CWA) or The Onion Router (Tor)
+    will **not** be covered in the exam.
+cfffa2d53bd043fc:
+  de: '# Themen für die Klausur'
+  en: '# Topics for the exam'
 d79d52f11dac6fa1:
   de: 'Privacy Engineering:'
   en: 'Privacy Engineering:'

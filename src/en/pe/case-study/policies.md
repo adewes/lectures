@@ -16,11 +16,22 @@ This Policy is guided by the General Data Protection Regulation (GDPR) and the S
 
 ## Product Design
 
+* Features must be designed to comply with the above data processing principles, i.e., in particular, they must be designed to minimize the personal data to be processed and provide users with simple and effective control options.
+
 ## User interface (UI) / front end
 
 * Data subjects must be able to easily exercise their rights via the user interface, i.e., to view their own data, correct it, restrict its processing, and request its deletion.
+* Settings that affect privacy must be kept clear and simple. **Dark patterns** must not be used, e.g. to pressure users into consent (e.g. selection of a newsletter directly below confirmation of the terms and conditions).
 
 ## Infrastructure / Backend / Data management
 
 * All personal data should only be stored in the system in encrypted or pseudonymized form. Where possible and appropriate, end-to-end encryption should be used so that data can only be decrypted on end devices of authorized users.
 * Data structures and data storage must be designed in such a way that personal data can be corrected and deleted and the processing of data by data subjects can be easily controlled.
+
+## Analytics & Data Science
+
+Analytics & Data Science are important components of product development, as they enable us to understand and optimize the use of our products. However, the data collection required for this also entails data protection risks, which is why we take various measures to minimize these risks.
+
+## Third-party supplier
+
+

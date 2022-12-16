@@ -1,3 +1,10 @@
+019546be8650c20e:
+  de: >2-
+      * **Dokumentation**: Erfassung und schriftliche Dokumentation
+    aller relevanten technischen Verarbeitungsvoränge der Software.
+  en: >2-
+      * **Documentation** : Recording and written documentation
+    of all relevant technical processing operations of the software.
 03e96db083215755:
   de: >-
     Kiebitz 2.0 soll als generelle Software zur sicheren Kommunikation
@@ -45,6 +52,13 @@
       * For the parties involved in the appointment booking process,
     i.e. doctors or appointment providers in general, as well
     as the users and, if applicable, customer support.
+0ca8131e1300fd50:
+  de: >2-
+      * **Tests**: Umsetzung automatisierter Software-Tests zur
+    Prüfung kritischer, datenschutzrelevanter Funktionalität.
+  en: >2-
+      * **Tests** : Implementation of automated software tests
+    to check critical functionality relevant to data protection.
 0f7b545d8aadd6a6:
   de: >2-
       * Im Terminbuchungsprozess werden die E-Mail Adresse des
@@ -76,6 +90,15 @@
   en: >2-
       * **Data integrity** : use of cryptographic and other mechanisms
     to ensure the integrity of data in the system.
+188ccff6665d4096:
+  de: >2-
+      * **Verschlüsselung**: Implementierung von Transportverschlüsselung
+    und ggf. Verschlüsselung gespeicherter Daten sowie Ende-zu-Ende
+    Verschlüsselung zwischen Akteuren im System.
+  en: >2-
+      * **Encryption** : Implementation of transport encryption
+    and, if necessary, encryption of stored data, as well as end-to-end
+    encryption between actors in the system.
 1a77942a87407b27:
   de: >-
     Das Produktteam hat für Kiebitz 2.0 den folgenden erweiterten
@@ -201,6 +224,15 @@
     and transmit it to the provider in encrypted form. The provider,
     in turn, should be able to enter further data in the given
     process and thus digitize a specific business process.
+41cf3225a16b60dd:
+  de: >2-
+      * **Anonymisierung & Pseudonymisierung**: Umsetzung geeigneter
+    Verfahren zur Pseudonymisierung und Anyonmisierung von Daten,
+    um die Verkettung oder missbräuchliche Nutzung zu erschweren.
+  en: >2-
+      * **Anonymization & Pseudonymization** : Implement appropriate
+    procedures for pseudonymization and anyonmization of data
+    to discourage chaining or misuse.
 4383400f299f8eff:
   de: >2-
       * Backup-Strategie: Buchungs- & Nutzerdaten müssen regelmäßig,
@@ -246,6 +278,13 @@
     * Sollen spezielle Kategorien personenbezogener Daten verarbeitet
     werden?
   en: '* Are special categories of personal data to be processed?'
+55bbd60e54943914:
+  de: "  * **Sicheres Authentifizierungsverfahren**: Implementierung\
+    \ eines sicheren Verfahrens zur Authentifizierung von Nutzern\
+    \ nach dem Stand der Technik. "
+  en: "  * **Secure authentication procedure** : Implementation\
+    \ of a secure procedure for authenticating users according\
+    \ to the state of the art. "
 56425426d00ec023:
   de: >2-
       * **Schutz vor äußeren Einflüssen**: Sicherstellung der
@@ -259,6 +298,15 @@
     peaks or denial of service (DoS) attacks, for example, through
     the use of CAPTCHAs. Protection against hacking or theft of
     data through cryptographic measures, e.g. encryption.
+5749d453f90bcb22:
+  de: >2-
+      * **Schnittstellen-Minimierung**: Einschränkung der Möglichkeit
+    des Datenabrufs über technische Schnittstellen auf das Mindestmaß
+    an benötigter Information.
+  en: >2-
+      * **Interface minimization** : Limiting the possibility
+    of data retrieval via technical interfaces to the minimum
+    amount of information required.
 589493d83986e410:
   de: '* **Transparenz**'
   en: '* **Transparency**'
@@ -269,6 +317,17 @@
   de: >-
     * In welchen Ländern soll die Software angeboten/genutzt werden?
   en: '* In which countries should the software be offered/used?'
+61776c50f34e6578:
+  de: >2-
+      *  **Rollenmanagement**: Einführung eines Berechtigungs-
+    & Rollenkonzept basierend auf dem Erforderlichkeitsprinzip,
+    sowie eines zugehörigen Identitätsmanagements; sowohl für
+    die Software als auch die notwendige Infrastruktur.
+  en: >2-
+      * **Role management** : Introduction of an authorization
+    & role concept based on the principle of necessity, as well
+    as an associated identity management; both for the software
+    and the necessary infrastructure.
 62dd01f145ad88df:
   de: '* **Datenminimierung**:'
   en: '* **Data minimization** :'
@@ -285,6 +344,13 @@
     the requirements of the GDPR, the **Standard Data Protection
     Model (SDM)**. As a framework for technical requirements,
     we choose the **BSI Basic Protection Model**.
+6503407380cb706c:
+  de: >2-
+      * **Automatisierte Tests**: Umsetzung automatisierter Software-Tests
+    zur Prüfung kritischer, datenschutzrelevanter Funktionalität.
+  en: >2-
+      * Automated **testing** : Implementation of automated software
+    tests to check critical functionality relevant to data protection.
 65fc44b7816b6ab4:
   de: '#### Nutzer: Registrierung'
   en: '#### User: Registration'
@@ -298,9 +364,33 @@
   en: >-
     * In which areas should the software process data? <u>**General
     administration, health**</u>.
+6859bbef54d8ac3d:
+  de: "  * **Technische Realisierung der Betroffenenrechte**:\
+    \ Umsetzung einer Schnittstelle für die Realisierung der Betroffenenrechte,\
+    \ d.h. zur Einschränkung der Verarbeitung, zur Anforderung\
+    \ eines Datenauszugs sowie zur Berichtigung und zur Löschung\
+    \ der eigenen Daten. "
+  en: "  * **Technical realization of data subject rights** :\
+    \ Implementation of an interface for the realization of data\
+    \ subject rights, i.e. to restrict processing, to request\
+    \ a data extract, and to correct and delete one's own data. "
 6a6c8d9cbb1789dd:
   de: '#### Dashboard'
   en: '#### Dashboard'
+6c179f21e6f62b62:
+  de: '  '
+  en: '  '
+6f7fc89da367747c:
+  de: >-
+    Aus dem rechtlichen Rahmen und dem Standard-Datenschutzmodell
+    als gewähltes Framework ergeben sich Anforderungen in folgenden
+    Bereichen. Es wurden für die Fallstudie nur die relevantesten
+    Anforderungen ausgewählt.
+  en: >-
+    The legal framework and the standard data protection model
+    as the chosen framework result in requirements in the following
+    areas. Only the most relevant requirements were selected for
+    the case study.
 70e5267bccd30ff5:
   de: >2-
       * Es soll für Anbieter von Terminen ein CRM eingerichtet
@@ -325,6 +415,14 @@
 775113f159aac4db:
   de: '* **Vertraulichkeit**:'
   en: '* **Confidentiality** :'
+7887ea4508647519:
+  de: >2-
+      * **Technische Rechtsbindung**: Einschränkung der Verarbeitung,
+    Übermittlung und Nutzung von Daten durch geeignete technische
+    Maßnahmen.
+  en: >2-
+      * **Technical legal binding** : Restriction of processing,
+    transmission and use of data by appropriate technical measures.
 79f60ef9c191224a:
   de: '* **Transparenz**:'
   en: '* **Transparency** :'
@@ -369,6 +467,17 @@
   en: >-
     services (e.g. in public authorities or companies) can be
     used.
+85df89fcdd2cde48:
+  de: >2-
+      * **Rollenmanagement**: Einführung eines Berechtigungs-
+    & Rollenkonzept basierend auf dem Erforderlichkeitsprinzip,
+    sowie eines zugehörigen Identitätsmanagements; sowohl für
+    die Software als auch die notwendige Infrastruktur.
+  en: >2-
+      * **Role management** : Introduction of an authorization
+    & role concept based on the principle of necessity, as well
+    as an associated identity management; both for the software
+    and the necessary infrastructure.
 8d18b5746d36c9af:
   de: >-
     Nutzer sollen wie bisher in der Lage sein, Termine bei Anbietern
@@ -497,6 +606,9 @@ abf4a80a9c7da6b6:
     * Sollen Untervearbeiter für die Verarbeitung der Daten eingesetzt
     werden?
   en: '* Should sub-processors be used to process the data?'
+ac8dd09507e203b2:
+  de: '  * ****:'
+  en: '  * * ***:'
 ad2764daca6ce028:
   de: >-
     Um konkrete Anforderungen aus Privacy Engineering Sicht zu
@@ -507,6 +619,13 @@ ad2764daca6ce028:
 afbb9a4c8b3e051f:
   de: '#### Datenerfassung'
   en: '#### Data acquisition'
+b2106e932e351e1c:
+  de: >2-
+      * **Reduzierung der Datenerfassung**: Systematische Reduzierung
+    der Erfassung personenbezogener Daten in allen Verarbeitungsvorgängen.
+  en: >2-
+      * **Reduction of data collection** : systematic reduction
+    of personal data collection in all processing operations.
 b362e091558f1670:
   de: '#### Initiale Fragen zur Anforderungsanalyse: Terminbuchung'
   en: >-
@@ -534,6 +653,15 @@ bc4c4c45653c848b:
     In the following sections, we document the implementation
     of the standard data protection model according to the [official
     documentation](https://www.datenschutz-mv.de/static/DS/Dateien/Datenschutzmodell/SDM-Methode_V3.pdf).
+bd9aa8edeaec413e:
+  de: >2-
+      * **Reduzierung der Kenntnisnahme**: Systematische Reduzierung
+    der Kenntnisnahme personenbezogener Daten in internen und
+    externen Verarbeitungsvorgängen ("need to know" Prinzip).
+  en: >2-
+      * **Reduction of need** -to-know: Systematic reduction of
+    the need-to-know of personal data in internal and external
+    processing operations ("need-to-know" principle).
 bdd3bcaf5c81ee1b:
   de: '### Standard-Datenschutzmodell'
   en: '### Standard data protection model'
@@ -566,6 +694,15 @@ c4c825d55a366961:
 c7f5fdeae38c66b0:
   de: '## Kiebitz 2.0 - Funktionen'
   en: '## Lapwing 2.0 - Functions'
+ca0a2980c5c9d6fc:
+  de: >2-
+      * **Einwilligungsmanagement**: Umsetzung eines rechtskonformen
+    Einwilligungsmanagements, das alle Einwilligungen die als
+    Grundlage für die Datenverarbeitung genutzt werden dokumentiert.
+  en: >2-
+      * **Consent management** : Implementation of legally compliant
+    consent management that documents all consents used as the
+    basis for data processing.
 cd02f885d89ec9af:
   de: >-
     * Welche konkreten personenbezogenen Daten sollen erfasst
@@ -591,9 +728,27 @@ dc171696836f6b30:
 dd621e7333c6e308:
   de: '#### Anbieter: Formularerstellung'
   en: '#### Provider: Form creation'
+dd6fb8e8dd26a0e7:
+  de: >2-
+      * **Löschkonzept**: Implementierung eines geeigneten technischen
+    Löschkonzepts für alle an der Informationsverarbeitung beteiligte
+    Systeme.
+  en: >2-
+      * **Deletion concept** : Implementation of a suitable technical
+    deletion concept for all systems involved in information processing.
 de2da7219393cdfd:
   de: '* **Verfügbarkeit**'
   en: '* **Availability**'
+e20214dcb3866d77:
+  de: >2-
+      * **Schutz vor äußeren Einflüssen**: Implementierung geeigneter
+    technischer und organisatorischer Maßnahmen zur Abwehr, Erkennung
+    und Behebung von Sicherheitszwischenfällen (z.B. durch Hacking).
+  en: >2-
+      * **Protection against external influences** : Implementation
+    of appropriate technical and organizational measures to defend
+    against, detect, and remedy security incidents (e.g., through
+    hacking).
 e34a74878bbec1b2:
   de: '### Funktionsumfang'
   en: '### Scope of functions'
@@ -637,6 +792,18 @@ eb94a6e520be8011:
     In addition, the software should be able to automate various
     typical workflows, such as booking appointments and filling
     out forms.
+ec5761ca4e52c3a3:
+  de: >2-
+      * **Einwilligungsmanagement**: Umsetzung eines rechtskonformen
+    Einwilligungsmanagements, das alle Einwilligungen die als
+    Grundlage für die Datenverarbeitung genutzt werden dokumentiert
+    und es Nutzern erlaubt, Einwilligungen nachzuvollziehen und
+    anzupassen.
+  en: >2-
+      * **Consent management** : Implementation of a legally compliant
+    consent management system that documents all consents used
+    as the basis for data processing and allows users to track
+    and adjust consents.
 ed314cc5aa7fc538:
   de: >2-
       * **Datenvalidierung**: Prüfung aller Eingabedaten vor Speicherung/Verarbeitung

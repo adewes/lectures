@@ -43,6 +43,19 @@ pages:
       slug: processes
       src: en/pe/case-study/processes.md
       title: Processes
+    - children:
+      - name: user-stories
+        src: en/pe/case-study/product/user-stories.md
+        title: User Stories
+      - name: data-model
+        src: en/pe/case-study/product/data-model.md
+        title: Data model
+      - name: mockups
+        src: en/pe/case-study/product/mockups.md
+        title: Mockups
+      name: product
+      slug: product
+      title: Product
     name: case-study
     slug: case-study
     title: Case study

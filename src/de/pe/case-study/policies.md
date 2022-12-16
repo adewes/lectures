@@ -16,11 +16,21 @@ Diese Policy orientiert sich an der Datenschutzgrundverordnung (DSGVO) und dem S
 
 ## Produktdesign
 
+* Features müssen so ausgestaltet werden, dass sie die obigen Prinzipien der Datenverarbeitung erfüllen, d.h. sie müssen insbesondere darauf ausgelegt sein, die zu verarbeitenden personenbezogenen Daten zu minimieren und Nutzern einfache und effektive Kontrollmöglichkeiten bieten.
+
 ## Benutzerobfläche (UI) / Frontend
 
 * Betroffene müssen über die Benutzeroberfläche einfach in der Lage sein, ihre Rechte auszuüben, d.h. die eigenen Daten einzusehen, zu korrigieren, ihre Verarbeitung einzuschränken und ihre Löschung zu beantragen.
+* Einstellungen, welche die Privatsphäre betreffen, müssen klar verständlich und einfach gehalten sein. Es dürfen keine **Dark Patterns** eingesetzt werden, um z.B. Nutzer zur Einwilligung zu drängen (z.B. Auswahl eines Newsletters direkt unter der Bestätigung der Geschäftsbedingungen).
 
 ## Infrastruktur / Backend / Datenhaltung
 
 * Alle personenbezogenen Daten sollen im System nur verschlüsselt oder pseudonymisiert gespeichert werden. Wo möglich und sinnvoll, soll Ende-zu-Ende Verschlüsselung eingesetzt werden, so dass eine Entschlüsselung von Daten nur auf Endgeräten berechtigter Nutzer erfolgt.
 * Datenstrukturen und Datenhaltung müssen so gestaltet werden, dass personenbezogene Daten korrigier- und löschbar sind und die Verarbeitung der Daten durch Betroffene einfach gesteuert werden kann.
+
+## Analytics & Data Science
+
+Analytics & Data Science sind wichtige Bestandteile der Produktentwicklung, da sie uns ermöglichen, die Nutzung unserer Produkte zu verstehen und zu optimieren. Die hierfür notwendige Datenerhebung birgt jedoch auch Datenschutzrisiken, weswegen wir verschiedene Maßnahmen treffen, um diese Risiken zu minimieren.
+
+## Drittanbieter
+
