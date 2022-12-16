@@ -32,9 +32,9 @@ pages:
       src: en/pe/case-study/requirements.md
       title: Requirements analysis
     - name: policies
-      slug: guidelines
+      slug: directive
       src: en/pe/case-study/policies.md
-      title: Guidelines
+      title: Directive
     - name: technical-measures
       slug: technical-measures
       src: en/pe/case-study/technical-measures.md

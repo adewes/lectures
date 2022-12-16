@@ -32,5 +32,14 @@ Diese Policy orientiert sich an der Datenschutzgrundverordnung (DSGVO) und dem S
 
 Analytics & Data Science sind wichtige Bestandteile der Produktentwicklung, da sie uns ermöglichen, die Nutzung unserer Produkte zu verstehen und zu optimieren. Die hierfür notwendige Datenerhebung birgt jedoch auch Datenschutzrisiken, weswegen wir verschiedene Maßnahmen treffen, um diese Risiken zu minimieren.
 
+* Die Weitergabe von Daten an Dritte soll nicht ohne weiteres erfolgen.
+* Die Erhebung und Verarbeitung von personenbezogenen Daten zu Analytics & Data Science Zwecken muss immer auf einer Einwilligung basieren.
+* Personenbezogene Daten aus verschiedenen Quellen dürfen nicht ohne weiteres miteinander kombiniert werden. Lediglich pseudonymisierte oder anonymisierte Daten dürfen kombiniert werden.
+* Der Zugriff auf Analytics-Daten muss auf berechtigte Personengruppen begrenzt sein.
+
 ## Drittanbieter
 
+ * Es sollen grundsätzlich nur europäische Anbieter, die der DSGVO unterliegen, für die Auftragsverarbeitung personenbezogener Daten genutzt werden.
+ * Die Verarbeitung muss auf einer Einwilligung basieren und Betroffenrechte müssen für die Verarbeitung wahrgenommen werden können.
+ * Die Einführung eines neuen Anbieters darf nur nach Bewilligung durch das Privacy Engineering Team erfolgen, die im Rahmen einer Privacy Triage festgestellt wird.
+ * Drittanbieter dürfen nur eingesetzt werden, wenn dies absolut notwendig ist und keine Möglichkeit besteht, die vom Anbieter bereitgestellte Funktionalität unter vertretbarem Aufwand intern bereitzustellen.

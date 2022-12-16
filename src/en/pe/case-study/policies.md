@@ -32,6 +32,17 @@ This Policy is guided by the General Data Protection Regulation (GDPR) and the S
 
 Analytics & Data Science are important components of product development, as they enable us to understand and optimize the use of our products. However, the data collection required for this also entails data protection risks, which is why we take various measures to minimize these risks.
 
+* The disclosure of data to third parties should not be made without further ado.
+* The collection and processing of personal data for Analytics & Data Science purposes must always be based on consent.
+* Personal data from different sources may not be combined without further ado. Only pseudonymized or anonymized data may be combined.
+* Access to Analytics data must be limited to authorized groups of people.
+
 ## Third-party supplier
 
-
+ * In principle, only European providers subject to the GDPR
+are to be used for the commissioned processing of personal data.
+ * Processing must be based on consent and data subject rights
+must be exercisable for processing.
+ * The introduction of a new provider may only occur after
+approval by the Privacy Engineering Team, as determined by Privacy Triage.
+ * Third-party providers may only be used if this is absolutely necessary and there is no possibility of providing the functionality provided by the provider internally at a reasonable cost.

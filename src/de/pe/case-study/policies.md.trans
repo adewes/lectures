@@ -27,6 +27,16 @@
   en: >-
     This policy is based on the General Data Protection Regulation
     (GDPR) and the Standard Data Protection Model (SDM).
+11d1b7ab1bd9d18b:
+  de: >2-
+     * Drittanbieter dürfen nur eingesetzt werden, wenn dies absolut
+    notwendig ist und keine Möglichkeit besteht, die vom Anbieter
+    bereitgestellte Funktionalität unter vertretbarem Aufwand
+    intern bereitzustellen.
+  en: >2-
+     * Third-party providers may only be used if this is absolutely
+    necessary and there is no possibility of providing the functionality
+    provided by the provider internally at a reasonable cost.
 163efe5b4a1bae05:
   de: >-
     * Einstellungen, welche die Privatsphäre betreffen, müssen
@@ -55,6 +65,14 @@
 21160d3ee083aa03:
   de: '## Drittanbieter'
   en: '## Third-party supplier'
+2c06925f7c248523:
+  de: >2-
+     * Die Verarbeitung muss auf einer Einwilligung basieren und
+    Betroffenrechte müssen für die Verarbeitung wahrgenommen werden
+    können.
+  en: >2-
+     * Processing must be based on consent and data subject rights
+    must be exercisable for processing.
 329054a53e561e9c:
   de: >-
     Diese Policy orientiert sich an der Datenschutzgrundverordnung
@@ -163,6 +181,15 @@
     software, design) with concrete guidelines and implementation
     aids for the design of the product and to simplify the work
     of the privacy engineering team.
+69417b24d48e26d7:
+  de: >2-
+     * Die Einführung eines neuen Anbieters darf nur nach Bewilligung
+    durch das Privacy Engineering Team erfolgen, die im Rahmen
+    einer Privacy Triage festgestellt wird.
+  en: >2-
+     * The introduction of a new provider may only occur after
+    approval by the Privacy Engineering Team, as determined by
+    Privacy Triage.
 6a0e10f80c837842:
   de: >-
     * Datenstrukturen und Datenhaltung müssen so gestaltet werden,
@@ -188,6 +215,14 @@
     a way that personal data can be corrected and deleted and
     the processing of data can be controlled at the data subject
     level.
+816c9d6fd45f1cc1:
+  de: >-
+    * Die Erhebung und Verarbeitung von personenbezogenen Daten
+    zu Analytics & Data Science Zwecken muss immer auf einer Einwilligung
+    basieren.
+  en: >-
+    * The collection and processing of personal data for Analytics
+    & Data Science purposes must always be based on consent.
 852c0a531bdc7b34:
   de: >-
     * Transparenz und Kontrolle: Betroffene müssen in der Lage
@@ -205,6 +240,13 @@
 8d1e13d669fc9ff5:
   de: '# Privacy Engineering Richtlinie'
   en: '# Privacy Engineering Policy'
+90c1dacc95d0825b:
+  de: >-
+    * Der Zugriff auf Analytics-Daten muss auf berechtigte Personengruppen
+    begrenzt sein.
+  en: >-
+    * Access to Analytics data must be limited to authorized groups
+    of people.
 b6a3ae76da85f2d3:
   de: >-
     * Datenstrukturen und Datenhaltung müssen so gestaltet werden,
@@ -276,9 +318,28 @@ d3f12e89ce47f0ab:
     encrypted or pseudonymized form. Where possible and appropriate,
     end-to-end encryption should be used so that data can only
     be decrypted on end devices of authorized users.
+e3ae5ee4054601ba:
+  de: >2-
+     * Es sollen grundsätzlich nur europäische Anbieter, die der
+    DSGVO unterliegen, für die Auftragsverarbeitung personenbezogener
+    Daten genutzt werden.
+  en: >2-
+     * In principle, only European providers subject to the GDPR
+    are to be used for the commissioned processing of personal
+    data.
 e3b0c44298fc1c14:
   de: ''
   en: ''
+f5dbe5b9ddc96303:
+  de: >-
+    * Personenbezogene Daten aus verschiedenen Quellen dürfen
+    nicht ohne weiteres miteinander kombiniert werden. Lediglich
+    pseudonymisierte oder anonymisierte Daten dürfen kombiniert
+    werden.
+  en: >-
+    * Personal data from different sources may not be combined
+    without further ado. Only pseudonymized or anonymized data
+    may be combined.
 f73c817edb3d3974:
   de: >-
     * Transparenz und Kontrolle: Betroffene müssen in der Lage
@@ -293,3 +354,10 @@ f73c817edb3d3974:
 fa3ed7e75616d5e0:
   de: '## Benutzerobfläche (UI) / Frontend'
   en: '## User interface (UI) / front end'
+ff16dd5ade480231:
+  de: >-
+    * Die Weitergabe von Daten an Dritte soll nicht ohne weiteres
+    erfolgen.
+  en: >-
+    * The disclosure of data to third parties should not be made
+    without further ado.

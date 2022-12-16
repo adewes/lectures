@@ -36,7 +36,7 @@ pages:
           name: requirements
           slug|t||slugify: ''
           src|f|exists?: "{target_language}/pe/case-study/requirements.md" 
-        - title|t: Richtlinien
+        - title|t: Richtlinie
           name: policies
           slug|t||slugify: ''
           src|f|exists?: "{target_language}/pe/case-study/policies.md" 

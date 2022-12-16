@@ -32,9 +32,9 @@ pages:
       src: de/pe/case-study/requirements.md
       title: Anforderungsanalyse
     - name: policies
-      slug: richtlinien
+      slug: richtlinie
       src: de/pe/case-study/policies.md
-      title: Richtlinien
+      title: Richtlinie
     - name: technical-measures
       slug: technische-massnahmen
       src: de/pe/case-study/technical-measures.md
